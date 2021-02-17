@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Estadística II</title>
+  <title>1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II</title>
   <meta name="description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Estadística II" />
+  <meta property="og:title" content="1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="alvarolimber/EST-145" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Estadística II" />
+  <meta name="twitter:title" content="1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II" />
   
   <meta name="twitter:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="index.html"/>
 
-<link rel="next" href="tema-1-distribuciones-bivariadas-multivariadas.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -159,68 +159,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Estadística II</h1>
-<h2 class="subtitle"><em>EST-145</em></h2>
-<p class="author"><em>Alvaro Chirino Gutierrez</em></p>
-<p class="date"><em>2021-02-17</em></p>
+<div id="tema-1-distribuciones-bivariadas-multivariadas" class="section level1">
+<h1><span class="header-section-number">1</span> Tema 1: Distribuciones bivariadas (multivariadas)</h1>
+<p>En el caso univariado se tenia a una va <span class="math inline">\(X\)</span> definida en los reales <span class="math inline">\(IR\)</span>, a esta va se le asignaba una función de distribución <span class="math inline">\(F(x)\)</span> y una función de densidad <span class="math inline">\(f(x)\)</span>. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:</p>
+<p>Caso discreto:</p>
+<p><span class="math display">\[\sum_{Rx} P(X=x)=1\]</span>
+<span class="math display">\[F(t)=P(X\leq t)=\sum_{x\leq t} P(X=x)\]</span></p>
+<p>Caso continuo:</p>
+<p><span class="math display">\[\int_{Rx}f(x)dx=1\]</span></p>
+<p><span class="math display">\[F(t)=P(X\leq t)=\int_{-\infty}^{t}f(x)dx\]</span></p>
+<p>La idea de este capitulo es ver las propiedades en el caso bivariante y generalizar para el caso multivariante.</p>
+<div id="variables-aleatorias-bivariantes" class="section level2">
+<h2><span class="header-section-number">1.1</span> Variables aleatorias bivariantes</h2>
+<p>Son un par de variables aleatorias con una distribución conjunta, son típicamente representadas con mayúscula <span class="math inline">\((X, Y)\)</span> o <span class="math inline">\((X_1,X_2)\)</span>, las realizaciones de estas variables aleatorias se representan como <span class="math inline">\((x,y)\)</span> o <span class="math inline">\((x_1,x_2)\)</span>.</p>
+<blockquote>
+<p>Definición 1.
+Un par de variables aleatorias bivariadas es un par numérico de resultados; una función definida en <span class="math inline">\(IR^2\)</span></p>
+</blockquote>
+<p>Ejemplos:</p>
+<ul>
+<li>Considerar el par (edad, estatura):
+<ul>
+<li><span class="math inline">\((23,170)\)</span></li>
+<li><span class="math inline">\((20,172)\)</span></li>
+<li><span class="math inline">\((20,154)\)</span></li>
+<li><span class="math inline">\((26,159)\)</span></li>
+<li><span class="math inline">\((19,175)\)</span></li>
+</ul></li>
+<li>Considerar el par: (ingreso, años experiencia)</li>
+</ul>
+<p>Imaginar lanzar 2 monedas simultáneamente, <span class="math inline">\(\Omega=\{CC,CS,SC,SS\}\)</span>, si definimos a <span class="math inline">\(Cara=1\)</span> y <span class="math inline">\(Sello=0\)</span>, <span class="math inline">\(R_{(X,Y)}=\{(1,1),(1,0),(0,1),(0,0)\}\)</span>.</p>
 </div>
-<div id="prefacio" class="section level1 unnumbered">
-<h1>Prefacio</h1>
-<p><a href="https://www.crcpress.com/product/isbn/9781138700109" target="_blank"><img src="images/cover.jpg" style="display: block; margin: auto;" /></a></p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Este documento de <a href="https://twiiter/alvarochirinog">Alvaro Chirino</a> esta bajo la licencia de <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<div id="audiencia" class="section level2 unnumbered">
-<h2>Audiencia</h2>
-<p>El libro fue diseñado originalmente para los estudiantes de la materia de Estadística II, una materia del pregrado de la carrera de Informática de la Universidad Mayor de San Ándres.</p>
+<div id="función-de-distribución-bivariada" class="section level2">
+<h2><span class="header-section-number">1.2</span> Función de distribución bivariada</h2>
+<blockquote>
+<p>Definición 2.</p>
+</blockquote>
+<p>La función de distribución conjunta de <span class="math inline">\((X,Y)\)</span> es</p>
+<p><span class="math display">\[F(x,y)=P(X\leq x,Y\leq y)=P\left[\{X\leq x\} \cap \{Y\leq y\}  \right]\]</span>
+Las propiedades de <span class="math inline">\(F\)</span> son similares al caso univariante, <span class="math inline">\(0\leq F(x,y)\leq 1\)</span>.</p>
+<p>Ejemplo:</p>
+<p><span class="math display">\[F(x,y)=(1-e^{-x})(1-e^{-y});\hspace{2cm} x,y\geq0 \]</span>
+* <span class="math inline">\(F(0,0)=0\)</span>
+* <span class="math inline">\(F(\infty,\infty)=1\)</span></p>
+<p>Calcular:</p>
+<p><span class="math display">\[P(X\leq 10,Y\leq 100)=F(10,100)=(1-e^{-10})(1-e^{-100})=0.9999546\]</span>
+<span class="math display">\[P(X\leq 5,Y\leq 20)=F(5,20)=0.99326\]</span></p>
+<p>La distribución conjunta satisface:</p>
+<p><span class="math display">\[P(a&lt;X\leq b,c&lt; Y\leq d)=F(b,d)-F(b,c)-F(a,d)+F(a,c)\]</span></p>
+<p>Para <span class="math inline">\(a&lt;b\)</span> y <span class="math inline">\(c&lt;d\)</span></p>
 </div>
-<div id="estructura-del-libro" class="section level2 unnumbered">
-<h2>Estructura del libro</h2>
-<p>El libro incluye 6 capítulos, estos son:</p>
-<ol style="list-style-type: decimal">
-<li>Distribuciones de probabilidad bivariada</li>
-<li>Distribuciones muestrales</li>
-<li>Distribuciones Chi cuadrado, t-student y Fisher</li>
-<li>Estimación puntual de parámetros</li>
-<li>Estimación de parámetros por intervalos de confianza</li>
-<li>Pruebas de hipótesis</li>
-</ol>
-</div>
-<div id="software-y-acuerdos" class="section level2 unnumbered">
-<h2>Software y acuerdos</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 4.0.3 (2020-10-10)
-## Platform: x86_64-w64-mingw32/x64 (64-bit)
-## Running under: Windows 10 x64 (build 19041)
-## 
-## Matrix products: default
-## 
-## locale:
-## [1] LC_COLLATE=Spanish_Bolivia.1252  LC_CTYPE=Spanish_Bolivia.1252   
-## [3] LC_MONETARY=Spanish_Bolivia.1252 LC_NUMERIC=C                    
-## [5] LC_TIME=Spanish_Bolivia.1252    
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## loaded via a namespace (and not attached):
-##  [1] compiler_4.0.3  magrittr_2.0.1  bookdown_0.21   htmltools_0.5.0 tools_4.0.3    
-##  [6] rstudioapi_0.13 yaml_2.2.1      stringi_1.5.3   rmarkdown_2.6   highr_0.8      
-## [11] knitr_1.31      stringr_1.4.0   xfun_0.19       digest_0.6.27   packrat_0.5.0  
-## [16] rlang_0.4.9     evaluate_0.14</code></pre>
-</div>
-<div id="bases-de-datos" class="section level2 unnumbered">
-<h2>Bases de datos</h2>
-<p>En este documento se emplearan 2 bases de datos del contexto Boliviano:</p>
-<ol style="list-style-type: decimal">
-<li>Encuesta a Hogares 2019 y 2019. Vivienda y Personas</li>
-<li>Computo oficial de las elecciones del 18 de Octubre de 2020</li>
-</ol>
-<p>Estas bases de datos se encuentran disponibles en formato <span class="math inline">\(.RData\)</span> en el repositorio de Github del texto.</p>
-</div>
-<div id="agradecimiento" class="section level2 unnumbered">
-<h2>Agradecimiento</h2>
-<p>Sarndal</p>
+<div id="función-masa-de-probabilidad-función-de-densidad" class="section level2">
+<h2><span class="header-section-number">1.3</span> Función masa de probabilidad (función de densidad)</h2>
+<p>Para el par <span class="math inline">\((X,Y)\)</span> con una función de distribución conjunta <span class="math inline">\(F(x,y)\)</span>.</p>
+<p>Para el caso continuo,</p>
+<blockquote>
+<p>Definición 3.</p>
+</blockquote>
+<p><span class="math display">\[f(x,y)=\frac{\partial^2}{\partial x \partial y}F(x,y)\]</span></p>
+<p>Por un tema de notación, a veces escribiremos <span class="math inline">\(f_{X,Y}(x,y)\)</span></p>
+<p>Ejercicio: encontrar <span class="math inline">\(f(x,y)\)</span> para la <span class="math inline">\(F\)</span> dada en el ejemplo anterior</p>
+<p><span class="math display">\[f(x,y)=\frac{\partial^2}{\partial x \partial y}\left[(1-e^{-x})(1-e^{-y})\right]=e^{-x}e^{-y}\]</span></p>
+<p><span class="math inline">\(f\)</span> satisface de forma similar las propiedades vistas en el caso univariante.</p>
+<p><span class="math display">\[\int_{Rx}\int_{Ry}f(x,y)dydx=1\]</span></p>
+<p>Para el ejercicio:</p>
+<p><span class="math display">\[\int_0^{\infty} \int_0^{\infty}e^{-x}e^{-y} dx dy=\int_0^{\infty} e^{-y} \left[-e^{-x}/_0^{\infty} \right] dy =1\]</span></p>
+<p><span class="math display">\[P(a&lt;X\leq b,c&lt; Y\leq d)=\int_a^b \int_c^d f(x,y)dxdy\]</span></p>
+<ul>
+<li>¿Qué relación existe entre estas dos variables?</li>
+<li>Serán independientes</li>
+<li>¿Cómo se afectan entre ellas?</li>
+</ul>
 
+<div id="refs" class="references">
+<div>
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div>
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+</div>
+<div>
+<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+<div>
+<p>———. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
+<div>
+<p>Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. “How to Read This Book.” <em>Transforming Climate Finance and Green Investment with Blockchains</em>, 1. <a href="https://doi.org/10.1016/b978-0-12-814447-3.00041-0">https://doi.org/10.1016/b978-0-12-814447-3.00041-0</a>.</p>
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -228,8 +255,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="tema-1-distribuciones-bivariadas-multivariadas.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

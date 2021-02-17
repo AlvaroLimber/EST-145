@@ -3,22 +3,22 @@
     "path": "~/GitHub/EST-145/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "1179575007",
+    "hash": "1233276888",
     "contents": "",
-    "dirty": false,
+    "dirty": true,
     "created": 1611240070093.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
-        "cursorPosition": "57,7",
-        "scrollLine": "0"
+        "cursorPosition": "56,0",
+        "scrollLine": "39"
     },
     "folds": "",
     "lastKnownWriteTime": 1611241966,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1611241966910,
+    "last_content_update": 1613585122610,
     "read_only": false,
     "read_only_alternatives": []
 }
