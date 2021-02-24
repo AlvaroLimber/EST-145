@@ -2,3 +2,8 @@ tema-1-distribuciones-bivariadas-multivariadas
 variables-aleatorias-bivariantes
 función-de-distribución-bivariada
 función-masa-de-probabilidad-función-de-densidad
+distribución-marginal
+independencia
+valores-esperados
+distribuciones-condicionales
+medidas-de-relación-entre-dos-variables
