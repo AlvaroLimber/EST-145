@@ -7,3 +7,6 @@ independencia
 valores-esperados
 distribuciones-condicionales
 medidas-de-relación-entre-dos-variables
+tema-2-distribuciones-muestrales
+muestras-y-población
+parámetros-estadística-y-estimadores.

@@ -1,0 +1,69 @@
+# Tema 2: Distribuciones muestrales
+
+A partir de este tema la estadística esta vinculada con la *inferencia* sobre los *parámetros* de la información/datos.
+
+## Muestras y población
+
+> Definición: Una población es una colección de objetos, estos objetos tienen variables.
+
+Sea nuestra población $U$, esta población puede ser finita o infinita
+
+Finitas,
+$$U=\{u_1, u_2, \ldots , u_i,...,u_N \}$$
+Infinita,
+
+$$U=\{u_1, u_2, \ldots , u_i,... \}$$
+
+
+Cada elemento de $U$ tiene varibles o características asociadas:
+
+$$u_i=\{X_{i1}, X_{i2}, \ldots, X_{iP} \}$$
+$$u_j=\{X_{j1}, X_{j2}, \ldots, X_{jP} \}$$
+
+> Definición, Muestra: Una muestra es un subconjunto de U.
+
+Normalmente una muestra tiene un tamaño $n$, el mecanismo para obtener la muestra de $U$ puede ser con reposición o sin reposición, en cualquier caso podemos anotar esto de la siguiente forma, sea $s$ una muestra:
+
+$$s=\{u_{1}^*,u_2^*, \ldots, u_n^* \}$$
+Note que los elementos $u_1$ y $u_1^*$ no necesariamente son los mismos.
+
+El subconjunto $s$ no es único y en realidad existen muchas muestras posibles, según el contexto, esto depende:
+
+  * Del tamaño de $N$, $n$
+  * Del mecanismo s/rep, c/rep.
+
+Ejercicios, 
+
+  1. Sea la población $U=\{a,b,c,d,e,f\}$, se define una muestra de $n=3$, escriba todas las muestras posibles según ambos mecanismos de reposición.
+
+Solución,  
+  * (s/rep), 20: $s_1=\{a,b,c\}$, $s_2=\{a,b,d \}$, $\ldots$ ,$s_{20}=\{d,e,f\}$ 
+  * (c/rep), 216: $s_1=\{a,a,a\}$, $s_2={a,a,b}$, $\ldots$, $s_{216}=\{f,f,f\}$  
+  
+  2. En una población de 90 estudiantes, si se define una muestra de 10 estudiantes, según ambos mecanismos de selección ¿Cuantas muestras se pueden armar?
+  * s/rep: 5720645481903
+  * c/rep: 34867844009999998976  
+
+Sin reposición:
+
+$$Muestras_{Posibles}=\binom{N}{n}$$
+
+Sin reposición:
+
+$$Muestras_{Posibles}=N^n$$
+
+Imaginemos a la primera variable de interés $X_1$, para el universo esta variable tiene los elementos:
+
+$$X_1=\{X_{11}, X_{21}, X_{31}, \ldots, X_{N1} \}$$
+
+Imaginemos que observamos a $X_1$, para la muestra.
+
+$$X_1=\{X_{11}^*, X_{21}^*, X_{31}^*, \ldots, X_{n1}^* \}$$
+
+Estos $X_{i1}^*$ para los $i=1,\ldots,n$ son variables aleatorias. Por lo tanto $X_1$ es un vector aleatorio de tamaño $n$.
+
+## Parámetros, estadística y estimadores.
+
+
+
+

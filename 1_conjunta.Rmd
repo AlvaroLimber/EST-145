@@ -255,9 +255,17 @@ $$corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}$
   * La intensidad de la dirección de la relación nos la da $corr_{xy}$, mientras más cercana a $corr_{xy}\rightarrow 1$ la relación directa es más fuerte, $corr_{xy}\rightarrow -1$ la relación inversa es más fuerte 
   * Si $corr_{xy}\rightarrow 0$ podemos decir que las variables no están relacionadas ("cuasi-independencia") la correlación mide principalmente relaciones lineales.
 
+Ejercicio, 
 
+Demostrar que si $X$ y $Y$ son independientes entonces: 
+$$E[XY]=E[X]*E[Y]$$
 
+Demostración,
 
+$$E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx=\int_{Rx}\int_{Ry} xy f(x)f(y) dy dx$$
+$$=\int_{Rx} x f(x)\left( \int_{Ry} y f(y) dy \right) dx=E[Y] \int_{Rx} xf(x)  dx=E[X]E[Y] $$
+Como resultado de lo anterior, si $X$ e $Y$ son independientes:
 
+$$cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0$$
 
-
+Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.

@@ -1,0 +1,46 @@
+---
+title: "Estadística 2. EST-145"
+subtitle: "Ejercicios propuestos"
+author: "Alvaro Chirino"
+date: "I-2021"
+output: 
+  pdf_document:
+    number_sections: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Distribuciones bivariadas
+
+## Ejercicio 1
+
+Sea $f(x,y)=1/4$, para $-1 \leq x \leq 1$ y $-1 \leq y \leq 1$
+
+  * Verificar que $f$ es una función de densidad valida
+  * Encontrar la marginal de $X$
+  * Encontrar la densidad condicional de $Y$ dado $X=x$
+  * Encontrar $E[Y|X=x]$
+  
+## Ejercicio 2
+
+Sea $f(x,y)=x+y$, para $0 \leq x \leq 1$ y $0 \leq y \leq 1$
+
+  * Verificar que $f$ es una función de densidad valida
+  * Encontrar la marginal de $X$
+  * Encontrar $E[X]$, $V(X)$, $E[XY]$ y $corr(X,Y)$
+  * Encontrar la densidad condicional de $Y$ dado $X=x$
+  * Encontrar $E[Y|X=x]$
+
+## Ejercicio 3
+
+Sea, 
+$$f(x,y)=\frac{2}{(1+x+y)^3}$$
+Para $X \geq 0$ y $y \geq 0$
+
+  * Verificar que $f$ es una función de densidad valida
+  * Encontrar la marginal de $X$
+  * Encontrar $E[X]$, $V(X)$, $E[XY]$ y $corr(X,Y)$
+  * Encontrar la densidad condicional de $Y$ dado $X=x$
+  * Encontrar $E[Y|X=x]$
