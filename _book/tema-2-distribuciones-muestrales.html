@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-03-01" />
+<meta name="date" content="2021-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -149,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a><ul>
 <li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
-<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadística-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadística y estimadores.</a></li>
+<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
 </ul></li>
 </ul>
 
@@ -181,7 +181,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[U=\{u_1, u_2, \ldots , u_i,...,u_N \}\]</span>
 Infinita,</p>
 <p><span class="math display">\[U=\{u_1, u_2, \ldots , u_i,... \}\]</span></p>
-<p>Cada elemento de <span class="math inline">\(U\)</span> tiene varibles o características asociadas:</p>
+<p>Cada elemento de <span class="math inline">\(U\)</span> tiene variables o características asociadas:</p>
 <p><span class="math display">\[u_i=\{X_{i1}, X_{i2}, \ldots, X_{iP} \}\]</span>
 <span class="math display">\[u_j=\{X_{j1}, X_{j2}, \ldots, X_{jP} \}\]</span></p>
 <blockquote>
@@ -211,16 +211,76 @@ Note que los elementos <span class="math inline">\(u_1\)</span> y <span class="m
 </ul>
 <p>Sin reposición:</p>
 <p><span class="math display">\[Muestras_{Posibles}=\binom{N}{n}\]</span></p>
-<p>Sin reposición:</p>
+<p>Con reposición:</p>
 <p><span class="math display">\[Muestras_{Posibles}=N^n\]</span></p>
 <p>Imaginemos a la primera variable de interés <span class="math inline">\(X_1\)</span>, para el universo esta variable tiene los elementos:</p>
 <p><span class="math display">\[X_1=\{X_{11}, X_{21}, X_{31}, \ldots, X_{N1} \}\]</span></p>
 <p>Imaginemos que observamos a <span class="math inline">\(X_1\)</span>, para la muestra.</p>
-<p><span class="math display">\[X_1=\{X_{11}^*, X_{21}^*, X_{31}^*, \ldots, X_{n1}^* \}\]</span></p>
+<p><span class="math display">\[X_1^*=\{X_{11}^*, X_{21}^*, X_{31}^*, \ldots, X_{n1}^* \}\]</span></p>
 <p>Estos <span class="math inline">\(X_{i1}^*\)</span> para los <span class="math inline">\(i=1,\ldots,n\)</span> son variables aleatorias. Por lo tanto <span class="math inline">\(X_1\)</span> es un vector aleatorio de tamaño <span class="math inline">\(n\)</span>.</p>
+<p>De ahora en adelante vamos a trabajar con un solo vector aleatorio denominado <span class="math inline">\(X\)</span>, de tal forma que este sea la colección de <span class="math inline">\(n\)</span> variables aleatorias.</p>
+<p><span class="math display">\[X=\{X_1,X_2,\ldots,X_n \}\]</span></p>
+<blockquote>
+<p>Definición.</p>
+</blockquote>
+<p>La colección del vector aleatorio <span class="math inline">\(X=\{X_1,X_2,\ldots,X_n \}\)</span>, son independientes e idénticamente distribuidas (iid) si la distribución conjunta de las <span class="math inline">\(n\)</span> variables puede ser escrita como <span class="math inline">\(f(x_1,x_2,\ldots,x_n)=f(x_1)*f(x_2)*\ldots*f(x_n)\)</span> y además todas las <span class="math inline">\(x_i\)</span> tienen la misma función de distribución <span class="math inline">\(F(x)\)</span>.</p>
+<blockquote>
+<p>Definición</p>
+</blockquote>
+<p>Sea <span class="math inline">\(N\)</span> el tamaño de la población y <span class="math inline">\(n\)</span> el tamaño de la muestra, ambos valores para fines de este capítulo son fijas o constantes.</p>
 </div>
-<div id="parámetros-estadística-y-estimadores." class="section level2">
-<h2><span class="header-section-number">2.2</span> Parámetros, estadística y estimadores.</h2>
+<div id="parámetros-estadísticas-y-estimadores." class="section level2">
+<h2><span class="header-section-number">2.2</span> Parámetros, estadísticas y estimadores.</h2>
+<p>El objetivo de la estadística es aprender acerca de las características de una población. Estas características las vamos a llamar <em>parámetros</em>.</p>
+<blockquote>
+<p>Definición,</p>
+</blockquote>
+<p>Un parámetro <span class="math inline">\(\theta\)</span> es una función sobre la población <span class="math inline">\(U\)</span>.</p>
+<p><span class="math display">\[\theta=f(U,X,Y,Z,\ldots)\]</span>
+Nota: Los parámetros de una población son constantes.</p>
+<p>Ejemplo, sea el universo los 10 primeros números naturales y sus valores. <span class="math inline">\(Y=\{1,2,3,4,5,6,7,8,9,10\}\)</span>. Sobre estos valores de esta población de <span class="math inline">\(N=10\)</span> se pueden calcular los siguientes parámetros.</p>
+<ul>
+<li>Total</li>
+</ul>
+<p><span class="math display">\[\theta_1=t_y=\sum_U y_i=55\]</span>
+* Media</p>
+<p><span class="math display">\[\theta_2=\mu_y=\frac{t_y}{N}=\frac{55}{10}=5.5\]</span></p>
+<ul>
+<li>Máximo: <span class="math inline">\(\theta_3=max(y)=10\)</span></li>
+<li>Mínimo: <span class="math inline">\(\theta_4=max(y)=1\)</span></li>
+</ul>
+<p>Es posibles hacer transformaciones sobre <span class="math inline">\(Y\)</span>, sea <span class="math inline">\(Z\)</span> una variables binaria que identifique a los números primos de <span class="math inline">\(Y\)</span>; <span class="math inline">\(1=primo\)</span>, <span class="math inline">\(0=\sim primo\)</span></p>
+<p><span class="math display">\[Z=\{1,1,1,0,1,0,1,0,0,0 \}\]</span></p>
+<p>Calcular el promedio de <span class="math inline">\(Z\)</span></p>
+<p><span class="math display">\[\theta_5=\mu_z=\frac{5}{10}=0.5\]</span></p>
+<p>Cuando obtenemos la media de un vector binario, obtenemos lo que se denomina un proporción</p>
+<p><span class="math display">\[\theta_5=P_a=\frac{\#A}{N}\]</span></p>
+<p><span class="math display">\[\theta_5=P_{primos}=\frac{\#primos}{N}\]</span></p>
+<blockquote>
+<p>Definición, estadística</p>
+</blockquote>
+<p>Se denomina estadística a una función sobre la muestra</p>
+<blockquote>
+<p>Definición, estimador</p>
+</blockquote>
+<p>Un estimador <span class="math inline">\(\hat{\theta}\)</span> para el parámetro <span class="math inline">\(\theta\)</span> es una <strong>estadística</strong> que busca aproximar/adivinar el valor de <span class="math inline">\(\theta\)</span></p>
+<p>Ejemplo, para la variable <span class="math inline">\(Y=\{1,2,3,4,5,6,7,8,9,10\}\)</span>, imaginar que se selecciona un muestra de tamaño <span class="math inline">\(n=4\)</span> s/rep.</p>
+<p>La cantidad de muestras posibles es de 210, supongamos que realizamos 2 procesos de selección para la muestra y obtenemos:</p>
+<ul>
+<li><span class="math inline">\(s_1=\{8, 1, 3, 7\}\)</span></li>
+<li><span class="math inline">\(s_2=\{8, 2, 6, 5\}\)</span></li>
+</ul>
+<p>Sabemos que el parámetro del total de <span class="math inline">\(Y\)</span> es <span class="math inline">\(t_y=55\)</span>, ¿Qué? función se puede aplicar sobre la muestra para postular a un estimador que se aproxime a <span class="math inline">\(t_y\)</span> sobre las 2 muestras seleccionadas</p>
+<p><span class="math display">\[\hat{\theta}_1=\hat{t}_y=\sum_s y_i\]</span></p>
+<p>Para <span class="math inline">\(s_1\)</span> el valor del estimador es de <span class="math inline">\(\hat{t}_{y,s1}=19\)</span>, <span class="math inline">\(\hat{t}_{y,s2}=21\)</span>, los valores evaluados sobre una muestra y un estimador se conoce como estimación</p>
+<p><span class="math display">\[\hat{\theta}_2=\hat{t}_y=\prod_s y_i\]</span></p>
+<p>Las estimaciones con el estimador propuesto <span class="math inline">\(\hat{t}_{y,s1}=8*1*3*7=168\)</span>, <span class="math inline">\(\hat{t}_{y,s1}=480\)</span></p>
+<p><span class="math display">\[\hat{\theta}_3=\frac{\prod_s y_i}{3}\]</span></p>
+<p><span class="math inline">\(\hat{t}_{y,s1}=56\)</span>, <span class="math inline">\(\hat{t}_{y,s2}=160\)</span></p>
+<p><span class="math display">\[\hat{\theta}_4=\frac{\sum_{s}y_i^2}{2}\]</span></p>
+<p><span class="math inline">\(\hat{t}_{y,s1}=61.5\)</span>, <span class="math inline">\(\hat{t}_{y,s2}=64.5\)</span></p>
+<p><span class="math display">\[\hat{\theta}_5=\frac{N}{n} \sum_{s}y_i \]</span></p>
+<p><span class="math inline">\(\hat{t}_{y,s1}=47.5\)</span>, <span class="math inline">\(\hat{t}_{y,s2}=52.5\)</span></p>
 
 <div id="refs" class="references">
 <div>

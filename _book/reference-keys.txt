@@ -9,4 +9,4 @@ distribuciones-condicionales
 medidas-de-relación-entre-dos-variables
 tema-2-distribuciones-muestrales
 muestras-y-población
-parámetros-estadística-y-estimadores.
+parámetros-estadísticas-y-estimadores.

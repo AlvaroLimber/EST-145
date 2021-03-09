@@ -269,3 +269,9 @@ Como resultado de lo anterior, si $X$ e $Y$ son independientes:
 $$cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0$$
 
 Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.
+
+Nota: 
+
+$$E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy$$
+
+
