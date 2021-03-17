@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Tema 2: Distribuciones muestrales
 
 A partir de este tema la estadística esta vinculada con la *inferencia* sobre los *parámetros* de la información/datos.
@@ -148,3 +153,306 @@ $\hat{t}_{y,s1}=61.5$, $\hat{t}_{y,s2}=64.5$
 $$\hat{\theta}_5=\frac{N}{n} \sum_{s}y_i $$
 
 $\hat{t}_{y,s1}=47.5$, $\hat{t}_{y,s2}=52.5$
+
+## Distribución muestral
+Recordar que una estadística es una función sobre la muestra y sobre los valores que toman las variables aleatorias vinculadas a esta. Como la estadística es una función sobre las muestras aleatorias (muestras posibles) las evaluaciones que se realizan para cada una de las muestras posibles (estimadores) conforman lo que vamos a denominar una distribución muestral. 
+
+Por ejemplo si planteamos al estimador del parámetro del total, recordar:
+
+$$\theta=t_y=\sum_U y_i$$
+Un estimador para este parámetro será:
+
+$$\hat{\theta}=\hat{t}_y=\frac{N}{n} \sum_s y_i$$
+
+Este $\hat{\theta}$ es una estadística sobre las muestras aleatorias, por lo tanto podemos decir que existe una distribución de probabilidad para este estimador, a esa distribución de probabilidad se conoce como distribución muestral.
+
+Ejemplo práctico.
+
+Supongamos que de una población de 6 personas tenemos la información de sus ingresos mensuales. $Y_{Ingresos}=\{2000,3000,3500,0,6000,4500\}$. $N=6$
+
+Supongamos que seleccionamos una muestra de tamaño $n=3$ de esta población, para ambos mecanismos de selección (s/rep, c/rep), se pide para ambos mecanismos:
+
+  * Conocer la cantidad de muestras posibles y mostrar estas.
+  * Para el estimador 
+  
+  $$\hat{\bar{Y}}=\frac{1}{n}\sum_s y_i$$
+  
+construir su distribución muestral y calcular su esperanza y su varianza
+  * Para el estimador; 
+  
+  $$\hat{t}_y=\frac{N}{n}\sum_s y_i$$ 
+  
+construir su distribución muestral y calcular su esperanza y su varianza
+  
+Respuesta, 
+
+(S/rep) Las muestras posibles son 20, estas muestras posibles son:
+```{r}
+Y<-c(2000,3000,3500,0,6000,4500)
+s<-combn(Y,3)
+s
+```
+
+Para el estimador de la media;
+
+Tomar en cuenta que el valor del parámetro de la media poblacional es: $\mu_y=\sum_U y_i /N=3166.667$
+
+```{r}
+y<-apply(s,2,sum)/3 #Distribución muestral para el estimador de la media
+hist(y)
+abline(v=mean(Y),col="red",lwd=3)
+# calcular la esperanza y la varianza
+uy<-sum(y*(1/20)) # esperanza del estimador de la media
+sum((y-uy)^2*(1/20)) # varianza de la media muestral
+```
+
+$$E[\hat{\theta}]=\sum_{Rs} \hat{\theta_s} P(\hat{\theta}=\hat{\theta_s})$$
+
+$$V(\hat{\theta})=E[(\hat{\theta}-E[\hat{\theta}])^2]=\sum_{s}(\hat{\theta_s}-E[\hat{\theta}])^2*P(\hat{\theta}=\hat{\theta})$$
+
+Nota, Si $E[\hat{\theta}]=\theta$ decimos que el estimador $\hat{\theta}$ es un estimador insesgado (sin **sesgo**)
+
+El estimador de la media muestral, es un estimador insesgado de la media poblacional.
+
+Para el estimador del total;
+
+Tomar en cuenta que el valor del parámetro del total poblacional es: $t_y=\sum_U y_i=19000$
+
+```{r}
+ty<-apply(s,2,sum)*(6/3) #Distribución muestral para el estimador del total
+hist(ty)
+abline(v=sum(Y),col="red",lwd=3)
+pty<-sum(ty*(1/20)) # esperanza
+sum((ty-pty)^2*(1/20)) # varianza de la media muestral
+```
+
+$$E[\hat{t}_y]=E[N*\bar{Y}]=N E[\bar{Y}]=N*u_y=N*\frac{\sum_U y_i}{N}=\sum_U {y_i}=t_y$$
+Repetir los cálculos para un muestreo con reposición. Muestras probables $6^3=N^n=216$.
+
+```{r,eval=FALSE}
+Y<-round(rnorm(25,30,5))
+s<-combn(Y,10)
+y<-apply(s,2,sum)/10
+hist(y)
+abline(v=mean(Y),col="red",lwd=2)
+```
+
+## Distribución muestral para la media
+Recordar que para una población ($U$) con alguna variable $X$ de tipo cuantitativa se puede obtener el parámetro de la media, definido como:
+
+$$\mu_x=\frac{\sum_U x_i}{N}$$
+
+Esta variable $X$ en la población por lo tanto tiene su media $\mu_x$ y también tiene su varianza, denotada por $\sigma_x^2$.
+
+> Teorema: 
+
+Sean $X_1,X_2,\ldots,X_n$ variables aleatorias para una muestra de tamaño $n$ extraida de la población $U$, donde estas $X_i$ independientes e idénticamente distribuidas (iid) como: $X_i\sim .(E[X_i]=\mu_x,V(X_i)=\sigma_x^2)$, entonces, si:
+
+$$\bar{X}=\frac{\sum_s x_i}{n}$$
+
+Tenemos que 
+
+$$E[\bar{X}]=\mu_x$$  
+
+$$V(\bar{X})=\sigma^2_{\bar{x}}=\frac{\sigma^2_x}{n}$$
+
+Demostración, 
+
+$$E[\bar{X}]=E\left[\frac{\sum_s x_i}{n}\right]=\frac{1}{n}E[x_1+x_2+\ldots+x_n]=\frac{1}{n}\left(E[x_1]+E[x_2]+\ldots+E[x_n] \right)=$$
+$$=\frac{1}{n}(\mu_x+\mu_x+\ldots+\mu_x)=\frac{n \mu_x}{n}=\mu_x$$
+
+Si, $X$ e $Y$ son independientes $Cov(X,Y)=0$.
+
+$$V(X+Y)=V(X)+V(Y)$$
+
+$$V(\bar{X})=V\left(\frac{\sum_s x_i}{n}\right)=\frac{1}{n^2}V(x_1+x_2+\ldots+x_n)=\frac{1}{n^2}\{V(x_1)+\ldots+V(x_n)\}=$$
+$$=\frac{1}{n^2}(\sigma^2_x+\sigma^2_x+\ldots+\sigma^2_x)=\frac{n \sigma_x^2}{n^2}=\frac{\sigma^2_x}{n}$$
+
+## Teorema del límite central
+
+> Teorema:
+
+Si $\bar{X}$ es la media de una muestra aleatoria de tamaño $n$. Tomada de una población $U$ con media $\mu_x$ y varianza finita $\sigma^2_x$. Entonces la forma límite de la distribución de:
+
+$$Z=\frac{\bar{X}-E[\bar{X}]}{\sqrt{V(\bar{X})}}=\frac{\bar{X}-\mu_x}{\frac{\sigma_x}{\sqrt{n}}}$$
+a medida que $n \rightarrow \infty$, podemos asegurar que $Z\sim N(0,1)$, en este marco se puede decir a medida que $n$ es más grande $\bar{X}\sim N(\mu_x,\frac{\sigma^2_x}{n})$ 
+
+Nota: esta idea de $n$ grande se usa tradicionalmente el valor de $n>30$, hay textos que plantean $n=20$.
+
+Simulación del teorema del límite central:
+
+```{r}
+N<-1000000
+x<-round(runif(N,0,10000),0)# ingresos mensuales de una población 
+hist(x)
+n<-30
+choose(N,n)
+
+#simular 1000 muestras distintas de tamaño n y calcular su media.
+xbar<-NULL
+for(i in 1:10000){
+  s<-sample(x,n)
+  xbar[i]<-mean(s)
+}
+hist(xbar)
+plot(density(xbar),col="blue",lwd=2)
+points(density(rnorm(10^6,mean(x),sqrt(var(x)*((n-1)/n))/sqrt(n))),type="l",col="red",lwd=2)
+```
+
+## Distribución muestral para la diferencia de medias
+
+Sean dos poblaciones $U_1$ y $U_2$ independientes con medias y varianzas respectivamente: $\mu_{x_1}$ y $\mu_{x_2}$, $\sigma^2_{x_1}$ y $\sigma^2_{x_2}$.
+
+> Teorema:
+
+La distribución muestral de las diferencias de media $\bar{X_1}-\bar{X_2}$ esta tiene una distribución aproximadamente normal ($n\rightarrow \infty$) con medias y varianzas dadas por:
+
+$$E[\bar{X_1}-\bar{X_2}]=\mu_{x_1}-\mu_{x_2}$$
+
+$$V(\bar{X_1}-\bar{X_2})=\frac{\sigma^2_{x_1}}{n_1}+\frac{\sigma^2_{x_2}}{n_2}$$
+Demostración:
+
+$$E[\bar{X_1}-\bar{X_2}]=E[\bar{X_1}]-E[\bar{X_2}]=\mu_{x_1}-\mu_{x_2}$$
+
+$$V(\bar{X_1}-\bar{X_2})=V(\bar{X_1})+V(\bar{X_2})=\frac{\sigma^2_{x_1}}{n_1}+\frac{\sigma^2_{x_2}}{n_2}$$
+
+## Distribución muestral para la proporción
+
+La proporción no es nada más que un caso especial de la media para $X$ que toma valores binarios según alguna característica de interés.
+
+Sea $P_A=\frac{\#A}{N}=\frac{\sum_U x_i}{N}$, $x_i=1$ si  $i \in A$ $x_i=0$ eoc. la proporción de alguna característica de la población.
+
+Así la el estimador de la proporción sera:
+
+$$\hat{P}_A=\frac{\sum_s{x_i}}{n}=\frac{\#a}{n}$$
+
+> Teorema: 
+
+Para el estadístico $\hat{P}_A$ se cumple cuando $n$ tiende a infinito los siguientes resultados:
+
+  * $E[\hat{P}_A]=P_A$
+  * $V(\hat{P}_A)=\frac{\sigma^2_A}{n}$
+  * $\hat{P}_A\sim N(P_A,\frac{\sigma^2_A}{n})$, cuando $n \rightarrow \infty$
+  
+Tarea, encontrar la forma de $\sigma^2_A$, sabiendo que $x_i$ es binaria.
+
+$$\sigma^2_A=\frac{\sum_U(x_i-\mu_x)^2}{N}= P_A *(1-P_A)$$
+
+## Distribución muestral para la varianza
+
+Recordar que para una población $U$, si observamos a una variable de interés respecto sus características podemos obtener medidas de centralidad y también medidas de variabilidad, por ejemplo, sea $X$ una variables definida para toda la población, y definamos los siguientes parámetros de $X$.
+
+$$\mu_x=\frac{\sum_U x_i}{N}$$
+
+Esta $\mu_x$ es una medida de centralidad, normalmente conocida como media, promedio de $X$, la otra medida puede ser:
+
+$$\sigma^2_x=\frac{\sum_U (x_i-\mu_x)^2}{N}$$
+
+$\sigma^2_x$ es la varianza poblacional
+
+Ejemplo,
+
+Sea una población de $N=5$ elementos con la variable $X=\{10,15,20,20,35\}$, calcular $\mu_x$ y $\sigma^2_x$.
+
+  * $\mu_x=20$
+  * $\sigma^2_x=70$
+  
+Suponer que se toman muestras aleatorias de esta población de tamaño $n=3$ sin reposición. La cantidad de muestras posibles es 10.
+
+```{r}
+x<-c(10,15,20,20,35)
+s<-combn(x,3)
+s
+#distribución muestral de la media
+mean(apply(s, 2, mean)) 
+```
+Pensemos para el caso de la varianza en posibles estadísticos (estimadores):
+
+$$\hat{\theta}_1=\hat{\sigma}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n}$$
+
+$$\hat{\theta}_2=\hat{S}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
+
+```{r}
+x<-c(10,15,20,20,35)
+n<-3;N<-5
+s
+var(x)*((N-1)/N)
+
+theta1<-apply(s,2,var)*((n-1)/n)
+theta2<-apply(s,2,var)
+
+
+theta1
+theta2
+plot(density(theta1),xlim=c(-50,300))
+points(density(theta2),col="red",type="l")
+
+mean(theta1) #E[]
+mean(theta2) #E[]
+```
+
+Notar que para el ejemplo $E[\hat{\theta_1}]$ ni $E[\hat{\theta_2}]$ se acercan a $\sigma^2_x$, sin embargo, $E[\theta_2]=S^2_x$.
+
+$$S^2_x=\frac{\sum_U (x_i-\mu_x)^2}{N-1}$$
+> Teorema
+
+Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria extraída de una población Normal $N(\mu_x,\sigma^2_x)$, definamos al estadístico:
+
+$$\hat{S}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
+
+Entonces, se cumple
+
+$$\chi^2=\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}=\frac{\sum_s (x_i-\bar{x})^2}{\sigma^2_x}\sim \chi^2(n-1)$$
+
+Simulación;
+
+```{r}
+#población de tamaño N=1000
+set.seed(999)
+x<-rnorm(1000,20,5)
+hist(x)
+#suponer que se extra una muestra de n=20 de esta población, 
+choose(1000,20)
+n<-20
+#vamos a simular unas 1500 muestras posibles sigma=25
+x2<-NULL
+for(i in 1:100000){
+ x2[i]<-(var(sample(x,20))*(n-1))/25
+}
+x2
+plot(density(x2))
+points(density(rchisq(1000000,19)),col="red",type="l")
+```
+
+## Distribución $\chi^2$
+
+Se dice que una variable aleatoria $X$ tiene una distribución Chi-cuadrado $\chi^2$ con $v$ grados de libertad. Se escribe como: $X \sim \chi^2(v)$, donde el $Rx=\{x>0\}$, si su función de densidad es:
+
+$$f(x)=\frac{1}{2^\frac{v}{2} \Gamma(\frac{v}{2})}*x^{\frac{v}{2}-1}*e^{-\frac{x}{2}}$$
+```{r}
+curve(dchisq(x,1),xlim=c(0,40),ylim=c(0,0.4))
+for(v in 1:30){
+curve(dchisq(x,v),add=T,col=v)
+  }
+```
+
+Donde, 
+
+$$E[X]=v$$
+$$V(X)=2v$$
+
+Ejercicio,
+
+Encuentre la probabilidad de que una muestra aleatoria de $n=25$ de un población normal con varianza $\sigma^2=9$, tenga una varianza muestral $\hat{S^2}$ entre 4 y 15.
+
+```{r}
+#ejemplo para usar R para calcular probabilidades de la Chi2
+pchisq(4,10) # F(t)=P(X<t): F(4)
+```
+
+ 
+## Distribución t-student
+
+## Distribución Fisher
+
+## Ejercicios 

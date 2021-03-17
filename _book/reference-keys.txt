@@ -10,3 +10,13 @@ medidas-de-relación-entre-dos-variables
 tema-2-distribuciones-muestrales
 muestras-y-población
 parámetros-estadísticas-y-estimadores.
+distribución-muestral
+distribución-muestral-para-la-media
+teorema-del-límite-central
+distribución-muestral-para-la-diferencia-de-medias
+distribución-muestral-para-la-proporción
+distribución-muestral-para-la-varianza
+distribución-chi2
+distribución-t-student
+distribución-fisher
+ejercicios
