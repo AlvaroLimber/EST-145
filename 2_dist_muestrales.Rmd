@@ -443,16 +443,129 @@ $$V(X)=2v$$
 
 Ejercicio,
 
-Encuentre la probabilidad de que una muestra aleatoria de $n=25$ de un población normal con varianza $\sigma^2=9$, tenga una varianza muestral $\hat{S^2}$ entre 4 y 15.
+Encuentre la probabilidad de que una muestra aleatoria de $n=25$ de un población normal con varianza $\sigma_x^2=9$, tenga una varianza muestral $\hat{S^2}$ entre 4 y 15.
+
+$$P(4<\hat{S}^2_x<15)=P(4*24/9<\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}<15*24/9)=P(10.66<\chi^2 <40)$$
+$$P(10.66<\chi^2 <40)=F(40)-F(10.66)=0.9786-0.0087=0.9699$$
+
+```{r}
+pchisq(40,24)#F(40) para un chi2(v=24)
+pchisq(10.66,24)#F(10.66) para un chi2(v=24)
+curve(dchisq(x,24),xlim=c(0,60))
+abline(v=c(10.66,40),col="red")
+```
+
+
+Tomar en cuenta que:
+
+$$\chi^2=\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}=\frac{\sum_s (x_i-\bar{x})^2}{\sigma^2_x}\sim \chi^2(n-1)$$
+
 
 ```{r}
 #ejemplo para usar R para calcular probabilidades de la Chi2
 pchisq(4,10) # F(t)=P(X<t): F(4)
 ```
 
- 
+
 ## Distribución t-student
+
+> Teorema 
+
+Sea $Z$ una variable aleatoria normal estándar y $V$ una variable aleatoria chi-cuadrado con $v$ grados de libertad. Si $Z$ y $V$ son independientes, entonces la distribución de la variable aleatoria $X$, donde:
+
+$$X=\frac{Z}{\sqrt{V/v}}$$
+Se comporta como una distribución $t$ con $v$ grados de libertad. En notación, decimos $X\sim t(v)$.
+
+$$f(x)=\frac{\Gamma(\frac{v+1}{2})}{\Gamma{(\frac{v}{2})}\sqrt{v\pi} }\left(1+\frac{x^2}{v} \right)^{-(\frac{v+1}{2})}, \quad -\infty<x<\infty$$
+
+Al igual que la distribución normal estándar, la $t$ es simétrica al rededor del cero. Y levemente más plana que una normal. 
+
+Nota: Cuando $v\rightarrow \infty$ la $t \sim N(\mu=0,\sigma^2=\frac{v}{v-2})$
+
+```{r}
+v<-5
+curve(dnorm(x,0,sqrt(v/(v-2))),xlim=c(-5,5),ylim=c(0,0.4))
+curve(dt(x,10),xlim=c(-5,5),main="t-student (v=10)",col="red",add=T)
+```
+
+> Corolario
+
+Sean $X_1, X_2, \ldots, X_n$ variables aleatorias e independientes e idénticamente distribuidas (iid) $X_i\sim N(\mu,\sigma^2_x), \quad i=\{1,\ldots,n\}$. Sean los estimadores:
+
+$$\bar{X}=\frac{\sum_s x_i}{n} \quad y \quad \hat{S}^2_x=\frac{\sum_s (x_i-\bar{X})^2}{n-1}$$
+
+Entonces,
+
+$$
+\frac{\bar{X}-\mu}{\hat{S}/\sqrt{n}}\sim t(v=n-1)
+$$
+Apariencia de la $t$
+
+```{r}
+curve(dt(x,2),xlim=c(-5,5),ylim=c(0,0.4))
+for(v in 3:30){
+  curve(dt(x,v),xlim=c(-5,5),col=v,add=T)
+}
+```
+
+
+En R, para obtener $P(X<t)=F(t)$ con $X\sim t(v)$.
+
+```{r}
+# P(X<2)=F(2), X ~ t(v=10)
+pt(2,10)
+```
+
+Ejercicio, Sea $X\sim t(v=14)$. Calcular:
+
+  * $P(X>0.67)=1-P(X\leq 0.67)=1-F(0.67)=1-0.7431=0.2569$
+  * $P(X<0.5)=F(0.5)=0.6875$
+  * $P(-1.96<X<1.96)=F(1,96)-F(-1.96)=0.9649-0.0351=0.9298$
 
 ## Distribución Fisher
 
+> Teorema
+
+Sean $U$ y $V$ dos variables aleatorias independientes, con $U\sim \chi^2(v_1)$ y $V \sim \chi^2(v_2)$. Y sea la variable $X$ definida como:
+
+$$X=\frac{U/v_1}{V/v_2}$$
+Así, decimos que $X$ se distribuye como una Fisher, $X\sim F(v_1,v_2)$, donde estas $v_1$ y $v_2$ son los grados de libertad de la Fisher. La forma de la distribución $f(x)$ es:
+
+
+$$
+f(x)=\frac{\left(\frac{v_1}{v_2} \right)^{v_1/2} x^{v_1/2-1}\Gamma{(\frac{v_1+v_2}{2})} }{\Gamma{(\frac{v_1}{2})} \Gamma{(\frac{v_2}{2})}\left(1+\frac{v_1}{v_2}x \right)^{(v_1+v_2)/2}}, \quad x>0
+$$
+
+### Para las varianzas muestrales
+
+Suponga que las mnuetsras aleatorias de tamaños $n_1$ y $n_2$ se selecciona de 2 poblaciones normales con varianzas $\sigma^2_1$ y $\sigma^2_2$ respectivamente. Sabemos:
+
+$$\chi^2_1=\frac{(n_1-1)\hat{S}_1}{\sigma^2_1}\sim \chi^2(v_1=n_1-1)$$
+
+$$\chi^2_2=\frac{(n_2-1)\hat{S}_2}{\sigma^2_2}\sim \chi^2(v_2=n_2-1)$$
+> Teorema:
+
+Si $\hat{S_1}$ y $\hat{S_2}$ son los estimadores de la varianza de muestras aleatorias independientes entre ellas de tamaño $n_1$ y $n_2$, tomadas de poblaciones normales con varianzas $\sigma^2_1$ y $\sigma^2_2$ entonces:
+
+$$\frac{\hat{S_1}/\sigma^2_1}{\hat{S_2}/\sigma^2_2}=\frac{\hat{S}_1*\sigma^2_2}{\hat{S}_2*\sigma^2_1}\sim F(v_1=n_1-1,v_2=n_2-1)$$
+
+```{r}
+curve(df(x,10,10),xlim=c(0,6))
+```
+
+En R
+
+```{r}
+#P(X<t)=F(t), donde  X ~ F(v1,v2). F(10,10), P(X<1)=F(1)
+pf(1,10,10)
+```
+
+
 ## Ejercicios 
+
+1. 
+2.
+3.
+4.
+5. 
+
