@@ -1,0 +1,163 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Estimaciones de una y dos muestrales
+
+## Inferencia estadística
+El proceso por el cual, mediante una muestra estadísticamente seleccionada se busca describir a la población/universo de la cual esta proviene. Podemos clasificar a la inferencia estadística en:
+
+  * *Inferencia descriptiva:* Tiene el único objetivo de describir a la población mediante la muestra, tradicionalmente se enfoca en estimaciones comúnes como; la media, la varianza, total, un porcentaje, diferencia de medias, diferencia de proporciones.
+    + Estimación puntual: $\hat{\theta}$
+    + Estimación por intervalos: $[ \hat{\theta}_{LI},\hat{\theta}_{LS}]$
+    + Pruebas de hipótesis: $\hat{\theta}=k$, $\hat{\theta}>k$, $\hat{\theta}<k$
+    + Tamaño de la muestra ($n$): $n=f(U,V(\hat{\theta}),\hat{\theta},\ldots)$
+  * *Inferencia predictiva:* Tiene una idea de estudiar; por un lado, la evolución de las estimaciones y sus posibles valores futuros (series de tiempo), por otro lado, le interesa conocer las relaciones (no causales) entre las variables.
+    + Series de tiempo
+    + Modelos lineales
+    + Técnicas multivariantes
+    + etc.
+  * *Inferencia causal:* Tiene el objetivo de medir la relación causal entre variables. $X \rightarrow Y$
+    + Diseños experimentales 
+    + Diseños cuasi-experimentales
+    + Modelos estructurales
+    + Etc.
+
+Tarea: Indagar a que se refiere la inferencia bayesiana.
+
+## Estimadores puntuales
+Recordemos que tenemos un universo $U$ de tamaño $N$.
+
+$$U=\{u_1, u_2,\ldots,u_N\}$$
+Donde cada unidad del universo tiene variables (características) asociadas, pensemos en $p$ características.
+
+$$u_i=\{X_{i1},X_{i2}, \ldots , X_{ip}\}$$
+Un párametro es una función sobre el universo y sus variables, lo denotamos por $\theta$
+
+$$\theta=f(U,X)$$
+Un estimador se construye a partir de la definición de una *estadística* ($\Theta$) y tiene el objetivo de aproximar de la mejor forma a un parámetro. $\hat{\theta}\rightarrow \theta$. 
+
+El estimador $\hat{\theta}$ se construye a partir de una muestra aleatoria ($s$) de tamaño $n$ obtenida de $U$. 
+
+> Nota: 
+
+Para un parámetro $\theta$, pueden existir muchos estimadores candidatos: $\hat{\theta}_1,\hat{\theta}_2, \hat{\theta}_3,...$, la pregunta es ¿Cuál es mejor?. Existen al menos dos criterios:
+
+### Estimador insesgado
+
+$$E[\hat{\theta}]=\theta$$
+
+### Estimador eficiente
+
+Supongamos que tenemos dos estimadores para $\theta$, $\hat{\theta}_1$, $\hat{\theta}_2$, el estimador más eficiente entre los dos será quien tenga el valor más pequeño en su varianza.
+
+$min(V(\hat{\theta_1}),V(\hat{\theta_2})) \rightarrow \hat{\theta}$$
+
+Ejemplo.
+
+Sea el vector $X=\{10,10,20,25,30\}$ de una población con $N=5$, 
+se define una muestra de $n=3$ y se busca estimar la media de $X$: $\mu_x$. A partir de los estimadores de la media y la mediana muestral. Determinar:
+
+  * Son estimadores insesgados
+  * Cuál estimador es más eficiente
+
+Suponga un muestreo sin reposición.
+
+Solución.
+```{r}
+x<-c(10,10,20,25,30)
+choose(5,3)
+s<-combn(x,3)
+#distribución muestral de la media muestral
+dmedia<-apply(s,2,mean)
+#distribución muestral de la mediana muestral
+dmediana<-apply(s,2,median)
+# Son estimadores insesgados
+#media
+sum(dmedia*(1/10)) # E[]
+mean(dmedia)
+#media
+sum(dmediana*(1/10)) # E[]
+mean(dmediana)
+#parámetro media poblacional
+mean(x)
+# Cuál estimador es más eficiente
+sum((dmedia-mean(dmedia))^2*1/10) # media muestral
+sum((dmediana-mean(dmediana))^2*1/10) # mediana muestral
+```
+
+Para este ejercicio, la media muestral es insesgado y más eficiente que la mediana muestral.
+
+> Nota
+
+Los principales problemas de estimación ocurren con frecuencia para estimar:
+
+  * El promedio o media de una población $\mu$
+  
+  $$\mu_X=\frac{\sum_U X_i}{N}$$
+  
+  * La varianza poblacional $\sigma^2$
+
+$$\sigma^2=\frac{\sum_U (X_i-\mu_X)^2}{N}$$  
+  
+  * La proporción de una característica en la población $P$
+  
+$$P_A=\frac{\#A}{N}=\frac{\sum_{U} X_i}{N}; \quad \{X_i=1, \quad i \in A, X_i=0,\quad eoc\}$$
+
+  * La diferencia de medias de dos poblaciones $\mu_1-\mu_2$
+  * La diferencia de proporciones de dos poblaciones $P_1-P_2$
+
+Estimaciones puntuales razonables de estos parámetros son las siguientes:
+
+  * Para $\mu$, la estimación es $\hat{\mu_x}=\bar{X}$ la media muestral
+  
+  $$\bar{X}=\frac{\sum_s X_i}{n}$$
+  * Para $\sigma^2$, la estimación es $\hat{\sigma}^2=\hat{S^2}$, la varianza muestral
+
+$$\hat{S}^2=\frac{\sum_s (X_i-\bar{X})^2}{n-1}$$
+  * Para $P$, la estimación es $\hat{P}$, la proporción muestral
+  
+  $$\hat{P}_A=\frac{\#_sA}{N}=\frac{\sum_{s} X_i}{N}; \quad \{X_i=1, \quad i \in A, X_i=0,\quad eoc\}$$
+  * Para $\mu_1-\mu_2$, la estimación es $\hat{\mu_1}-\hat{\mu}_2=\bar{X}_1-\bar{X}_2$, la diferencia entre las medias de las muestras de dos muestras aleatorias independientes.
+  * Para $P_1-P_2$, la estimación es $\hat{P_1}-\hat{P}_2$, la diferencia entre las proporciones de las muestras de dos muestras aleatorias independientes.
+
+Ejercicio, Suponga que $X$ es una variable aleatoria con media $\mu$ y varianza $\sigma^2$. Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria de tamaño $n$ de $X$. DEMOSTRAR que la media de muestra $\bar{X}$ y la varianza muestral $\hat{S}^2$
+son estimadores insesgados de $\mu$ y $\sigma^2$, respectivamente. 
+
+Como información; $E[X]=\mu$, 
+
+$$V(X)=\sigma^2=E[X^2]-E[X]^2$$.
+
+También recordar que;
+
+$$V(\bar{X})=\frac{\sigma^2}{n}=E[\bar{X}^2]-E[\bar{X}]^2=E[\bar{X}^2]-\mu^2$$
+Solución,
+
+$$E[\bar{X}]=E\left[\frac{\sum_s X_i}{n} \right]=\frac{1}{n}\left(\sum_s E[X_i]\right)=\frac{1}{n}\left(\sum_{i=1}^n \mu\right)=\mu $$
+
+$$E[\hat{S^2}]=E\left[\frac{\sum_s (X_i-\bar{X})^2}{n-1} \right]=\frac{1}{n-1} E\left[\sum_s (X_i^2-2X_i \bar{X}+\bar{X}^2) \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X} \sum_sX_i +n\bar{X}^2 \right]= $$
+
+$$=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X}n\frac{\sum_s X_i}{n}  +n\bar{X}^2 \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-2n\bar{X}^2  +n\bar{X}^2 \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-n\bar{X}^2\right]=$$
+
+$$=\frac{1}{n-1}\left(\sum_s E[X_i^2]-nE[\bar{X}^2] \right)= \alpha$$
+Notar
+
+$\sigma^2=E[X^2]-E[X]^2=E[X^2]-\mu^2$ para un $X_i$, $\sigma^2=E[X_i^2]-E[X_i]^2=E[X_i^2]-\mu^2$, entonces, $E[X_i]=\sigma^2+\mu^2$. Por otro lado $E[\bar{X}^2]=\frac{\sigma^2}{n}+\mu^2$, Así:
+
+$$\alpha=\frac{1}{n-1}\left[\sum_s (\sigma^2+\mu) -n \left(\frac{\sigma^2}{n}+\mu \right) \right]=\frac{1}{n-1}\left[ n \sigma^2+n\mu -\sigma^2-n\mu  \right]=\frac{\sigma^2(n-1)}{n-1}=\sigma^2$$
+
+### Error cuadrático medio (ECM)
+
+Este se define para un estimador como:
+
+$$ECM(\hat{\theta})=E\left[(\hat{\theta}-\theta)^2\right]$$
+
+Recordar que $V(\hat{\theta})=E\left[(\hat{\theta}-E[\hat{\theta}])^2\right]$.
+
+$$ECM(\hat{\theta})=E\left[\left[(\hat{\theta}-E[\hat{\theta}])-(\theta-E[\hat\theta]) \right]^2\right]=E\left[(\hat{\theta}-E[\hat{\theta}])^2-2(\hat{\theta}-E[\hat{\theta}])(\theta-E[\hat\theta])+ (\theta-E[\hat\theta])^2 \right]=$$
+
+$$=E[(\hat{\theta}-E[\hat{\theta}])^2]-2(\theta-E[\hat\theta])E\left[\hat{\theta}-E[\hat{\theta}]\right]+E[(\theta-E[\hat\theta])^2]=V(\hat\theta)=V(\hat{\theta})+E[(\theta-E[\hat\theta])^2]=$$
+
+$$=V(\hat{\theta})+sesgo(\hat\theta)^2$$
+

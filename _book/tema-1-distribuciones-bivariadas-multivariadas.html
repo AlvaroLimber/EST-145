@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-03-28" />
+<meta name="date" content="2021-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +161,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a><ul>
 <li class="chapter" data-level="2.11.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.11.1</b> Para las varianzas muestrales</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a></li>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a><ul>
+<li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios-del-examen"><i class="fa fa-check"></i><b>2.12.1</b> Ejercicios del examen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a><ul>
+<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
+<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
+<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -372,7 +382,21 @@ Como resultado de lo anterior, si <span class="math inline">\(X\)</span> e <span
 <p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0\]</span></p>
 <p>Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.</p>
 <p>Nota:</p>
-<p><span class="math display">\[E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy\]</span></p>
+<p><span class="math display">\[E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy\]</span>
+### Ejercicio</p>
+<p>Para</p>
+<p><span class="math display">\[f(x,y)=\frac{x(1+3y^2)}{4} \quad 0&lt;x&lt;2, \quad 0&lt;y&lt;1\]</span></p>
+<p>Calcular</p>
+<p><span class="math display">\[P(1/4&lt;X&lt;1/2 | Y=1/3)\]</span></p>
+<p>Solución</p>
+<p>Se debe encontrar <span class="math inline">\(f_{X|Y}(X|Y)=\frac{f(x,y)}{f(y)}\)</span></p>
+<p><span class="math display">\[f(y)=\int_0^2 \frac{x(1+3y^2)}{4} dx=\frac{(1+3y^2)}{4} \int_0^2 x dx=\frac{(1+3y^2)}{4} \frac{x^2}{2}/_0^2=\]</span>
+<span class="math display">\[=\frac{(1+3y^2)}{4}(2)=\frac{(1+3y^2)}{2}\]</span></p>
+<p><span class="math display">\[f_{X|Y}(X|Y)=\frac{\frac{x(1+3y^2)}{4}}{\frac{(1+3y^2)}{2}}=\frac{x}{2}\]</span>
+Verificando que sea correcta</p>
+<p><span class="math display">\[\int_0^2 \frac{x}{2}dx=\frac{x^2}{4}/_0^2=1\]</span>
+<span class="math display">\[P(1/4&lt;X&lt;1/2 | Y=1/3)=\int_{1/4}^{1/2} f_{X|Y}(X|Y) dx=\int_{1/4}^{1/2} \frac{x}{2} dx=\frac{x^2}{4}/_{0.25}^{0.5}=\]</span></p>
+<p><span class="math display">\[=\frac{0.5^2}{4}-\frac{0.25^2}{4}=\frac{3}{64}\]</span></p>
 
 </div>
 </div>

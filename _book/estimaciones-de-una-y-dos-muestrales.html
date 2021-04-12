@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Estimaciones de una y dos muestrales | Estadística II</title>
+  <meta name="description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Estimaciones de una y dos muestrales | Estadística II" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
+  <meta name="github-repo" content="alvarolimber/EST-145" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Estimaciones de una y dos muestrales | Estadística II" />
+  
+  <meta name="twitter:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
+  
+
+<meta name="author" content="Alvaro Chirino Gutierrez" />
+
+
+<meta name="date" content="2021-04-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tema-2-distribuciones-muestrales.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#bases-de-datos"><i class="fa fa-check"></i>Bases de datos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimiento"><i class="fa fa-check"></i>Agradecimiento</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a><ul>
+<li class="chapter" data-level="1.1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes</a></li>
+<li class="chapter" data-level="1.2" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada</a></li>
+<li class="chapter" data-level="1.3" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)</a></li>
+<li class="chapter" data-level="1.4" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal</a></li>
+<li class="chapter" data-level="1.5" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia</a></li>
+<li class="chapter" data-level="1.6" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados</a></li>
+<li class="chapter" data-level="1.7" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
+<li class="chapter" data-level="1.8" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a><ul>
+<li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
+<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
+<li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral</a></li>
+<li class="chapter" data-level="2.4" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-media"><i class="fa fa-check"></i><b>2.4</b> Distribución muestral para la media</a></li>
+<li class="chapter" data-level="2.5" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>2.5</b> Teorema del límite central</a></li>
+<li class="chapter" data-level="2.6" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-diferencia-de-medias"><i class="fa fa-check"></i><b>2.6</b> Distribución muestral para la diferencia de medias</a></li>
+<li class="chapter" data-level="2.7" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-proporción"><i class="fa fa-check"></i><b>2.7</b> Distribución muestral para la proporción</a></li>
+<li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la varianza</a></li>
+<li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.9</b> Distribución <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.10</b> Distribución t-student</a></li>
+<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a><ul>
+<li class="chapter" data-level="2.11.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.11.1</b> Para las varianzas muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a><ul>
+<li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios-del-examen"><i class="fa fa-check"></i><b>2.12.1</b> Ejercicios del examen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a><ul>
+<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
+<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
+<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística II</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="estimaciones-de-una-y-dos-muestrales" class="section level1">
+<h1><span class="header-section-number">3</span> Estimaciones de una y dos muestrales</h1>
+<div id="inferencia-estadística" class="section level2">
+<h2><span class="header-section-number">3.1</span> Inferencia estadística</h2>
+<p>El proceso por el cual, mediante una muestra estadísticamente seleccionada se busca describir a la población/universo de la cual esta proviene. Podemos clasificar a la inferencia estadística en:</p>
+<ul>
+<li><em>Inferencia descriptiva:</em> Tiene el único objetivo de describir a la población mediante la muestra, tradicionalmente se enfoca en estimaciones comúnes como; la media, la varianza, total, un porcentaje, diferencia de medias, diferencia de proporciones.
+<ul>
+<li>Estimación puntual: <span class="math inline">\(\hat{\theta}\)</span></li>
+<li>Estimación por intervalos: <span class="math inline">\([ \hat{\theta}_{LI},\hat{\theta}_{LS}]\)</span></li>
+<li>Pruebas de hipótesis: <span class="math inline">\(\hat{\theta}=k\)</span>, <span class="math inline">\(\hat{\theta}&gt;k\)</span>, <span class="math inline">\(\hat{\theta}&lt;k\)</span></li>
+<li>Tamaño de la muestra (<span class="math inline">\(n\)</span>): <span class="math inline">\(n=f(U,V(\hat{\theta}),\hat{\theta},\ldots)\)</span></li>
+</ul></li>
+<li><em>Inferencia predictiva:</em> Tiene una idea de estudiar; por un lado, la evolución de las estimaciones y sus posibles valores futuros (series de tiempo), por otro lado, le interesa conocer las relaciones (no causales) entre las variables.
+<ul>
+<li>Series de tiempo</li>
+<li>Modelos lineales</li>
+<li>Técnicas multivariantes</li>
+<li>etc.</li>
+</ul></li>
+<li><em>Inferencia causal:</em> Tiene el objetivo de medir la relación causal entre variables. <span class="math inline">\(X \rightarrow Y\)</span>
+<ul>
+<li>Diseños experimentales</li>
+<li>Diseños cuasi-experimentales</li>
+<li>Modelos estructurales</li>
+<li>Etc.</li>
+</ul></li>
+</ul>
+<p>Tarea: Indagar a que se refiere la inferencia bayesiana.</p>
+</div>
+<div id="estimadores-puntuales" class="section level2">
+<h2><span class="header-section-number">3.2</span> Estimadores puntuales</h2>
+<p>Recordemos que tenemos un universo <span class="math inline">\(U\)</span> de tamaño <span class="math inline">\(N\)</span>.</p>
+<p><span class="math display">\[U=\{u_1, u_2,\ldots,u_N\}\]</span>
+Donde cada unidad del universo tiene variables (características) asociadas, pensemos en <span class="math inline">\(p\)</span> características.</p>
+<p><span class="math display">\[u_i=\{X_{i1},X_{i2}, \ldots , X_{ip}\}\]</span>
+Un párametro es una función sobre el universo y sus variables, lo denotamos por <span class="math inline">\(\theta\)</span></p>
+<p><span class="math display">\[\theta=f(U,X)\]</span>
+Un estimador se construye a partir de la definición de una <em>estadística</em> (<span class="math inline">\(\Theta\)</span>) y tiene el objetivo de aproximar de la mejor forma a un parámetro. <span class="math inline">\(\hat{\theta}\rightarrow \theta\)</span>.</p>
+<p>El estimador <span class="math inline">\(\hat{\theta}\)</span> se construye a partir de una muestra aleatoria (<span class="math inline">\(s\)</span>) de tamaño <span class="math inline">\(n\)</span> obtenida de <span class="math inline">\(U\)</span>.</p>
+<blockquote>
+<p>Nota:</p>
+</blockquote>
+<p>Para un parámetro <span class="math inline">\(\theta\)</span>, pueden existir muchos estimadores candidatos: <span class="math inline">\(\hat{\theta}_1,\hat{\theta}_2, \hat{\theta}_3,...\)</span>, la pregunta es ¿Cuál es mejor?. Existen al menos dos criterios:</p>
+<div id="estimador-insesgado" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Estimador insesgado</h3>
+<p><span class="math display">\[E[\hat{\theta}]=\theta\]</span></p>
+</div>
+<div id="estimador-eficiente" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Estimador eficiente</h3>
+<p>Supongamos que tenemos dos estimadores para <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\hat{\theta}_1\)</span>, <span class="math inline">\(\hat{\theta}_2\)</span>, el estimador más eficiente entre los dos será quien tenga el valor más pequeño en su varianza.</p>
+<p><span class="math inline">\(min(V(\hat{\theta_1}),V(\hat{\theta_2})) \rightarrow \hat{\theta}\)</span>$</p>
+<p>Ejemplo.</p>
+<p>Sea el vector <span class="math inline">\(X=\{10,10,20,25,30\}\)</span> de una población con <span class="math inline">\(N=5\)</span>,
+se define una muestra de <span class="math inline">\(n=3\)</span> y se busca estimar la media de <span class="math inline">\(X\)</span>: <span class="math inline">\(\mu_x\)</span>. A partir de los estimadores de la media y la mediana muestral. Determinar:</p>
+<ul>
+<li>Son estimadores insesgados</li>
+<li>Cuál estimador es más eficiente</li>
+</ul>
+<p>Suponga un muestreo sin reposición.</p>
+<p>Solución.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb60-1"></a>x&lt;-<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>)</span>
+<span id="cb60-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb60-2"></a><span class="kw">choose</span>(<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-1"></a>s&lt;-<span class="kw">combn</span>(x,<span class="dv">3</span>)</span>
+<span id="cb62-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-2"></a><span class="co">#distribución muestral de la media muestral</span></span>
+<span id="cb62-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-3"></a>dmedia&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,mean)</span>
+<span id="cb62-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-4"></a><span class="co">#distribución muestral de la mediana muestral</span></span>
+<span id="cb62-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-5"></a>dmediana&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,median)</span>
+<span id="cb62-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-6"></a><span class="co"># Son estimadores insesgados</span></span>
+<span id="cb62-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-7"></a><span class="co">#media</span></span>
+<span id="cb62-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-8"></a><span class="kw">sum</span>(dmedia<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
+<pre><code>## [1] 19</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb64-1"></a><span class="kw">mean</span>(dmedia)</span></code></pre></div>
+<pre><code>## [1] 19</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb66-1"></a><span class="co">#media</span></span>
+<span id="cb66-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb66-2"></a><span class="kw">sum</span>(dmediana<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
+<pre><code>## [1] 18.5</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb68-1"></a><span class="kw">mean</span>(dmediana)</span></code></pre></div>
+<pre><code>## [1] 18.5</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb70-1"></a><span class="co">#parámetro media poblacional</span></span>
+<span id="cb70-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb70-2"></a><span class="kw">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 19</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb72-1"></a><span class="co"># Cuál estimador es más eficiente</span></span>
+<span id="cb72-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb72-2"></a><span class="kw">sum</span>((dmedia<span class="op">-</span><span class="kw">mean</span>(dmedia))<span class="op">^</span><span class="dv">2</span><span class="op">*</span><span class="dv">1</span><span class="op">/</span><span class="dv">10</span>) <span class="co"># media muestral</span></span></code></pre></div>
+<pre><code>## [1] 10.66667</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb74-1"></a><span class="kw">sum</span>((dmediana<span class="op">-</span><span class="kw">mean</span>(dmediana))<span class="op">^</span><span class="dv">2</span><span class="op">*</span><span class="dv">1</span><span class="op">/</span><span class="dv">10</span>) <span class="co"># mediana muestral</span></span></code></pre></div>
+<pre><code>## [1] 35.25</code></pre>
+<p>Para este ejercicio, la media muestral es insesgado y más eficiente que la mediana muestral.</p>
+<blockquote>
+<p>Nota</p>
+</blockquote>
+<p>Los principales problemas de estimación ocurren con frecuencia para estimar:</p>
+<ul>
+<li>El promedio o media de una población <span class="math inline">\(\mu\)</span></li>
+</ul>
+<p><span class="math display">\[\mu_X=\frac{\sum_U X_i}{N}\]</span></p>
+<ul>
+<li>La varianza poblacional <span class="math inline">\(\sigma^2\)</span></li>
+</ul>
+<p><span class="math display">\[\sigma^2=\frac{\sum_U (X_i-\mu_X)^2}{N}\]</span></p>
+<ul>
+<li>La proporción de una característica en la población <span class="math inline">\(P\)</span></li>
+</ul>
+<p><span class="math display">\[P_A=\frac{\#A}{N}=\frac{\sum_{U} X_i}{N}; \quad \{X_i=1, \quad i \in A, X_i=0,\quad eoc\}\]</span></p>
+<ul>
+<li>La diferencia de medias de dos poblaciones <span class="math inline">\(\mu_1-\mu_2\)</span></li>
+<li>La diferencia de proporciones de dos poblaciones <span class="math inline">\(P_1-P_2\)</span></li>
+</ul>
+<p>Estimaciones puntuales razonables de estos parámetros son las siguientes:</p>
+<ul>
+<li>Para <span class="math inline">\(\mu\)</span>, la estimación es <span class="math inline">\(\hat{\mu_x}=\bar{X}\)</span> la media muestral</li>
+</ul>
+<p><span class="math display">\[\bar{X}=\frac{\sum_s X_i}{n}\]</span>
+* Para <span class="math inline">\(\sigma^2\)</span>, la estimación es <span class="math inline">\(\hat{\sigma}^2=\hat{S^2}\)</span>, la varianza muestral</p>
+<p><span class="math display">\[\hat{S}^2=\frac{\sum_s (X_i-\bar{X})^2}{n-1}\]</span>
+* Para <span class="math inline">\(P\)</span>, la estimación es <span class="math inline">\(\hat{P}\)</span>, la proporción muestral</p>
+<p><span class="math display">\[\hat{P}_A=\frac{\#_sA}{N}=\frac{\sum_{s} X_i}{N}; \quad \{X_i=1, \quad i \in A, X_i=0,\quad eoc\}\]</span>
+* Para <span class="math inline">\(\mu_1-\mu_2\)</span>, la estimación es <span class="math inline">\(\hat{\mu_1}-\hat{\mu}_2=\bar{X}_1-\bar{X}_2\)</span>, la diferencia entre las medias de las muestras de dos muestras aleatorias independientes.
+* Para <span class="math inline">\(P_1-P_2\)</span>, la estimación es <span class="math inline">\(\hat{P_1}-\hat{P}_2\)</span>, la diferencia entre las proporciones de las muestras de dos muestras aleatorias independientes.</p>
+<p>Ejercicio, Suponga que <span class="math inline">\(X\)</span> es una variable aleatoria con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>. Sea <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> de <span class="math inline">\(X\)</span>. DEMOSTRAR que la media de muestra <span class="math inline">\(\bar{X}\)</span> y la varianza muestral <span class="math inline">\(\hat{S}^2\)</span>
+son estimadores insesgados de <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span>, respectivamente.</p>
+<p>Como información; <span class="math inline">\(E[X]=\mu\)</span>,</p>
+<p><span class="math display">\[V(X)=\sigma^2=E[X^2]-E[X]^2\]</span>.</p>
+<p>También recordar que;</p>
+<p><span class="math display">\[V(\bar{X})=\frac{\sigma^2}{n}=E[\bar{X}^2]-E[\bar{X}]^2=E[\bar{X}^2]-\mu^2\]</span>
+Solución,</p>
+<p><span class="math display">\[E[\bar{X}]=E\left[\frac{\sum_s X_i}{n} \right]=\frac{1}{n}\left(\sum_s E[X_i]\right)=\frac{1}{n}\left(\sum_{i=1}^n \mu\right)=\mu \]</span></p>
+<p><span class="math display">\[E[\hat{S^2}]=E\left[\frac{\sum_s (X_i-\bar{X})^2}{n-1} \right]=\frac{1}{n-1} E\left[\sum_s (X_i^2-2X_i \bar{X}+\bar{X}^2) \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X} \sum_sX_i +n\bar{X}^2 \right]= \]</span></p>
+<p><span class="math display">\[=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X}n\frac{\sum_s X_i}{n}  +n\bar{X}^2 \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-2n\bar{X}^2  +n\bar{X}^2 \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-n\bar{X}^2\right]=\]</span></p>
+<p><span class="math display">\[=\frac{1}{n-1}\left(\sum_s E[X_i^2]-nE[\bar{X}^2] \right)= \alpha\]</span>
+Notar</p>
+<p><span class="math inline">\(\sigma^2=E[X^2]-E[X]^2=E[X^2]-\mu^2\)</span> para un <span class="math inline">\(X_i\)</span>, <span class="math inline">\(\sigma^2=E[X_i^2]-E[X_i]^2=E[X_i^2]-\mu^2\)</span>, entonces, <span class="math inline">\(E[X_i]=\sigma^2+\mu^2\)</span>. Por otro lado <span class="math inline">\(E[\bar{X}^2]=\frac{\sigma^2}{n}+\mu^2\)</span>, Así:</p>
+<p><span class="math display">\[\alpha=\frac{1}{n-1}\left[\sum_s (\sigma^2+\mu) -n \left(\frac{\sigma^2}{n}+\mu \right) \right]=\frac{1}{n-1}\left[ n \sigma^2+n\mu -\sigma^2-n\mu  \right]=\frac{\sigma^2(n-1)}{n-1}=\sigma^2\]</span></p>
+</div>
+<div id="error-cuadrático-medio-ecm" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Error cuadrático medio (ECM)</h3>
+<p>Este se define para un estimador como:</p>
+<p><span class="math display">\[ECM(\hat{\theta})=E\left[(\hat{\theta}-\theta)^2\right]\]</span></p>
+<p>Recordar que <span class="math inline">\(V(\hat{\theta})=E\left[(\hat{\theta}-E[\hat{\theta}])^2\right]\)</span>.</p>
+<p><span class="math display">\[ECM(\hat{\theta})=E\left[\left[(\hat{\theta}-E[\hat{\theta}])-(\theta-E[\hat\theta]) \right]^2\right]=E\left[(\hat{\theta}-E[\hat{\theta}])^2-2(\hat{\theta}-E[\hat{\theta}])(\theta-E[\hat\theta])+ (\theta-E[\hat\theta])^2 \right]=\]</span></p>
+<p><span class="math display">\[=E[(\hat{\theta}-E[\hat{\theta}])^2]-2(\theta-E[\hat\theta])E\left[\hat{\theta}-E[\hat{\theta}]\right]+E[(\theta-E[\hat\theta])^2]=V(\hat\theta)=V(\hat{\theta})+E[(\theta-E[\hat\theta])^2]=\]</span></p>
+<p><span class="math display">\[=V(\hat{\theta})+sesgo(\hat\theta)^2\]</span></p>
+
+<div id="refs" class="references">
+<div>
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div>
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+</div>
+<div>
+<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+<div>
+<p>———. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
+<div>
+<p>Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. “How to Read This Book.” <em>Transforming Climate Finance and Green Investment with Blockchains</em>, 1. <a href="https://doi.org/10.1016/b978-0-12-814447-3.00041-0">https://doi.org/10.1016/b978-0-12-814447-3.00041-0</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tema-2-distribuciones-muestrales.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

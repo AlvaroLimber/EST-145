@@ -3,7 +3,7 @@
     "path": "~/GitHub/EST-145/1_conjunta.Rmd",
     "project_path": "1_conjunta.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "1622226460",
     "contents": "",
     "dirty": false,
     "created": 1613585188423.0,
@@ -11,16 +11,16 @@
     "relative_order": 2,
     "properties": {
         "chunk_output_type": "console",
-        "cursorPosition": "166,8",
+        "cursorPosition": "298,47",
         "scrollLine": "0",
         "docOutlineVisible": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1615243767,
+    "lastKnownWriteTime": 1617217306,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1615243767132,
+    "last_content_update": 1617217306194,
     "read_only": false,
     "read_only_alternatives": []
 }

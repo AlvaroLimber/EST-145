@@ -21,3 +21,10 @@ distribución-t-student
 distribución-fisher
 para-las-varianzas-muestrales
 ejercicios
+ejercicios-del-examen
+estimaciones-de-una-y-dos-muestrales
+inferencia-estadística
+estimadores-puntuales
+estimador-insesgado
+estimador-eficiente
+error-cuadrático-medio-ecm

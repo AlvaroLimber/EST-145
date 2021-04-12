@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-03-28" />
+<meta name="date" content="2021-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +161,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a><ul>
 <li class="chapter" data-level="2.11.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.11.1</b> Para las varianzas muestrales</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a></li>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a><ul>
+<li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios-del-examen"><i class="fa fa-check"></i><b>2.12.1</b> Ejercicios del examen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a><ul>
+<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
+<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
+<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -184,7 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Estadística II</h1>
 <h2 class="subtitle"><em>EST-145</em></h2>
 <p class="author"><em>Alvaro Chirino Gutierrez</em></p>
-<p class="date"><em>2021-03-28</em></p>
+<p class="date"><em>2021-04-12</em></p>
 </div>
 <div id="prefacio" class="section level1 unnumbered">
 <h1>Prefacio</h1>
@@ -227,14 +237,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [6] methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bookdown_0.21     packrat_0.5.0     digest_0.6.27    
-##  [4] R6_2.5.0          jsonlite_1.7.2    magrittr_2.0.1   
-##  [7] evaluate_0.14     highr_0.8         stringi_1.5.3    
-## [10] rlang_0.4.10      rstudioapi_0.13   jquerylib_0.1.3  
-## [13] bslib_0.2.4       rmarkdown_2.7     tools_4.0.4      
-## [16] stringr_1.4.0     tinytex_0.30      xfun_0.22        
-## [19] yaml_2.2.1        compiler_4.0.4    htmltools_0.5.1.1
-## [22] knitr_1.31        sass_0.3.1</code></pre>
+##  [1] bookdown_0.21     packrat_0.5.0    
+##  [3] digest_0.6.27     R6_2.5.0         
+##  [5] jsonlite_1.7.2    magrittr_2.0.1   
+##  [7] evaluate_0.14     highr_0.8        
+##  [9] stringi_1.5.3     rlang_0.4.10     
+## [11] rstudioapi_0.13   jquerylib_0.1.3  
+## [13] bslib_0.2.4       rmarkdown_2.7    
+## [15] tools_4.0.4       stringr_1.4.0    
+## [17] xfun_0.22         yaml_2.2.1       
+## [19] compiler_4.0.4    htmltools_0.5.1.1
+## [21] knitr_1.31        sass_0.3.1</code></pre>
 </div>
 <div id="bases-de-datos" class="section level2 unnumbered">
 <h2>Bases de datos</h2>

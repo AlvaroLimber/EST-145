@@ -44,3 +44,44 @@ Para $X \geq 0$ y $y \geq 0$
   * Encontrar $E[X]$, $V(X)$, $E[XY]$ y $corr(X,Y)$
   * Encontrar la densidad condicional de $Y$ dado $X=x$
   * Encontrar $E[Y|X=x]$
+
+# Distribuciones Muestrales 
+
+## Ejercicio 1
+
+```{r,echo=F}
+set.seed(1822)
+n1<-round(runif(1,5,30))
+n2<-round(runif(1,5,30))
+b<-round(runif(1,1,5),2)
+```
+
+Si $\hat{S_1}^2$ y $\hat{S_2}^2$ representan las varianzas de muestras aleatorias independientes de tamaños $n_1=$ `r n1` y $n_2=$ `r n2`, tomadas de poblaciones normales con varianzas iguales, calcule: $P( \hat{S_1}^2 / \hat{S_2}^2<$ `r b`)
+
+## Ejercicio 2
+
+```{r,echo=F}
+set.seed(1822)
+mu<-round(runif(1,5,15),2)
+sigma<-round(runif(1,5,15),2)
+n<-round(runif(1,40,70))
+b<-round(runif(1,7,15),2)
+```
+
+La cantidad de tiempo que le toma al cajero de un banco con servicio en el automóvil atender a un cliente es una variable aleatoria con una media $\mu=$ `r mu` minutos y una desviación estándar $\sigma=$ `r sigma` minutos. Si se observa una muestra aleatoria de `r n` clientes, calcule la probabilidad de que el tiempo medio que el cliente pasa en la ventanilla del cajero sea más de `r b` minutos;
+
+## Ejercicio 3
+
+```{r,echo=F}
+set.seed(1822)
+u1<-round(runif(1,60,80),2)
+u2<-round(runif(1,25,50),2)
+s1<-round(runif(1,5,15),2)
+s2<-round(runif(1,5,12),2)
+n1<-round(runif(1,40,70))
+n2<-round(runif(1,40,70)) 
+b<-u1-u2+round(runif(1,-2,2),1)
+z<-(b-(u1-u2))/sqrt(s1^2/n1+s2^2/n2)
+```
+
+La distribución de alturas de cierta raza de perros terrier tiene una media de `r u1` centímetros y una desviación estándar de `r s1` centímetros; en tanto que la distribución de alturas de cierta raza de poodles tiene una media de `r u2` centímetros con una desviación estándar de `r s2` centímetros. Calcule la probabilidad de que la media muestral de una muestra aleatoria de alturas de `r n1` terriers exceda la media muestral para una muestra aleatoria de alturas de `r n2` poodles a lo sumo `r b` centímetros.

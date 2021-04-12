@@ -639,3 +639,29 @@ Teniendo en cuenta que $\chi^2\sim \chi^2(v=24)$
 5. Un fabricante de cierta marca de barras de cereal con bajo contenido de grasa afirma que el contenido promedio de grasa saturada en éstas es de 0.5 gramos. En una muestra aleatoria de 8 barras de cereal de esta marca
 se encontró que su contenido de grasa saturada era de 0.6, 0.7, 0.7, 0.3, 0.4, 0.5, 0.4 y 0.2. ¿Estaría de acuerdo con tal afirmación? Suponga una distribución normal. ($t$)
 
+### Ejercicios del examen
+
+6. CI=1 
+
+
+
+```{r}
+# P(3<x<19)=F(19)-F(3) v=16
+pchisq(19,16)-pchisq(3,16)
+```
+
+7. CI=1
+
+$$P(X>0.68)=1-P(X<0.68)=1-F(0.68)$$
+
+```{r}
+#v=22
+1-pt(0.68,22)
+```
+
+8. $X\sim F(v_1,v_2)$
+
+$$P(X=1.36)=0$$
+```{r}
+curve(dnorm(x),xlim=c(-3,3))
+```
