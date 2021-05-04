@@ -3,7 +3,7 @@
     "path": "~/GitHub/EST-145/3_estimacion.Rmd",
     "project_path": "3_estimacion.Rmd",
     "type": "r_markdown",
-    "hash": "1888251170",
+    "hash": "1387554088",
     "contents": "",
     "dirty": false,
     "created": 1617646561848.0,
@@ -11,17 +11,18 @@
     "relative_order": 4,
     "properties": {
         "tempName": "Untitled1",
-        "cursorPosition": "161,38",
-        "scrollLine": "154",
+        "cursorPosition": "495,78",
+        "scrollLine": "486",
         "chunk_output_type": "console",
-        "docOutlineVisible": "0"
+        "docOutlineVisible": "0",
+        "Source": "Source"
     },
     "folds": "",
-    "lastKnownWriteTime": 1618262511,
+    "lastKnownWriteTime": 1620072736,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1618262511280,
+    "last_content_update": 1620072736592,
     "read_only": false,
     "read_only_alternatives": []
 }

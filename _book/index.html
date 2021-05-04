@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-04-12" />
+<meta name="date" content="2021-05-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 
 <link rel="next" href="tema-1-distribuciones-bivariadas-multivariadas.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,22 +51,21 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -130,14 +130,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#bases-de-datos"><i class="fa fa-check"></i>Bases de datos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimiento"><i class="fa fa-check"></i>Agradecimiento</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a><ul>
+<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes</a></li>
 <li class="chapter" data-level="1.2" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada</a></li>
 <li class="chapter" data-level="1.3" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)</a></li>
@@ -147,7 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
 <li class="chapter" data-level="1.8" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a><ul>
+<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
 <li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
 <li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral</a></li>
@@ -158,19 +161,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la varianza</a></li>
 <li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.9</b> Distribución <span class="math inline">\(\chi^2\)</span></a></li>
 <li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.10</b> Distribución t-student</a></li>
-<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a><ul>
+<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a>
+<ul>
 <li class="chapter" data-level="2.11.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.11.1</b> Para las varianzas muestrales</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a><ul>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios-del-examen"><i class="fa fa-check"></i><b>2.12.1</b> Ejercicios del examen</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a><ul>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
-<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a><ul>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
 <li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
 <li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
+<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao</a></li>
+<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud</a></li>
+<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -194,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Estadística II</h1>
 <h2 class="subtitle"><em>EST-145</em></h2>
 <p class="author"><em>Alvaro Chirino Gutierrez</em></p>
-<p class="date"><em>2021-04-12</em></p>
+<p class="date"><em>2021-05-03</em></p>
 </div>
 <div id="prefacio" class="section level1 unnumbered">
 <h1>Prefacio</h1>
@@ -218,8 +232,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="software-y-acuerdos" class="section level2 unnumbered">
 <h2>Software y acuerdos</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 4.0.4 (2021-02-15)
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.0.5 (2021-03-31)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 19042)
 ## 
@@ -233,21 +247,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [5] LC_TIME=Spanish_Bolivia.1252    
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets 
-## [6] methods   base     
+## [1] stats     graphics 
+## [3] grDevices utils    
+## [5] datasets  methods  
+## [7] base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bookdown_0.21     packrat_0.5.0    
-##  [3] digest_0.6.27     R6_2.5.0         
-##  [5] jsonlite_1.7.2    magrittr_2.0.1   
-##  [7] evaluate_0.14     highr_0.8        
-##  [9] stringi_1.5.3     rlang_0.4.10     
-## [11] rstudioapi_0.13   jquerylib_0.1.3  
-## [13] bslib_0.2.4       rmarkdown_2.7    
-## [15] tools_4.0.4       stringr_1.4.0    
-## [17] xfun_0.22         yaml_2.2.1       
-## [19] compiler_4.0.4    htmltools_0.5.1.1
-## [21] knitr_1.31        sass_0.3.1</code></pre>
+##  [1] bookdown_0.21    
+##  [2] digest_0.6.27    
+##  [3] R6_2.5.0         
+##  [4] jsonlite_1.7.2   
+##  [5] magrittr_2.0.1   
+##  [6] evaluate_0.14    
+##  [7] highr_0.8        
+##  [8] stringi_1.5.3    
+##  [9] rlang_0.4.10     
+## [10] rstudioapi_0.13  
+## [11] jquerylib_0.1.3  
+## [12] bslib_0.2.4      
+## [13] rmarkdown_2.7    
+## [14] tools_4.0.5      
+## [15] stringr_1.4.0    
+## [16] xfun_0.22        
+## [17] yaml_2.2.1       
+## [18] rsconnect_0.8.16 
+## [19] compiler_4.0.5   
+## [20] htmltools_0.5.1.1
+## [21] knitr_1.31       
+## [22] sass_0.3.1</code></pre>
 </div>
 <div id="bases-de-datos" class="section level2 unnumbered">
 <h2>Bases de datos</h2>

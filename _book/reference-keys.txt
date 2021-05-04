@@ -28,3 +28,9 @@ estimadores-puntuales
 estimador-insesgado
 estimador-eficiente
 error-cuadrático-medio-ecm
+cota-de-cramer-rao
+método-de-maxima-verosimilitud
+método-de-momentos
+estimación-por-intervalos-de-confianza
+intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida.
+tamaño-de-muestra

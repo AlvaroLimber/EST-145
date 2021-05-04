@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-04-12" />
+<meta name="date" content="2021-05-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="tema-1-distribuciones-bivariadas-multivariadas.html"/>
 <link rel="next" href="estimaciones-de-una-y-dos-muestrales.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,22 +51,21 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -130,14 +130,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#bases-de-datos"><i class="fa fa-check"></i>Bases de datos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimiento"><i class="fa fa-check"></i>Agradecimiento</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a><ul>
+<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes</a></li>
 <li class="chapter" data-level="1.2" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada</a></li>
 <li class="chapter" data-level="1.3" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)</a></li>
@@ -147,7 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
 <li class="chapter" data-level="1.8" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a><ul>
+<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
 <li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
 <li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral</a></li>
@@ -158,19 +161,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la varianza</a></li>
 <li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.9</b> Distribución <span class="math inline">\(\chi^2\)</span></a></li>
 <li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.10</b> Distribución t-student</a></li>
-<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a><ul>
+<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a>
+<ul>
 <li class="chapter" data-level="2.11.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.11.1</b> Para las varianzas muestrales</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a><ul>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios-del-examen"><i class="fa fa-check"></i><b>2.12.1</b> Ejercicios del examen</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a><ul>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
-<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a><ul>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
 <li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
 <li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
+<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao</a></li>
+<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud</a></li>
+<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -190,10 +204,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tema-2-distribuciones-muestrales" class="section level1">
+<div id="tema-2-distribuciones-muestrales" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Tema 2: Distribuciones muestrales</h1>
 <p>A partir de este tema la estadística esta vinculada con la <em>inferencia</em> sobre los <em>parámetros</em> de la información/datos.</p>
-<div id="muestras-y-población" class="section level2">
+<div id="muestras-y-población" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Muestras y población</h2>
 <blockquote>
 <p>Definición: Una población es una colección de objetos, estos objetos tienen variables.</p>
@@ -251,7 +265,7 @@ Note que los elementos <span class="math inline">\(u_1\)</span> y <span class="m
 </blockquote>
 <p>Sea <span class="math inline">\(N\)</span> el tamaño de la población y <span class="math inline">\(n\)</span> el tamaño de la muestra, ambos valores para fines de este capítulo son fijas o constantes.</p>
 </div>
-<div id="parámetros-estadísticas-y-estimadores." class="section level2">
+<div id="parámetros-estadísticas-y-estimadores." class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Parámetros, estadísticas y estimadores.</h2>
 <p>El objetivo de la estadística es aprender acerca de las características de una población. Estas características las vamos a llamar <em>parámetros</em>.</p>
 <blockquote>
@@ -304,7 +318,7 @@ Nota: Los parámetros de una población son constantes.</p>
 <p><span class="math display">\[\hat{\theta}_5=\frac{N}{n} \sum_{s}y_i \]</span></p>
 <p><span class="math inline">\(\hat{t}_{y,s1}=47.5\)</span>, <span class="math inline">\(\hat{t}_{y,s2}=52.5\)</span></p>
 </div>
-<div id="distribución-muestral" class="section level2">
+<div id="distribución-muestral" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Distribución muestral</h2>
 <p>Recordar que una estadística es una función sobre la muestra y sobre los valores que toman las variables aleatorias vinculadas a esta. Como la estadística es una función sobre las muestras aleatorias (muestras posibles) las evaluaciones que se realizan para cada una de las muestras posibles (estimadores) conforman lo que vamos a denominar una distribución muestral.</p>
 <p>Por ejemplo si planteamos al estimador del parámetro del total, recordar:</p>
@@ -326,30 +340,38 @@ Un estimador para este parámetro será:</p>
 <p>construir su distribución muestral y calcular su esperanza y su varianza</p>
 <p>Respuesta,</p>
 <p>(S/rep) Las muestras posibles son 20, estas muestras posibles son:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tema-2-distribuciones-muestrales.html#cb3-1"></a>Y&lt;-<span class="kw">c</span>(<span class="dv">2000</span>,<span class="dv">3000</span>,<span class="dv">3500</span>,<span class="dv">0</span>,<span class="dv">6000</span>,<span class="dv">4500</span>)</span>
-<span id="cb3-2"><a href="tema-2-distribuciones-muestrales.html#cb3-2"></a>s&lt;-<span class="kw">combn</span>(Y,<span class="dv">3</span>)</span>
-<span id="cb3-3"><a href="tema-2-distribuciones-muestrales.html#cb3-3"></a>s</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
-## [1,] 2000 2000 2000 2000 2000 2000 2000 2000 2000
-## [2,] 3000 3000 3000 3000 3500 3500 3500    0    0
-## [3,] 3500    0 6000 4500    0 6000 4500 6000 4500
-##      [,10] [,11] [,12] [,13] [,14] [,15] [,16] [,17]
-## [1,]  2000  3000  3000  3000  3000  3000  3000  3500
-## [2,]  6000  3500  3500  3500     0     0  6000     0
-## [3,]  4500     0  6000  4500  6000  4500  4500  6000
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tema-2-distribuciones-muestrales.html#cb3-1" aria-hidden="true" tabindex="-1"></a>Y<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">3000</span>,<span class="dv">3500</span>,<span class="dv">0</span>,<span class="dv">6000</span>,<span class="dv">4500</span>)</span>
+<span id="cb3-2"><a href="tema-2-distribuciones-muestrales.html#cb3-2" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(Y,<span class="dv">3</span>)</span>
+<span id="cb3-3"><a href="tema-2-distribuciones-muestrales.html#cb3-3" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,] 2000 2000 2000 2000 2000
+## [2,] 3000 3000 3000 3000 3500
+## [3,] 3500    0 6000 4500    0
+##      [,6] [,7] [,8] [,9]
+## [1,] 2000 2000 2000 2000
+## [2,] 3500 3500    0    0
+## [3,] 6000 4500 6000 4500
+##      [,10] [,11] [,12] [,13]
+## [1,]  2000  3000  3000  3000
+## [2,]  6000  3500  3500  3500
+## [3,]  4500     0  6000  4500
+##      [,14] [,15] [,16] [,17]
+## [1,]  3000  3000  3000  3500
+## [2,]     0     0  6000     0
+## [3,]  6000  4500  4500  6000
 ##      [,18] [,19] [,20]
 ## [1,]  3500  3500     0
 ## [2,]     0  6000  6000
 ## [3,]  4500  4500  4500</code></pre>
 <p>Para el estimador de la media;</p>
 <p>Tomar en cuenta que el valor del parámetro de la media poblacional es: <span class="math inline">\(\mu_y=\sum_U y_i /N=3166.667\)</span></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tema-2-distribuciones-muestrales.html#cb5-1"></a>y&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,sum)<span class="op">/</span><span class="dv">3</span> <span class="co">#Distribución muestral para el estimador de la media</span></span>
-<span id="cb5-2"><a href="tema-2-distribuciones-muestrales.html#cb5-2"></a><span class="kw">hist</span>(y)</span>
-<span id="cb5-3"><a href="tema-2-distribuciones-muestrales.html#cb5-3"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">mean</span>(Y),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tema-2-distribuciones-muestrales.html#cb5-1" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,sum)<span class="sc">/</span><span class="dv">3</span> <span class="co">#Distribución muestral para el estimador de la media</span></span>
+<span id="cb5-2"><a href="tema-2-distribuciones-muestrales.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y)</span>
+<span id="cb5-3"><a href="tema-2-distribuciones-muestrales.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">mean</span>(Y),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tema-2-distribuciones-muestrales.html#cb6-1"></a><span class="co"># calcular la esperanza y la varianza</span></span>
-<span id="cb6-2"><a href="tema-2-distribuciones-muestrales.html#cb6-2"></a>uy&lt;-<span class="kw">sum</span>(y<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">20</span>)) <span class="co"># esperanza del estimador de la media</span></span>
-<span id="cb6-3"><a href="tema-2-distribuciones-muestrales.html#cb6-3"></a><span class="kw">sum</span>((y<span class="op">-</span>uy)<span class="op">^</span><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">20</span>)) <span class="co"># varianza de la media muestral</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tema-2-distribuciones-muestrales.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calcular la esperanza y la varianza</span></span>
+<span id="cb6-2"><a href="tema-2-distribuciones-muestrales.html#cb6-2" aria-hidden="true" tabindex="-1"></a>uy<span class="ot">&lt;-</span><span class="fu">sum</span>(y<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)) <span class="co"># esperanza del estimador de la media</span></span>
+<span id="cb6-3"><a href="tema-2-distribuciones-muestrales.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((y<span class="sc">-</span>uy)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)) <span class="co"># varianza de la media muestral</span></span></code></pre></div>
 <pre><code>## [1] 711111.1</code></pre>
 <p><span class="math display">\[E[\hat{\theta}]=\sum_{Rs} \hat{\theta_s} P(\hat{\theta}=\hat{\theta_s})\]</span></p>
 <p><span class="math display">\[V(\hat{\theta})=E[(\hat{\theta}-E[\hat{\theta}])^2]=\sum_{s}(\hat{\theta_s}-E[\hat{\theta}])^2*P(\hat{\theta}=\hat{\theta})\]</span></p>
@@ -357,22 +379,22 @@ Un estimador para este parámetro será:</p>
 <p>El estimador de la media muestral, es un estimador insesgado de la media poblacional.</p>
 <p>Para el estimador del total;</p>
 <p>Tomar en cuenta que el valor del parámetro del total poblacional es: <span class="math inline">\(t_y=\sum_U y_i=19000\)</span></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tema-2-distribuciones-muestrales.html#cb8-1"></a>ty&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,sum)<span class="op">*</span>(<span class="dv">6</span><span class="op">/</span><span class="dv">3</span>) <span class="co">#Distribución muestral para el estimador del total</span></span>
-<span id="cb8-2"><a href="tema-2-distribuciones-muestrales.html#cb8-2"></a><span class="kw">hist</span>(ty)</span>
-<span id="cb8-3"><a href="tema-2-distribuciones-muestrales.html#cb8-3"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">sum</span>(Y),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tema-2-distribuciones-muestrales.html#cb8-1" aria-hidden="true" tabindex="-1"></a>ty<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,sum)<span class="sc">*</span>(<span class="dv">6</span><span class="sc">/</span><span class="dv">3</span>) <span class="co">#Distribución muestral para el estimador del total</span></span>
+<span id="cb8-2"><a href="tema-2-distribuciones-muestrales.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ty)</span>
+<span id="cb8-3"><a href="tema-2-distribuciones-muestrales.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">sum</span>(Y),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tema-2-distribuciones-muestrales.html#cb9-1"></a>pty&lt;-<span class="kw">sum</span>(ty<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">20</span>)) <span class="co"># esperanza</span></span>
-<span id="cb9-2"><a href="tema-2-distribuciones-muestrales.html#cb9-2"></a><span class="kw">sum</span>((ty<span class="op">-</span>pty)<span class="op">^</span><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">20</span>)) <span class="co"># varianza de la media muestral</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tema-2-distribuciones-muestrales.html#cb9-1" aria-hidden="true" tabindex="-1"></a>pty<span class="ot">&lt;-</span><span class="fu">sum</span>(ty<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)) <span class="co"># esperanza</span></span>
+<span id="cb9-2"><a href="tema-2-distribuciones-muestrales.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((ty<span class="sc">-</span>pty)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)) <span class="co"># varianza de la media muestral</span></span></code></pre></div>
 <pre><code>## [1] 25600000</code></pre>
 <p><span class="math display">\[E[\hat{t}_y]=E[N*\bar{Y}]=N E[\bar{Y}]=N*u_y=N*\frac{\sum_U y_i}{N}=\sum_U {y_i}=t_y\]</span>
 Repetir los cálculos para un muestreo con reposición. Muestras probables <span class="math inline">\(6^3=N^n=216\)</span>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tema-2-distribuciones-muestrales.html#cb11-1"></a>Y&lt;-<span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">5</span>))</span>
-<span id="cb11-2"><a href="tema-2-distribuciones-muestrales.html#cb11-2"></a>s&lt;-<span class="kw">combn</span>(Y,<span class="dv">10</span>)</span>
-<span id="cb11-3"><a href="tema-2-distribuciones-muestrales.html#cb11-3"></a>y&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,sum)<span class="op">/</span><span class="dv">10</span></span>
-<span id="cb11-4"><a href="tema-2-distribuciones-muestrales.html#cb11-4"></a><span class="kw">hist</span>(y)</span>
-<span id="cb11-5"><a href="tema-2-distribuciones-muestrales.html#cb11-5"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">mean</span>(Y),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tema-2-distribuciones-muestrales.html#cb11-1" aria-hidden="true" tabindex="-1"></a>Y<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">5</span>))</span>
+<span id="cb11-2"><a href="tema-2-distribuciones-muestrales.html#cb11-2" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(Y,<span class="dv">10</span>)</span>
+<span id="cb11-3"><a href="tema-2-distribuciones-muestrales.html#cb11-3" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,sum)<span class="sc">/</span><span class="dv">10</span></span>
+<span id="cb11-4"><a href="tema-2-distribuciones-muestrales.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y)</span>
+<span id="cb11-5"><a href="tema-2-distribuciones-muestrales.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">mean</span>(Y),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
 </div>
-<div id="distribución-muestral-para-la-media" class="section level2">
+<div id="distribución-muestral-para-la-media" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Distribución muestral para la media</h2>
 <p>Recordar que para una población (<span class="math inline">\(U\)</span>) con alguna variable <span class="math inline">\(X\)</span> de tipo cuantitativa se puede obtener el parámetro de la media, definido como:</p>
 <p><span class="math display">\[\mu_x=\frac{\sum_U x_i}{N}\]</span></p>
@@ -393,7 +415,7 @@ Repetir los cálculos para un muestreo con reposición. Muestras probables <span
 <p><span class="math display">\[V(\bar{X})=V\left(\frac{\sum_s x_i}{n}\right)=\frac{1}{n^2}V(x_1+x_2+\ldots+x_n)=\frac{1}{n^2}\{V(x_1)+\ldots+V(x_n)\}=\]</span>
 <span class="math display">\[=\frac{1}{n^2}(\sigma^2_x+\sigma^2_x+\ldots+\sigma^2_x)=\frac{n \sigma_x^2}{n^2}=\frac{\sigma^2_x}{n}\]</span></p>
 </div>
-<div id="teorema-del-límite-central" class="section level2">
+<div id="teorema-del-límite-central" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Teorema del límite central</h2>
 <blockquote>
 <p>Teorema:</p>
@@ -403,26 +425,26 @@ Repetir los cálculos para un muestreo con reposición. Muestras probables <span
 a medida que <span class="math inline">\(n \rightarrow \infty\)</span>, podemos asegurar que <span class="math inline">\(Z\sim N(0,1)\)</span>, en este marco se puede decir a medida que <span class="math inline">\(n\)</span> es más grande <span class="math inline">\(\bar{X}\sim N(\mu_x,\frac{\sigma^2_x}{n})\)</span></p>
 <p>Nota: esta idea de <span class="math inline">\(n\)</span> grande se usa tradicionalmente el valor de <span class="math inline">\(n&gt;30\)</span>, hay textos que plantean <span class="math inline">\(n=20\)</span>.</p>
 <p>Simulación del teorema del límite central:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tema-2-distribuciones-muestrales.html#cb12-1"></a>N&lt;-<span class="dv">1000000</span></span>
-<span id="cb12-2"><a href="tema-2-distribuciones-muestrales.html#cb12-2"></a>x&lt;-<span class="kw">round</span>(<span class="kw">runif</span>(N,<span class="dv">0</span>,<span class="dv">10000</span>),<span class="dv">0</span>)<span class="co"># ingresos mensuales de una población </span></span>
-<span id="cb12-3"><a href="tema-2-distribuciones-muestrales.html#cb12-3"></a><span class="kw">hist</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tema-2-distribuciones-muestrales.html#cb12-1" aria-hidden="true" tabindex="-1"></a>N<span class="ot">&lt;-</span><span class="dv">1000000</span></span>
+<span id="cb12-2"><a href="tema-2-distribuciones-muestrales.html#cb12-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(N,<span class="dv">0</span>,<span class="dv">10000</span>),<span class="dv">0</span>)<span class="co"># ingresos mensuales de una población </span></span>
+<span id="cb12-3"><a href="tema-2-distribuciones-muestrales.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tema-2-distribuciones-muestrales.html#cb13-1"></a>n&lt;-<span class="dv">30</span></span>
-<span id="cb13-2"><a href="tema-2-distribuciones-muestrales.html#cb13-2"></a><span class="kw">choose</span>(N,n)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tema-2-distribuciones-muestrales.html#cb13-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">30</span></span>
+<span id="cb13-2"><a href="tema-2-distribuciones-muestrales.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">choose</span>(N,n)</span></code></pre></div>
 <pre><code>## [1] 3.768348e+147</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tema-2-distribuciones-muestrales.html#cb15-1"></a><span class="co">#simular 1000 muestras distintas de tamaño n y calcular su media.</span></span>
-<span id="cb15-2"><a href="tema-2-distribuciones-muestrales.html#cb15-2"></a>xbar&lt;-<span class="ot">NULL</span></span>
-<span id="cb15-3"><a href="tema-2-distribuciones-muestrales.html#cb15-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10000</span>){</span>
-<span id="cb15-4"><a href="tema-2-distribuciones-muestrales.html#cb15-4"></a>  s&lt;-<span class="kw">sample</span>(x,n)</span>
-<span id="cb15-5"><a href="tema-2-distribuciones-muestrales.html#cb15-5"></a>  xbar[i]&lt;-<span class="kw">mean</span>(s)</span>
-<span id="cb15-6"><a href="tema-2-distribuciones-muestrales.html#cb15-6"></a>}</span>
-<span id="cb15-7"><a href="tema-2-distribuciones-muestrales.html#cb15-7"></a><span class="kw">hist</span>(xbar)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tema-2-distribuciones-muestrales.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#simular 1000 muestras distintas de tamaño n y calcular su media.</span></span>
+<span id="cb15-2"><a href="tema-2-distribuciones-muestrales.html#cb15-2" aria-hidden="true" tabindex="-1"></a>xbar<span class="ot">&lt;-</span><span class="cn">NULL</span></span>
+<span id="cb15-3"><a href="tema-2-distribuciones-muestrales.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
+<span id="cb15-4"><a href="tema-2-distribuciones-muestrales.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  s<span class="ot">&lt;-</span><span class="fu">sample</span>(x,n)</span>
+<span id="cb15-5"><a href="tema-2-distribuciones-muestrales.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  xbar[i]<span class="ot">&lt;-</span><span class="fu">mean</span>(s)</span>
+<span id="cb15-6"><a href="tema-2-distribuciones-muestrales.html#cb15-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-7"><a href="tema-2-distribuciones-muestrales.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(xbar)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tema-2-distribuciones-muestrales.html#cb16-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(xbar),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb16-2"><a href="tema-2-distribuciones-muestrales.html#cb16-2"></a><span class="kw">points</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">10</span><span class="op">^</span><span class="dv">6</span>,<span class="kw">mean</span>(x),<span class="kw">sqrt</span>(<span class="kw">var</span>(x)<span class="op">*</span>((n<span class="dv">-1</span>)<span class="op">/</span>n))<span class="op">/</span><span class="kw">sqrt</span>(n))),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tema-2-distribuciones-muestrales.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(xbar),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb16-2"><a href="tema-2-distribuciones-muestrales.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">density</span>(<span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>,<span class="fu">mean</span>(x),<span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">*</span>((n<span class="dv">-1</span>)<span class="sc">/</span>n))<span class="sc">/</span><span class="fu">sqrt</span>(n))),<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
 </div>
-<div id="distribución-muestral-para-la-diferencia-de-medias" class="section level2">
+<div id="distribución-muestral-para-la-diferencia-de-medias" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Distribución muestral para la diferencia de medias</h2>
 <p>Sean dos poblaciones <span class="math inline">\(U_1\)</span> y <span class="math inline">\(U_2\)</span> independientes con medias y varianzas respectivamente: <span class="math inline">\(\mu_{x_1}\)</span> y <span class="math inline">\(\mu_{x_2}\)</span>, <span class="math inline">\(\sigma^2_{x_1}\)</span> y <span class="math inline">\(\sigma^2_{x_2}\)</span>.</p>
 <blockquote>
@@ -435,7 +457,7 @@ Demostración:</p>
 <p><span class="math display">\[E[\bar{X_1}-\bar{X_2}]=E[\bar{X_1}]-E[\bar{X_2}]=\mu_{x_1}-\mu_{x_2}\]</span></p>
 <p><span class="math display">\[V(\bar{X_1}-\bar{X_2})=V(\bar{X_1})+V(\bar{X_2})=\frac{\sigma^2_{x_1}}{n_1}+\frac{\sigma^2_{x_2}}{n_2}\]</span></p>
 </div>
-<div id="distribución-muestral-para-la-proporción" class="section level2">
+<div id="distribución-muestral-para-la-proporción" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Distribución muestral para la proporción</h2>
 <p>La proporción no es nada más que un caso especial de la media para <span class="math inline">\(X\)</span> que toma valores binarios según alguna característica de interés.</p>
 <p>Sea <span class="math inline">\(P_A=\frac{\#A}{N}=\frac{\sum_U x_i}{N}\)</span>, <span class="math inline">\(x_i=1\)</span> si <span class="math inline">\(i \in A\)</span> <span class="math inline">\(x_i=0\)</span> eoc. la proporción de alguna característica de la población.</p>
@@ -453,7 +475,7 @@ Demostración:</p>
 <p>Tarea, encontrar la forma de <span class="math inline">\(\sigma^2_A\)</span>, sabiendo que <span class="math inline">\(x_i\)</span> es binaria.</p>
 <p><span class="math display">\[\sigma^2_A=\frac{\sum_U(x_i-\mu_x)^2}{N}= P_A *(1-P_A)\]</span></p>
 </div>
-<div id="distribución-muestral-para-la-varianza" class="section level2">
+<div id="distribución-muestral-para-la-varianza" class="section level2" number="2.8">
 <h2><span class="header-section-number">2.8</span> Distribución muestral para la varianza</h2>
 <p>Recordar que para una población <span class="math inline">\(U\)</span>, si observamos a una variable de interés respecto sus características podemos obtener medidas de centralidad y también medidas de variabilidad, por ejemplo, sea <span class="math inline">\(X\)</span> una variables definida para toda la población, y definamos los siguientes parámetros de <span class="math inline">\(X\)</span>.</p>
 <p><span class="math display">\[\mu_x=\frac{\sum_U x_i}{N}\]</span></p>
@@ -467,9 +489,9 @@ Demostración:</p>
 <li><span class="math inline">\(\sigma^2_x=70\)</span></li>
 </ul>
 <p>Suponer que se toman muestras aleatorias de esta población de tamaño <span class="math inline">\(n=3\)</span> sin reposición. La cantidad de muestras posibles es 10.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tema-2-distribuciones-muestrales.html#cb17-1"></a>x&lt;-<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
-<span id="cb17-2"><a href="tema-2-distribuciones-muestrales.html#cb17-2"></a>s&lt;-<span class="kw">combn</span>(x,<span class="dv">3</span>)</span>
-<span id="cb17-3"><a href="tema-2-distribuciones-muestrales.html#cb17-3"></a>s</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tema-2-distribuciones-muestrales.html#cb17-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
+<span id="cb17-2"><a href="tema-2-distribuciones-muestrales.html#cb17-2" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(x,<span class="dv">3</span>)</span>
+<span id="cb17-3"><a href="tema-2-distribuciones-muestrales.html#cb17-3" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]   10   10   10   10   10   10   15   15   15
 ## [2,]   15   15   15   20   20   20   20   20   20
@@ -478,15 +500,15 @@ Demostración:</p>
 ## [1,]    20
 ## [2,]    20
 ## [3,]    35</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tema-2-distribuciones-muestrales.html#cb19-1"></a><span class="co">#distribución muestral de la media</span></span>
-<span id="cb19-2"><a href="tema-2-distribuciones-muestrales.html#cb19-2"></a><span class="kw">mean</span>(<span class="kw">apply</span>(s, <span class="dv">2</span>, mean)) </span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tema-2-distribuciones-muestrales.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la media</span></span>
+<span id="cb19-2"><a href="tema-2-distribuciones-muestrales.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(s, <span class="dv">2</span>, mean)) </span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
 <p>Pensemos para el caso de la varianza en posibles estadísticos (estimadores):</p>
 <p><span class="math display">\[\hat{\theta}_1=\hat{\sigma}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n}\]</span></p>
 <p><span class="math display">\[\hat{\theta}_2=\hat{S}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}\]</span></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tema-2-distribuciones-muestrales.html#cb21-1"></a>x&lt;-<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
-<span id="cb21-2"><a href="tema-2-distribuciones-muestrales.html#cb21-2"></a>n&lt;-<span class="dv">3</span>;N&lt;-<span class="dv">5</span></span>
-<span id="cb21-3"><a href="tema-2-distribuciones-muestrales.html#cb21-3"></a>s</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tema-2-distribuciones-muestrales.html#cb21-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
+<span id="cb21-2"><a href="tema-2-distribuciones-muestrales.html#cb21-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">3</span>;N<span class="ot">&lt;-</span><span class="dv">5</span></span>
+<span id="cb21-3"><a href="tema-2-distribuciones-muestrales.html#cb21-3" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]   10   10   10   10   10   10   15   15   15
 ## [2,]   15   15   15   20   20   20   20   20   20
@@ -495,26 +517,26 @@ Demostración:</p>
 ## [1,]    20
 ## [2,]    20
 ## [3,]    35</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tema-2-distribuciones-muestrales.html#cb23-1"></a><span class="kw">var</span>(x)<span class="op">*</span>((N<span class="dv">-1</span>)<span class="op">/</span>N)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tema-2-distribuciones-muestrales.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x)<span class="sc">*</span>((N<span class="dv">-1</span>)<span class="sc">/</span>N)</span></code></pre></div>
 <pre><code>## [1] 70</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tema-2-distribuciones-muestrales.html#cb25-1"></a>theta1&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,var)<span class="op">*</span>((n<span class="dv">-1</span>)<span class="op">/</span>n)</span>
-<span id="cb25-2"><a href="tema-2-distribuciones-muestrales.html#cb25-2"></a>theta2&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,var)</span>
-<span id="cb25-3"><a href="tema-2-distribuciones-muestrales.html#cb25-3"></a></span>
-<span id="cb25-4"><a href="tema-2-distribuciones-muestrales.html#cb25-4"></a></span>
-<span id="cb25-5"><a href="tema-2-distribuciones-muestrales.html#cb25-5"></a>theta1</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tema-2-distribuciones-muestrales.html#cb25-1" aria-hidden="true" tabindex="-1"></a>theta1<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,var)<span class="sc">*</span>((n<span class="dv">-1</span>)<span class="sc">/</span>n)</span>
+<span id="cb25-2"><a href="tema-2-distribuciones-muestrales.html#cb25-2" aria-hidden="true" tabindex="-1"></a>theta2<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,var)</span>
+<span id="cb25-3"><a href="tema-2-distribuciones-muestrales.html#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="tema-2-distribuciones-muestrales.html#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="tema-2-distribuciones-muestrales.html#cb25-5" aria-hidden="true" tabindex="-1"></a>theta1</span></code></pre></div>
 <pre><code>##  [1]  16.666667  16.666667 116.666667  22.222222
 ##  [5] 105.555556 105.555556   5.555556  72.222222
 ##  [9]  72.222222  50.000000</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tema-2-distribuciones-muestrales.html#cb27-1"></a>theta2</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tema-2-distribuciones-muestrales.html#cb27-1" aria-hidden="true" tabindex="-1"></a>theta2</span></code></pre></div>
 <pre><code>##  [1]  25.000000  25.000000 175.000000  33.333333
 ##  [5] 158.333333 158.333333   8.333333 108.333333
 ##  [9] 108.333333  75.000000</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tema-2-distribuciones-muestrales.html#cb29-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(theta1),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">50</span>,<span class="dv">300</span>))</span>
-<span id="cb29-2"><a href="tema-2-distribuciones-muestrales.html#cb29-2"></a><span class="kw">points</span>(<span class="kw">density</span>(theta2),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tema-2-distribuciones-muestrales.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(theta1),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">50</span>,<span class="dv">300</span>))</span>
+<span id="cb29-2"><a href="tema-2-distribuciones-muestrales.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">density</span>(theta2),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">type=</span><span class="st">&quot;l&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tema-2-distribuciones-muestrales.html#cb30-1"></a><span class="kw">mean</span>(theta1) <span class="co">#E[]</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tema-2-distribuciones-muestrales.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(theta1) <span class="co">#E[]</span></span></code></pre></div>
 <pre><code>## [1] 58.33333</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tema-2-distribuciones-muestrales.html#cb32-1"></a><span class="kw">mean</span>(theta2) <span class="co">#E[]</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tema-2-distribuciones-muestrales.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(theta2) <span class="co">#E[]</span></span></code></pre></div>
 <pre><code>## [1] 87.5</code></pre>
 <p>Notar que para el ejemplo <span class="math inline">\(E[\hat{\theta_1}]\)</span> ni <span class="math inline">\(E[\hat{\theta_2}]\)</span> se acercan a <span class="math inline">\(\sigma^2_x\)</span>, sin embargo, <span class="math inline">\(E[\theta_2]=S^2_x\)</span>.</p>
 <p><span class="math display">\[S^2_x=\frac{\sum_U (x_i-\mu_x)^2}{N-1}\]</span>
@@ -524,21 +546,21 @@ Demostración:</p>
 <p>Entonces, se cumple</p>
 <p><span class="math display">\[\chi^2=\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}=\frac{\sum_s (x_i-\bar{x})^2}{\sigma^2_x}\sim \chi^2(n-1)\]</span></p>
 <p>Simulación;</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tema-2-distribuciones-muestrales.html#cb34-1"></a><span class="co">#población de tamaño N=1000</span></span>
-<span id="cb34-2"><a href="tema-2-distribuciones-muestrales.html#cb34-2"></a><span class="kw">set.seed</span>(<span class="dv">999</span>)</span>
-<span id="cb34-3"><a href="tema-2-distribuciones-muestrales.html#cb34-3"></a>x&lt;-<span class="kw">rnorm</span>(<span class="dv">1000</span>,<span class="dv">20</span>,<span class="dv">5</span>)</span>
-<span id="cb34-4"><a href="tema-2-distribuciones-muestrales.html#cb34-4"></a><span class="kw">hist</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tema-2-distribuciones-muestrales.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#población de tamaño N=1000</span></span>
+<span id="cb34-2"><a href="tema-2-distribuciones-muestrales.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">999</span>)</span>
+<span id="cb34-3"><a href="tema-2-distribuciones-muestrales.html#cb34-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">1000</span>,<span class="dv">20</span>,<span class="dv">5</span>)</span>
+<span id="cb34-4"><a href="tema-2-distribuciones-muestrales.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tema-2-distribuciones-muestrales.html#cb35-1"></a><span class="co">#suponer que se extra una muestra de n=20 de esta población, </span></span>
-<span id="cb35-2"><a href="tema-2-distribuciones-muestrales.html#cb35-2"></a><span class="kw">choose</span>(<span class="dv">1000</span>,<span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tema-2-distribuciones-muestrales.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#suponer que se extra una muestra de n=20 de esta población, </span></span>
+<span id="cb35-2"><a href="tema-2-distribuciones-muestrales.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">1000</span>,<span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## [1] 3.394828e+41</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tema-2-distribuciones-muestrales.html#cb37-1"></a>n&lt;-<span class="dv">20</span></span>
-<span id="cb37-2"><a href="tema-2-distribuciones-muestrales.html#cb37-2"></a><span class="co">#vamos a simular unas 1500 muestras posibles sigma=25</span></span>
-<span id="cb37-3"><a href="tema-2-distribuciones-muestrales.html#cb37-3"></a>x2&lt;-<span class="ot">NULL</span></span>
-<span id="cb37-4"><a href="tema-2-distribuciones-muestrales.html#cb37-4"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100000</span>){</span>
-<span id="cb37-5"><a href="tema-2-distribuciones-muestrales.html#cb37-5"></a> x2[i]&lt;-(<span class="kw">var</span>(<span class="kw">sample</span>(x,<span class="dv">20</span>))<span class="op">*</span>(n<span class="dv">-1</span>))<span class="op">/</span><span class="dv">25</span></span>
-<span id="cb37-6"><a href="tema-2-distribuciones-muestrales.html#cb37-6"></a>}</span>
-<span id="cb37-7"><a href="tema-2-distribuciones-muestrales.html#cb37-7"></a>x2</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tema-2-distribuciones-muestrales.html#cb37-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb37-2"><a href="tema-2-distribuciones-muestrales.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">#vamos a simular unas 1500 muestras posibles sigma=25</span></span>
+<span id="cb37-3"><a href="tema-2-distribuciones-muestrales.html#cb37-3" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="cn">NULL</span></span>
+<span id="cb37-4"><a href="tema-2-distribuciones-muestrales.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100000</span>){</span>
+<span id="cb37-5"><a href="tema-2-distribuciones-muestrales.html#cb37-5" aria-hidden="true" tabindex="-1"></a> x2[i]<span class="ot">&lt;-</span>(<span class="fu">var</span>(<span class="fu">sample</span>(x,<span class="dv">20</span>))<span class="sc">*</span>(n<span class="dv">-1</span>))<span class="sc">/</span><span class="dv">25</span></span>
+<span id="cb37-6"><a href="tema-2-distribuciones-muestrales.html#cb37-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-7"><a href="tema-2-distribuciones-muestrales.html#cb37-7" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
 <pre><code>##    [1] 28.012821 13.303299 12.916730 15.444633
 ##    [5] 20.070571 18.598947 12.987323 26.229370
 ##    [9] 17.443031 29.634228 19.228462 16.847166
@@ -790,18 +812,18 @@ Demostración:</p>
 ##  [993]  8.403704 22.308734 12.866281 16.714866
 ##  [997] 20.025841 11.190805 16.622595 10.999016
 ##  [ reached getOption(&quot;max.print&quot;) -- omitted 99000 entries ]</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tema-2-distribuciones-muestrales.html#cb39-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(x2))</span>
-<span id="cb39-2"><a href="tema-2-distribuciones-muestrales.html#cb39-2"></a><span class="kw">points</span>(<span class="kw">density</span>(<span class="kw">rchisq</span>(<span class="dv">1000000</span>,<span class="dv">19</span>)),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tema-2-distribuciones-muestrales.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(x2))</span>
+<span id="cb39-2"><a href="tema-2-distribuciones-muestrales.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">density</span>(<span class="fu">rchisq</span>(<span class="dv">1000000</span>,<span class="dv">19</span>)),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">type=</span><span class="st">&quot;l&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
 </div>
-<div id="distribución-chi2" class="section level2">
+<div id="distribución-chi2" class="section level2" number="2.9">
 <h2><span class="header-section-number">2.9</span> Distribución <span class="math inline">\(\chi^2\)</span></h2>
 <p>Se dice que una variable aleatoria <span class="math inline">\(X\)</span> tiene una distribución Chi-cuadrado <span class="math inline">\(\chi^2\)</span> con <span class="math inline">\(v\)</span> grados de libertad. Se escribe como: <span class="math inline">\(X \sim \chi^2(v)\)</span>, donde el <span class="math inline">\(Rx=\{x&gt;0\}\)</span>, si su función de densidad es:</p>
 <p><span class="math display">\[f(x)=\frac{1}{2^\frac{v}{2} \Gamma(\frac{v}{2})}*x^{\frac{v}{2}-1}*e^{-\frac{x}{2}}\]</span></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tema-2-distribuciones-muestrales.html#cb40-1"></a><span class="kw">curve</span>(<span class="kw">dchisq</span>(x,<span class="dv">1</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">40</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>))</span>
-<span id="cb40-2"><a href="tema-2-distribuciones-muestrales.html#cb40-2"></a><span class="cf">for</span>(v <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>){</span>
-<span id="cb40-3"><a href="tema-2-distribuciones-muestrales.html#cb40-3"></a><span class="kw">curve</span>(<span class="kw">dchisq</span>(x,v),<span class="dt">add=</span>T,<span class="dt">col=</span>v)</span>
-<span id="cb40-4"><a href="tema-2-distribuciones-muestrales.html#cb40-4"></a>  }</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tema-2-distribuciones-muestrales.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x,<span class="dv">1</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">40</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>))</span>
+<span id="cb40-2"><a href="tema-2-distribuciones-muestrales.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(v <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>){</span>
+<span id="cb40-3"><a href="tema-2-distribuciones-muestrales.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x,v),<span class="at">add=</span>T,<span class="at">col=</span>v)</span>
+<span id="cb40-4"><a href="tema-2-distribuciones-muestrales.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Donde,</p>
 <p><span class="math display">\[E[X]=v\]</span>
@@ -810,20 +832,20 @@ Demostración:</p>
 <p>Encuentre la probabilidad de que una muestra aleatoria de <span class="math inline">\(n=25\)</span> de un población normal con varianza <span class="math inline">\(\sigma_x^2=9\)</span>, tenga una varianza muestral <span class="math inline">\(\hat{S^2}\)</span> entre 4 y 15.</p>
 <p><span class="math display">\[P(4&lt;\hat{S}^2_x&lt;15)=P(4*24/9&lt;\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}&lt;15*24/9)=P(10.66&lt;\chi^2 &lt;40)\]</span>
 <span class="math display">\[P(10.66&lt;\chi^2 &lt;40)=F(40)-F(10.66)=0.9786-0.0087=0.9699\]</span></p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="tema-2-distribuciones-muestrales.html#cb41-1"></a><span class="kw">pchisq</span>(<span class="dv">40</span>,<span class="dv">24</span>)<span class="co">#F(40) para un chi2(v=24)</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="tema-2-distribuciones-muestrales.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="dv">40</span>,<span class="dv">24</span>)<span class="co">#F(40) para un chi2(v=24)</span></span></code></pre></div>
 <pre><code>## [1] 0.9786132</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="tema-2-distribuciones-muestrales.html#cb43-1"></a><span class="kw">pchisq</span>(<span class="fl">10.66</span>,<span class="dv">24</span>)<span class="co">#F(10.66) para un chi2(v=24)</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="tema-2-distribuciones-muestrales.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="fl">10.66</span>,<span class="dv">24</span>)<span class="co">#F(10.66) para un chi2(v=24)</span></span></code></pre></div>
 <pre><code>## [1] 0.008762108</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tema-2-distribuciones-muestrales.html#cb45-1"></a><span class="kw">curve</span>(<span class="kw">dchisq</span>(x,<span class="dv">24</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">60</span>))</span>
-<span id="cb45-2"><a href="tema-2-distribuciones-muestrales.html#cb45-2"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="fl">10.66</span>,<span class="dv">40</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tema-2-distribuciones-muestrales.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x,<span class="dv">24</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">60</span>))</span>
+<span id="cb45-2"><a href="tema-2-distribuciones-muestrales.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="fl">10.66</span>,<span class="dv">40</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Tomar en cuenta que:</p>
 <p><span class="math display">\[\chi^2=\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}=\frac{\sum_s (x_i-\bar{x})^2}{\sigma^2_x}\sim \chi^2(n-1)\]</span></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="tema-2-distribuciones-muestrales.html#cb46-1"></a><span class="co">#ejemplo para usar R para calcular probabilidades de la Chi2</span></span>
-<span id="cb46-2"><a href="tema-2-distribuciones-muestrales.html#cb46-2"></a><span class="kw">pchisq</span>(<span class="dv">4</span>,<span class="dv">10</span>) <span class="co"># F(t)=P(X&lt;t): F(4)</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="tema-2-distribuciones-muestrales.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ejemplo para usar R para calcular probabilidades de la Chi2</span></span>
+<span id="cb46-2"><a href="tema-2-distribuciones-muestrales.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="dv">4</span>,<span class="dv">10</span>) <span class="co"># F(t)=P(X&lt;t): F(4)</span></span></code></pre></div>
 <pre><code>## [1] 0.05265302</code></pre>
 </div>
-<div id="distribución-t-student" class="section level2">
+<div id="distribución-t-student" class="section level2" number="2.10">
 <h2><span class="header-section-number">2.10</span> Distribución t-student</h2>
 <blockquote>
 <p>Teorema</p>
@@ -834,9 +856,9 @@ Se comporta como una distribución <span class="math inline">\(t\)</span> con <s
 <p><span class="math display">\[f(x)=\frac{\Gamma(\frac{v+1}{2})}{\Gamma{(\frac{v}{2})}\sqrt{v\pi} }\left(1+\frac{x^2}{v} \right)^{-(\frac{v+1}{2})}, \quad -\infty&lt;x&lt;\infty\]</span></p>
 <p>Al igual que la distribución normal estándar, la <span class="math inline">\(t\)</span> es simétrica al rededor del cero. Y levemente más plana que una normal.</p>
 <p>Nota: Cuando <span class="math inline">\(v\rightarrow \infty\)</span> la <span class="math inline">\(t \sim N(\mu=0,\sigma^2=\frac{v}{v-2})\)</span></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="tema-2-distribuciones-muestrales.html#cb48-1"></a>v&lt;-<span class="dv">5</span></span>
-<span id="cb48-2"><a href="tema-2-distribuciones-muestrales.html#cb48-2"></a><span class="kw">curve</span>(<span class="kw">dnorm</span>(x,<span class="dv">0</span>,<span class="kw">sqrt</span>(v<span class="op">/</span>(v<span class="dv">-2</span>))),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>))</span>
-<span id="cb48-3"><a href="tema-2-distribuciones-muestrales.html#cb48-3"></a><span class="kw">curve</span>(<span class="kw">dt</span>(x,<span class="dv">10</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">main=</span><span class="st">&quot;t-student (v=10)&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">add=</span>T)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="tema-2-distribuciones-muestrales.html#cb48-1" aria-hidden="true" tabindex="-1"></a>v<span class="ot">&lt;-</span><span class="dv">5</span></span>
+<span id="cb48-2"><a href="tema-2-distribuciones-muestrales.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x,<span class="dv">0</span>,<span class="fu">sqrt</span>(v<span class="sc">/</span>(v<span class="dv">-2</span>))),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>))</span>
+<span id="cb48-3"><a href="tema-2-distribuciones-muestrales.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dt</span>(x,<span class="dv">10</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="at">main=</span><span class="st">&quot;t-student (v=10)&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">add=</span>T)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <blockquote>
 <p>Corolario</p>
@@ -848,14 +870,14 @@ Se comporta como una distribución <span class="math inline">\(t\)</span> con <s
 \frac{\bar{X}-\mu}{\hat{S}/\sqrt{n}}\sim t(v=n-1)
 \]</span>
 Apariencia de la <span class="math inline">\(t\)</span></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="tema-2-distribuciones-muestrales.html#cb49-1"></a><span class="kw">curve</span>(<span class="kw">dt</span>(x,<span class="dv">2</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>))</span>
-<span id="cb49-2"><a href="tema-2-distribuciones-muestrales.html#cb49-2"></a><span class="cf">for</span>(v <span class="cf">in</span> <span class="dv">3</span><span class="op">:</span><span class="dv">30</span>){</span>
-<span id="cb49-3"><a href="tema-2-distribuciones-muestrales.html#cb49-3"></a>  <span class="kw">curve</span>(<span class="kw">dt</span>(x,v),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">col=</span>v,<span class="dt">add=</span>T)</span>
-<span id="cb49-4"><a href="tema-2-distribuciones-muestrales.html#cb49-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="tema-2-distribuciones-muestrales.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dt</span>(x,<span class="dv">2</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>))</span>
+<span id="cb49-2"><a href="tema-2-distribuciones-muestrales.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(v <span class="cf">in</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">30</span>){</span>
+<span id="cb49-3"><a href="tema-2-distribuciones-muestrales.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">curve</span>(<span class="fu">dt</span>(x,v),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="at">col=</span>v,<span class="at">add=</span>T)</span>
+<span id="cb49-4"><a href="tema-2-distribuciones-muestrales.html#cb49-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>En R, para obtener <span class="math inline">\(P(X&lt;t)=F(t)\)</span> con <span class="math inline">\(X\sim t(v)\)</span>.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="tema-2-distribuciones-muestrales.html#cb50-1"></a><span class="co"># P(X&lt;2)=F(2), X ~ t(v=10)</span></span>
-<span id="cb50-2"><a href="tema-2-distribuciones-muestrales.html#cb50-2"></a><span class="kw">pt</span>(<span class="dv">2</span>,<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="tema-2-distribuciones-muestrales.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(X&lt;2)=F(2), X ~ t(v=10)</span></span>
+<span id="cb50-2"><a href="tema-2-distribuciones-muestrales.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(<span class="dv">2</span>,<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 0.963306</code></pre>
 <p>Ejercicio, Sea <span class="math inline">\(X\sim t(v=14)\)</span>. Calcular:</p>
 <ul>
@@ -864,7 +886,7 @@ Apariencia de la <span class="math inline">\(t\)</span></p>
 <li><span class="math inline">\(P(-1.96&lt;X&lt;1.96)=F(1,96)-F(-1.96)=0.9649-0.0351=0.9298\)</span></li>
 </ul>
 </div>
-<div id="distribución-fisher" class="section level2">
+<div id="distribución-fisher" class="section level2" number="2.11">
 <h2><span class="header-section-number">2.11</span> Distribución Fisher</h2>
 <blockquote>
 <p>Teorema</p>
@@ -875,7 +897,7 @@ Así, decimos que <span class="math inline">\(X\)</span> se distribuye como una 
 <p><span class="math display">\[
 f(x)=\frac{\left(\frac{v_1}{v_2} \right)^{v_1/2} x^{v_1/2-1}\Gamma{(\frac{v_1+v_2}{2})} }{\Gamma{(\frac{v_1}{2})} \Gamma{(\frac{v_2}{2})}\left(1+\frac{v_1}{v_2}x \right)^{(v_1+v_2)/2}}, \quad x&gt;0
 \]</span></p>
-<div id="para-las-varianzas-muestrales" class="section level3">
+<div id="para-las-varianzas-muestrales" class="section level3" number="2.11.1">
 <h3><span class="header-section-number">2.11.1</span> Para las varianzas muestrales</h3>
 <p>Suponga que las mnuetsras aleatorias de tamaños <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> se selecciona de 2 poblaciones normales con varianzas <span class="math inline">\(\sigma^2_1\)</span> y <span class="math inline">\(\sigma^2_2\)</span> respectivamente. Sabemos:</p>
 <p><span class="math display">\[\chi^2_1=\frac{(n_1-1)\hat{S}_1}{\sigma^2_1}\sim \chi^2(v_1=n_1-1)\]</span></p>
@@ -883,15 +905,15 @@ f(x)=\frac{\left(\frac{v_1}{v_2} \right)^{v_1/2} x^{v_1/2-1}\Gamma{(\frac{v_1+v_
 &gt; Teorema:</p>
 <p>Si <span class="math inline">\(\hat{S_1}\)</span> y <span class="math inline">\(\hat{S_2}\)</span> son los estimadores de la varianza de muestras aleatorias independientes entre ellas de tamaño <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span>, tomadas de poblaciones normales con varianzas <span class="math inline">\(\sigma^2_1\)</span> y <span class="math inline">\(\sigma^2_2\)</span> entonces:</p>
 <p><span class="math display">\[\frac{\hat{S_1}/\sigma^2_1}{\hat{S_2}/\sigma^2_2}=\frac{\hat{S}_1*\sigma^2_2}{\hat{S}_2*\sigma^2_1}\sim F(v_1=n_1-1,v_2=n_2-1)\]</span></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tema-2-distribuciones-muestrales.html#cb52-1"></a><span class="kw">curve</span>(<span class="kw">df</span>(x,<span class="dv">10</span>,<span class="dv">10</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tema-2-distribuciones-muestrales.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">10</span>,<span class="dv">10</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>En R</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tema-2-distribuciones-muestrales.html#cb53-1"></a><span class="co">#P(X&lt;t)=F(t), donde  X ~ F(v1,v2). F(10,10), P(X&lt;1)=F(1)</span></span>
-<span id="cb53-2"><a href="tema-2-distribuciones-muestrales.html#cb53-2"></a><span class="kw">pf</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tema-2-distribuciones-muestrales.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#P(X&lt;t)=F(t), donde  X ~ F(v1,v2). F(10,10), P(X&lt;1)=F(1)</span></span>
+<span id="cb53-2"><a href="tema-2-distribuciones-muestrales.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5</code></pre>
 </div>
 </div>
-<div id="ejercicios" class="section level2">
+<div id="ejercicios" class="section level2" number="2.12">
 <h2><span class="header-section-number">2.12</span> Ejercicios</h2>
 <ol style="list-style-type: decimal">
 <li>La capacidad máxima de un ascensor es de 500 kilos. Si la distribución <span class="math inline">\(X\)</span> de los pesos de los usuarios es</li>
@@ -960,26 +982,26 @@ Solución, como información se tienen 2 muestras, <span class="math inline">\(n
 <li>Un fabricante de cierta marca de barras de cereal con bajo contenido de grasa afirma que el contenido promedio de grasa saturada en éstas es de 0.5 gramos. En una muestra aleatoria de 8 barras de cereal de esta marca
 se encontró que su contenido de grasa saturada era de 0.6, 0.7, 0.7, 0.3, 0.4, 0.5, 0.4 y 0.2. ¿Estaría de acuerdo con tal afirmación? Suponga una distribución normal. (<span class="math inline">\(t\)</span>)</li>
 </ol>
-<div id="ejercicios-del-examen" class="section level3">
+<div id="ejercicios-del-examen" class="section level3" number="2.12.1">
 <h3><span class="header-section-number">2.12.1</span> Ejercicios del examen</h3>
 <ol start="6" style="list-style-type: decimal">
 <li>CI=1</li>
 </ol>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="tema-2-distribuciones-muestrales.html#cb55-1"></a><span class="co"># P(3&lt;x&lt;19)=F(19)-F(3) v=16</span></span>
-<span id="cb55-2"><a href="tema-2-distribuciones-muestrales.html#cb55-2"></a><span class="kw">pchisq</span>(<span class="dv">19</span>,<span class="dv">16</span>)<span class="op">-</span><span class="kw">pchisq</span>(<span class="dv">3</span>,<span class="dv">16</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="tema-2-distribuciones-muestrales.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(3&lt;x&lt;19)=F(19)-F(3) v=16</span></span>
+<span id="cb55-2"><a href="tema-2-distribuciones-muestrales.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="dv">19</span>,<span class="dv">16</span>)<span class="sc">-</span><span class="fu">pchisq</span>(<span class="dv">3</span>,<span class="dv">16</span>)</span></code></pre></div>
 <pre><code>## [1] 0.7311673</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>CI=1</li>
 </ol>
 <p><span class="math display">\[P(X&gt;0.68)=1-P(X&lt;0.68)=1-F(0.68)\]</span></p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="tema-2-distribuciones-muestrales.html#cb57-1"></a><span class="co">#v=22</span></span>
-<span id="cb57-2"><a href="tema-2-distribuciones-muestrales.html#cb57-2"></a><span class="dv">1</span><span class="op">-</span><span class="kw">pt</span>(<span class="fl">0.68</span>,<span class="dv">22</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="tema-2-distribuciones-muestrales.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co">#v=22</span></span>
+<span id="cb57-2"><a href="tema-2-distribuciones-muestrales.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(<span class="fl">0.68</span>,<span class="dv">22</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2517989</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li><span class="math inline">\(X\sim F(v_1,v_2)\)</span></li>
 </ol>
 <p><span class="math display">\[P(X=1.36)=0\]</span></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="tema-2-distribuciones-muestrales.html#cb59-1"></a><span class="kw">curve</span>(<span class="kw">dnorm</span>(x),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="tema-2-distribuciones-muestrales.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 
 </div>

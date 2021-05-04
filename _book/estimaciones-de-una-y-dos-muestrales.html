@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-04-12" />
+<meta name="date" content="2021-05-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="tema-2-distribuciones-muestrales.html"/>
 
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,22 +51,21 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -130,14 +130,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#bases-de-datos"><i class="fa fa-check"></i>Bases de datos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimiento"><i class="fa fa-check"></i>Agradecimiento</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a><ul>
+<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes</a></li>
 <li class="chapter" data-level="1.2" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada</a></li>
 <li class="chapter" data-level="1.3" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)</a></li>
@@ -147,7 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
 <li class="chapter" data-level="1.8" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a><ul>
+<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
 <li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
 <li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral</a></li>
@@ -158,19 +161,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la varianza</a></li>
 <li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.9</b> Distribución <span class="math inline">\(\chi^2\)</span></a></li>
 <li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.10</b> Distribución t-student</a></li>
-<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a><ul>
+<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a>
+<ul>
 <li class="chapter" data-level="2.11.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.11.1</b> Para las varianzas muestrales</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a><ul>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios-del-examen"><i class="fa fa-check"></i><b>2.12.1</b> Ejercicios del examen</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a><ul>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
-<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a><ul>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
 <li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
 <li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
+<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao</a></li>
+<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud</a></li>
+<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -190,9 +204,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estimaciones-de-una-y-dos-muestrales" class="section level1">
+<div id="estimaciones-de-una-y-dos-muestrales" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Estimaciones de una y dos muestrales</h1>
-<div id="inferencia-estadística" class="section level2">
+<div id="inferencia-estadística" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Inferencia estadística</h2>
 <p>El proceso por el cual, mediante una muestra estadísticamente seleccionada se busca describir a la población/universo de la cual esta proviene. Podemos clasificar a la inferencia estadística en:</p>
 <ul>
@@ -220,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Tarea: Indagar a que se refiere la inferencia bayesiana.</p>
 </div>
-<div id="estimadores-puntuales" class="section level2">
+<div id="estimadores-puntuales" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Estimadores puntuales</h2>
 <p>Recordemos que tenemos un universo <span class="math inline">\(U\)</span> de tamaño <span class="math inline">\(N\)</span>.</p>
 <p><span class="math display">\[U=\{u_1, u_2,\ldots,u_N\}\]</span>
@@ -234,11 +248,11 @@ Un estimador se construye a partir de la definición de una <em>estadística</em
 <p>Nota:</p>
 </blockquote>
 <p>Para un parámetro <span class="math inline">\(\theta\)</span>, pueden existir muchos estimadores candidatos: <span class="math inline">\(\hat{\theta}_1,\hat{\theta}_2, \hat{\theta}_3,...\)</span>, la pregunta es ¿Cuál es mejor?. Existen al menos dos criterios:</p>
-<div id="estimador-insesgado" class="section level3">
+<div id="estimador-insesgado" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Estimador insesgado</h3>
 <p><span class="math display">\[E[\hat{\theta}]=\theta\]</span></p>
 </div>
-<div id="estimador-eficiente" class="section level3">
+<div id="estimador-eficiente" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Estimador eficiente</h3>
 <p>Supongamos que tenemos dos estimadores para <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\hat{\theta}_1\)</span>, <span class="math inline">\(\hat{\theta}_2\)</span>, el estimador más eficiente entre los dos será quien tenga el valor más pequeño en su varianza.</p>
 <p><span class="math inline">\(min(V(\hat{\theta_1}),V(\hat{\theta_2})) \rightarrow \hat{\theta}\)</span>$</p>
@@ -251,32 +265,32 @@ se define una muestra de <span class="math inline">\(n=3\)</span> y se busca est
 </ul>
 <p>Suponga un muestreo sin reposición.</p>
 <p>Solución.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb60-1"></a>x&lt;-<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>)</span>
-<span id="cb60-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb60-2"></a><span class="kw">choose</span>(<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb60-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>)</span>
+<span id="cb60-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-1"></a>s&lt;-<span class="kw">combn</span>(x,<span class="dv">3</span>)</span>
-<span id="cb62-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-2"></a><span class="co">#distribución muestral de la media muestral</span></span>
-<span id="cb62-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-3"></a>dmedia&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,mean)</span>
-<span id="cb62-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-4"></a><span class="co">#distribución muestral de la mediana muestral</span></span>
-<span id="cb62-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-5"></a>dmediana&lt;-<span class="kw">apply</span>(s,<span class="dv">2</span>,median)</span>
-<span id="cb62-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-6"></a><span class="co"># Son estimadores insesgados</span></span>
-<span id="cb62-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-7"></a><span class="co">#media</span></span>
-<span id="cb62-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-8"></a><span class="kw">sum</span>(dmedia<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-1" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(x,<span class="dv">3</span>)</span>
+<span id="cb62-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la media muestral</span></span>
+<span id="cb62-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-3" aria-hidden="true" tabindex="-1"></a>dmedia<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,mean)</span>
+<span id="cb62-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la mediana muestral</span></span>
+<span id="cb62-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-5" aria-hidden="true" tabindex="-1"></a>dmediana<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,median)</span>
+<span id="cb62-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Son estimadores insesgados</span></span>
+<span id="cb62-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="co">#media</span></span>
+<span id="cb62-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dmedia<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb64-1"></a><span class="kw">mean</span>(dmedia)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dmedia)</span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb66-1"></a><span class="co">#media</span></span>
-<span id="cb66-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb66-2"></a><span class="kw">sum</span>(dmediana<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#media</span></span>
+<span id="cb66-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dmediana<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
 <pre><code>## [1] 18.5</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb68-1"></a><span class="kw">mean</span>(dmediana)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dmediana)</span></code></pre></div>
 <pre><code>## [1] 18.5</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb70-1"></a><span class="co">#parámetro media poblacional</span></span>
-<span id="cb70-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb70-2"></a><span class="kw">mean</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co">#parámetro media poblacional</span></span>
+<span id="cb70-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb72-1"></a><span class="co"># Cuál estimador es más eficiente</span></span>
-<span id="cb72-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb72-2"></a><span class="kw">sum</span>((dmedia<span class="op">-</span><span class="kw">mean</span>(dmedia))<span class="op">^</span><span class="dv">2</span><span class="op">*</span><span class="dv">1</span><span class="op">/</span><span class="dv">10</span>) <span class="co"># media muestral</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuál estimador es más eficiente</span></span>
+<span id="cb72-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((dmedia<span class="sc">-</span><span class="fu">mean</span>(dmedia))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>) <span class="co"># media muestral</span></span></code></pre></div>
 <pre><code>## [1] 10.66667</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb74-1"></a><span class="kw">sum</span>((dmediana<span class="op">-</span><span class="kw">mean</span>(dmediana))<span class="op">^</span><span class="dv">2</span><span class="op">*</span><span class="dv">1</span><span class="op">/</span><span class="dv">10</span>) <span class="co"># mediana muestral</span></span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((dmediana<span class="sc">-</span><span class="fu">mean</span>(dmediana))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>) <span class="co"># mediana muestral</span></span></code></pre></div>
 <pre><code>## [1] 35.25</code></pre>
 <p>Para este ejercicio, la media muestral es insesgado y más eficiente que la mediana muestral.</p>
 <blockquote>
@@ -325,7 +339,7 @@ Notar</p>
 <p><span class="math inline">\(\sigma^2=E[X^2]-E[X]^2=E[X^2]-\mu^2\)</span> para un <span class="math inline">\(X_i\)</span>, <span class="math inline">\(\sigma^2=E[X_i^2]-E[X_i]^2=E[X_i^2]-\mu^2\)</span>, entonces, <span class="math inline">\(E[X_i]=\sigma^2+\mu^2\)</span>. Por otro lado <span class="math inline">\(E[\bar{X}^2]=\frac{\sigma^2}{n}+\mu^2\)</span>, Así:</p>
 <p><span class="math display">\[\alpha=\frac{1}{n-1}\left[\sum_s (\sigma^2+\mu) -n \left(\frac{\sigma^2}{n}+\mu \right) \right]=\frac{1}{n-1}\left[ n \sigma^2+n\mu -\sigma^2-n\mu  \right]=\frac{\sigma^2(n-1)}{n-1}=\sigma^2\]</span></p>
 </div>
-<div id="error-cuadrático-medio-ecm" class="section level3">
+<div id="error-cuadrático-medio-ecm" class="section level3" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Error cuadrático medio (ECM)</h3>
 <p>Este se define para un estimador como:</p>
 <p><span class="math display">\[ECM(\hat{\theta})=E\left[(\hat{\theta}-\theta)^2\right]\]</span></p>
@@ -333,22 +347,222 @@ Notar</p>
 <p><span class="math display">\[ECM(\hat{\theta})=E\left[\left[(\hat{\theta}-E[\hat{\theta}])-(\theta-E[\hat\theta]) \right]^2\right]=E\left[(\hat{\theta}-E[\hat{\theta}])^2-2(\hat{\theta}-E[\hat{\theta}])(\theta-E[\hat\theta])+ (\theta-E[\hat\theta])^2 \right]=\]</span></p>
 <p><span class="math display">\[=E[(\hat{\theta}-E[\hat{\theta}])^2]-2(\theta-E[\hat\theta])E\left[\hat{\theta}-E[\hat{\theta}]\right]+E[(\theta-E[\hat\theta])^2]=V(\hat\theta)=V(\hat{\theta})+E[(\theta-E[\hat\theta])^2]=\]</span></p>
 <p><span class="math display">\[=V(\hat{\theta})+sesgo(\hat\theta)^2\]</span></p>
+</div>
+<div id="cota-de-cramer-rao" class="section level3" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Cota de Cramer Rao</h3>
+<p>Es posible obtener una cota inferior de la varianza de todos los estimadores (<span class="math inline">\(\hat{\theta}_1, \hat{\theta}_2,\ldots\)</span>) insesgados de <span class="math inline">\(\theta\)</span>. Sea <span class="math inline">\(\hat{\theta}\)</span> un estimador insesgado del parámetro <span class="math inline">\(\theta\)</span>, basado en una muestra aleatorio de <span class="math inline">\(n\)</span> observaciones, y considérese que <span class="math inline">\(f(x,\theta)\)</span> denota la función de distribución de probabilidades de una variable aleatoria <span class="math inline">\(X\)</span>. Entonces una cota inferior en la varianza de <span class="math inline">\(\hat{\theta}\)</span> es:</p>
+<p><span class="math display">\[V(\hat{\theta})\geq\frac{1}{nE\left\{ \left[\frac{d}{d\theta }ln f(X,\theta) \right]^2 \right\}}\]</span></p>
+<p>Esta desigualdad se denomina <em>cota de Cramer Rao</em>. Si un estimador insesgado <span class="math inline">\(\hat{\theta}\)</span> satisface la desigualdad, se tratará del estimador insesgado de varianza mínima de <span class="math inline">\(\theta\)</span>.</p>
+<p>Ejemplo, Demostrar que la media muestra <span class="math inline">\(\bar{X}\)</span> es el estimador insesgado de varianza mínima de la media de una distribución normal con varianza conocida.</p>
+<p>Sea <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>, sabemos <span class="math inline">\(E[\bar{X}]=\mu\)</span></p>
+<p><span class="math display">\[f(X,\mu)=\frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{1}{2}\left(\frac{X-\mu}{\sigma}\right)^2}\]</span>
+<span class="math display">\[ln f(X,\mu)=ln\left( \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{1}{2}\left(\frac{X-\mu}{\sigma}\right)^2} \right)=-ln\left( \sqrt{2\pi} \sigma \right) -\frac{1}{2}\left(\frac{X-\mu}{\sigma}\right)^2\]</span></p>
+<p><span class="math display">\[E\left\{\left[ \frac{d}{d\mu} ln f(X,\mu)\right]^2 \right\}=E\left\{ \left[ \frac{(X-\mu)}{\sigma^2} \right]^2\right\} =E\left[\frac{(X-\mu)^2}{\sigma^4} \right]=\frac{E[(X-\mu)^2]}{\sigma^4}=\]</span>
+<span class="math display">\[=\frac{\sigma^2}{\sigma^4}=\frac{1}{\sigma^2}\]</span>
+Finalmente, para la cota de Cramer-Rao</p>
+<p><span class="math display">\[V(\bar{X})\geq \frac{1}{\frac{n}{\sigma^2}}=\frac{\sigma^2}{n}=V(\bar{X})\]</span></p>
+</div>
+<div id="método-de-maxima-verosimilitud" class="section level3" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Método de Maxima verosimilitud</h3>
+<p>Suponga que <span class="math inline">\(X\)</span> es una va, con distribución <span class="math inline">\(f(X,\theta)\)</span>, donde <span class="math inline">\(\theta\)</span> es un parámetro desconocido. Sean <span class="math inline">\(X_1, X_2,\ldots, X_n\)</span> va. iid. como <span class="math inline">\(X\)</span>, la muestra de tamaño <span class="math inline">\(n\)</span>. La función de probabilidad de las <span class="math inline">\(n\)</span> va. se escribe como:</p>
+<p><span class="math display">\[f(X_1,X_2, \ldots,X_n,\theta)=f(X_1,\theta)*f(X_2,\theta)*\ldots*f(X_n,\theta)=L(\theta)\]</span>
+El estimador de máxima verosimilitud de <span class="math inline">\(\theta\)</span> es el valor que maximiza la función de probabilidad <span class="math inline">\(L(\theta)\)</span>.</p>
+<p>Pasos para obtener el estimador de máxima verosimilitud para un parámetro <span class="math inline">\(\theta\)</span></p>
+<ol style="list-style-type: decimal">
+<li>Obtener <span class="math inline">\(L(\theta)\)</span></li>
+<li>Calcular <span class="math inline">\(ln [L(\theta)]\)</span></li>
+<li>Resolver la ecuación:</li>
+</ol>
+<p><span class="math display">\[\frac{d}{d\theta} ln [L(\theta)]=0\]</span></p>
+<p>En el caso de que tengamos más de un parámetro, los pasos son:</p>
+<ol style="list-style-type: decimal">
+<li>Obtener <span class="math inline">\(L(\theta_1,\theta_2,\ldots)=f(X_1,\theta_1,\theta_2,\ldots)*\ldots*f(X_n,\theta_1,\theta_2,\ldots)\)</span></li>
+<li>Calcular <span class="math inline">\(ln [L(\theta_1,\theta_2,\ldots)]\)</span></li>
+<li>Resolver el sistema de ecuaciones:</li>
+</ol>
+<p><span class="math display">\[\frac{\partial }{\partial \theta_1} ln [L(\theta_1,\theta_2,\ldots)]=0\]</span>
+<span class="math display">\[\frac{\partial }{\partial \theta_2} ln [L(\theta_1,\theta_2,\ldots)]=0\]</span>
+<span class="math display">\[\frac{\partial }{\partial \theta_p} ln [L(\theta_1,\theta_2,\ldots)]=0\]</span></p>
+<p>Ejemplo,</p>
+<p>Sea <span class="math inline">\(X\sim Bernoulli(p)\)</span>, la función de probabilidad es:</p>
+<p><span class="math display">\[P(X=x)=\pi(x)=p^x (1-p)^{1-x} \quad ; x=\{0,1\}\]</span></p>
+<p>Si <span class="math inline">\(p\)</span> es el parámetro de interés que se busca estimar, ¿qué forma tendrá el estimador de máxima verosimilitud?</p>
+<p>Solución,</p>
+<p>Supongamos que se extrae una muestra de tamaño <span class="math inline">\(n\)</span>, así:</p>
+<p><span class="math display">\[L(p)=f(X_1,p)*f(X_2,p)*\ldots*f(X_n,p)=p^{x_1} (1-p)^{1-x_1}*p^{x_2} (1-p)^{1-x_2}*\ldots*p^{x_n} (1-p)^{1-x_n}\]</span></p>
+<p><span class="math display">\[L(p)=p^{\sum_{i=1}^n x_i}*(1-p)^{n-\sum_{i=1}^n x_i}\]</span></p>
+<p><span class="math display">\[ln[ L(p)]= \sum_{i=1}^n x_i ln(p)+\left(n-\sum_{i=1}^n x_i \right) ln(1-p) \]</span></p>
+<p><span class="math display">\[\frac{d}{dp}ln[ L(p)]= \frac{\sum_{i=1}^n x_i}{p}-\frac{\left(n-\sum_{i=1}^n x_i\right)}{1-p}=0\]</span></p>
+<p><span class="math display">\[ \frac{\sum_{i=1}^n x_i}{p}-\frac{\left(n-\sum_{i=1}^n x_i\right)}{1-p}=0\]</span></p>
+<p><span class="math display">\[\hat{p}_{mv}=\frac{\sum_{i=1}^n x_i}{n}\]</span></p>
+<p>Ejemplo, Sea <span class="math inline">\(X_1, X_2, \ldots,X_n\)</span>, va iid, tal que <span class="math inline">\(X_i\sim Poisson(\lambda)\)</span>. Encontrar el estimador de <span class="math inline">\(\lambda\)</span> empleando el método de máxima verosimilitud.</p>
+<p>Solución, recordar que si <span class="math inline">\(X\sim Poisson(\lambda)\)</span></p>
+<p><span class="math display">\[\pi(x)=P(X=x)=\frac{e^{-\lambda} \lambda ^x}{x!}; \quad X=\{0,1,2\ldots\}\]</span></p>
+<p><span class="math display">\[L(\lambda)=\pi(X_1,\lambda)*\pi(X_2,\lambda)*\ldots*\pi(X_n,\lambda)\]</span></p>
+<p><span class="math display">\[L(\lambda)=\frac{e^{-\lambda} \lambda ^{x_1}}{x_1!}*\frac{e^{-\lambda} \lambda ^{x_2}}{x_2!}*\ldots*\frac{e^{-\lambda} \lambda ^{x_n}}{x_n!}\]</span></p>
+<p><span class="math display">\[L(\lambda)=\prod_{i=1}^n \frac{e^{-\lambda} \lambda ^{x_i}}{x_i!}=\frac{e^{-n\lambda}\lambda^{\sum_{i=1}^n x_i}}{\prod_{i=1}^n x_i!}\]</span>
+<span class="math display">\[ln [L(\lambda)]=-n\lambda+\sum_{i=1}^n x_i ln \lambda - ln \prod_{i=1}^n x_i!\]</span>
+<span class="math display">\[\frac{d}{d\lambda}ln [L(\lambda)]=-n+\frac{\sum_{i=1}^n x_i}{\lambda}=0\]</span></p>
+<p><span class="math display">\[\hat{\lambda}=\frac{\sum_{i=1}^n x_i}{n}\]</span></p>
+<p>Ejemplo, Sea <span class="math inline">\(X_1, X_2, \ldots,X_n\)</span>, va iid, tal que <span class="math inline">\(X_i\sim exp(\lambda)\)</span>. Encontrar el estimador de <span class="math inline">\(\lambda\)</span> empleando el método de máxima verosimilitud.</p>
+<p>Solución, recordar que si <span class="math inline">\(X\sim exp(\lambda)\)</span> su función de densidad es dada por:</p>
+<p><span class="math display">\[f(x)=\lambda e^{-\lambda x}; \quad x\geq0\]</span></p>
+<p><span class="math display">\[L(\lambda)=\prod_{i=1}^n \lambda e^{-\lambda x_i}=\lambda^n e^{-\lambda \sum_{i=1}^n x_i}\]</span>
+<span class="math display">\[ln [L(\lambda)]=n ln \lambda-\lambda \sum_{i=1}^n x_i\]</span>
+<span class="math display">\[\frac{d}{d\lambda}ln [L(\lambda)]=\frac{n}{\lambda}-\sum_{i=1}^n x_i=0\]</span>
+<span class="math display">\[\hat{\lambda}=\frac{1}{\frac{\sum_{i=1}^n x_i}{n}}=\frac{1}{\bar{X}}\]</span></p>
+<p>Ejemplo, Sea <span class="math inline">\(X_1, X_2, \ldots,X_n\)</span>, va iid, tal que <span class="math inline">\(X_i\sim N(\mu,\sigma^2)\)</span> ambos parámetros desconocidos. Encontrar los estimadores de máxima verosimilitud para <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Solución, recordar si <span class="math inline">\(X\sim N(\mu, \sigma^2)\)</span> su función de densidad es dada por:</p>
+<p><span class="math display">\[f(X)=\frac{1}{\left(2\pi \sigma^2 \right)^{1/2} }e^{-\frac{1}{2}\frac{\left(x-\mu\right)^2}{\sigma^2}}\]</span>
+<span class="math display">\[L(\mu,\sigma^2)=\prod_{i=1}^n \frac{1}{\left(2\pi \sigma^2 \right)^{1/2} }e^{-\frac{1}{2}\frac{\left(x_i-\mu\right)^2}{\sigma^2}}=\frac{1}{\left(2\pi \sigma^2 \right)^{n/2} }e^{-\frac{1}{2 \sigma^2}\sum_{i=1}^n \left(x_i-\mu\right)^2}\]</span>
+<span class="math display">\[ln[L(\mu,\sigma^2)]=-\frac{n}{2}ln (2\pi \sigma^2)-\frac{1}{2 \sigma^2}\sum_{i=1}^n \left(x_i-\mu\right)^2\]</span>
+<span class="math display">\[\frac{\partial}{\partial \mu} ln[L(\mu,\sigma^2)]=\frac{1}{\sigma^2} \sum_{i=1}^n \left(x_i-\mu\right)=0\]</span></p>
+<p><span class="math display">\[\frac{\partial}{\partial \sigma^2} ln[L(\mu,\sigma^2)]=-\frac{n}{2 \sigma^2}+\frac{1}{2 \sigma^4}\sum_{i=1}^n \left(x_i-\mu\right)^2=0\]</span>
+<span class="math display">\[\sum_{i=1}^n x_i - n\mu=0\]</span>
+<span class="math display">\[\hat{\mu}=\frac{\sum_{i=1}^n x_i}{n}=\bar{X}\]</span></p>
+<p><span class="math display">\[\hat{\sigma}^2=\frac{\sum_{i=1}^n \left(x_i-\bar{X}\right)^2}{n}\]</span></p>
+</div>
+<div id="método-de-momentos" class="section level3" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> Método de momentos</h3>
+<p>Este método fue desarrollado por 1894 por Pearson, a diferencia del método de máxima verosimilitud que fue ampliamente utilizado por Fisher a partir 1912.</p>
+<p>Recordar que para una variable aleatoria, los momentos respecto el origen son:</p>
+<ul>
+<li>Primer Momento: <span class="math inline">\(\mu_1=E[X]=\int x f(x) dx\)</span></li>
+<li>Segundo Momento: <span class="math inline">\(\mu_2=E[X^2]=\int x^2 f(x) dx\)</span></li>
+<li>k-ésimo momento: <span class="math inline">\(\mu_k=E[X^k]\)</span></li>
+</ul>
+<p>Sea <span class="math inline">\(X_1, X_2, \ldots ,X_n\)</span> una muestra aleatorio de tamaño <span class="math inline">\(n\)</span> de una va <span class="math inline">\(X\)</span>, definamos los primeros <span class="math inline">\(k\)</span> momentos de la muestra respecto al origen como:</p>
+<ul>
+<li>Primer momento:</li>
+</ul>
+<p><span class="math display">\[m_1=\frac{\sum_{i=1}^n x_i}{n}\]</span></p>
+<ul>
+<li>Segundo momento:</li>
+</ul>
+<p><span class="math display">\[m_2=\frac{\sum_{i=1}^n x^2_i}{n}\]</span></p>
+<ul>
+<li>k-ésimo momento:</li>
+</ul>
+<p><span class="math display">\[m_k=\frac{\sum_{i=1}^n x^k_i}{n}; \quad k=1,2,\ldots \]</span></p>
+<p>Los momentos <span class="math inline">\(\mu_k\)</span> de la población serán funciones de los parámetros desconocidos <span class="math inline">\(\theta\)</span>. Al igualar estos momentos muestrales con los poblaciones vamos a poder construir un sistema de ecuaciones de cuantas incógnitas se defina con la distribución de <span class="math inline">\(X\)</span></p>
+<p>Ejemplo, Sea <span class="math inline">\(X_1, X_2, \ldots,X_n\)</span>, va iid, tal que <span class="math inline">\(X_i\sim exp(\lambda)\)</span>. Encontrar el estimador de <span class="math inline">\(\lambda\)</span> empleando el método de momentos.</p>
+<p>Solución, recordar que si <span class="math inline">\(X\sim exp(\lambda)\)</span> su función de densidad es dada por:</p>
+<p><span class="math display">\[f(x)=\lambda e^{-\lambda x}; \quad x\geq0\]</span>
+<span class="math display">\[E[X]=m_1\]</span>
+<span class="math display">\[E[X]=\int_0^\infty x\lambda e^{-\lambda x}dx=\frac{1}{\lambda}\]</span></p>
+<p>Igualando los momentos:</p>
+<p><span class="math display">\[\frac{1}{\lambda}=\frac{\sum_s x_i}{n}\]</span></p>
+<p><span class="math display">\[\hat{\lambda}= \frac{1}{\frac{\sum_s x_i}{n}}=\frac{1}{\bar{X}}\]</span></p>
+<p>Ejercicio, Sea <span class="math inline">\(X\)</span> una va geométrica con parámetro <span class="math inline">\(p\)</span>, encuentre un estimador de <span class="math inline">\(p\)</span> mediante el método de momentos y el método de máxima verosimilitud. En base a una muestra aleatoria de tamaño <span class="math inline">\(n\)</span></p>
+<p>Recordar que si <span class="math inline">\(X\sim G(p)\)</span>, entonces su distribución de probabilidades es:</p>
+<p><span class="math display">\[\pi(x)=P(X=x)=(1-p)^x p; \quad x=\{0,1,2,\dots\} \]</span></p>
+<p>Recordar que <span class="math inline">\(E[X]=\frac{1-p}{p}\)</span>, por el método de momentos:</p>
+<p><span class="math display">\[\frac{1-p}{p}=\bar{X}\]</span></p>
+<p><span class="math display">\[\hat{p}=\frac{1}{\bar{X}+1}\]</span>
+Por el método de máxima verosimilitud.</p>
+<p><span class="math display">\[L(p)=\prod_{i=1}^n (1-p)^{x_i} p=(1-p)^{\sum_s x_i} p^n\]</span>
+<span class="math display">\[ln [L(p)]=\sum_s x_i ln (1-p)+n ln(p)\]</span></p>
+<p><span class="math display">\[\frac{d}{dp}ln [L(p)]=-\frac{\sum_s x_i}{1-p}+\frac{n}{p}=0\]</span>
+<span class="math display">\[\hat{p}=\frac{1}{\bar{X}+1}\]</span></p>
+<p>Tarea, Sea <span class="math inline">\(X\)</span> una normal con parámetro <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>, encuentre un estimador de <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span> mediante el método de momentos. En base a una muestra aleatoria de tamaño <span class="math inline">\(n\)</span></p>
+<p><span class="math display">\[\mu=\bar{X}\]</span>
+<span class="math display">\[E[X^2]=\frac{\sum_s x_i^2}{n}\]</span></p>
+<p>Recordar que <span class="math inline">\(\sigma^2=E[X^2]-E[X]^2=E[X^2]-\mu^2 \approx E[X^2]-\bar{X}^2\)</span>.</p>
+</div>
+</div>
+<div id="estimación-por-intervalos-de-confianza" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Estimación por intervalos de confianza</h2>
+<p>Para construir un intervalo de confianza del parámetro desconocido <span class="math inline">\(\theta\)</span>, se debe encontrar dos estadísticas <span class="math inline">\(L\)</span> y <span class="math inline">\(U\)</span> tales que:</p>
+<p><span class="math display">\[P(L\leq\theta\leq U)=1-\alpha\]</span>
+El intervalo <span class="math inline">\(L\leq\theta\leq U\)</span> se llama intervalo de confianza del <span class="math inline">\(100*(1-\alpha)\)</span>. A <span class="math inline">\(L\)</span> se lo conoce como límite inferior y <span class="math inline">\(U\)</span> como límite superior.</p>
+<p>La interpretación del intervalo de confianza es que si se coleccionan muchas muestras aleatorias y se calcula un intervalo de confianza del <span class="math inline">\(100*(1-\alpha)\)</span> por ciento en <span class="math inline">\(\theta\)</span> de cada muestra, entonces <span class="math inline">\(100*(1-\alpha)\)</span> por ciento de estos intervalos contendrán el verdadero valor de <span class="math inline">\(\theta\)</span>.</p>
+<div id="intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida." class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Intervalo de confianza para la media, asumiendo varianza conocida.</h3>
+<p>Sea <span class="math inline">\(X\)</span> una va con media desconocida <span class="math inline">\(\mu\)</span> y varianza conocida <span class="math inline">\(\sigma^2\)</span>. Suponga que se toma una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>. Puede obtenerse un intervalo de confianza del <span class="math inline">\(100*(1-\alpha)\)</span> por ciento en <span class="math inline">\(\mu\)</span> considerando la distribución de muestreo de <span class="math inline">\(X\)</span> de la media muestral <span class="math inline">\(\bar{X}\)</span>. Por el teorema del límite central sabemos que <span class="math inline">\(\bar{X}\sim N(\mu,\frac{\sigma^2}{n})\)</span> bajo ciertas condiciones. Así:</p>
+<p><span class="math display">\[Z=\frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\]</span>
+Teniendo a <span class="math inline">\(Z\sim N(0,1)\)</span>, para armar el intervalo de confianza basta con trabajar sobre:</p>
+<p><span class="math display">\[P(L\leq Z\leq U)=1-\alpha\]</span>
+Para un intervalo de confianza <span class="math inline">\(L \leq \theta \le U\)</span> se debe asegurar que la precisión de los lados sea la misma, <span class="math inline">\(\theta-L=U-\theta\)</span>.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fl">3.5</span>),<span class="at">xlab=</span><span class="st">&quot;z&quot;</span>)</span>
+<span id="cb76-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span>
+<span id="cb76-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb76-3" aria-hidden="true" tabindex="-1"></a>sx<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">seq</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">qnorm</span>(<span class="fl">0.025</span>),<span class="fl">0.01</span>),<span class="fu">qnorm</span>(<span class="fl">0.025</span>))</span>
+<span id="cb76-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb76-4" aria-hidden="true" tabindex="-1"></a>sy<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">qnorm</span>(<span class="fl">0.025</span>),<span class="fl">0.01</span>)),<span class="dv">0</span>)</span>
+<span id="cb76-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(sx,sy,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb76-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>sx,sy,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] -1.959964</code></pre>
+<p>Si <span class="math inline">\(\alpha=0.05\)</span></p>
+<p><span class="math display">\[P(L\leq Z\leq U)=0.95\]</span></p>
+<p><span class="math display">\[P(-Z_{\alpha/2}\leq Z\leq Z_{\alpha/2})=1-\alpha\]</span></p>
+<p><span class="math display">\[P\left(-Z_{\alpha/2}\leq \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \leq Z_{\alpha/2}\right)=1-\alpha\]</span></p>
+<p><span class="math display">\[P\left(\bar{X}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\leq\mu \leq \bar{X}+Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\right)=1-\alpha\]</span>
+Así de esta manera tenemos identificados a <span class="math inline">\(L\)</span> y <span class="math inline">\(U\)</span> para <span class="math inline">\(\mu\)</span> con varianza conocida.</p>
+<p><span class="math display">\[L=\bar{X}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</span>
+<span class="math display">\[U=\bar{X}+Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</span></p>
+<p><span class="math inline">\(\alpha\)</span> es conocida como el nivel de significancia y <span class="math inline">\(1-\alpha\)</span> como la confiabilidad. Los valores más usuales de <span class="math inline">\(\alpha\)</span> son 0.01, 0.05 y 0.1, para estudios sobre ciencias de la salud el valor recomendado es de 0.01 o menor, para las ciencias sociales y económicas el valor recomendado es 0.05. Para la distribución normal los valores de <span class="math inline">\(Z_{\alpha/2}\)</span> son:</p>
+<ul>
+<li><span class="math inline">\(\alpha=0.1\)</span>, <span class="math inline">\(Z_{\alpha/2}=Z_{0.05}=1.64\)</span> (90% confiabilidad)</li>
+<li><span class="math inline">\(\alpha=0.05\)</span>, <span class="math inline">\(Z_{\alpha/2}=Z_{0.025}=1.96\)</span> (95% confiabilidad)</li>
+<li><span class="math inline">\(\alpha=0.01\)</span>, <span class="math inline">\(Z_{\alpha/2}=Z_{0.005}=2.58\)</span> (99% confiabilidad)</li>
+</ul>
+<p>Ejercicio, Se sabe que la vida en horas de una bombilla eléctrica de 75 watts se distribuye aproximadamente normal, con <span class="math inline">\(\sigma=25\)</span> horas. Una muestra aleatoria de 20 bombillas tiene una vida media de <span class="math inline">\(\bar{X}=1014\)</span> horas. Encontrarlos intervalos de confianza para 90, 95 y 99 % de confiabilidad</p>
+<p>Solución, como información <span class="math inline">\(n=20\)</span>, para elaborar los intervalos:</p>
+<p><span class="math display">\[\bar{X}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\leq\mu \leq \bar{X}+Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</span>
+Al 90%</p>
+<p><span class="math display">\[1014-1.64 \frac{25}{\sqrt{20}}\leq\mu \leq 1014+1.64 \frac{25}{\sqrt{20}}\]</span></p>
+<p><span class="math display">\[1004.832 \leq \mu \leq 1023.168\]</span>
+Al 95%</p>
+<p><span class="math display">\[1014-1.96 \frac{25}{\sqrt{20}}\leq\mu \leq 1014+1.96 \frac{25}{\sqrt{20}}\]</span></p>
+<p><span class="math display">\[1003.043 \leq \mu \leq 1024.957\]</span>
+Al 99%</p>
+<p><span class="math display">\[1014-2.58 \frac{25}{\sqrt{20}}\leq\mu \leq 1014+2.58 \frac{25}{\sqrt{20}}\]</span></p>
+<p><span class="math display">\[999.5774 \leq \mu \leq 1028.423\]</span></p>
+<div id="tamaño-de-muestra" class="section level4" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Tamaño de muestra</h4>
+<p>Definamos al margen de error absoluto como:</p>
+<p><span class="math display">\[\epsilon=Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</span>
+Notar que es posible despejar <span class="math inline">\(n\)</span> y esto permitirá tener una formula para definir un tamaño de muestra condicionado a: el margen de error (<span class="math inline">\(\epsilon\)</span>), desviación de los datos (<span class="math inline">\(\sigma\)</span>) y el nivel de confiabilidad (<span class="math inline">\(Z_{\alpha/2}\)</span>)</p>
+<p><span class="math display">\[n=\frac{Z_{\alpha/2}^2*\sigma^2}{\epsilon^2}=\left(\frac{Z_{\alpha/2}*\sigma}{\epsilon} \right)^2\]</span>
+Nota: Esta formula se puede utilizar en la medida que la muestra que se seleccione sea aleatoria simple, se refiere a la selección de unidades simples.</p>
+<p>Ejemplo, se busca conocer el tiempo promedio en horas/día que pasan los estudiantes de informática de la UMSA en la computadora, para ello se planea realizar una encuesta aleatoria, que logre un 95% de confiabilidad y tenga un margen de error de 0.8 horas. Definir el tamaño de muestra necesario.</p>
+<p>Solución, como información se tiene: <span class="math inline">\(\epsilon=0.8\)</span>, <span class="math inline">\(Z_{\alpha/2}=1.96\)</span>, para el valor de <span class="math inline">\(\sigma\)</span> para el calculo del tamaño de muestra se realizó una piloto en la materia de estadística II a 10 estudiantes y el resultado fue <span class="math inline">\(\sigma=3.335\)</span>. Así:</p>
+<p><span class="math display">\[n=\left(\frac{1.96*3.335}{0.8} \right)^2=66.8\approx 67\]</span>
+### Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza</p>
+<p>Tenemos dos va independientes, <span class="math inline">\(X_1\)</span> con media <span class="math inline">\(\mu_1\)</span> desconocida y varianza <span class="math inline">\(\sigma^2_1\)</span> conocida y <span class="math inline">\(X_2\)</span> con media <span class="math inline">\(\mu_2\)</span> desconocida y varianza <span class="math inline">\(\sigma^2_2\)</span> conocida. El objetivo es encontrar un intervalo para <span class="math inline">\(\mu_1-\mu2\)</span>. Sea dos muestras aleatorias recopíladas para ambas va, de tal forma que <span class="math inline">\(n_1\)</span> representa el tamaño de muestra para <span class="math inline">\(X_1\)</span> y <span class="math inline">\(n_2\)</span> para <span class="math inline">\(X_2\)</span>. Recordar por el teorema del limite central, esta diferencia de medias puede ser estimada por sus medias muestrales y además se aproxima a una normal, tal que:</p>
+<p><span class="math display">\[\bar{X}_1-\bar{X}_2 \sim N\left(\mu_{\bar{X}_1-\bar{X}_2}=\mu_1-\mu_2,\sigma^2_{\bar{X}_1-\bar{X}_2}=\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}\right)\]</span>
+Ahora,</p>
+<p><span class="math display">\[Z=\frac{\bar{X}_1-\bar{X}_2-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}}\]</span>
+Dado que <span class="math inline">\(Z\sim N(0,1)\)</span>, ahora lo que queda es trabajar sobre:</p>
+<p><span class="math display">\[P(-Z_{\alpha/2} \leq Z \leq Z_{\alpha/2})=1-\alpha\]</span>
+Así, el limite inferior y superior esta dado por:</p>
+<p><span class="math display">\[L=\bar{X}_1-\bar{X}_2-Z_{\alpha/2}\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}\]</span>
+<span class="math display">\[U=\bar{X}_1-\bar{X}_2+Z_{\alpha/2}\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}\]</span></p>
+<p>Notar que en general, dado un estimador <span class="math inline">\(\hat{\theta}\)</span> para el parámetro <span class="math inline">\(\theta\)</span>, su usamos el teorema del limite central su intervalo de confianza estará dado por:</p>
+<p><span class="math display">\[IC(\theta): \quad \hat{\theta} \pm Z_{\alpha/2} \sqrt{V(\hat{\theta})} \]</span></p>
+<p>Ejercicio: Se lleva a cabo pruebas de resistencia a la tensión sobre diferentes clases de largueros de aluminio utilizados en la fabricación de alas de aeroplanos comerciales. De la experiencia pasada con el proceso de fabricación de largueros y del procedimiento de prueba, se supone que las desviaciones estándar de las resistencias a la tensión son conocidas, Los datos obtenidos son:</p>
+<ul>
+<li>Clase de larguero 1: <span class="math inline">\(n_1=18\)</span>, <span class="math inline">\(\bar{X}_1=85.9\)</span>, <span class="math inline">\(\sigma_1=1\)</span></li>
+<li>Clase de larguero 2: <span class="math inline">\(n_2=16\)</span>, <span class="math inline">\(\bar{X}_2=73.3\)</span>, <span class="math inline">\(\sigma_2=1.5\)</span></li>
+</ul>
+<p>Si <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> son las verdaderas resistencias a la tensión de ambas clases de largueros. Encuentre intervalos de confianza al 90% y 95% de confiabilidad para la diferencia de estas medias.</p>
 
-<div id="refs" class="references">
-<div>
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-rmarkdown" class="csl-entry">
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
 </div>
-<div>
-<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
-<div>
-<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.</p>
+<div id="ref-R-knitr" class="csl-entry">
+Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.
 </div>
-<div>
-<p>———. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+<div id="ref-R-bookdown" class="csl-entry">
+———. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
 </div>
-<div>
-<p>Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. “How to Read This Book.” <em>Transforming Climate Finance and Green Investment with Blockchains</em>, 1. <a href="https://doi.org/10.1016/b978-0-12-814447-3.00041-0">https://doi.org/10.1016/b978-0-12-814447-3.00041-0</a>.</p>
+<div id="ref-Xie2018" class="csl-entry">
+Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <span>“<span class="nocase">How to Read This Book</span>.”</span> <em>Transforming Climate Finance and Green Investment with Blockchains</em>, 1. <a href="https://doi.org/10.1016/b978-0-12-814447-3.00041-0">https://doi.org/10.1016/b978-0-12-814447-3.00041-0</a>.
+</div>
 </div>
 </div>
 </div>
