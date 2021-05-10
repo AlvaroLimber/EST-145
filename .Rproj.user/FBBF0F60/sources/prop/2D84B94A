@@ -1,8 +1,11 @@
 {
     "tempName": "Untitled1",
-    "cursorPosition": "495,78",
-    "scrollLine": "486",
+    "cursorPosition": "599,0",
+    "scrollLine": "622",
     "chunk_output_type": "console",
     "docOutlineVisible": "0",
-    "Source": "Source"
+    "Source": "Source",
+    "rmdVisualMode": "false",
+    "rmdVisualWrapConfigured": "true",
+    "rmdVisualModeLocation": "31081:20366.66796875"
 }

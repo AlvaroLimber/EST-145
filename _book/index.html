@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-05-03" />
+<meta name="date" content="2021-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -185,6 +185,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30."><i class="fa fa-check"></i><b>3.3.2</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervamuestra-menor-a-30.lo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero"><i class="fa fa-check"></i><b>3.3.3</b> Intervamuestra menor a 30.lo de confianza para la media y la diferencia de medias con varianza desconocida pero</a></li>
+<li class="chapter" data-level="3.3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados"><i class="fa fa-check"></i><b>3.3.4</b> Intervalos de confianza para la diferencia de medias de datos pareados</a></li>
+<li class="chapter" data-level="3.3.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones"><i class="fa fa-check"></i><b>3.3.5</b> Intervalo de confianza para proporciones</a></li>
+<li class="chapter" data-level="3.3.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.3.6</b> Intervalo de confianza para diferencia de proporciones</a></li>
+<li class="chapter" data-level="3.3.7" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza"><i class="fa fa-check"></i><b>3.3.7</b> Intervalo de confianza para la varianza</a></li>
+<li class="chapter" data-level="3.3.8" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas"><i class="fa fa-check"></i><b>3.3.8</b> Intervalo de confianza para el cociente de varianzas</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -208,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Estadística II</h1>
 <h2 class="subtitle"><em>EST-145</em></h2>
 <p class="author"><em>Alvaro Chirino Gutierrez</em></p>
-<p class="date"><em>2021-05-03</em></p>
+<p class="date"><em>2021-05-10</em></p>
 </div>
 <div id="prefacio" class="section level1 unnumbered">
 <h1>Prefacio</h1>
@@ -247,9 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [5] LC_TIME=Spanish_Bolivia.1252    
 ## 
 ## attached base packages:
-## [1] stats     graphics 
-## [3] grDevices utils    
-## [5] datasets  methods  
+## [1] stats     graphics  grDevices
+## [4] utils     datasets  methods  
 ## [7] base     
 ## 
 ## loaded via a namespace (and not attached):
@@ -270,11 +276,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [15] stringr_1.4.0    
 ## [16] xfun_0.22        
 ## [17] yaml_2.2.1       
-## [18] rsconnect_0.8.16 
-## [19] compiler_4.0.5   
-## [20] htmltools_0.5.1.1
-## [21] knitr_1.31       
-## [22] sass_0.3.1</code></pre>
+## [18] compiler_4.0.5   
+## [19] htmltools_0.5.1.1
+## [20] knitr_1.31       
+## [21] sass_0.3.1</code></pre>
 </div>
 <div id="bases-de-datos" class="section level2 unnumbered">
 <h2>Bases de datos</h2>
