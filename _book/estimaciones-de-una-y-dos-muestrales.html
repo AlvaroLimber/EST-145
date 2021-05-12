@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-05-10" />
+<meta name="date" content="2021-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -698,10 +698,11 @@ confiabilidad. Los datos son:</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1534</span>)</span>
 <span id="cb79-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb79-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">40</span>,<span class="dv">19</span>,<span class="dv">29</span>))</span>
 <span id="cb79-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb79-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 20 26 25 24 22 27 21 28 23 26
-## [11] 23 24 27 22 20 27 23 26 22 23
-## [21] 23 28 21 25 20 19 24 22 27 22
-## [31] 21 28 28 24 23 24 21 28 27 24</code></pre>
+<pre><code>##  [1] 20 26 25 24 22 27 21 28
+##  [9] 23 26 23 24 27 22 20 27
+## [17] 23 26 22 23 23 28 21 25
+## [25] 20 19 24 22 27 22 21 28
+## [33] 28 24 23 24 21 28 27 24</code></pre>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span><span class="dv">40</span>)</span></code></pre></div>
 <pre><code>## [1] 23.12872 24.77128</code></pre>
 </div>
@@ -726,9 +727,10 @@ determinada población, los datos son:</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
 <span id="cb83-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb83-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
 <span id="cb83-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb83-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 171 173 180 152 148 166 177 179
-##  [9] 173 167 175 145 152 142 143 155
-## [17] 179 176 173 147</code></pre>
+<pre><code>##  [1] 171 173 180 152 148 166
+##  [7] 177 179 173 167 175 145
+## [13] 152 142 143 155 179 176
+## [19] 173 147</code></pre>
 <p>Encontrar un intervalo de confianza al 95% de confiabilidad para la
 media poblacional.</p>
 <p>Solución,</p>
@@ -757,10 +759,11 @@ para las notas de un examen, los resultados para ambos grupos fueron:</p>
 <span id="cb87-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1457</span>)</span>
 <span id="cb87-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb87-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
 <span id="cb87-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb87-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
-<pre><code>##  [1] 79 82 99 30 20 64 94 97 84 67</code></pre>
+<pre><code>##  [1] 79 82 99 30 20 64 94 97
+##  [9] 84 67</code></pre>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb89-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
-<pre><code>##  [1] 73 62 57 23 59 16 65 39 81 23
-## [11] 74 22 20</code></pre>
+<pre><code>##  [1] 73 62 57 23 59 16 65 39
+##  [9] 81 23 74 22 20</code></pre>
 <p>Armar un intervalo de confianza al 95% de confiabilidad suponiendo que
 las varianzas son iguales y otro para varianzas distintas.</p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb91-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
@@ -822,8 +825,9 @@ respecto su estatura en centímetros, las mediciones son:</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
 <span id="cb99-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb99-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
 <span id="cb99-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb99-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 161 179 171 152 141 168 168 173
-##  [9] 155 169 160 177 164 165 159</code></pre>
+<pre><code>##  [1] 161 179 171 152 141 168
+##  [7] 168 173 155 169 160 177
+## [13] 164 165 159</code></pre>
 <p>Se pide encontrar al estimador de la proporción y su intervalo de
 confianza al 95% de confiabilidad para la proporción de estudiantes con
 estatura de 170 o más.</p>
@@ -831,7 +835,8 @@ estatura de 170 o más.</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb101-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
 <span id="cb101-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb101-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
 <span id="cb101-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb101-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0</code></pre>
+<pre><code>##  [1] 0 1 1 0 0 0 0 1 0 0 0 1 0
+## [14] 0 0</code></pre>
 <div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
 <span id="cb103-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb103-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
 <span id="cb103-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb103-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
@@ -873,12 +878,65 @@ tiene un 70% de apoyo.</p>
 </div>
 <div id="intervalo-de-confianza-para-diferencia-de-proporciones" class="section level3" number="3.3.6">
 <h3><span class="header-section-number">3.3.6</span> Intervalo de confianza para diferencia de proporciones</h3>
+<p>Esta diferencia de proporciones son ampliamente usadas cuando se comparan dos poblaciones, respecto una característica de interés sobre dos poblaciones independientes. Así el intervalo de la diferencia de proporciones esta dado por:</p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}\]</span></p>
+<p>Donde <span class="math inline">\(\hat{P}_1\)</span> y <span class="math inline">\(\hat{P}_2\)</span> son estimaciones de proporción para la población 1 y 2, respecto una misma característica, <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> son los tamaños de muestra es estas poblaciones.</p>
+<p>Ejercicio, en una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb111-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb111-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb111-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb111-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb111-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb111-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb111-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb111-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
+<span id="cb111-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb111-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
+<span id="cb111-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb111-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
+<pre><code>##    estatura mujer
+## 1       161     0
+## 2       179     0
+## 3       171     1
+## 4       152     0
+## 5       141     1
+## 6       168     0
+## 7       168     0
+## 8       173     1
+## 9       155     0
+## 10      169     0
+## 11      160     1
+## 12      177     1
+## 13      164     1
+## 14      165     1
+## 15      159     1
+## 16      172     1
+## 17      158     0
+## 18      169     0
+## 19      172     1
+## 20      166     0</code></pre>
+<p>Se pide calcular el estimador puntual de la diferencia de proporciones y el intervalo de confianza al 90% de confiabilidad.</p>
+<p>Solución, algunos parámetros del ejercicio <span class="math inline">\(n_1=10\)</span> , <span class="math inline">\(n_2=10\)</span>, las proporciones:</p>
+<p><span class="math display">\[\hat{P}_{1,h}=\frac{\#a}{n_1}=\frac{1}{10}=0.1\]</span>
+<span class="math display">\[\hat{P}_{2,m}=\frac{\#a}{n_2}=\frac{5}{10}=0.5\]</span></p>
+<p>El estimador puntual es dado por:</p>
+<p><span class="math display">\[\hat{P}_1-\hat{P}_2=0.1-0.5=-0.4\]</span></p>
+<p>Ahora, el intervalo de confianza</p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=-0.4 \pm 1.64 * \sqrt{\frac{0.1*0.9}{10}+\frac{0.5*0.5}{10}}=-0.4 \pm 0.3024\]</span>
+<span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=[-0.702 \quad -0.098]\]</span></p>
 </div>
 <div id="intervalo-de-confianza-para-la-varianza" class="section level3" number="3.3.7">
 <h3><span class="header-section-number">3.3.7</span> Intervalo de confianza para la varianza</h3>
+<p>Suponga que <span class="math inline">\(X\sim Normal(\mu,\sigma)\)</span> ambos parámetros desconocidos. Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> de <span class="math inline">\(X\)</span>. Recodar que la varianza muestra sigue una distribución de muestreo tipo <span class="math inline">\(\chi^2\)</span>.</p>
+<p><span class="math display">\[\chi^2=\frac{(n-1)\hat{S}^2}{\sigma^2}\]</span>
+Para desarrollar el intervalo usamos esta distribución:</p>
+<p><span class="math display">\[P(\chi^2_{1-\alpha/2,n-1} \leq \chi^2 \leq \chi^2_{\alpha/2,n-1})=1-\alpha\]</span>
+<span class="math display">\[IC_{100*(1-\alpha)}(\sigma^2): \left[\frac{(n-1)\hat{S}^2}{\chi^2_{\alpha/2,n-1}} \quad  \frac{(n-1)\hat{S}^2}{\chi^2_{1-\alpha/2,n-1}}\right]\]</span></p>
 </div>
 <div id="intervalo-de-confianza-para-el-cociente-de-varianzas" class="section level3" number="3.3.8">
 <h3><span class="header-section-number">3.3.8</span> Intervalo de confianza para el cociente de varianzas</h3>
+<p>El objetivo de esta medida es tener un intervalo para el cociente de las varianzas de dos poblaciones, esto puede servir para identificar que población (con que variable) tiene mayor variabilidad. El parámetro es:</p>
+<p><span class="math display">\[\theta=\frac{\sigma^2_1}{\sigma^2_2}\]</span>
+Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> son va normales con media <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> desconocidas y varianzas <span class="math inline">\(\sigma^2_1\)</span>, <span class="math inline">\(\sigma^2_2\)</span> también desconocidas. Sean dos muestras aleatorias de <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> de tamaño <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> y sean <span class="math inline">\(\hat{S}^2_1\)</span> y <span class="math inline">\(\hat{S}^2_2\)</span> las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución <span class="math inline">\(F\)</span>.</p>
+<p><span class="math display">\[F=\frac{\frac{\hat{S}^2_2}{\sigma^2_2}}{\frac{\hat{S}^2_1}{\sigma^2_1}}\]</span></p>
+<p>Se busca:</p>
+<p><span class="math display">\[P(F_{1-\alpha/2,n_1-1,n_2-1} \leq F \leq F_{\alpha/2,n_1-1,n_2-1})=1-\alpha\]</span></p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_1-1,n_2-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_1-1,n_2-1}\right]\]</span></p>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-R-rmarkdown" class="csl-entry">

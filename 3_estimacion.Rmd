@@ -822,7 +822,62 @@ $n$ máxima y (2) mediante un sondeo se verifico que el candidato $Z$
 tiene un 70% de apoyo.
 
 ### Intervalo de confianza para diferencia de proporciones
+Esta diferencia de proporciones son ampliamente usadas cuando se comparan dos poblaciones, respecto una característica de interés sobre dos poblaciones independientes. Así el intervalo de la diferencia de proporciones esta dado por:
+
+$$IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}$$
+
+Donde $\hat{P}_1$ y $\hat{P}_2$ son estimaciones de proporción para la población 1 y 2, respecto una misma característica, $n_1$ y $n_2$ son los tamaños de muestra es estas poblaciones.
+
+Ejercicio, en una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:
+
+```{r}
+n<-20
+set.seed(1501)
+estatura<-round(rnorm(n,165,10),0)
+set.seed(1501)
+mujer<-rbinom(n,1,0.4)
+bd<-data.frame(estatura,mujer)
+bd
+```
+
+Se pide calcular el estimador puntual de la diferencia de proporciones y el intervalo de confianza al 90% de confiabilidad.
+
+Solución, algunos parámetros del ejercicio $n_1=10$ , $n_2=10$, las proporciones:
+
+$$\hat{P}_{1,h}=\frac{\#a}{n_1}=\frac{1}{10}=0.1$$
+$$\hat{P}_{2,m}=\frac{\#a}{n_2}=\frac{5}{10}=0.5$$
+
+El estimador puntual es dado por:
+
+$$\hat{P}_1-\hat{P}_2=0.1-0.5=-0.4$$
+
+Ahora, el intervalo de confianza
+
+$$IC_{100*(1-\alpha)}(P_1-P_2)=-0.4 \pm 1.64 * \sqrt{\frac{0.1*0.9}{10}+\frac{0.5*0.5}{10}}=-0.4 \pm 0.3024$$
+$$IC_{100*(1-\alpha)}(P_1-P_2)=[-0.702 \quad -0.098]$$
 
 ### Intervalo de confianza para la varianza
+Suponga que $X\sim Normal(\mu,\sigma)$ ambos parámetros desconocidos. Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de tamaño $n$ de $X$. Recodar que la varianza muestra sigue una distribución de muestreo tipo $\chi^2$.
+
+$$\chi^2=\frac{(n-1)\hat{S}^2}{\sigma^2}$$
+Para desarrollar el intervalo usamos esta distribución:
+
+$$P(\chi^2_{1-\alpha/2,n-1} \leq \chi^2 \leq \chi^2_{\alpha/2,n-1})=1-\alpha$$
+$$IC_{100*(1-\alpha)}(\sigma^2): \left[\frac{(n-1)\hat{S}^2}{\chi^2_{\alpha/2,n-1}} \quad  \frac{(n-1)\hat{S}^2}{\chi^2_{1-\alpha/2,n-1}}\right]$$
 
 ### Intervalo de confianza para el cociente de varianzas
+
+El objetivo de esta medida es tener un intervalo para el cociente de las varianzas de dos poblaciones, esto puede servir para identificar que población (con que variable) tiene mayor variabilidad. El parámetro es:
+
+$$\theta=\frac{\sigma^2_1}{\sigma^2_2}$$
+Supongamos que $X_1$ y $X_2$ son va normales con media $\mu_1$ y $\mu_2$ desconocidas y varianzas $\sigma^2_1$, $\sigma^2_2$ también desconocidas. Sean dos muestras aleatorias de $X_1$ y $X_2$ de tamaño $n_1$ y $n_2$ y sean $\hat{S}^2_1$ y $\hat{S}^2_2$ las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución $F$.
+
+$$F=\frac{\frac{\hat{S}^2_2}{\sigma^2_2}}{\frac{\hat{S}^2_1}{\sigma^2_1}}$$
+
+Se busca:
+
+$$P(F_{1-\alpha/2,n_1-1,n_2-1} \leq F \leq F_{\alpha/2,n_1-1,n_2-1})=1-\alpha$$
+
+$$IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_1-1,n_2-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_1-1,n_2-1}\right]$$
+
+
