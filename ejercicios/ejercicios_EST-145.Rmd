@@ -85,3 +85,23 @@ z<-(b-(u1-u2))/sqrt(s1^2/n1+s2^2/n2)
 ```
 
 La distribución de alturas de cierta raza de perros terrier tiene una media de `r u1` centímetros y una desviación estándar de `r s1` centímetros; en tanto que la distribución de alturas de cierta raza de poodles tiene una media de `r u2` centímetros con una desviación estándar de `r s2` centímetros. Calcule la probabilidad de que la media muestral de una muestra aleatoria de alturas de `r n1` terriers exceda la media muestral para una muestra aleatoria de alturas de `r n2` poodles a lo sumo `r b` centímetros.
+
+# Estimaciones
+
+## Ejercicio 1
+
+$X_1, X_2, \ldots, X_7$ denota una muestra aleatoria de una población que tiene media $\mu$ y varianza $\sigma^2$. Considere los siguientes estimadores de $\mu$:
+
+$$\hat{\theta}_1=\frac{X_1+X_2+\ldots+X_7}{7}$$
+
+$$\hat{\theta}_2=\frac{2X_1-X_6+X_4}{2}$$
+¿Alguno de los estimadores es insesgado? ¿Cuál de los estimadores es el "mejor"? ¿En qué sentido es el mejor?
+
+## Ejercicio 2
+Suponga que la variable aleatoria $X$ tiene una distribución de probabilidad
+
+$$f(x)=(\tau+1)x^\tau \quad 0<X<1$$
+Sea $X_1, X_2, \ldots,X_n$ una muestra aleatoria de tamaño $n$. Obtenga el estimador de máxima verosimilitud de $\tau$, 
+
+## Ejercicio 3
+La fracción de productos defectuosos producidos por dos líneas de producción se está analizando. Una muestra de 1300 unidades de la línea 1 tiene 15 defectuosas, en tanto una muestra aleatoria de 1700 unidades de la línea 2 tiene 34 defectuosas. Encuentre un intervalo de confianza al 99% de confiabilidad respecto la diferencia de unidades defectuosas producidas por las dos líneas.

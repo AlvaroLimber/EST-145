@@ -42,3 +42,16 @@ tamaño-de-muestra-para-estimar-proporciones
 intervalo-de-confianza-para-diferencia-de-proporciones
 intervalo-de-confianza-para-la-varianza
 intervalo-de-confianza-para-el-cociente-de-varianzas
+prueba-de-hipótesis
+introducción
+hipótesis-estadística
+errores-de-tipo-i-y-errores-de-tipo-ii
+pasos-para-la-prueba-hipótesis-estadística
+prueba-de-hipótesis-sobre-la-media
+prueba-de-hipótesis-sobre-la-diferencia-de-medias
+prueba-de-hipótesis-sobre-la-proporción
+prueba-de-hipótesis-sobre-la-diferencia-de-proporciones
+tamaño-de-muestra-1
+prueba-de-hipótesis-sobre-la-varianza
+prueba-de-hipótesis-sobre-la-igualdad-de-varianzas
+bondad-de-ajuste

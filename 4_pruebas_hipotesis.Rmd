@@ -1,0 +1,55 @@
+# Prueba de Hipótesis
+
+Dado que el principal objetivo de la inferencia estadística es aproximarse al valor de los parámetros ($\theta$) mediante un estimador muestral $\hat{\theta}$ que viene de una distribución muestral y por lo tanto es una variable aleatoria también. 
+
+Otra estrategia a parte de la estimación (puntual o por intervalos) del parámetro $\theta$ es la de plantear hipótesis al rededor de los valores del parámetro. A esto le vamos a denominar una prueba de hipótesis, donde solamente existen dos posibles resultados; Rechazamos la hipótesis o no la rechazamos.  
+
+En este tema se explora las pruebas de hipótesis estadísticas sobre parámetros comunes, vistos anteriormente:
+
+  + Media
+  + Diferencia de medias
+  + Proporción
+  + Diferencia de proporciones
+  + Datos pareados (colección de información de la misma unidad, en diversos momentos del tiempo)
+  + Varianza
+  + Igualdad de varianza
+
+Adicionalmente, al final del tema se vera la pruebas de **bondad de ajuste**, que se sirven para plantear cuando una serie de datos tiene una determinada distribución
+  
+Todas las pruebas que se verán están enmarcadas en lo paramétrico, es decir, se realizarán supuestos respecto la distribución de la información y se trabaja con distribuciones conocidas como; la normal, t-student, $\chi^2$, F.
+
+Mencionar que existen las pruebas de hipótesis **no paramétricas**, estas funcionan sobre las distribuciones libres. 
+  
+## Introducción
+
+### Hipótesis estadística
+Tener presente que la hipótesis que se defina debe estar siempre en términos del parámetro, no de la muestra. Cuando elaboramos una hipótesis esta tiene dos elementos; la hipótesis que se plantea (hipótesis nula) y el complemento de esta hipótesis (hipótesis alternativa), esta última puede ser de un lado o de dos lados. 
+
+$$H_0: \theta = k$$
+$$H_1: \theta \neq k \quad(\text{2 lados})$$
+$$H_1: \theta < k \quad(\text{1 lado})$$
+$$H_1: \theta > k \quad(\text{1 lado})$$
+
+### Errores de tipo I y errores de tipo II
+(investigar de que se trata y buscar ejemplos)
+
+
+### Pasos para la prueba hipótesis estadística
+
+## Prueba de hipótesis sobre la media
+
+## Prueba de hipótesis sobre la diferencia de medias
+
+## Prueba de hipótesis sobre la proporción
+
+## Prueba de hipótesis sobre la diferencia de Proporciones
+
+## Tamaño de muestra 
+
+## Prueba de hipótesis sobre la varianza
+
+## Prueba de hipótesis sobre la igualdad de varianzas
+
+## Bondad de ajuste
+
+

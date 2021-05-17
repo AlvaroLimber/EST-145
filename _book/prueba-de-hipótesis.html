@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II</title>
+  <title>4 Prueba de Hipótesis | Estadística II</title>
   <meta name="description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II" />
+  <meta property="og:title" content="4 Prueba de Hipótesis | Estadística II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="alvarolimber/EST-145" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II" />
+  <meta name="twitter:title" content="4 Prueba de Hipótesis | Estadística II" />
   
   <meta name="twitter:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="tema-2-distribuciones-muestrales.html"/>
+<link rel="prev" href="estimaciones-de-una-y-dos-muestrales.html"/>
+
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -228,214 +228,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tema-1-distribuciones-bivariadas-multivariadas" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Tema 1: Distribuciones bivariadas (multivariadas)</h1>
-<p>En el caso univariado se tenia a una va <span class="math inline">\(X\)</span> definida en los reales <span class="math inline">\(IR\)</span>, a esta va se le asignaba una función de distribución <span class="math inline">\(F(x)\)</span> y una función de densidad <span class="math inline">\(f(x)\)</span>. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:</p>
-<p>Caso discreto:</p>
-<p><span class="math display">\[\sum_{Rx} P(X=x)=1\]</span>
-<span class="math display">\[F(t)=P(X\leq t)=\sum_{x\leq t} P(X=x)\]</span></p>
-<p>Caso continuo:</p>
-<p><span class="math display">\[\int_{Rx}f(x)dx=1\]</span></p>
-<p><span class="math display">\[F(t)=P(X\leq t)=\int_{-\infty}^{t}f(x)dx\]</span></p>
-<p>La idea de este capitulo es ver las propiedades en el caso bivariante y generalizar para el caso multivariante.</p>
-<div id="variables-aleatorias-bivariantes" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Variables aleatorias bivariantes</h2>
-<p>Son un par de variables aleatorias con una distribución conjunta, son típicamente representadas con mayúscula <span class="math inline">\((X, Y)\)</span> o <span class="math inline">\((X_1,X_2)\)</span>, las realizaciones de estas variables aleatorias se representan como <span class="math inline">\((x,y)\)</span> o <span class="math inline">\((x_1,x_2)\)</span>.</p>
-<blockquote>
-<p>Definición 1.
-Un par de variables aleatorias bivariadas es un par numérico de resultados; una función definida en <span class="math inline">\(IR^2\)</span></p>
-</blockquote>
-<p>Ejemplos:</p>
+<div id="prueba-de-hipótesis" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Prueba de Hipótesis</h1>
+<p>Dado que el principal objetivo de la inferencia estadística es aproximarse al valor de los parámetros (<span class="math inline">\(\theta\)</span>) mediante un estimador muestral <span class="math inline">\(\hat{\theta}\)</span> que viene de una distribución muestral y por lo tanto es una variable aleatoria también.</p>
+<p>Otra estrategia a parte de la estimación (puntual o por intervalos) del parámetro <span class="math inline">\(\theta\)</span> es la de plantear hipótesis al rededor de los valores del parámetro. A esto le vamos a denominar una prueba de hipótesis, donde solamente existen dos posibles resultados; Rechazamos la hipótesis o no la rechazamos.</p>
+<p>En este tema se explora las pruebas de hipótesis estadísticas sobre parámetros comunes, vistos anteriormente:</p>
 <ul>
-<li>Considerar el par (edad, estatura):
-<ul>
-<li><span class="math inline">\((23,170)\)</span></li>
-<li><span class="math inline">\((20,172)\)</span></li>
-<li><span class="math inline">\((20,154)\)</span></li>
-<li><span class="math inline">\((26,159)\)</span></li>
-<li><span class="math inline">\((19,175)\)</span></li>
-</ul></li>
-<li>Considerar el par: (ingreso, años experiencia)</li>
+<li>Media</li>
+<li>Diferencia de medias</li>
+<li>Proporción</li>
+<li>Diferencia de proporciones</li>
+<li>Datos pareados (colección de información de la misma unidad, en diversos momentos del tiempo)</li>
+<li>Varianza</li>
+<li>Igualdad de varianza</li>
 </ul>
-<p>Imaginar lanzar 2 monedas simultáneamente, <span class="math inline">\(\Omega=\{CC,CS,SC,SS\}\)</span>, si definimos a <span class="math inline">\(Cara=1\)</span> y <span class="math inline">\(Sello=0\)</span>, <span class="math inline">\(R_{(X,Y)}=\{(1,1),(1,0),(0,1),(0,0)\}\)</span>.</p>
+<p>Adicionalmente, al final del tema se vera la pruebas de <strong>bondad de ajuste</strong>, que se sirven para plantear cuando una serie de datos tiene una determinada distribución</p>
+<p>Todas las pruebas que se verán están enmarcadas en lo paramétrico, es decir, se realizarán supuestos respecto la distribución de la información y se trabaja con distribuciones conocidas como; la normal, t-student, <span class="math inline">\(\chi^2\)</span>, F.</p>
+<p>Mencionar que existen las pruebas de hipótesis <strong>no paramétricas</strong>, estas funcionan sobre las distribuciones libres.</p>
+<div id="introducción" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introducción</h2>
+<div id="hipótesis-estadística" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Hipótesis estadística</h3>
+<p>Tener presente que la hipótesis que se defina debe estar siempre en términos del parámetro, no de la muestra. Cuando elaboramos una hipótesis esta tiene dos elementos; la hipótesis que se plantea (hipótesis nula) y el complemento de esta hipótesis (hipótesis alternativa), esta última puede ser de un lado o de dos lados.</p>
+<p><span class="math display">\[H_0: \theta = k\]</span>
+<span class="math display">\[H_1: \theta \neq k \quad(\text{2 lados})\]</span>
+<span class="math display">\[H_1: \theta &lt; k \quad(\text{1 lado})\]</span>
+<span class="math display">\[H_1: \theta &gt; k \quad(\text{1 lado})\]</span></p>
 </div>
-<div id="función-de-distribución-bivariada" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Función de distribución bivariada</h2>
-<blockquote>
-<p>Definición 2.</p>
-</blockquote>
-<p>La función de distribución conjunta de <span class="math inline">\((X,Y)\)</span> es</p>
-<p><span class="math display">\[F(x,y)=P(X\leq x,Y\leq y)=P\left[\{X\leq x\} \cap \{Y\leq y\}  \right]\]</span>
-Las propiedades de <span class="math inline">\(F\)</span> son similares al caso univariante, <span class="math inline">\(0\leq F(x,y)\leq 1\)</span>.</p>
-<p>Ejemplo:</p>
-<p><span class="math display">\[F(x,y)=(1-e^{-x})(1-e^{-y});\hspace{2cm} x,y\geq0 \]</span>
-* <span class="math inline">\(F(0,0)=0\)</span>
-* <span class="math inline">\(F(\infty,\infty)=1\)</span></p>
-<p>Calcular:</p>
-<p><span class="math display">\[P(X\leq 10,Y\leq 100)=F(10,100)=(1-e^{-10})(1-e^{-100})=0.9999546\]</span>
-<span class="math display">\[P(X\leq 5,Y\leq 20)=F(5,20)=0.99326\]</span></p>
-<p>La distribución conjunta satisface:</p>
-<p><span class="math display">\[P(a&lt;X\leq b,c&lt; Y\leq d)=F(b,d)-F(b,c)-F(a,d)+F(a,c)\]</span></p>
-<p>Para <span class="math inline">\(a&lt;b\)</span> y <span class="math inline">\(c&lt;d\)</span></p>
+<div id="errores-de-tipo-i-y-errores-de-tipo-ii" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Errores de tipo I y errores de tipo II</h3>
+<p>(investigar de que se trata y buscar ejemplos)</p>
 </div>
-<div id="función-masa-de-probabilidad-función-de-densidad" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Función masa de probabilidad (función de densidad)</h2>
-<p>Para el par <span class="math inline">\((X,Y)\)</span> con una función de distribución conjunta <span class="math inline">\(F(x,y)\)</span>.</p>
-<p>Para el caso continuo,</p>
-<blockquote>
-<p>Definición 3.</p>
-</blockquote>
-<p><span class="math display">\[f(x,y)=\frac{\partial^2}{\partial x \partial y}F(x,y)\]</span></p>
-<p>Por un tema de notación, a veces escribiremos <span class="math inline">\(f_{X,Y}(x,y)\)</span></p>
-<p>Ejercicio: encontrar <span class="math inline">\(f(x,y)\)</span> para la <span class="math inline">\(F\)</span> dada en el ejemplo anterior</p>
-<p><span class="math display">\[f(x,y)=\frac{\partial^2}{\partial x \partial y}\left[(1-e^{-x})(1-e^{-y})\right]=e^{-x}e^{-y}\]</span></p>
-<p><span class="math inline">\(f\)</span> satisface de forma similar las propiedades vistas en el caso univariante.</p>
-<p><span class="math display">\[\int_{Rx}\int_{Ry}f(x,y)dydx=1\]</span></p>
-<p>Para el ejercicio:</p>
-<p><span class="math display">\[\int_0^{\infty} \int_0^{\infty}e^{-x}e^{-y} dx dy=\int_0^{\infty} e^{-y} \left[-e^{-x}/_0^{\infty} \right] dy =1\]</span></p>
-<p><span class="math display">\[P(a&lt;X\leq b,c&lt; Y\leq d)=\int_a^b \int_c^d f(x,y)dxdy\]</span></p>
-<p>Para el caso discreto podemos definirlo de la siguiente forma:</p>
-<p><span class="math display">\[f(x,y)=\pi(x,y)=P(X=x,Y=y)\]</span>
-<span class="math display">\[\sum_{Rx}\sum_{Ry}\pi(x,y)=1\]</span></p>
-<p>Ejemplo, en un restaurante de pizza se vende porciones de pizza y gaseosa, el dueño del local realizó un monitoreo del patrón de como los clientes ordenan sus pedidos, respecto la cantidad de porciones de pizza con la cantidad de gaseosas, encontrando el siguiente resultado:</p>
-<p>Cuál sera la probabilidad de:</p>
-<ul>
-<li><span class="math inline">\(P(X=3,Y=2)=0.13\)</span></li>
-<li><span class="math inline">\(P(X\geq 2, Y=1)=P(X=2, Y=1)+P(X=3,Y=1)=\pi_{21}+\pi_{31}=0.17+0.05=0.22\)</span></li>
-</ul>
+<div id="pasos-para-la-prueba-hipótesis-estadística" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Pasos para la prueba hipótesis estadística</h3>
 </div>
-<div id="distribución-marginal" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Distribución marginal</h2>
-<p>La distribución conjunta del vector aleatorio <span class="math inline">\((X,Y)\)</span> describe la distribución del vector aleatorio, sin embargo, es posible a partir de la distribución conjunta, generar las distribuciones para cada componente del vector aleatorio.</p>
-<blockquote>
-<p>Definición 4, la distribución marginal de X es:</p>
-</blockquote>
-<p><span class="math display">\[F_X(x)=P(X\leq x)=P(X\leq x, Y\leq \infty)=lim_{y\rightarrow \infty} F(x,y)\]</span></p>
-<p>De manera más usual se tiene:</p>
-<p>Para el caso discreto:</p>
-<p><span class="math display">\[P(X=x)=\pi(x)=\sum_{Ry} \pi(x,y)\]</span></p>
-<p><span class="math display">\[P(Y=y)=\pi(y)=\sum_{Rx} \pi(x,y)\]</span>
-Para el caso continuo:</p>
-<p><span class="math display">\[f(x)=\int_{Ry} f(x,y)dy\]</span></p>
-<p><span class="math display">\[f(y)=\int_{Rx} f(x,y)dx\]</span>
-Ejercicio, para la función:</p>
-<p><span class="math display">\[f(x,y)=e^{-x}e^{-y}\]</span></p>
-<p>Con <span class="math inline">\(x,y\geq 0\)</span>, encontrar las marginales de <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(f(y)\)</span>.</p>
-<p>Solución:</p>
-<p><span class="math display">\[f(x)=\int_0^{\infty}e^{-x}e^{-y} dy=e^{-x}\]</span></p>
-<p><span class="math display">\[f(y)=\int_0^{\infty}e^{-x}e^{-y} dx=e^{-y}\]</span></p>
-<p>Nota: las marginales deben estar en función de su propia variable aleatoria y no contener otras variables, dado que son marginales.</p>
-<p>Notar que en este ejercicio:</p>
-<p><span class="math display">\[f(x,y)=e^{-x}e^{-y}=f(x)*f(y)\]</span>
-Esto no siempre sucede, este caso se da cuando las variables son independientes.</p>
-<p>Ejemplo para el caso discreto,</p>
 </div>
-<div id="independencia" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Independencia</h2>
-<blockquote>
-<p>Definición 6, dos variables aleatorias son independientes si:</p>
-</blockquote>
-<p><span class="math display">\[f(x,y)=f(x)*f(y)\]</span>
-<span class="math display">\[\pi(x,y)=\pi(x)*\pi(y)\]</span></p>
-<p>Ejercicio, verificar si la siguiente función esta bien definida y si las variables son independientes.</p>
-<p><span class="math display">\[f(x,y)=\frac{1}{4}(x+y)*xy*e^{-x-y}; \hspace{2cm} x,y&gt;0\]</span>
-Solución,</p>
-<p>Si esta bien definida, esto significa:</p>
-<p><span class="math display">\[\int_0^{\infty}\int_0^{\infty}\frac{1}{4}(x+y)*xy*e^{-x-y}=1\]</span></p>
-<p><span class="math display">\[f(x)=\int_{Ry}f(x,y)dy=\frac{x^2+2x}{4} ( e^{-x})\]</span>
-Tarea, encontrar <span class="math inline">\(f(y)\)</span> y evaluar si son o no independientes</p>
+<div id="prueba-de-hipótesis-sobre-la-media" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Prueba de hipótesis sobre la media</h2>
 </div>
-<div id="valores-esperados" class="section level2" number="1.6">
-<h2><span class="header-section-number">1.6</span> Valores esperados</h2>
-<p>En el caso univariado, sea <span class="math inline">\(X\)</span> una variable aleatoria con función de probabilidad <span class="math inline">\(\pi(x)\)</span> para el caso discreto o <span class="math inline">\(f(x)\)</span> para el caso continuo, el operador matemático esperanza se define como:</p>
-<p>Para el caso discreto,
-<span class="math display">\[E[g(X)]=\sum_{Rx}g(x)P(X=x)\]</span></p>
-<p>Para el caso continuo,
-<span class="math display">\[E[g(X)]=\int_{Rx}g(x)f(x)dx\]</span></p>
-<blockquote>
-<p>Definición 6,
-El valor esperado para la función <span class="math inline">\(g(X,Y)\)</span>, se define como:</p>
-</blockquote>
-<p>Para el caso discreto:</p>
-<p><span class="math display">\[E[g(X,Y)]=\sum_{Rx}\sum_{Ry}g(x,y)\pi(x,y)\]</span></p>
-<p>Para el caso continuo:</p>
-<p><span class="math display">\[E[g(X,Y)]=\int_{Rx}\int_{Ry}g(x,y)f(x.y)dydx\]</span>
-Nota, hay valores esperados más usuales que otros,</p>
-<p>Por ejemplo, las varianzas para cada variable
-<span class="math display">\[E[(X-E[X])^2]=V(X)\]</span>
-<span class="math display">\[E[(Y-E[Y])^2]=V(Y)\]</span></p>
-<p>Otras medidas son <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(E[Y]\)</span> que son referencias muy similares a un promedio aritmético. Otra valor esperado bastante usado en los casos bivariados es:</p>
-<p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx\]</span>
-Encontrar la forma de <span class="math inline">\(E[X]\)</span> usando la definición anterior.</p>
-<p><span class="math display">\[E[X]=\int_{Rx}\int_{Ry} x f(x,y) dy dx=\int_{Rx}xf(x) dx\]</span>
-<span class="math display">\[E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx\]</span></p>
-<p>Ejemplo para el caso discreto, de las pizza y las gaseosas.</p>
-<p><span class="math display">\[E[X]=1*0.5+2*0.31+3*0.19=1.69\]</span>
-<span class="math display">\[E[Y]=0*0.12+1*0.63+2*0.25=1.13\]</span></p>
-<p><span class="math display">\[E[X^2]=\sum_{x=1}^{x=3}x^2 \pi(x)=1^2*0.5+2^2*0.31+3^2*0.19=3.45\]</span>
-<span class="math display">\[E[Y^2]=0^2*0.12+1^2*0.63+2^2*0.25=1.63\]</span>
-<span class="math display">\[E[XY]=\sum_{Rx}\sum_{Ry}xy \pi(x,y)=1*0*0.04+1*1*0.42+\ldots+3*2*0.13=2.067\]</span></p>
+<div id="prueba-de-hipótesis-sobre-la-diferencia-de-medias" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Prueba de hipótesis sobre la diferencia de medias</h2>
 </div>
-<div id="distribuciones-condicionales" class="section level2" number="1.7">
-<h2><span class="header-section-number">1.7</span> Distribuciones condicionales</h2>
-<p>Estas distribuciones nos ayudan a entender el comportamiento de una variable, cuando fijamos a otra.</p>
-<blockquote>
-<p>Definición, una distribución condicional se define como:</p>
-</blockquote>
-<p>Caso discreto,</p>
-<p><span class="math inline">\(\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}\)</span></p>
-<p>Caso continuo,</p>
-<p><span class="math display">\[f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}\]</span>
-<span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}\]</span>
-Estas funciones condicionales cumplen todas las propiedades de una función de probabilidad.</p>
-<p>Demostrar que:</p>
-<p><span class="math display">\[\int_{Rx} f_{X/Y}(x/y) dx=1\]</span></p>
-<p><span class="math display">\[\int_{Rx} f_{X/Y}(x/y) dx=\int_{Rx} \frac{f(x,y)}{f(y)} dx=\frac{1}{f(y)}\int_{Rx} f(x,y)dx=\frac{f(y)}{f(y)}=1\]</span>
-Que sucede si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son variables independientes:</p>
-<p><span class="math display">\[f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}=\frac{f(x)f(y)}{f(y)}=f(x)\]</span>
-<span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}=\frac{f(x)f(y)}{f(x)}=f(y)\]</span></p>
+<div id="prueba-de-hipótesis-sobre-la-proporción" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Prueba de hipótesis sobre la proporción</h2>
 </div>
-<div id="medidas-de-relación-entre-dos-variables" class="section level2" number="1.8">
-<h2><span class="header-section-number">1.8</span> Medidas de relación entre dos variables</h2>
-<p>Estas medidas nos ayudan a conocer si dos variables <em>están relacionadas</em> y nos permite saber el <em>tipo de relación</em> (directa, inversa) y también podemos saber la <em>intensidad de la relación</em>. Las medidas son:</p>
-<p>La Covarianza <span class="math inline">\(cov(X,Y)\)</span> es una medida absoluta de relación:</p>
-<p><span class="math display">\[cov(X,Y)=E[(X-E[X])(Y-E[Y])]\]</span>
-Una alternativa a esta formula (versión corta).</p>
-<p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]\]</span>
-Tarea, demostrar lo anterior.</p>
-<p>Otra medida importantes es la correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, esta es una medida relativa, que cumple la propiedad: <span class="math inline">\(-1 \leq corr(X,Y) \leq 1\)</span>, esta se define como:</p>
-<p><span class="math display">\[corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}\]</span>
-* Si <span class="math inline">\(cov_{xy}\)</span> o <span class="math inline">\(corr_{xy}\)</span> son distintas de 0, podemos afirmar que existe relación
-* Si <span class="math inline">\(cov_{xy}&gt;0\)</span> o <span class="math inline">\(corr_{xy}&gt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es directa
-* Si <span class="math inline">\(cov_{xy}&lt;0\)</span> o <span class="math inline">\(corr_{xy}&lt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es inversa
-* La intensidad de la dirección de la relación nos la da <span class="math inline">\(corr_{xy}\)</span>, mientras más cercana a <span class="math inline">\(corr_{xy}\rightarrow 1\)</span> la relación directa es más fuerte, <span class="math inline">\(corr_{xy}\rightarrow -1\)</span> la relación inversa es más fuerte
-* Si <span class="math inline">\(corr_{xy}\rightarrow 0\)</span> podemos decir que las variables no están relacionadas (“cuasi-independencia”) la correlación mide principalmente relaciones lineales.</p>
-<p>Ejercicio,</p>
-<p>Demostrar que si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes entonces:
-<span class="math display">\[E[XY]=E[X]*E[Y]\]</span></p>
-<p>Demostración,</p>
-<p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx=\int_{Rx}\int_{Ry} xy f(x)f(y) dy dx\]</span>
-<span class="math display">\[=\int_{Rx} x f(x)\left( \int_{Ry} y f(y) dy \right) dx=E[Y] \int_{Rx} xf(x)  dx=E[X]E[Y] \]</span>
-Como resultado de lo anterior, si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes:</p>
-<p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0\]</span></p>
-<p>Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.</p>
-<p>Nota:</p>
-<p><span class="math display">\[E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy\]</span>
-### Ejercicio</p>
-<p>Para</p>
-<p><span class="math display">\[f(x,y)=\frac{x(1+3y^2)}{4} \quad 0&lt;x&lt;2, \quad 0&lt;y&lt;1\]</span></p>
-<p>Calcular</p>
-<p><span class="math display">\[P(1/4&lt;X&lt;1/2 | Y=1/3)\]</span></p>
-<p>Solución</p>
-<p>Se debe encontrar <span class="math inline">\(f_{X|Y}(X|Y)=\frac{f(x,y)}{f(y)}\)</span></p>
-<p><span class="math display">\[f(y)=\int_0^2 \frac{x(1+3y^2)}{4} dx=\frac{(1+3y^2)}{4} \int_0^2 x dx=\frac{(1+3y^2)}{4} \frac{x^2}{2}/_0^2=\]</span>
-<span class="math display">\[=\frac{(1+3y^2)}{4}(2)=\frac{(1+3y^2)}{2}\]</span></p>
-<p><span class="math display">\[f_{X|Y}(X|Y)=\frac{\frac{x(1+3y^2)}{4}}{\frac{(1+3y^2)}{2}}=\frac{x}{2}\]</span>
-Verificando que sea correcta</p>
-<p><span class="math display">\[\int_0^2 \frac{x}{2}dx=\frac{x^2}{4}/_0^2=1\]</span>
-<span class="math display">\[P(1/4&lt;X&lt;1/2 | Y=1/3)=\int_{1/4}^{1/2} f_{X|Y}(X|Y) dx=\int_{1/4}^{1/2} \frac{x}{2} dx=\frac{x^2}{4}/_{0.25}^{0.5}=\]</span></p>
-<p><span class="math display">\[=\frac{0.5^2}{4}-\frac{0.25^2}{4}=\frac{3}{64}\]</span></p>
+<div id="prueba-de-hipótesis-sobre-la-diferencia-de-proporciones" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Prueba de hipótesis sobre la diferencia de Proporciones</h2>
+</div>
+<div id="tamaño-de-muestra-1" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Tamaño de muestra</h2>
+</div>
+<div id="prueba-de-hipótesis-sobre-la-varianza" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Prueba de hipótesis sobre la varianza</h2>
+</div>
+<div id="prueba-de-hipótesis-sobre-la-igualdad-de-varianzas" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> Prueba de hipótesis sobre la igualdad de varianzas</h2>
+</div>
+<div id="bondad-de-ajuste" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> Bondad de ajuste</h2>
 
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-rmarkdown" class="csl-entry">
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
+</div>
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-R-knitr" class="csl-entry">
+Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry">
+———. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+</div>
+<div id="ref-Xie2018" class="csl-entry">
+Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <span>“<span class="nocase">How to Read This Book</span>.”</span> <em>Transforming Climate Finance and Green Investment with Blockchains</em>, 1. <a href="https://doi.org/10.1016/b978-0-12-814447-3.00041-0">https://doi.org/10.1016/b978-0-12-814447-3.00041-0</a>.
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -443,8 +311,8 @@ Verificando que sea correcta</p>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tema-2-distribuciones-muestrales.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="estimaciones-de-una-y-dos-muestrales.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
