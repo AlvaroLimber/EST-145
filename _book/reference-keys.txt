@@ -45,6 +45,7 @@ intervalo-de-confianza-para-el-cociente-de-varianzas
 prueba-de-hipótesis
 introducción
 hipótesis-estadística
+región-de-aceptación-y-región-de-rechazo
 errores-de-tipo-i-y-errores-de-tipo-ii
 pasos-para-la-prueba-hipótesis-estadística
 prueba-de-hipótesis-sobre-la-media

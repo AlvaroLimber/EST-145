@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-05-17" />
+<meta name="date" content="2021-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -199,8 +199,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística</a></li>
-<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.2</b> Errores de tipo I y errores de tipo II</a></li>
-<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.3</b> Pasos para la prueba hipótesis estadística</a></li>
+<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo</a></li>
+<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II</a></li>
+<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.4</b> Pasos para la prueba hipótesis estadística</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media</a></li>
 <li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias</a></li>
@@ -255,12 +256,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[H_1: \theta &lt; k \quad(\text{1 lado})\]</span>
 <span class="math display">\[H_1: \theta &gt; k \quad(\text{1 lado})\]</span></p>
 </div>
-<div id="errores-de-tipo-i-y-errores-de-tipo-ii" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Errores de tipo I y errores de tipo II</h3>
-<p>(investigar de que se trata y buscar ejemplos)</p>
+<div id="región-de-aceptación-y-región-de-rechazo" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Región de aceptación y región de rechazo</h3>
+<p>Al plantear un hipótesis estadística sobre un parámetro de alguna población, la manera de verificar dicha hipótesis pasara por estudiar una muestra aleatoria sobre la cual se establecera una regla que nos permita decir si la hipótesis es correcta o no. Tradicionalmente se definirá un estadístico de prueba que nos permitirá decidir. Por ejemplo, estamos interesados en conocer el promedio de ingresos laborales mensuales de las personas que viven en el municipio de La Paz. Planteamos la hipótesis nula:</p>
+<p><span class="math display">\[H_0: \mu_{ingreso}=3000.Bs\]</span>
+La hipótesis alternativa</p>
+<p><span class="math display">\[H_1: \mu_{ingreso} \neq 3000.Bs\]</span>
+Imaginemos que tomamos una muestra aleatoria de personas del municipio de La Paz y les consultamos acerca de su ingreso laboral mensual, el resultado del promedio muestral es de</p>
+<p><span class="math display">\[\bar{x}=?\]</span></p>
+<p>Una regla para contrastar una hipótesis es definir la región de aceptación y la región de rechazo, en este ejemplo podemos momentaneamente de forma arbitraria podemos decir que “aceptamos” la <span class="math inline">\(H_0\)</span> si</p>
+<p><span class="math display">\[2700\leq\bar{x}\leq 3100\]</span></p>
+<p>En otro caso, se rechaza la hipótesis y la región que esta fuera de la región de aceptación se conoce como región de rechazo (<span class="math inline">\(\bar{x}&lt;2700\)</span> ó <span class="math inline">\(\bar{x}&gt;3100\)</span>).</p>
+<blockquote>
+<p>Nota: En la práctica, normalmente la región de aceptación para pruebas de 2 lados coincide con el intervalo de confianza.</p>
+</blockquote>
+<p>Tener presente los conceptos de:</p>
+<ul>
+<li>Hipótesis nula</li>
+<li>Hipótesis alternativa (1 lado, 2 lados)</li>
+<li>Estadístico de prueba</li>
+<li>Región de aceptación</li>
+<li>Región de rechazo</li>
+<li>Error de tipo I</li>
+<li>Error de tipo II</li>
+</ul>
 </div>
-<div id="pasos-para-la-prueba-hipótesis-estadística" class="section level3" number="4.1.3">
-<h3><span class="header-section-number">4.1.3</span> Pasos para la prueba hipótesis estadística</h3>
+<div id="errores-de-tipo-i-y-errores-de-tipo-ii" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Errores de tipo I y errores de tipo II</h3>
+<p>(investigar de que se trata y buscar ejemplos)</p>
+<ul>
+<li>(Falso positivo) Error de tipo I (<span class="math inline">\(\alpha\)</span>)</li>
+<li>(Falso negativos) Error de tipo II (<span class="math inline">\(\beta\)</span>)</li>
+</ul>
+<p><img src="images/f1.PNG" /></p>
+<p>Investigar acerca de la Curva de característica de operación en pruebas de hipótesis</p>
+</div>
+<div id="pasos-para-la-prueba-hipótesis-estadística" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Pasos para la prueba hipótesis estadística</h3>
 </div>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-media" class="section level2" number="4.2">
