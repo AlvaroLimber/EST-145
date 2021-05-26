@@ -47,12 +47,16 @@ introducción
 hipótesis-estadística
 región-de-aceptación-y-región-de-rechazo
 errores-de-tipo-i-y-errores-de-tipo-ii
+pruebas-bilaterales
+pruebas-unilaterales
 pasos-para-la-prueba-hipótesis-estadística
 prueba-de-hipótesis-sobre-la-media
+con-varianza-conocida
+con-varianza-desconocida
 prueba-de-hipótesis-sobre-la-diferencia-de-medias
 prueba-de-hipótesis-sobre-la-proporción
 prueba-de-hipótesis-sobre-la-diferencia-de-proporciones
-tamaño-de-muestra-1
+tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii
 prueba-de-hipótesis-sobre-la-varianza
 prueba-de-hipótesis-sobre-la-igualdad-de-varianzas
 bondad-de-ajuste

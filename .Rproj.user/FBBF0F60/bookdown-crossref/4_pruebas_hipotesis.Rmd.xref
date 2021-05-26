@@ -3,12 +3,16 @@ h2:introducción Introducción
 h3:hipótesis-estadística Hipótesis estadística
 h3:región-de-aceptación-y-región-de-rechazo Región de aceptación y región de rechazo
 h3:errores-de-tipo-i-y-errores-de-tipo-ii Errores de tipo I y errores de tipo II
+h3:pruebas-bilaterales Pruebas bilaterales
+h3:pruebas-unilaterales Pruebas unilaterales
 h3:pasos-para-la-prueba-hipótesis-estadística Pasos para la prueba hipótesis estadística
 h2:prueba-de-hipótesis-sobre-la-media Prueba de hipótesis sobre la media
+h3:con-varianza-conocida Con varianza conocida
+h3:con-varianza-desconocida Con varianza desconocida
 h2:prueba-de-hipótesis-sobre-la-diferencia-de-medias Prueba de hipótesis sobre la diferencia de medias
 h2:prueba-de-hipótesis-sobre-la-proporción Prueba de hipótesis sobre la proporción
 h2:prueba-de-hipótesis-sobre-la-diferencia-de-proporciones Prueba de hipótesis sobre la diferencia de Proporciones
-h2:tamaño-de-muestra Tamaño de muestra
+h2:tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii Tamaño de muestra y su relación con el error de tipo I y tipo II
 h2:prueba-de-hipótesis-sobre-la-varianza Prueba de hipótesis sobre la varianza
 h2:prueba-de-hipótesis-sobre-la-igualdad-de-varianzas Prueba de hipótesis sobre la igualdad de varianzas
 h2:bondad-de-ajuste Bondad de ajuste

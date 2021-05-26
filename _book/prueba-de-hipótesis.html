@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-05-19" />
+<meta name="date" content="2021-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,13 +201,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística</a></li>
 <li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo</a></li>
 <li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II</a></li>
-<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.4</b> Pasos para la prueba hipótesis estadística</a></li>
+<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-bilaterales"><i class="fa fa-check"></i><b>4.1.4</b> Pruebas bilaterales</a></li>
+<li class="chapter" data-level="4.1.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-unilaterales"><i class="fa fa-check"></i><b>4.1.5</b> Pruebas unilaterales</a></li>
+<li class="chapter" data-level="4.1.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.6</b> Pasos para la prueba hipótesis estadística</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media</a></li>
+<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-conocida"><i class="fa fa-check"></i><b>4.2.1</b> Con varianza conocida</a></li>
+<li class="chapter" data-level="4.2.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-desconocida"><i class="fa fa-check"></i><b>4.2.2</b> Con varianza desconocida</a></li>
+</ul></li>
 <li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias</a></li>
 <li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción</a></li>
 <li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones</a></li>
-<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-1"><i class="fa fa-check"></i><b>4.6</b> Tamaño de muestra</a></li>
+<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.6</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
 <li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la varianza</a></li>
 <li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.8</b> Prueba de hipótesis sobre la igualdad de varianzas</a></li>
 <li class="chapter" data-level="4.9" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#bondad-de-ajuste"><i class="fa fa-check"></i><b>4.9</b> Bondad de ajuste</a></li>
@@ -289,17 +295,164 @@ Imaginemos que tomamos una muestra aleatoria de personas del municipio de La Paz
 <li>(Falso negativos) Error de tipo II (<span class="math inline">\(\beta\)</span>)</li>
 </ul>
 <p><img src="images/f1.PNG" /></p>
-<p>Investigar acerca de la Curva de característica de operación en pruebas de hipótesis</p>
 </div>
-<div id="pasos-para-la-prueba-hipótesis-estadística" class="section level3" number="4.1.4">
-<h3><span class="header-section-number">4.1.4</span> Pasos para la prueba hipótesis estadística</h3>
+<div id="pruebas-bilaterales" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Pruebas bilaterales</h3>
+<p><span class="math display">\[H_0: \theta=k\]</span>
+<span class="math display">\[H_1: \theta\neq k\]</span>
+<img src="https://www.iartificial.net/wp-content/uploads/2019/02/normal2-1024x513.png" /></p>
+</div>
+<div id="pruebas-unilaterales" class="section level3" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Pruebas unilaterales</h3>
+<p>Existen de 2 tipos,</p>
+<p><img src="http://2.bp.blogspot.com/-I9kXmIV1sFo/UvVxpRTJIuI/AAAAAAAAAAk/ffboYYJmpn8/s1600/sss.jpg" /></p>
+</div>
+<div id="pasos-para-la-prueba-hipótesis-estadística" class="section level3" number="4.1.6">
+<h3><span class="header-section-number">4.1.6</span> Pasos para la prueba hipótesis estadística</h3>
+<ol style="list-style-type: decimal">
+<li>Plantear la prueba de hipótesis; definir <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></li>
+<li>Establecer el nivel de significancia de la prueba; el error de tipo I a tolerar, normalmente los valores más usuales son <span class="math inline">\(\alpha=\{0.01,0.05,0.1\}\)</span></li>
+<li>Seleccionar y construir el <strong>estadístico de prueba</strong> adecuado; se obtiene usando la información de una muestra aleatoria</li>
+<li>Determinar las regiones de aceptación y rechazo; estas regiones se construyen usando como insumo el paso 2 y 3</li>
+<li>Tomar una decisión en base al estadístico de prueba y las regiones de aceptación y rechazo identificadas.</li>
+</ol>
 </div>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-media" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Prueba de hipótesis sobre la media</h2>
+<p>Para las pruebas al rededor de la media, vamos a suponer que los datos de interés se distribuyen como una normal o al menos que la muestra aleatoria para el estadístico de prueba es “grande” y por lo tanto podemos usar el teorema del limite central. Existen dos variaciones para esta prueba; cuando se conoce la varianza y cuando no se conoce</p>
+<div id="con-varianza-conocida" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Con varianza conocida</h3>
+<ol style="list-style-type: decimal">
+<li>Hipótesis</li>
+</ol>
+<p><span class="math display">\[H_0: \mu=\mu_0\]</span>
+<span class="math display">\[H_1: \mu \neq \mu_0\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Nivel de significancia; es <span class="math inline">\(\alpha\)</span>, dado que es una prueba bilateral existen dos regiones de rechazo, cada una de estas 2 regiones con probabilidad <span class="math inline">\(\alpha/2\)</span></li>
+<li>Estadístico de prueba; Se cuenta con una muestra aleatoria (<span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>) iid de tamaño <span class="math inline">\(n\)</span>, de tal forma que cada una de estas variables <span class="math inline">\(X_i\sim .(E(X_i)=\mu,\sigma(conocido))\)</span>. La estadística de prueba es:</li>
+</ol>
+<p><span class="math display">\[Z_0=\frac{\bar{X}-\mu_0}{\frac{\sigma}{\sqrt{n}}}\]</span></p>
+<p>Este estadístico supone que <span class="math inline">\(Z_0\sim N(0,1)\)</span>, en el supuesto que <span class="math inline">\(E[\bar{X}]=\mu=\mu_0\)</span>, este supuesto se cumple siempre y cuando <span class="math inline">\(H_0\)</span> sea cierta</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Región de aceptación y rechazo</li>
+</ol>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="prueba-de-hipótesis.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 10%&quot;</span>)</span>
+<span id="cb113-2"><a href="prueba-de-hipótesis.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb113-3"><a href="prueba-de-hipótesis.html#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.64</span>,<span class="fl">1.64</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb113-4"><a href="prueba-de-hipótesis.html#cb113-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="prueba-de-hipótesis.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># al 5 %</span></span>
+<span id="cb114-2"><a href="prueba-de-hipótesis.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 5%&quot;</span>)</span>
+<span id="cb114-3"><a href="prueba-de-hipótesis.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.96</span>,<span class="fl">1.96</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb114-4"><a href="prueba-de-hipótesis.html#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-2.png" width="672" /></p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="prueba-de-hipótesis.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># al 1 %</span></span>
+<span id="cb115-2"><a href="prueba-de-hipótesis.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 1%&quot;</span>)</span>
+<span id="cb115-3"><a href="prueba-de-hipótesis.html#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.58</span>,<span class="fl">2.58</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb115-4"><a href="prueba-de-hipótesis.html#cb115-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-3.png" width="672" /></p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="prueba-de-hipótesis.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co">#qnorm(0.01/2)</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>La decisión; Se rechaza la <span class="math inline">\(H_0\)</span> cuando:</li>
+</ol>
+<p><span class="math display">\[Z_0&gt;Z_{\alpha/2} \quad ó \quad Z_0&lt;-Z_{\alpha/2}\]</span>
+Los valores usuales para los <span class="math inline">\(Z_{\alpha/2}\)</span> son:</p>
+<ul>
+<li>al 10 de significanca: <span class="math inline">\(Z_{\alpha/2}=1.64\)</span></li>
+<li>al 5 de significanca: <span class="math inline">\(Z_{\alpha/2}=1.96\)</span></li>
+<li>al 5 de significanca: <span class="math inline">\(Z_{\alpha/2}=2.58\)</span></li>
+</ul>
+<p>Ejercicio. Se sabe que los diámetros de tornillos tienen una desviación estándar de 0.0001 plg. Una muestra aleatoria de 35 tornillos produce un diámetro promedio de 0.2546 plg. Prueba la hipótesis de que el diámetro medio real es de 0.255 plg. empleando un <span class="math inline">\(\alpha=0.05\)</span>.</p>
+<p><span class="math display">\[H_0: \mu=0.255\]</span>
+<span class="math display">\[H_1: \mu\neq0.255\]</span></p>
+<p><span class="math display">\[Z_0=\frac{0.2546-0.255}{\frac{0.0001}{\sqrt{35}}}=-23.66\]</span></p>
+<p>Se rechaza <span class="math inline">\(H_0\)</span> si:</p>
+<p><span class="math display">\[-23.66&gt;1.96 \quad ó \quad -23.66&lt;-1.96\]</span>
+Por lo tanto rechazamos la hipótesis nula de que la media de diámetro de los tornillos sea de 0.255 plg.</p>
+<p>Para las pruebas unilaterales se utiliza el mismo estadístico de prueba <span class="math inline">\(Z_0\)</span>, con las siguientes hipótesis y región de rechazo.</p>
+<p><span class="math display">\[H_0: \mu=\mu_0\]</span>
+<span class="math display">\[H_1: \mu&gt;\mu_0\]</span>
+Se rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline">\(Z_0&gt;Z{\alpha}\)</span>.</p>
+<p><span class="math display">\[H_0: \mu=\mu_0\]</span></p>
+<p><span class="math display">\[H_1: \mu &lt; \mu_0\]</span>
+Se rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline">\(Z_0&lt;-Z{\alpha}\)</span></p>
+<p>Los valores usuales para los <span class="math inline">\(Z_\{alpha}\)</span> de pruebas unilaterales.</p>
+<ul>
+<li><span class="math inline">\(Z_{0.1}=1.28\)</span></li>
+<li><span class="math inline">\(Z_{0.05}=1.64\)</span></li>
+<li><span class="math inline">\(Z_{0.01}=2.33\)</span></li>
+</ul>
+</div>
+<div id="con-varianza-desconocida" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Con varianza desconocida</h3>
+<p>Si el tamaño de muestra fuera mayor 30, todo lo visto anteriormente se mantiene, el único cambio se da al momento de calcular el estadísticó de prueba donde en lugar de <span class="math inline">\(\sigma\)</span> tomamos la varianza muestral <span class="math inline">\(\hat{S}\)</span></p>
+<p><span class="math display">\[Z_0=\frac{\bar{X}-\mu_0}{\frac{\hat{S}}{\sqrt{n}}}\]</span>
+Si la muestra no es mayor 30, podemos suponer que los datos son normales y la aproximación para la región de aceptación y rechazo vienen de una t-student.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Estadístico de prueba</li>
+</ol>
+<p><span class="math display">\[t_0=\frac{\bar{X}-\mu_0}{\frac{\hat{S}}{\sqrt{n}}}\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Región de aceptación y rechazo; si <span class="math inline">\(H_0\)</span> es cierta, entonces <span class="math inline">\(t_0\sim t(n-1)\)</span>.</p></li>
+<li><p>La decisión; Se rechaza la <span class="math inline">\(H_0\)</span> cuando:</p></li>
+</ol>
+<p><span class="math display">\[t_0&gt;t_{\alpha/2,n-1} \quad ó \quad t_0&lt;-t_{\alpha/2,n-1}\]</span></p>
+</div>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-diferencia-de-medias" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Prueba de hipótesis sobre la diferencia de medias</h2>
+<p>Esta prueba se utiliza principalmente cuando se contrasta valores de 2 poblaciones independientes. Las hipótesis son:</p>
+<p><span class="math display">\[H_0: \mu_1=\mu_2\]</span>
+<span class="math display">\[H_1: \mu_1\neq\mu_2\]</span>
+Suponemos que se extrae muestras aleatorias de cada una de las poblaciones de tamaño <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> respectivamente. Se supone que cada una de las muestras las poblaciones se distribuyen iid con media desconocida y varianza conocida. Si suponemos que la muestra en ambas poblaciones son grandes <span class="math inline">\(n_1,n_2&gt;30\)</span> usando el teorema central del limite podemos afirmar en base a los capitulos anteriores</p>
+<p><span class="math display">\[\bar{X_1}-\bar{X}_2\sim N \left(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\right)\]</span>
+Por lo tanto se puede plantear como estadístico de prueba si <span class="math inline">\(H_0\)</span> es cierta:</p>
+<p><span class="math display">\[Z_0=\frac{\bar{X_1}-\bar{X}_2}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)\]</span></p>
+<p>Finalmente, en base a la distribución de <span class="math inline">\(Z_0\)</span>, se rechaza la igualdad de medias cuando:</p>
+<p><span class="math display">\[Z_0&gt;Z_{\alpha/2} \quad ó \quad Z_0&lt; -Z_{\alpha/2} \]</span>
+Cuando la varianza no es conocida pero el tamaño de muestra es mayor a 30 para ambas poblaciones, el estadístico de prueba es el único que cambia</p>
+<p><span class="math display">\[Z_0=\frac{\bar{X_1}-\bar{X}_2}{\sqrt{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}_2^2}{n_2}}}\sim N(0,1)\]</span>
+Cuando <span class="math inline">\(H_1: \mu_1&gt;\mu2\)</span> se rechaza la <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[Z_0&gt;Z_{\alpha}\]</span>
+Cuando <span class="math inline">\(H_1: \mu_1&lt;\mu2\)</span> se rechaza la <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[Z_0&lt;-Z_{\alpha}\]</span>
+Cuando la muestra es menor a 30 en una o ambas poblaciones, se debe hacer el supuesto que los datos son normales y aproximar la distribución a una <span class="math inline">\(t-student\)</span>. En este caso el estadístico de prueba es:</p>
+<p><span class="math display">\[t_0=\frac{\bar{X_1}-\bar{X}_2}{\sqrt{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}_2^2}{n_2}}}\]</span></p>
+<p>Lo anterior para el estadístico <span class="math inline">\(t_0\)</span> es valido bajo el supuesto de normalidad de los datos y las varianzas de las poblaciones no son iguales <span class="math inline">\(\sigma_1 \neq \sigma_2\)</span>.</p>
+<p>En el caso donde suponemos igualdad de varianzas <span class="math inline">\(\sigma_1 = \sigma_2\)</span>. El estadístico de prueba es:</p>
+<p><span class="math display">\[t_0=\frac{\bar{X_1}-\bar{X}_2}{\hat{S}_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</span>
+Donde:</p>
+<p><span class="math display">\[\hat{S}^2_p=\frac{(n_1-1)\hat{S}_1^2+(n_2-1)\hat{S}_2^2}{n_1+n_2-2}\]</span></p>
+<p>Entonces, para el caso de igualdad de varianza se rechaza la <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[t_0&gt;t_{\alpha/2,n_1+n_2-2} \quad ó \quad t_0&lt;-t_{\alpha/2,n_1+n_2-2}\]</span></p>
+<p>Cuando las varianzas no son iguales, se rechaza la <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[t_0&gt;t_{\alpha/2,v} \quad ó \quad t_0&lt;-t_{\alpha/2,v}\]</span>
+Donde:</p>
+<p><span class="math display">\[v=\frac{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}_2^2}{n_2}}{\frac{(\hat{S}^2_1/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}-2\]</span></p>
+<p>Ejemplo. Dos tipos de plásticos son apropiados para que los utilice un fabricante de componentes
+electrónicos. La resistencia al rompimiento de estos plásticos es importante,
+Se sabe que <span class="math inline">\(\sigma_1=\sigma_2=1.0\)</span> psi. De una muestra aleatoria de tamaño <span class="math inline">\(n_1 = 10\)</span> y
+<span class="math inline">\(n_2 = 12\)</span> obtenemos <span class="math inline">\(\bar{X}_1 = 162.5\)</span> y <span class="math inline">\(\bar{X}_2 = 155.0\)</span>. La compañía no adoptará el plástico 1
+a menos que su resistencia al rompimiento exceda la del plástico 2 al menos por 10
+psi. De acuerdo con la información de la muestra, ¿debe utilizarse el plástico I?</p>
+<p>Solución, la variable es el resistencia al rompimiento de dos tipos de plásticos. Sea <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> los promedios de resistencia de los plásticos 1 y 2 respectivamente.</p>
+<p><span class="math display">\[H_0: \mu_1=\mu_2+10\]</span>
+Vamos a definir una tercera variable en base al plástico 2 que sea <span class="math inline">\(y=x_2+10\)</span>, de tal forme que <span class="math inline">\(\mu_y=E[y]=\mu_2+10\)</span> , también, <span class="math inline">\(\sigma^2_y=V(Y)=V(X_2)=\sigma_2^2\)</span> , así la hipótesis es:</p>
+<p><span class="math display">\[H_0: \mu_1=\mu_y\]</span>
+<span class="math display">\[H_1: \mu_1 \neq \mu_y\]</span>
+<span class="math display">\[H_1: \mu_1 &lt; \mu_y\]</span></p>
+<p><span class="math display">\[Z_0=\frac{162.5-(155.0+10)}{\sqrt{\frac{1}{10}+\frac{1}{12}}}=-5.8387\]</span>
+Evaluando en la región de rechazo con una significancia del 5%</p>
+<p><span class="math display">\[-5.84&lt; -1.96 = -Z_{\alpha/2}\]</span></p>
+<p>Por lo tanto rechazamos <span class="math inline">\(H_0\)</span></p>
+<p>Ahora el prueba unilateral</p>
+<p><span class="math display">\[-5.84&lt; -1.64 = -Z_{\alpha}\]</span>
+Para ambas <span class="math inline">\(H_1\)</span> se rechaza la <span class="math inline">\(H_0\)</span>. Por lo tanto estadísticamente se recomienda no usar el plástico I ya que no supera en 10 psi al plástico 2</p>
+<p>Si contrastamos:</p>
+<p><span class="math display">\[H_1: \mu_1&gt;\mu_y\]</span>
+Se rechaza la <span class="math inline">\(H_0\)</span> si:</p>
+<p><span class="math display">\[-5.84&gt; 1.64 = Z_{\alpha}\]</span></p>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-proporción" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Prueba de hipótesis sobre la proporción</h2>
@@ -307,8 +460,8 @@ Imaginemos que tomamos una muestra aleatoria de personas del municipio de La Paz
 <div id="prueba-de-hipótesis-sobre-la-diferencia-de-proporciones" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Prueba de hipótesis sobre la diferencia de Proporciones</h2>
 </div>
-<div id="tamaño-de-muestra-1" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Tamaño de muestra</h2>
+<div id="tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Tamaño de muestra y su relación con el error de tipo I y tipo II</h2>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-varianza" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Prueba de hipótesis sobre la varianza</h2>
