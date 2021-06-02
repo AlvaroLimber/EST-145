@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-05-26" />
+<meta name="date" content="2021-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -214,9 +214,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción</a></li>
 <li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones</a></li>
 <li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.6</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
-<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la varianza</a></li>
-<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.8</b> Prueba de hipótesis sobre la igualdad de varianzas</a></li>
-<li class="chapter" data-level="4.9" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#bondad-de-ajuste"><i class="fa fa-check"></i><b>4.9</b> Bondad de ajuste</a></li>
 </ul></li>
 </ul>
 
@@ -361,7 +358,7 @@ Los valores usuales para los <span class="math inline">\(Z_{\alpha/2}\)</span> s
 <ul>
 <li>al 10 de significanca: <span class="math inline">\(Z_{\alpha/2}=1.64\)</span></li>
 <li>al 5 de significanca: <span class="math inline">\(Z_{\alpha/2}=1.96\)</span></li>
-<li>al 5 de significanca: <span class="math inline">\(Z_{\alpha/2}=2.58\)</span></li>
+<li>al 1 de significanca: <span class="math inline">\(Z_{\alpha/2}=2.58\)</span></li>
 </ul>
 <p>Ejercicio. Se sabe que los diámetros de tornillos tienen una desviación estándar de 0.0001 plg. Una muestra aleatoria de 35 tornillos produce un diámetro promedio de 0.2546 plg. Prueba la hipótesis de que el diámetro medio real es de 0.255 plg. empleando un <span class="math inline">\(\alpha=0.05\)</span>.</p>
 <p><span class="math display">\[H_0: \mu=0.255\]</span>
@@ -386,7 +383,7 @@ Se rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline"
 </div>
 <div id="con-varianza-desconocida" class="section level3" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Con varianza desconocida</h3>
-<p>Si el tamaño de muestra fuera mayor 30, todo lo visto anteriormente se mantiene, el único cambio se da al momento de calcular el estadísticó de prueba donde en lugar de <span class="math inline">\(\sigma\)</span> tomamos la varianza muestral <span class="math inline">\(\hat{S}\)</span></p>
+<p>Si el tamaño de muestra fuera mayor 30, todo lo visto anteriormente se mantiene, el único cambio se da al momento de calcular el estadístico de prueba donde en lugar de <span class="math inline">\(\sigma\)</span> tomamos la varianza muestral <span class="math inline">\(\hat{S}\)</span></p>
 <p><span class="math display">\[Z_0=\frac{\bar{X}-\mu_0}{\frac{\hat{S}}{\sqrt{n}}}\]</span>
 Si la muestra no es mayor 30, podemos suponer que los datos son normales y la aproximación para la región de aceptación y rechazo vienen de una t-student.</p>
 <ol start="3" style="list-style-type: decimal">
@@ -456,21 +453,94 @@ Se rechaza la <span class="math inline">\(H_0\)</span> si:</p>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-proporción" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Prueba de hipótesis sobre la proporción</h2>
+<p>Partimos de las siguientes hipótesis:</p>
+<p><span class="math display">\[H_0: P=P_0\]</span>
+<span class="math display">\[H_1: P \neq P_0\]</span>
+<span class="math display">\[H_1: P &lt; P_0\]</span>
+<span class="math display">\[H_1: P &gt; P_0\]</span>
+Como se vio en el capítulo anterior podemos suponer que tenemos una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> donde las variables de esta muestra <span class="math inline">\(X\sim N(nP,n*P*(1-P))\)</span>, entonces si la hipótesis nula es cierta entonces <span class="math inline">\(X\sim N(nP_0,n*P_0*(1-P_0))\)</span>. Así el estadístico de prueba es la estandarización de <span class="math inline">\(X\)</span>.</p>
+<p><span class="math display">\[Z_0=\frac{X-nP_0}{\sqrt{n*P_0*(1-P_0)}}\sim N(0,1)\]</span></p>
+<p>Donde <span class="math inline">\(X\)</span> representa el número de casos en la muestra aleatoria que pertenecen a la clase de interés.</p>
+<p>De esta forma en una prueba bilateral se rechaza la <span class="math inline">\(H_0\)</span> si</p>
+<p><span class="math display">\[Z_0&lt; - Z_{\alpha/2} \quad ó \quad Z_0&gt;  Z_{\alpha/2}\]</span>
+Para las pruebas unilaterales, con <span class="math inline">\(H_1: P&gt; P_0\)</span>, se rechaza <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[Z_0&gt;Z_\alpha\]</span>
+Con <span class="math inline">\(H_1: P&lt; P_0\)</span>, se rechaza <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[Z_0&lt;-Z_\alpha\]</span>
+Ejercicio, De 1000 casos seleccionados de cáncer en el pulmón, 823 terminaron en muerte. Se podría decir que el porcentaje de muertes es del 90%, o mayor a este valor.</p>
+<p>Solución, el parámetro de interés es la proporción de muertes por el cáncer de pulmón (<span class="math inline">\(P\)</span>)</p>
+<p><span class="math display">\[H_0: P=0.9\]</span>
+<span class="math display">\[H_1: P\neq0.9\]</span>
+<span class="math display">\[H_2: P &gt; 0.9\]</span>
+El estadístico de prueba:</p>
+<p><span class="math display">\[Z_0=\frac{823-1000*0.9}{\sqrt{1000*0.9*0.1}}=-8.11\]</span>
+Para la prueba bilateral a un <span class="math inline">\(\alpha=0.05\)</span>:</p>
+<p><span class="math display">\[-8.11&lt; - 1.96 \quad ó \quad -8.11&gt;  1.96\]</span>
+Por lo tanto se rechaza la <span class="math inline">\(H_0\)</span>. Mientras que para la prueba unilateral</p>
+<p><span class="math display">\[-8.11&gt;1.64\]</span></p>
+<p>No hay evidencia estadística para rechazar <span class="math inline">\(H_0\)</span> y aceptar <span class="math inline">\(H_2\)</span>.</p>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-diferencia-de-proporciones" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Prueba de hipótesis sobre la diferencia de Proporciones</h2>
+<p>En este caso el supuesto principal es que se trabajan con 2 poblaciones independientes y sobre ellas se busca contrastar el valor de sus proporciones de alguna clase en particular.</p>
+<p><span class="math display">\[H_0: P_1=P_2\]</span>
+<span class="math display">\[H_1: P_1 \neq P_2\]</span>
+<span class="math display">\[H_1: P_1 &gt; P_2\]</span>
+<span class="math display">\[H_1: P_1 &lt; P_2\]</span></p>
+<p>Se parte con dos muestras aleatorias de tamaños <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> de ambas poblaciones, y sea <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span> el número de observaciones que pertenecen a la clase de interés en las muestras. Si aproximamos a <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> como normales al ser estas binomiales, si se trabaja a nivel de los estimadores, sean <span class="math inline">\(\hat{P}_1\)</span> y <span class="math inline">\(\hat{P}_2\)</span> se sabe que:</p>
+<p><span class="math display">\[Z_0=\frac{\hat{P_1}-\hat{P_2}}{\sqrt{\hat{P}(1-\hat{P})*\left[\frac{1}{n_1}+\frac{1}{n_2} \right]}}\sim N(0,1)\]</span>
+<span class="math display">\[\hat{P}=\frac{X_1+X_2}{n_1+n_2}\]</span>
+De esta forma en una prueba bilateral se rechaza la <span class="math inline">\(H_0\)</span> si</p>
+<p><span class="math display">\[Z_0&lt; - Z_{\alpha/2} \quad ó \quad Z_0&gt;  Z_{\alpha/2}\]</span>
+Para las pruebas unilaterales, con <span class="math inline">\(H_1: P_1&gt; P_2\)</span>, se rechaza <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[Z_0&gt;Z_\alpha\]</span>
+Con <span class="math inline">\(H_1: P_1&lt; P_2\)</span>, se rechaza <span class="math inline">\(H_0\)</span> cuando:</p>
+<p><span class="math display">\[Z_0&lt;-Z_\alpha\]</span>
+Ejercicio, del libro guía del capítulo resolver el ejercicio 11.41 y 11.42</p>
 </div>
 <div id="tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Tamaño de muestra y su relación con el error de tipo I y tipo II</h2>
-</div>
-<div id="prueba-de-hipótesis-sobre-la-varianza" class="section level2" number="4.7">
-<h2><span class="header-section-number">4.7</span> Prueba de hipótesis sobre la varianza</h2>
-</div>
-<div id="prueba-de-hipótesis-sobre-la-igualdad-de-varianzas" class="section level2" number="4.8">
-<h2><span class="header-section-number">4.8</span> Prueba de hipótesis sobre la igualdad de varianzas</h2>
-</div>
-<div id="bondad-de-ajuste" class="section level2" number="4.9">
-<h2><span class="header-section-number">4.9</span> Bondad de ajuste</h2>
+<p>Recordar que el error de tipo 1 denotado por <span class="math inline">\(\alpha\)</span> es el falso positivo o también establece el riesgo de rechazar algo que es verdadero. Mientras que el error de tipo 2, denotado por <span class="math inline">\(\beta\)</span> es el falso negativo, que establece el riesgo de aceptar algo que es falso.</p>
+<p>Para la prueba de hipótesis para la media, la formula para el tamaño de muestra es:</p>
+<p>Bilateral,</p>
+<p><span class="math display">\[n=\frac{(Z_{\alpha/2}+Z_\beta)^2 \sigma^2}{\delta^2 }\]</span>
+Unilaterales</p>
+<p><span class="math display">\[n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }\]</span></p>
+<p>Ejercicio, 11.2 del libro guía.</p>
+<p>Se está estudiando el rendimiento de un proceso químico. De la experiencia previa
+se sabe que la varianza del rendimiento con este proceso es 5. Los últimos cinco días de operación de la planta han dado como resultado los siguientes rendimientos (en porcentajes):</p>
+<p><span class="math display">\[91.6,88.75,90.8,89.95,91.3.\]</span></p>
+<ul>
+<li>¿Hay razón para creer que el rendimiento es menor al 90%?</li>
+<li>¿Que tamaño de muestra se requeriría para detectar un rendimiento medio verdadero de 85% con probabilidad de 0.95?</li>
+</ul>
+<p>Solución,</p>
+<p><span class="math display">\[H_0: \mu=90\]</span>
+<span class="math display">\[H_1: \mu&lt;90\]</span>
+<span class="math display">\[Z_0=\frac{\bar{X}-\mu_0}{\frac{\sigma}{\sqrt{n}}}=\frac{90.48-90}{\frac{2.24}{\sqrt{5}}}=0.48\]</span>
+Se rechaza <span class="math inline">\(H_0\)</span> si (a un <span class="math inline">\(\alpha=0.05\)</span>):</p>
+<p><span class="math display">\[0.48&lt;-Z_{\alpha}=-1.64\]</span>
+Por lo tanto no hay evidencia estadística para rechazar <span class="math inline">\(H_0\)</span>.</p>
+<p><span class="math display">\[n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }=\frac{(1.64+1.64)^2 5}{(-5)^2 }=2.15 \approx 3\]</span></p>
+<p>De forma análoga en las otras pruebas estadísticas se tienen los tamaños de muestra:</p>
+<p>Para la diferencia de medias</p>
+<p>Bilateral
+<span class="math display">\[n=\frac{(Z_{\alpha/2}+Z_\beta)^2 (\sigma_1^2+\sigma_2^2)}{\delta^2 }\]</span></p>
+<p><span class="math display">\[n=\frac{(Z_{\alpha}+Z_\beta)^2 (\sigma_1^2+\sigma_2^2)}{\delta^2 }\]</span>
+Para la proporción,</p>
+<p>Bilateral</p>
+<p><span class="math display">\[n=\left(\frac{Z_{\alpha/2} \sqrt{P_0(1-P_0)}+Z_{\beta} \sqrt{P(1-P)}}{P-P_0} \right)^2\]</span>
+Donde <span class="math inline">\(P\)</span> es el valor propuesto para <span class="math inline">\(H_1\)</span>.</p>
+<p>Unilateral</p>
+<p><span class="math display">\[n=\left(\frac{Z_{\alpha} \sqrt{P_0(1-P_0)}+Z_{\beta} \sqrt{P(1-P)}}{P-P_0} \right)^2\]</span></p>
+<p>Tareas, revisar el libro guía el capítulo 11, en los apartados:</p>
+<ul>
+<li>11-10.2. Tamaño de muestra para la diferencia de proporciones</li>
+<li>Revisar la tabla 11.7</li>
+<li>Revisar la Prueba de hipótesis sobre la varianza</li>
+<li>Revisar la Prueba de hipótesis sobre la igualdad de varianzas</li>
+<li>Se recomienda ir resolviendo los ejercicios del capitulo 11</li>
+</ul>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-R-rmarkdown" class="csl-entry">

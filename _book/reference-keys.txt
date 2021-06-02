@@ -57,6 +57,3 @@ prueba-de-hipótesis-sobre-la-diferencia-de-medias
 prueba-de-hipótesis-sobre-la-proporción
 prueba-de-hipótesis-sobre-la-diferencia-de-proporciones
 tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii
-prueba-de-hipótesis-sobre-la-varianza
-prueba-de-hipótesis-sobre-la-igualdad-de-varianzas
-bondad-de-ajuste

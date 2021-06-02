@@ -132,7 +132,7 @@ Los valores usuales para los $Z_{\alpha/2}$ son:
 
   + al 10 de significanca: $Z_{\alpha/2}=1.64$
   + al 5 de significanca: $Z_{\alpha/2}=1.96$
-  + al 5 de significanca: $Z_{\alpha/2}=2.58$
+  + al 1 de significanca: $Z_{\alpha/2}=2.58$
   
 Ejercicio. Se sabe que los diámetros de tornillos tienen una desviación estándar de 0.0001 plg. Una muestra aleatoria de 35 tornillos produce un diámetro promedio de 0.2546 plg. Prueba la hipótesis de que el diámetro medio real es de 0.255 plg. empleando un $\alpha=0.05$.
 
@@ -165,7 +165,7 @@ Los valores usuales para los $Z_\{alpha}$ de pruebas unilaterales.
 
 ### Con varianza desconocida
 
-Si el tamaño de muestra fuera mayor 30, todo lo visto anteriormente se mantiene, el único cambio se da al momento de calcular el estadísticó de prueba donde en lugar de $\sigma$ tomamos la varianza muestral $\hat{S}$
+Si el tamaño de muestra fuera mayor 30, todo lo visto anteriormente se mantiene, el único cambio se da al momento de calcular el estadístico de prueba donde en lugar de $\sigma$ tomamos la varianza muestral $\hat{S}$
 
 $$Z_0=\frac{\bar{X}-\mu_0}{\frac{\hat{S}}{\sqrt{n}}}$$
 Si la muestra no es mayor 30, podemos suponer que los datos  son normales y la aproximación para la región de aceptación y rechazo vienen de una t-student.
@@ -266,12 +266,133 @@ $$-5.84> 1.64 = Z_{\alpha}$$
 
 ## Prueba de hipótesis sobre la proporción
 
+Partimos de las siguientes hipótesis:
+
+$$H_0: P=P_0$$
+$$H_1: P \neq P_0$$
+$$H_1: P < P_0$$
+$$H_1: P > P_0$$
+Como se vio en el capítulo anterior podemos suponer que tenemos una muestra aleatoria de tamaño $n$ donde las variables de esta muestra $X\sim N(nP,n*P*(1-P))$, entonces si la hipótesis nula es cierta entonces $X\sim N(nP_0,n*P_0*(1-P_0))$. Así el estadístico de prueba es la estandarización de $X$.
+
+$$Z_0=\frac{X-nP_0}{\sqrt{n*P_0*(1-P_0)}}\sim N(0,1)$$
+
+Donde $X$ representa el número de casos en la muestra aleatoria que pertenecen a la clase de interés.
+
+De esta forma en una prueba bilateral se rechaza la $H_0$ si
+
+$$Z_0< - Z_{\alpha/2} \quad ó \quad Z_0>  Z_{\alpha/2}$$
+Para las pruebas unilaterales, con $H_1: P> P_0$, se rechaza $H_0$ cuando:
+
+$$Z_0>Z_\alpha$$
+Con $H_1: P< P_0$, se rechaza $H_0$ cuando:
+
+$$Z_0<-Z_\alpha$$
+Ejercicio, De 1000 casos seleccionados de cáncer en el pulmón, 823 terminaron en muerte. Se podría decir que el porcentaje de muertes es del 90%, o mayor a este valor.
+
+Solución, el parámetro de interés es la proporción de muertes por el cáncer de pulmón ($P$)
+
+$$H_0: P=0.9$$
+$$H_1: P\neq0.9$$
+$$H_2: P > 0.9$$
+El estadístico de prueba:
+
+$$Z_0=\frac{823-1000*0.9}{\sqrt{1000*0.9*0.1}}=-8.11$$
+Para la prueba bilateral a un $\alpha=0.05$:
+
+$$-8.11< - 1.96 \quad ó \quad -8.11>  1.96$$
+Por lo tanto se rechaza la $H_0$. Mientras que para la prueba unilateral 
+
+$$-8.11>1.64$$
+
+No hay evidencia estadística para rechazar $H_0$ y aceptar $H_2$.
+
 ## Prueba de hipótesis sobre la diferencia de Proporciones
+
+En este caso el supuesto principal es que se trabajan con 2 poblaciones independientes y sobre ellas se busca contrastar el valor de sus proporciones de alguna clase en particular. 
+
+$$H_0: P_1=P_2$$
+$$H_1: P_1 \neq P_2$$
+$$H_1: P_1 > P_2$$
+$$H_1: P_1 < P_2$$
+
+Se parte con dos muestras aleatorias de tamaños $n_1$ y $n_2$ de ambas poblaciones, y sea $X_1$, $X_2$ el número de observaciones que pertenecen a la clase de interés en las muestras. Si aproximamos a $X_1$ y $X_2$ como normales al ser estas binomiales, si se trabaja a nivel de los estimadores, sean $\hat{P}_1$ y $\hat{P}_2$ se sabe que:
+
+$$Z_0=\frac{\hat{P_1}-\hat{P_2}}{\sqrt{\hat{P}(1-\hat{P})*\left[\frac{1}{n_1}+\frac{1}{n_2} \right]}}\sim N(0,1)$$
+$$\hat{P}=\frac{X_1+X_2}{n_1+n_2}$$
+De esta forma en una prueba bilateral se rechaza la $H_0$ si
+
+$$Z_0< - Z_{\alpha/2} \quad ó \quad Z_0>  Z_{\alpha/2}$$
+Para las pruebas unilaterales, con $H_1: P_1> P_2$, se rechaza $H_0$ cuando:
+
+$$Z_0>Z_\alpha$$
+Con $H_1: P_1< P_2$, se rechaza $H_0$ cuando:
+
+$$Z_0<-Z_\alpha$$
+Ejercicio, del libro guía del capítulo resolver el ejercicio 11.41 y 11.42
 
 ## Tamaño de muestra y su relación con el error de tipo I y tipo II
 
-## Prueba de hipótesis sobre la varianza
+Recordar que el error de tipo 1 denotado por $\alpha$ es el falso positivo o también establece el riesgo de rechazar algo que es verdadero. Mientras que el error de tipo 2, denotado por $\beta$ es el falso negativo, que establece el riesgo de aceptar algo que es falso. 
 
-## Prueba de hipótesis sobre la igualdad de varianzas
+Para la prueba de hipótesis para la media, la formula para el tamaño de muestra es:
 
-## Bondad de ajuste
+Bilateral,
+
+$$n=\frac{(Z_{\alpha/2}+Z_\beta)^2 \sigma^2}{\delta^2 }$$
+Unilaterales
+
+$$n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }$$
+
+Ejercicio, 11.2 del libro guía.
+
+Se está estudiando el rendimiento de un proceso químico. De la experiencia previa
+se sabe que la varianza del rendimiento con este proceso es 5. Los últimos cinco días de operación de la planta han dado como resultado los siguientes rendimientos (en porcentajes):
+
+$$91.6,88.75,90.8,89.95,91.3.$$
+
+  * ¿Hay razón para creer que el rendimiento es menor al 90%?
+  * ¿Que tamaño de muestra se requeriría para detectar un rendimiento medio verdadero de 85% con probabilidad de 0.95?
+
+Solución, 
+
+$$H_0: \mu=90$$
+$$H_1: \mu<90$$
+$$Z_0=\frac{\bar{X}-\mu_0}{\frac{\sigma}{\sqrt{n}}}=\frac{90.48-90}{\frac{2.24}{\sqrt{5}}}=0.48$$
+Se rechaza $H_0$ si (a un $\alpha=0.05$): 
+
+$$0.48<-Z_{\alpha}=-1.64$$
+Por lo tanto no hay evidencia estadística para rechazar $H_0$.
+
+
+
+$$n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }=\frac{(1.64+1.64)^2 5}{(-5)^2 }=2.15 \approx 3$$
+
+De forma análoga en las otras pruebas estadísticas se tienen los tamaños de muestra:
+
+Para la diferencia de medias
+
+Bilateral
+$$n=\frac{(Z_{\alpha/2}+Z_\beta)^2 (\sigma_1^2+\sigma_2^2)}{\delta^2 }$$
+
+$$n=\frac{(Z_{\alpha}+Z_\beta)^2 (\sigma_1^2+\sigma_2^2)}{\delta^2 }$$
+Para la proporción,
+
+Bilateral
+
+$$n=\left(\frac{Z_{\alpha/2} \sqrt{P_0(1-P_0)}+Z_{\beta} \sqrt{P(1-P)}}{P-P_0} \right)^2$$
+Donde $P$ es el valor propuesto para $H_1$.
+
+Unilateral
+
+$$n=\left(\frac{Z_{\alpha} \sqrt{P_0(1-P_0)}+Z_{\beta} \sqrt{P(1-P)}}{P-P_0} \right)^2$$
+
+Tareas, revisar el libro guía el capítulo 11, en los apartados:
+
+  * 11-10.2. Tamaño de muestra para la diferencia de proporciones
+  * Revisar la tabla 11.7
+  * Revisar la Prueba de hipótesis sobre la varianza 
+  * Revisar la Prueba de hipótesis sobre la igualdad de varianzas
+  * Se recomienda ir resolviendo los ejercicios del capitulo 11
+  
+  
+  
