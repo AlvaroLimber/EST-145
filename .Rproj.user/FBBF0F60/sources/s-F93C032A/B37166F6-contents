@@ -243,6 +243,26 @@ Encontrar la forma de $E[X]$ usando la definición anterior.
 $$E[X]=\int_{Rx}\int_{Ry} x f(x,y) dy dx=\int_{Rx}xf(x) dx$$
 $$E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx$$
 
+Ejercicio, Sea la función conjunta 
+
+$$f(x,y)=\frac{1}{500}, \quad 0<X<0.25 \quad 0<y<2000$$
+Encontrar:
+
+  * $E[X]=1/8$, $V[X]=\frac{0.25^2}{12}=\frac{1}{192}$, $E[Y]=1000$, $V[Y]=\frac{2000^2}{12}=\frac{1000000}{3}$
+  * $E[XY]$
+  
+
+$$E[X]=\int_0^{0.25}\int_0^{2000} x \frac{1}{500}dy dx=\int_0^{0.25}x\int_0^{2000}  \frac{1}{500}dy dx=4\int_0^{0.25}x dx=4*\frac{(x^2)_0^{0.25}}{2}=\frac{1}{8}$$
+
+$$E[XY]=125$$
+
+Nota: Si dos variables aleatorias son independientes:
+
+$$E[XY]=E[X]E[Y]$$
+Demostración,
+
+$$E[XY]=\int_{Rx}\int_{Ry} xyf(x,y)dydx=\int_{Rx}\int_{Ry} xyf(x)f(y)dydx=\int_{Rx}x f(x)\left(\int_{Ry} yf(y)dy\right)dx=E[X]*E[Y]$$
+
 Ejemplo para el caso discreto, de las pizza y las gaseosas.
 
 $$E[X]=1*0.5+2*0.31+3*0.19=1.69$$
@@ -253,6 +273,11 @@ $$E[Y^2]=0^2*0.12+1^2*0.63+2^2*0.25=1.63$$
 $$E[XY]=\sum_{Rx}\sum_{Ry}xy \pi(x,y)=1*0*0.04+1*1*0.42+\ldots+3*2*0.13=2.067$$
 
 ## Distribuciones condicionales
+
+Recordar de estadística I:
+
+$$P(B/A)=\frac{P(A\cap B)}{P(A)}$$
+
 Estas distribuciones nos ayudan a entender el comportamiento de una variable, cuando fijamos a otra.
 
 > Definición, una distribución condicional se define como:

@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-08-11" />
+<meta name="date" content="2021-08-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -427,6 +427,19 @@ Nota, hay valores esperados más usuales que otros,</p>
 Encontrar la forma de <span class="math inline">\(E[X]\)</span> usando la definición anterior.</p>
 <p><span class="math display">\[E[X]=\int_{Rx}\int_{Ry} x f(x,y) dy dx=\int_{Rx}xf(x) dx\]</span>
 <span class="math display">\[E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx\]</span></p>
+<p>Ejercicio, Sea la función conjunta</p>
+<p><span class="math display">\[f(x,y)=\frac{1}{500}, \quad 0&lt;X&lt;0.25 \quad 0&lt;y&lt;2000\]</span>
+Encontrar:</p>
+<ul>
+<li><span class="math inline">\(E[X]=1/8\)</span>, <span class="math inline">\(V[X]=\frac{0.25^2}{12}=\frac{1}{192}\)</span>, <span class="math inline">\(E[Y]=1000\)</span>, <span class="math inline">\(V[Y]=\frac{2000^2}{12}=\frac{1000000}{3}\)</span></li>
+<li><span class="math inline">\(E[XY]\)</span></li>
+</ul>
+<p><span class="math display">\[E[X]=\int_0^{0.25}\int_0^{2000} x \frac{1}{500}dy dx=\int_0^{0.25}x\int_0^{2000}  \frac{1}{500}dy dx=4\int_0^{0.25}x dx=4*\frac{(x^2)_0^{0.25}}{2}=\frac{1}{8}\]</span></p>
+<p><span class="math display">\[E[XY]=125\]</span></p>
+<p>Nota: Si dos variables aleatorias son independientes:</p>
+<p><span class="math display">\[E[XY]=E[X]E[Y]\]</span>
+Demostración,</p>
+<p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xyf(x,y)dydx=\int_{Rx}\int_{Ry} xyf(x)f(y)dydx=\int_{Rx}x f(x)\left(\int_{Ry} yf(y)dy\right)dx=E[X]*E[Y]\]</span></p>
 <p>Ejemplo para el caso discreto, de las pizza y las gaseosas.</p>
 <p><span class="math display">\[E[X]=1*0.5+2*0.31+3*0.19=1.69\]</span>
 <span class="math display">\[E[Y]=0*0.12+1*0.63+2*0.25=1.13\]</span></p>
@@ -436,6 +449,8 @@ Encontrar la forma de <span class="math inline">\(E[X]\)</span> usando la defini
 </div>
 <div id="distribuciones-condicionales" class="section level2" number="1.7">
 <h2><span class="header-section-number">1.7</span> Distribuciones condicionales</h2>
+<p>Recordar de estadística I:</p>
+<p><span class="math display">\[P(B/A)=\frac{P(A\cap B)}{P(A)}\]</span></p>
 <p>Estas distribuciones nos ayudan a entender el comportamiento de una variable, cuando fijamos a otra.</p>
 <blockquote>
 <p>Definición, una distribución condicional se define como:</p>
