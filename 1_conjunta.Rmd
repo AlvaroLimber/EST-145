@@ -284,7 +284,7 @@ Estas distribuciones nos ayudan a entender el comportamiento de una variable, cu
 
 Caso discreto,
 
-$\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}$
+$$\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}$$
 
 Caso continuo,
 
@@ -301,6 +301,48 @@ Que sucede si $X$ e $Y$ son variables independientes:
 
 $$f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}=\frac{f(x)f(y)}{f(y)}=f(x)$$
 $$f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}=\frac{f(x)f(y)}{f(x)}=f(y)$$
+Ejercicio, 
+
+Sea la densidad conjunta de $X,Y$:
+
+$$f(x,y)=x^2+\frac{xy}{3}, \quad 0<x\leq 1, \quad 0\leq y \leq2$$
+Se pide: 
+
+  * Verificar que es una función de probabilidad 
+  * Encontrar las marginales 
+  * Encontrar las condicionales ($X/Y$, $Y/X$)
+  * Encontrar $E[X]$, $E[Y]$, $E[XY]$, $E[X/Y]$, $E[Y/X]$
+  * ¿Son independientes?
+
+$$\int_{Rx} \int_{Ry}f(x,y)dydx=\int_0^1 \int_0^2 x^2+\frac{xy}{3} dy dx=1$$
+
+$$f(x)=\int_{Ry}f(x,y)dy=2x^2 +\frac{2x}{3}$$
+
+$$f(y)=\int_{Rx}f(x,y)dx=\frac{1}{3}+\frac{y}{6}$$
+
+$$f_{X/Y}(x/y)=\frac{x^2+\frac{xy}{3}}{\frac{1}{3}+\frac{y}{6}}=\frac{x(3x+y)}{1+\frac{y}{2}}$$
+
+$$f_{Y/X}(y/x)=\frac{x^2+\frac{xy}{3}}{2x^2 +\frac{2x}{3}}=\frac{3x^2+xy}{6x^2+2x}$$
+
+$$E[X]=\int_0^1 x\left( 2x^2 +\frac{2x}{3} \right)dx=\frac{13}{18}$$
+
+$$E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dx=\frac{10}{9}$$
+
+$$E[XY]=\int_{Rx} \int_{Ry} xy f(x,y)dydx=\int_0^1 \int_0^2 xy \left(x^2+\frac{xy}{3}\right) dy dx=\frac{43}{54}$$
+
+### Esperanza condicional
+
+Se refiere a calcular el valor esperado sobre la función condicional.
+
+$$E[Y/X]=\int_{Ry} y*  f_{Y/X}(y/x)dy$$
+$$E[X/Y]=\int_{Rx} x*  f_{X/Y}(x/y)dx$$
+Para el ejercicio anterior,
+
+$$E[Y/X]=\int_0^2 y* \left(\frac{3x^2+xy}{6x^2+2x}\right) dy=\frac{9x+4}{9x+3}$$
+
+$$E[Y/X=0.5]=\frac{17}{15}$$
+$$E[X/Y]=\frac{9+4y}{12+6y}$$
+
 
 ## Medidas de relación entre dos variables
 
@@ -308,7 +350,7 @@ Estas medidas nos ayudan a conocer si dos variables *están relacionadas* y nos 
 
 La Covarianza $cov(X,Y)$ es una medida absoluta de relación:
 
-$$cov(X,Y)=E[(X-E[X])(Y-E[Y])]$$
+$$cov(X,Y)=E\left\[(X-E[X])(Y-E[Y])\right\]$$
 Una alternativa a esta formula (versión corta).
 
 $$cov(X,Y)=E[XY]-E[X]*E[Y]$$
@@ -317,11 +359,18 @@ Tarea, demostrar lo anterior.
 Otra medida importantes es la correlación entre $X$ e $Y$, esta es una medida relativa, que cumple la propiedad:  $-1 \leq corr(X,Y) \leq 1$, esta se define como:
 
 $$corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}$$
+
   * Si $cov_{xy}$ o $corr_{xy}$ son distintas de 0, podemos afirmar que existe relación
   * Si $cov_{xy}>0$ o $corr_{xy}>0$ la relación entre $X$ e $Y$ es directa
   * Si $cov_{xy}<0$ o $corr_{xy}<0$ la relación entre $X$ e $Y$ es inversa
   * La intensidad de la dirección de la relación nos la da $corr_{xy}$, mientras más cercana a $corr_{xy}\rightarrow 1$ la relación directa es más fuerte, $corr_{xy}\rightarrow -1$ la relación inversa es más fuerte 
   * Si $corr_{xy}\rightarrow 0$ podemos decir que las variables no están relacionadas ("cuasi-independencia") la correlación mide principalmente relaciones lineales.
+  
+Tarea, 
+
+Calcular la Covarianza y la correlación de las variables aleatorias $X,Y$.
+
+$$cov(X,Y)=\frac{43}{54}-\frac{13}{18}*\frac{10}{9}=-\frac{1}{162}$$
 
 Ejercicio, 
 
@@ -365,4 +414,74 @@ $$\int_0^2 \frac{x}{2}dx=\frac{x^2}{4}/_0^2=1$$
 $$P(1/4<X<1/2 | Y=1/3)=\int_{1/4}^{1/2} f_{X|Y}(X|Y) dx=\int_{1/4}^{1/2} \frac{x}{2} dx=\frac{x^2}{4}/_{0.25}^{0.5}=$$
 
 $$=\frac{0.5^2}{4}-\frac{0.25^2}{4}=\frac{3}{64}$$
+
+Ejercicio de práctica, 
+
+Sea la función de densidad:
+
+$$f(x,y)=24xy, \quad x>0 \quad y>0 \quad x+y<1$$
+
+  * Verificar si es una función de probabilidad
+  * Encontrar la función de distribución $F$
+  * Calcular la probabilidad que 
+  
+$$P(X>0.3 , Y<0.5 )$$
+
+Recordar;
+
+$$F(x,y)=P(X<x,Y<y)$$
+
+Hay que tomar al menos 2 casos:
+
+  * $0<x<1$, $x+y<1$
+  * $0<x<1$, $1-x\leq y\leq1$
+
+Para el primer caso:
+
+$$\int_0^y \int_0^x 24xy dxdy=6x^2 y^2$$
+Para el segundo caso:
+
+$$\int_0^y \int_0^{1-y} 24xy dxdy=$$
+Ejercicio de práctica,
+
+Sea la función de densidad
+
+$$f(x,y)=4 e^{-2(x+y)} \quad x>0 \quad y>0$$
+  * Verificar si es una función de probabilidad
+  * Suponer que estamos interesados en el comportamiento de la variable: 
+
+$$Z=\frac{X}{Y}$$
+
+encontrar la distribución de $Z$.
+
+Definimos a $z=\frac{x}{y}$ y $w=x+y$. Ahora encontramos las funciones $G$
+
+$$x=\frac{zw}{1+z}; \quad y=\frac{w}{1+z}$$
+
+$$l(w,z)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|=4 e^{-2(\frac{zw}{1+z}+\frac{w}{1+z})}*\frac{w}{(1+z)^2}$$
+$$l(z,w)=\frac{4w e^{-2w}}{(1+z)^2}, \quad w>0, \quad z>0$$
+finalmente:
+
+$$f(z)=\int_0^{\infty} \frac{4w e^{-2w}}{(1+z)^2} dw=\frac{1}{(1+z)^2}$$
+
+## Transformaciones
+
+Supongamos que se busca encontrar a partir de la función de densidad $f(X,Y)$ de dos variables X, Y una tercera variable $Z=H_1(X,Y)$. La estrategia para resolver este tipo de problemas es:
+
+  * Definir una cuarta variable $W=H_2(X,Y)$, es elegida por conveniencia 
+  * Se encuentran $X=G_1(Z,W)$, $Y=G_2(Z,W)$
+  * Una vez con estos valores la función conjunta de $Z,W$ es:
+
+$$l(Z,W)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|$$
+
+Donde $J(Z,W)$ se llama jacobiano de la transformación y es dado por:
+
+$$J(Z,W)=\left|
+\begin{array}
+& \frac{\partial X }{\partial Z} & \frac{\partial X }{\partial W} \\
+\frac{\partial Y }{\partial Z} & \frac{\partial Y }{\partial W}
+\end{array}
+\right|
+$$
+
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-08-16" />
+<meta name="date" content="2021-08-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,8 +171,12 @@ div.csl-indent {
 <li class="chapter" data-level="1.4" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal</a></li>
 <li class="chapter" data-level="1.5" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia</a></li>
 <li class="chapter" data-level="1.6" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados</a></li>
-<li class="chapter" data-level="1.7" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
+<li class="chapter" data-level="1.7" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.7.1</b> Esperanza condicional</a></li>
+</ul></li>
 <li class="chapter" data-level="1.8" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
+<li class="chapter" data-level="1.9" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#transformaciones"><i class="fa fa-check"></i><b>1.9</b> Transformaciones</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
 <ul>
@@ -456,7 +460,7 @@ Demostración,</p>
 <p>Definición, una distribución condicional se define como:</p>
 </blockquote>
 <p>Caso discreto,</p>
-<p><span class="math inline">\(\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}\)</span></p>
+<p><span class="math display">\[\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}\]</span></p>
 <p>Caso continuo,</p>
 <p><span class="math display">\[f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}\]</span>
 <span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}\]</span>
@@ -466,23 +470,57 @@ Estas funciones condicionales cumplen todas las propiedades de una función de p
 <p><span class="math display">\[\int_{Rx} f_{X/Y}(x/y) dx=\int_{Rx} \frac{f(x,y)}{f(y)} dx=\frac{1}{f(y)}\int_{Rx} f(x,y)dx=\frac{f(y)}{f(y)}=1\]</span>
 Que sucede si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son variables independientes:</p>
 <p><span class="math display">\[f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}=\frac{f(x)f(y)}{f(y)}=f(x)\]</span>
-<span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}=\frac{f(x)f(y)}{f(x)}=f(y)\]</span></p>
+<span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}=\frac{f(x)f(y)}{f(x)}=f(y)\]</span>
+Ejercicio,</p>
+<p>Sea la densidad conjunta de <span class="math inline">\(X,Y\)</span>:</p>
+<p><span class="math display">\[f(x,y)=x^2+\frac{xy}{3}, \quad 0&lt;x\leq 1, \quad 0\leq y \leq2\]</span>
+Se pide:</p>
+<ul>
+<li>Verificar que es una función de probabilidad</li>
+<li>Encontrar las marginales</li>
+<li>Encontrar las condicionales (<span class="math inline">\(X/Y\)</span>, <span class="math inline">\(Y/X\)</span>)</li>
+<li>Encontrar <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(E[Y]\)</span>, <span class="math inline">\(E[XY]\)</span>, <span class="math inline">\(E[X/Y]\)</span>, <span class="math inline">\(E[Y/X]\)</span></li>
+<li>¿Son independientes?</li>
+</ul>
+<p><span class="math display">\[\int_{Rx} \int_{Ry}f(x,y)dydx=\int_0^1 \int_0^2 x^2+\frac{xy}{3} dy dx=1\]</span></p>
+<p><span class="math display">\[f(x)=\int_{Ry}f(x,y)dy=2x^2 +\frac{2x}{3}\]</span></p>
+<p><span class="math display">\[f(y)=\int_{Rx}f(x,y)dx=\frac{1}{3}+\frac{y}{6}\]</span></p>
+<p><span class="math display">\[f_{X/Y}(x/y)=\frac{x^2+\frac{xy}{3}}{\frac{1}{3}+\frac{y}{6}}=\frac{x(3x+y)}{1+\frac{y}{2}}\]</span></p>
+<p><span class="math display">\[f_{Y/X}(y/x)=\frac{x^2+\frac{xy}{3}}{2x^2 +\frac{2x}{3}}=\frac{3x^2+xy}{6x^2+2x}\]</span></p>
+<p><span class="math display">\[E[X]=\int_0^1 x\left( 2x^2 +\frac{2x}{3} \right)dx=\frac{13}{18}\]</span></p>
+<p><span class="math display">\[E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dx=\frac{10}{9}\]</span></p>
+<p><span class="math display">\[E[XY]=\int_{Rx} \int_{Ry} xy f(x,y)dydx=\int_0^1 \int_0^2 xy \left(x^2+\frac{xy}{3}\right) dy dx=\frac{43}{54}\]</span></p>
+<div id="esperanza-condicional" class="section level3" number="1.7.1">
+<h3><span class="header-section-number">1.7.1</span> Esperanza condicional</h3>
+<p>Se refiere a calcular el valor esperado sobre la función condicional.</p>
+<p><span class="math display">\[E[Y/X]=\int_{Ry} y*  f_{Y/X}(y/x)dy\]</span>
+<span class="math display">\[E[X/Y]=\int_{Rx} x*  f_{X/Y}(x/y)dx\]</span>
+Para el ejercicio anterior,</p>
+<p><span class="math display">\[E[Y/X]=\int_0^2 y* \left(\frac{3x^2+xy}{6x^2+2x}\right) dy=\frac{9x+4}{9x+3}\]</span></p>
+<p><span class="math display">\[E[Y/X=0.5]=\frac{17}{15}\]</span>
+<span class="math display">\[E[X/Y]=\frac{9+4y}{12+6y}\]</span></p>
+</div>
 </div>
 <div id="medidas-de-relación-entre-dos-variables" class="section level2" number="1.8">
 <h2><span class="header-section-number">1.8</span> Medidas de relación entre dos variables</h2>
 <p>Estas medidas nos ayudan a conocer si dos variables <em>están relacionadas</em> y nos permite saber el <em>tipo de relación</em> (directa, inversa) y también podemos saber la <em>intensidad de la relación</em>. Las medidas son:</p>
 <p>La Covarianza <span class="math inline">\(cov(X,Y)\)</span> es una medida absoluta de relación:</p>
-<p><span class="math display">\[cov(X,Y)=E[(X-E[X])(Y-E[Y])]\]</span>
+<p><span class="math display">\[cov(X,Y)=E\left\[(X-E[X])(Y-E[Y])\right\]\]</span>
 Una alternativa a esta formula (versión corta).</p>
 <p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]\]</span>
 Tarea, demostrar lo anterior.</p>
 <p>Otra medida importantes es la correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, esta es una medida relativa, que cumple la propiedad: <span class="math inline">\(-1 \leq corr(X,Y) \leq 1\)</span>, esta se define como:</p>
-<p><span class="math display">\[corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}\]</span>
-* Si <span class="math inline">\(cov_{xy}\)</span> o <span class="math inline">\(corr_{xy}\)</span> son distintas de 0, podemos afirmar que existe relación
-* Si <span class="math inline">\(cov_{xy}&gt;0\)</span> o <span class="math inline">\(corr_{xy}&gt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es directa
-* Si <span class="math inline">\(cov_{xy}&lt;0\)</span> o <span class="math inline">\(corr_{xy}&lt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es inversa
-* La intensidad de la dirección de la relación nos la da <span class="math inline">\(corr_{xy}\)</span>, mientras más cercana a <span class="math inline">\(corr_{xy}\rightarrow 1\)</span> la relación directa es más fuerte, <span class="math inline">\(corr_{xy}\rightarrow -1\)</span> la relación inversa es más fuerte
-* Si <span class="math inline">\(corr_{xy}\rightarrow 0\)</span> podemos decir que las variables no están relacionadas (“cuasi-independencia”) la correlación mide principalmente relaciones lineales.</p>
+<p><span class="math display">\[corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(cov_{xy}\)</span> o <span class="math inline">\(corr_{xy}\)</span> son distintas de 0, podemos afirmar que existe relación</li>
+<li>Si <span class="math inline">\(cov_{xy}&gt;0\)</span> o <span class="math inline">\(corr_{xy}&gt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es directa</li>
+<li>Si <span class="math inline">\(cov_{xy}&lt;0\)</span> o <span class="math inline">\(corr_{xy}&lt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es inversa</li>
+<li>La intensidad de la dirección de la relación nos la da <span class="math inline">\(corr_{xy}\)</span>, mientras más cercana a <span class="math inline">\(corr_{xy}\rightarrow 1\)</span> la relación directa es más fuerte, <span class="math inline">\(corr_{xy}\rightarrow -1\)</span> la relación inversa es más fuerte</li>
+<li>Si <span class="math inline">\(corr_{xy}\rightarrow 0\)</span> podemos decir que las variables no están relacionadas (“cuasi-independencia”) la correlación mide principalmente relaciones lineales.</li>
+</ul>
+<p>Tarea,</p>
+<p>Calcular la Covarianza y la correlación de las variables aleatorias <span class="math inline">\(X,Y\)</span>.</p>
+<p><span class="math display">\[cov(X,Y)=\frac{43}{54}-\frac{13}{18}*\frac{10}{9}=-\frac{1}{162}\]</span></p>
 <p>Ejercicio,</p>
 <p>Demostrar que si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes entonces:
 <span class="math display">\[E[XY]=E[X]*E[Y]\]</span></p>
@@ -508,6 +546,57 @@ Verificando que sea correcta</p>
 <p><span class="math display">\[\int_0^2 \frac{x}{2}dx=\frac{x^2}{4}/_0^2=1\]</span>
 <span class="math display">\[P(1/4&lt;X&lt;1/2 | Y=1/3)=\int_{1/4}^{1/2} f_{X|Y}(X|Y) dx=\int_{1/4}^{1/2} \frac{x}{2} dx=\frac{x^2}{4}/_{0.25}^{0.5}=\]</span></p>
 <p><span class="math display">\[=\frac{0.5^2}{4}-\frac{0.25^2}{4}=\frac{3}{64}\]</span></p>
+<p>Ejercicio de práctica,</p>
+<p>Sea la función de densidad:</p>
+<p><span class="math display">\[f(x,y)=24xy, \quad x&gt;0 \quad y&gt;0 \quad x+y&lt;1\]</span></p>
+<ul>
+<li>Verificar si es una función de probabilidad</li>
+<li>Encontrar la función de distribución <span class="math inline">\(F\)</span></li>
+<li>Calcular la probabilidad que</li>
+</ul>
+<p><span class="math display">\[P(X&gt;0.3 , Y&lt;0.5 )\]</span></p>
+<p>Recordar;</p>
+<p><span class="math display">\[F(x,y)=P(X&lt;x,Y&lt;y)\]</span></p>
+<p>Hay que tomar al menos 2 casos:</p>
+<ul>
+<li><span class="math inline">\(0&lt;x&lt;1\)</span>, <span class="math inline">\(x+y&lt;1\)</span></li>
+<li><span class="math inline">\(0&lt;x&lt;1\)</span>, <span class="math inline">\(1-x\leq y\leq1\)</span></li>
+</ul>
+<p>Para el primer caso:</p>
+<p><span class="math display">\[\int_0^y \int_0^x 24xy dxdy=6x^2 y^2\]</span>
+Para el segundo caso:</p>
+<p><span class="math display">\[\int_0^y \int_0^{1-y} 24xy dxdy=\]</span>
+Ejercicio de práctica,</p>
+<p>Sea la función de densidad</p>
+<p><span class="math display">\[f(x,y)=4 e^{-2(x+y)} \quad x&gt;0 \quad y&gt;0\]</span>
+* Verificar si es una función de probabilidad
+* Suponer que estamos interesados en el comportamiento de la variable:</p>
+<p><span class="math display">\[Z=\frac{X}{Y}\]</span></p>
+<p>encontrar la distribución de <span class="math inline">\(Z\)</span>.</p>
+<p>Definimos a <span class="math inline">\(z=\frac{x}{y}\)</span> y <span class="math inline">\(w=x+y\)</span>. Ahora encontramos las funciones <span class="math inline">\(G\)</span></p>
+<p><span class="math display">\[x=\frac{zw}{1+z}; \quad y=\frac{w}{1+z}\]</span></p>
+<p><span class="math display">\[l(w,z)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|=4 e^{-2(\frac{zw}{1+z}+\frac{w}{1+z})}*\frac{w}{(1+z)^2}\]</span>
+<span class="math display">\[l(z,w)=\frac{4w e^{-2w}}{(1+z)^2}, \quad w&gt;0, \quad z&gt;0\]</span>
+finalmente:</p>
+<p><span class="math display">\[f(z)=\int_0^{\infty} \frac{4w e^{-2w}}{(1+z)^2} dw=\frac{1}{(1+z)^2}\]</span></p>
+</div>
+<div id="transformaciones" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> Transformaciones</h2>
+<p>Supongamos que se busca encontrar a partir de la función de densidad <span class="math inline">\(f(X,Y)\)</span> de dos variables X, Y una tercera variable <span class="math inline">\(Z=H_1(X,Y)\)</span>. La estrategia para resolver este tipo de problemas es:</p>
+<ul>
+<li>Definir una cuarta variable <span class="math inline">\(W=H_2(X,Y)\)</span>, es elegida por conveniencia</li>
+<li>Se encuentran <span class="math inline">\(X=G_1(Z,W)\)</span>, <span class="math inline">\(Y=G_2(Z,W)\)</span></li>
+<li>Una vez con estos valores la función conjunta de <span class="math inline">\(Z,W\)</span> es:</li>
+</ul>
+<p><span class="math display">\[l(Z,W)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|\]</span></p>
+<p>Donde <span class="math inline">\(J(Z,W)\)</span> se llama jacobiano de la transformación y es dado por:</p>
+<p><span class="math display">\[J(Z,W)=\left|
+\begin{array}
+&amp; \frac{\partial X }{\partial Z} &amp; \frac{\partial X }{\partial W} \\
+\frac{\partial Y }{\partial Z} &amp; \frac{\partial Y }{\partial W}
+\end{array}
+\right|
+\]</span></p>
 
 </div>
 </div>
