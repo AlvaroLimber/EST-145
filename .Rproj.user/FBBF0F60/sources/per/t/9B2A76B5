@@ -1,0 +1,29 @@
+{
+    "id": "9B2A76B5",
+    "path": "~/GitHub/EST-145/2_dist_muestrales.Rmd",
+    "project_path": "2_dist_muestrales.Rmd",
+    "type": "r_markdown",
+    "hash": "2219794680",
+    "contents": "",
+    "dirty": false,
+    "created": 1630347373754.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "tempName": "Untitled1",
+        "cursorPosition": "472,15",
+        "scrollLine": "470",
+        "docOutlineVisible": "0",
+        "chunk_output_type": "console",
+        "docOutlineSize": "155",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1631132795,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1631132795371,
+    "read_only": false,
+    "read_only_alternatives": []
+}

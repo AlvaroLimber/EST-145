@@ -9,6 +9,7 @@ distribuciones-condicionales
 esperanza-condicional
 medidas-de-relación-entre-dos-variables
 transformaciones
+distrubuciones-conjuntas-de-más-de-2-variables-aleatorias
 tema-2-distribuciones-muestrales
 muestras-y-población
 parámetros-estadísticas-y-estimadores.

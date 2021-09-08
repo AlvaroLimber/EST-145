@@ -484,4 +484,21 @@ $$J(Z,W)=\left|
 \right|
 $$
 
+## Distrubuciones conjuntas de más de 2 variables aleatorias
+
+Estamos introduciendo ahora $n$ variables aleatorias, que se puede denotar por vector 
+
+$$\left[X_1,X_2,\ldots,X_n \right]$$
+
+Se puede definir su función de densidad conjunta:
+
+$$f(X_1,X_2,\ldots,X_n)=\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1$$
+$$f(X_1,X_2,\ldots,X_n)\geq 0$$
+
+Las marginales de cada variables se obtienen integrando la función de densidad sobre todas las variables aleatorias excepto la variable de interés.
+
+$$f(x_i)=\int \ldots\int_{Rx_{j\neq i}} f(X_1,X_2,\ldots,X_n)dx\ldots dx_{j \neq i}$$
+Notar también que si las $n$ variables aleatorias son independientes entre ellas:
+
+$$f(X_1,X_2,\ldots,X_n)=f(X_1)*f(X_2)*\ldots f(X_n)$$
 

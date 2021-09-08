@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-08-23" />
+<meta name="date" content="2021-09-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -177,6 +177,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="1.8" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
 <li class="chapter" data-level="1.9" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#transformaciones"><i class="fa fa-check"></i><b>1.9</b> Transformaciones</a></li>
+<li class="chapter" data-level="1.10" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.10</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
 <ul>
@@ -597,6 +598,18 @@ finalmente:</p>
 \end{array}
 \right|
 \]</span></p>
+</div>
+<div id="distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="section level2" number="1.10">
+<h2><span class="header-section-number">1.10</span> Distrubuciones conjuntas de más de 2 variables aleatorias</h2>
+<p>Estamos introduciendo ahora <span class="math inline">\(n\)</span> variables aleatorias, que se puede denotar por vector</p>
+<p><span class="math display">\[\left[X_1,X_2,\ldots,X_n \right]\]</span></p>
+<p>Se puede definir su función de densidad conjunta:</p>
+<p><span class="math display">\[f(X_1,X_2,\ldots,X_n)=\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1\]</span>
+<span class="math display">\[f(X_1,X_2,\ldots,X_n)\geq 0\]</span></p>
+<p>Las marginales de cada variables se obtienen integrando la función de densidad sobre todas las variables aleatorias excepto la variable de interés.</p>
+<p><span class="math display">\[f(x_i)=\int \ldots\int_{Rx_{j\neq i}} f(X_1,X_2,\ldots,X_n)dx\ldots dx_{j \neq i}\]</span>
+Notar también que si las <span class="math inline">\(n\)</span> variables aleatorias son independientes entre ellas:</p>
+<p><span class="math display">\[f(X_1,X_2,\ldots,X_n)=f(X_1)*f(X_2)*\ldots f(X_n)\]</span></p>
 
 </div>
 </div>
