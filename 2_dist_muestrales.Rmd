@@ -385,12 +385,45 @@ pa<-NULL
 for(i in 1:r){
 s<-sample(a,n)
 pa[i]<-mean(s)
-print(i)
 }
 PA<-mean(a)
 plot(density(pa),col="blue",lwd=1.5)
 points(density(rnorm(10^6,PA,sqrt(PA*(1-PA)/n))),col="red",type="l",lwd=2)
 ```
+
+Ejercicio:
+
+De una población de 150 estudiantes de la materia de estadística I se toma una muestra de 40 estudiantes, sobre los cuales se realiza un test sobre 100 puntos. Con los siguientes resultados:
+
+59 54 61 58 66 56 35 42 49 65 61 61 58 57 57 60 55 63 66 48 52 54 49 54 55 32 60 40 53 67 54 60 44 74 55 24 43 56 62 50
+
+ Calcule: 
+
+  + la probabilidad que el promedio de nota sea menor a 50, 
+  + la probabilidad que el promedio de nota sea mayor a 60
+  + la probabilidad que el promedio de nota se encuentre entre 50 y 55
+
+Solución, 
+
+Como información $N=150$, $n=40$,
+
+$$\bar{X}=54.225$$
+
+$$\hat{S}^2_x=99.35833$$
+Usando el teorema del limite central, podemos decir (aproximar) que:
+
+$$\bar{X}\sim N\left(\mu_x\approx\bar{x},\frac{\sigma^2_x}{n}\approx \frac{\hat{S}^2_x}{n} \right)=N(54.225,2.484)$$
+
+La probabilidad que el promedio de nota sea menor a 50, 
+
+$$P(\bar{X}<50)=P\left(\frac{\bar{X}-\mu_x}{\frac{\sigma_x}{\sqrt{n}}} <\frac{50-54.225}{\sqrt{2.484}}\right)=P(Z<-2.68)=\phi(-2.68)=$$
+$$=0.00368$$
+
+  + la probabilidad que el promedio de nota sea mayor a 60
+  
+$$P(\bar{X}>60)=P(Z>3.66)=1-P(Z\leq 3.66)=1-\phi(3.66)=0.00013$$  
+  
+  + la probabilidad que el promedio de nota se encuentre entre 50 y 55
 
 ## Distribución muestral para la varianza
 
@@ -436,18 +469,48 @@ theta1<-apply(s,2,var)*((n-1)/n)
 theta2<-apply(s,2,var)
 
 
-theta1
-theta2
+mean(theta1)-70
+mean(theta2)-70
+
 plot(density(theta1),xlim=c(-50,300))
 points(density(theta2),col="red",type="l")
 
-mean(theta1) #E[]
-mean(theta2) #E[]
+
+
 ```
 
-Notar que para el ejemplo $E[\hat{\theta_1}]$ ni $E[\hat{\theta_2}]$ se acercan a $\sigma^2_x$, sin embargo, $E[\theta_2]=S^2_x$.
+Notar que para el ejemplo $E[\hat{\theta_1}]$ ni $E[\hat{\theta_2}]$ se acercan a $\sigma^2_x$, sin embargo, $E[\hat{\theta}_2]=S^2_x$.
 
 $$S^2_x=\frac{\sum_U (x_i-\mu_x)^2}{N-1}$$
+Viendo los resultados en una simulación
+
+```{r}
+N<-1000
+set.seed(1527)
+x<-round(rnorm(N,60,10),0)
+mean(x)#mu
+sum((x-mean(x))^2)/N#sigma
+n<-60
+theta1<-NULL
+theta2<-NULL
+r<-20000
+for(i in 1:r){
+  aux<-sample(x,n)
+  theta1[i]<-var(aux)*((n-1)/n)
+  theta2[i]<-var(aux)
+}
+plot(density(theta1),col="red")
+points(density(theta2),col="blue",type="l")
+abline(v=var(x)*((N-1)/N))
+abline(v=mean(theta1),col="red")
+abline(v=mean(theta2),col="blue")
+
+var(x)*((N-1)/N)#parámetro
+mean(theta1)#estimador por copia /n
+mean(theta2)#varianza muestral /n-1
+```
+
+
 > Teorema
 
 Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria extraída de una población Normal $N(\mu_x,\sigma^2_x)$, definamos al estadístico:
@@ -461,20 +524,11 @@ $$\chi^2=\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}=\frac{\sum_s (x_i-\bar{x})^2}{\sigm
 Simulación;
 
 ```{r}
-#población de tamaño N=1000
-set.seed(999)
-x<-rnorm(1000,20,5)
-hist(x)
-#suponer que se extra una muestra de n=20 de esta población, 
-choose(1000,20)
-n<-20
-#vamos a simular unas 1500 muestras posibles sigma=25
-x2<-NULL
-for(i in 1:1000){
- x2[i]<-(var(sample(x,20))*(n-1))/25
-}
-plot(density(x2))
-points(density(rchisq(1000000,19)),col="red",type="l")
+sigma2x<-var(x)*((N-1)/N)#parámetro
+chi2<-(theta2*(n-1))/sigma2x
+
+plot(density(chi2))
+curve(dchisq(x,df=59),add=T,col="red")
 ```
 
 ## Distribución $\chi^2$
@@ -482,6 +536,7 @@ points(density(rchisq(1000000,19)),col="red",type="l")
 Se dice que una variable aleatoria $X$ tiene una distribución Chi-cuadrado $\chi^2$ con $v$ grados de libertad. Se escribe como: $X \sim \chi^2(v)$, donde el $Rx=\{x>0\}$, si su función de densidad es:
 
 $$f(x)=\frac{1}{2^\frac{v}{2} \Gamma(\frac{v}{2})}*x^{\frac{v}{2}-1}*e^{-\frac{x}{2}}$$
+
 ```{r}
 curve(dchisq(x,1),xlim=c(0,40),ylim=c(0,0.4))
 for(v in 1:30){
