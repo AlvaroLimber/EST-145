@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Prueba de Hipótesis | Estadística II</title>
   <meta name="description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Prueba de Hipótesis | Estadística II" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-09-20" />
+<meta name="date" content="2021-10-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="estimaciones-de-una-y-dos-muestrales.html"/>
 
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -213,7 +213,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
 <li class="chapter" data-level="3.3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30."><i class="fa fa-check"></i><b>3.3.2</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.</a></li>
-<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervamuestra-menor-a-30.lo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero"><i class="fa fa-check"></i><b>3.3.3</b> Intervamuestra menor a 30.lo de confianza para la media y la diferencia de medias con varianza desconocida pero</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30."><i class="fa fa-check"></i><b>3.3.3</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.</a></li>
 <li class="chapter" data-level="3.3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados"><i class="fa fa-check"></i><b>3.3.4</b> Intervalos de confianza para la diferencia de medias de datos pareados</a></li>
 <li class="chapter" data-level="3.3.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones"><i class="fa fa-check"></i><b>3.3.5</b> Intervalo de confianza para proporciones</a></li>
 <li class="chapter" data-level="3.3.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.3.6</b> Intervalo de confianza para diferencia de proporciones</a></li>
@@ -598,7 +598,6 @@ Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <span>“<span class="no
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -638,6 +637,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

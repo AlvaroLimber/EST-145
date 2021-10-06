@@ -97,7 +97,6 @@ Para el caso discreto podemos definirlo de la siguiente forma:
 
 $$f(x,y)=\pi(x,y)=P(X=x,Y=y)$$
 $$\sum_{Rx}\sum_{Ry}\pi(x,y)=1$$
-
 Ejemplo, en un restaurante de pizza se vende porciones de pizza y gaseosa, el dueño del local realizó un monitoreo del patrón de como los clientes ordenan sus pedidos, respecto la cantidad de porciones de pizza con la cantidad de gaseosas, encontrando el siguiente resultado:
 
 Cuál sera la probabilidad de:

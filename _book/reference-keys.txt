@@ -37,7 +37,7 @@ estimación-por-intervalos-de-confianza
 intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida.
 tamaño-de-muestra
 intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30.
-intervamuestra-menor-a-30.lo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero
+intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30.
 intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados
 intervalo-de-confianza-para-proporciones
 tamaño-de-muestra-para-estimar-proporciones
