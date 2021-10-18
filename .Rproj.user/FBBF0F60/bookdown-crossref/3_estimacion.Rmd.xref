@@ -10,6 +10,7 @@ h3:método-de-momentos Método de momentos
 h2:estimación-por-intervalos-de-confianza Estimación por intervalos de confianza
 h3:intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida. Intervalo de confianza para la media, asumiendo varianza conocida.
 h4:tamaño-de-muestra Tamaño de muestra
+h3:intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza
 h3:intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30. Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.
 h3:intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30. Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.
 h3:intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados Intervalos de confianza para la diferencia de medias de datos pareados

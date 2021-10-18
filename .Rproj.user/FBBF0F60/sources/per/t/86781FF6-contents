@@ -615,29 +615,22 @@ Nota: Esta formula se puede utilizar en la medida que la muestra que se
 seleccione sea aleatoria simple, se refiere a la selección de unidades
 simples.
 
-Ejemplo, se busca conocer el tiempo promedio en horas/día que pasan los
-estudiantes de informática de la UMSA en la computadora, para ello se
-planea realizar una encuesta aleatoria, que logre un 95% de
-confiabilidad y tenga un margen de error de 0.8 horas. Definir el tamaño
-de muestra necesario.
+Ejemplo, se busca conocer el tiempo promedio en horas/día que pasan los estudiantes de informática de la UMSA en la computadora, para ello se planea realizar una encuesta aleatoria, que logre un 95% de confiabilidad y tenga un margen de error de 0.8 horas. Definir el tamaño de muestra necesario.
 
 Solución, como información se tiene: $\epsilon=0.8$,
-$Z_{\alpha/2}=1.96$, para el valor de $\sigma$ para el calculo del
-tamaño de muestra se realizó una piloto en la materia de estadística II
-a 10 estudiantes y el resultado fue $\sigma=3.335$. Así:
+$Z_{\alpha/2}=1.96$, para el valor de $\sigma$ para el calculo del tamaño de muestra se realizó una piloto en la materia de estadística II a 13 estudiantes y el resultado fue $\hat{\sigma}=2.72$ (varianza muestral). Así:
 
-$$n=\left(\frac{1.96*3.335}{0.8} \right)^2=66.8\approx 67$$ \#\#\#
-Intervalo de confianza sobre la diferencia de dos medias, conocida la
-varianza
+$$n=\left(\frac{1.96*2.72}{0.8} \right)^2=44.41 \approx 45$$ 
 
-Tenemos dos va independientes, $X_1$ con media $\mu_1$ desconocida y
-varianza $\sigma^2_1$ conocida y $X_2$ con media $\mu_2$ desconocida y
-varianza $\sigma^2_2$ conocida. El objetivo es encontrar un intervalo
-para $\mu_1-\mu2$. Sea dos muestras aleatorias recopíladas para ambas
-va, de tal forma que $n_1$ representa el tamaño de muestra para $X_1$ y
-$n_2$ para $X_2$. Recordar por el teorema del limite central, esta
-diferencia de medias puede ser estimada por sus medias muestrales y
-además se aproxima a una normal, tal que:
+Ejercicio, se quiere obtener el tamaño de muestra para un estudio que busca conocer el promedio de gasto en educación mensual de los hogares de los estudiantes de informática. Se quiere un nivel de confiabilidad del 90%, asumiendo un margen de error de 300 Bs. Se sabe de un estudio similar que $\hat{\sigma}=650$ Bs.
+
+Solución,
+
+$$n=\left(\frac{1.64*650}{300} \right)^2= 12.62\approx 13 $$
+
+### Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza
+
+Tenemos dos va independientes, $X_1$ con media $\mu_1$ desconocida y varianza $\sigma^2_1$ conocida y $X_2$ con media $\mu_2$ desconocida y varianza $\sigma^2_2$ conocida. El objetivo es encontrar un intervalo para $\mu_1-\mu_2$. Sea dos muestras aleatorias recopíladas para ambas va, de tal forma que $n_1$ representa el tamaño de muestra para $X_1$ y $n_2$ para $X_2$. Recordar por el teorema del limite central, esta diferencia de medias puede ser estimada por sus medias muestrales y además se aproxima a una normal, tal que:
 
 $$\bar{X}_1-\bar{X}_2 \sim N\left(\mu_{\bar{X}_1-\bar{X}_2}=\mu_1-\mu_2,\sigma^2_{\bar{X}_1-\bar{X}_2}=\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}\right)$$
 Ahora,
@@ -645,24 +638,16 @@ Ahora,
 $$Z=\frac{\bar{X}_1-\bar{X}_2-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}}$$
 Dado que $Z\sim N(0,1)$, ahora lo que queda es trabajar sobre:
 
-$$P(-Z_{\alpha/2} \leq Z \leq Z_{\alpha/2})=1-\alpha$$ Así, el limite
-inferior y superior esta dado por:
+$$P(-Z_{\alpha/2} \leq Z \leq Z_{\alpha/2})=1-\alpha$$ Así, el limite inferior y superior esta dado por:
 
 $$L=\bar{X}_1-\bar{X}_2-Z_{\alpha/2}\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}$$
 $$U=\bar{X}_1-\bar{X}_2+Z_{\alpha/2}\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}$$
 
-Notar que en general, dado un estimador $\hat{\theta}$ para el parámetro
-$\theta$, su usamos el teorema del limite central su intervalo de
-confianza estará dado por:
+Notar que en general, dado un estimador $\hat{\theta}$ para el parámetro $\theta$, su usamos el teorema del limite central su intervalo de confianza estará dado por:
 
 $$IC(\theta): \quad \hat{\theta} \pm Z_{\alpha/2} \sqrt{V(\hat{\theta})} $$
 
-Ejercicio: Se lleva a cabo pruebas de resistencia a la tensión sobre
-diferentes clases de largueros de aluminio utilizados en la fabricación
-de alas de aeroplanos comerciales. De la experiencia pasada con el
-proceso de fabricación de largueros y del procedimiento de prueba, se
-supone que las desviaciones estándar de las resistencias a la tensión
-son conocidas, Los datos obtenidos son:
+Ejemplo: Se lleva a cabo pruebas de resistencia a la tensión sobre diferentes clases de largueros de aluminio utilizados en la fabricación de alas de aeroplanos comerciales. De la experiencia pasada con el proceso de fabricación de largueros y del procedimiento de prueba, se supone que las desviaciones estándar de las resistencias a la tensión son conocidas, Los datos obtenidos son:
 
 -   Clase de larguero 1: $n_1=18$, $\bar{X}_1=85.9$, $\sigma_1=1$
 -   Clase de larguero 2: $n_2=16$, $\bar{X}_2=73.3$, $\sigma_2=1.5$
@@ -674,16 +659,12 @@ ambas clases de largueros. Encuentre intervalos de confianza al 90% y
 Solución, para el 90% de confiabilidad el intervalo esta dado por:
 
 $$IC_{90\%}(\mu_1-\mu_2): 85.9-73.3 \pm 1.64*\sqrt{\frac{1^2}{18}+\frac{1.5^2}{16}}=12.6 \pm 0.73: [11.87\quad 13.33]$$
-$$IC_{90\%}(\mu_1-\mu_2): 85.9-73.3 \pm 1.96*\sqrt{\frac{1^2}{18}+\frac{1.5^2}{16}}=12.6 \pm 0.87: [11.73\quad 13.47]$$
+$$IC_{95\%}(\mu_1-\mu_2): 85.9-73.3 \pm 1.96*\sqrt{\frac{1^2}{18}+\frac{1.5^2}{16}}=12.6 \pm 0.87: [11.73\quad 13.47]$$
 
 ### Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.
 
-Para los 2 anteriores intervalos definidos se suponía que la varianza es
-conocida, cuando no sucede esto la mejor alternativa para reemplazar a
-$\sigma^2$ es usando $\hat{S}^2$, esto siempre y cuando el tamaño de
-muestra sea grande ($n>30$), para el caso de la diferencia de medias,
-ambos tamaños de muestra deben ser mayores a 30 $(n_1,n_2>30)$. Esto
-debido al teorema del limite central.
+Para los 2 anteriores intervalos definidos se suponía que la varianza es conocida, cuando no sucede esto la mejor alternativa para reemplazar a $\sigma^2$ es usando $\hat{S}^2$, esto siempre y cuando el tamaño de muestra sea grande ($n>30$), para el caso de la diferencia de medias,
+ambos tamaños de muestra deben ser mayores a 30 $(n_1,n_2>30)$. Esto debido al teorema del limite central.
 
 Para la media
 
@@ -693,9 +674,19 @@ Para la diferencia de medias
 
 $$IC_{100(1-\alpha)}(\mu_1-\mu_2): \bar{X}_1-\bar{X}_2 \pm Z_{\alpha/2} \sqrt{\frac{\hat{S_1}^2}{n_1}+\frac{\hat{S_2}^2}{n_2}}$$
 
-Ejercicio, se tiene el dato de una muestra aleatoria de 40 personas,
-respecto su edad. Construya el intervalo de confianza al 95% de
-confiabilidad. Los datos son:
+Ejercicio, se tiene el dato de una muestra aleatoria de 35 estudiantes sobre la variable horas/día en la computadora, se pide calcular los intervalos de confianza al 90, 95 y 99% de confiabilidad, los datos son:
+
+```{r}
+n<-35
+set.seed(1517)
+x<-round(rnorm(n,7.6,2.72),0)
+
+mean(x)+c(-1,1)*1.64*sqrt(var(x)/n)#90%
+mean(x)+c(-1,1)*1.96*sqrt(var(x)/n)#95%
+mean(x)+c(-1,1)*2.58*sqrt(var(x)/n)#99%
+```
+
+Ejercicio, se tiene el dato de una muestra aleatoria de 40 personas, respecto su edad. Construya el intervalo de confianza al 95% de confiabilidad. Los datos son:
 
 ```{r}
 set.seed(1534)
@@ -706,11 +697,7 @@ mean(x)+c(-1,1)*1.96*sqrt(var(x)/40)
 
 ### Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.
 
-Para producir un intervalo de confianza valido en estos casos, se debe
-realizar supuestos fuertes respecto la población de la cual proviene la
-información. La suposición mas usual es que la población de base viene
-de una normal, lo que nos lleva en distribuciones muestrales a trabajar
-con un distribución $t-student$.
+Para producir un intervalo de confianza valido en estos casos, se debe realizar supuestos fuertes respecto la población de la cual proviene la información. La suposición mas usual es que la población de base viene de una normal, lo que nos lleva en distribuciones muestrales a trabajar con un distribución $t-student$.
 
 Para la media, sea:
 
@@ -727,9 +714,18 @@ Lo que nos a:
 
 $$IC_{100*(1-\alpha)}(\mu): \bar{X} \pm t_{\alpha/2,n-1} \sqrt{\frac{\hat{S}^2}{n}}$$
 
-Ejemplo, suponga que tenemos las mediciones de la estatura en cm de un
-grupo de 20 personas que fue seleccionado de forma aleatoria de una
-determinada población, los datos son:
+Nota: El valor de $t_{\alpha/2,n-1}$ en R.
+
+```{r}
+qnorm(0.05/2,lower.tail = F)#PARA LA NORMAL
+#para la t-student
+alpha<-c(0.1,0.05,0.01)
+n<-20
+qt(alpha/2,n-1,lower.tail = F)
+```
+
+
+Ejemplo, suponga que tenemos las mediciones de la estatura en cm de un grupo de 20 personas que fue seleccionado de forma aleatoria de una determinada población, los datos son:
 
 ```{r}
 set.seed(1421)
