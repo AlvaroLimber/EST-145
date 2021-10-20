@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-10-18" />
+<meta name="date" content="2021-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -789,11 +789,11 @@ ambos tamaños de muestra deben ser mayores a 30 <span class="math inline">\((n_
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1534</span>)</span>
 <span id="cb119-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">40</span>,<span class="dv">19</span>,<span class="dv">29</span>))</span>
 <span id="cb119-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 20 26 25 24 22 27 21 28
-##  [9] 23 26 23 24 27 22 20 27
-## [17] 23 26 22 23 23 28 21 25
-## [25] 20 19 24 22 27 22 21 28
-## [33] 28 24 23 24 21 28 27 24</code></pre>
+<pre><code>##  [1] 20 26 25 24 22 27 21 28 23
+## [10] 26 23 24 27 22 20 27 23 26
+## [19] 22 23 23 28 21 25 20 19 24
+## [28] 22 27 22 21 28 28 24 23 24
+## [37] 21 28 27 24</code></pre>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span><span class="dv">40</span>)</span></code></pre></div>
 <pre><code>## [1] 23.12872 24.77128</code></pre>
 </div>
@@ -816,94 +816,130 @@ encontrar:</p>
 <span id="cb125-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb125-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
 <span id="cb125-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb125-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 1.729133 2.093024 2.860935</code></pre>
+<p>Ejercicio, suponga que se tiene el dato de 15 personas sobre sus ingresos mensuales, estos datos proviene de una muestra aleatoria. Calcular el estimador de la media e intervalos de confianza al 95% y 98% de confiabilidad.</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
+<span id="cb127-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1423</span>)</span>
+<span id="cb127-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">500</span>,<span class="dv">10000</span>),<span class="dv">0</span>)</span>
+<span id="cb127-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-4" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1] 3415 1271 7587 5620 1277
+##  [6] 2620 8805 1811 5152 4956
+## [11] 7823 9186 6785 3465 9672</code></pre>
+<p>Solución, bajo el supuesto que los ingresos tienen un comportamiento normal, se utilizara el intervalo de confianza con la t-student.</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="co">#estimador puntual</span></span></code></pre></div>
+<pre><code>## [1] 5296.333</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos de confianza</span></span>
+<span id="cb131-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#95%</span></span></code></pre></div>
+<pre><code>## [1] 3680.188 6912.479</code></pre>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.02</span><span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#98%</span></span></code></pre></div>
+<pre><code>## [1] 3318.717 7273.950</code></pre>
 <p>Ejemplo, suponga que tenemos las mediciones de la estatura en cm de un grupo de 20 personas que fue seleccionado de forma aleatoria de una determinada población, los datos son:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
-<span id="cb127-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
-<span id="cb127-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
+<span id="cb135-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
+<span id="cb135-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>##  [1] 171 173 180 152 148 166
 ##  [7] 177 179 173 167 175 145
 ## [13] 152 142 143 155 179 176
 ## [19] 173 147</code></pre>
-<p>Encontrar un intervalo de confianza al 95% de confiabilidad para la
-media poblacional.</p>
+<p>Encontrar un intervalo de confianza al 95% de confiabilidad para la media poblacional.</p>
 <p>Solución,</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb129-1" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
-<span id="cb129-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb129-2" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb129-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb129-3" aria-hidden="true" tabindex="-1"></a>s2<span class="ot">&lt;-</span><span class="fu">var</span>(x)</span>
-<span id="cb129-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb129-4" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
-<span id="cb129-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb129-5" aria-hidden="true" tabindex="-1"></a>mx<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(s2<span class="sc">/</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-1" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
+<span id="cb137-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-2" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb137-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-3" aria-hidden="true" tabindex="-1"></a>s2<span class="ot">&lt;-</span><span class="fu">var</span>(x)</span>
+<span id="cb137-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-4" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb137-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-5" aria-hidden="true" tabindex="-1"></a>mx<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(s2<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] 157.1698 170.1302</code></pre>
 <p>Para la diferencia de medias, pero con varianzas iguales
 <span class="math inline">\(\sigma_1=\sigma_2\)</span></p>
 <p>Cuando <span class="math inline">\(n_1\)</span> o <span class="math inline">\(n_2\)</span> no superen ambas a 30, la mejor alternativa es usar
 el intervalo de confianza en base a la distribución <span class="math inline">\(t\)</span>, para la
 diferencia de medias el IC es:</p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,n_1+n_2-2} \hat{S}_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\]</span>
-Con <span class="math inline">\(\hat{S^2}_p\)</span></p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,n_1+n_2-2} \hat{S}_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\]</span></p>
+<p>Con <span class="math inline">\(\hat{S^2}_p\)</span></p>
 <p><span class="math display">\[\hat{S}^2_p=\frac{(n_1-1)\hat{S}^2_1+(n_2-1)\hat{S}^2_2}{n_1+n_2-2}\]</span></p>
 <p>Para la diferencia de medias, pero con varianzas no iguales</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,v} \sqrt{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2}}\]</span></p>
-<p><span class="math display">\[v=\frac{\left(\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2} \right)^2}{\frac{(\hat{S}_1^2/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}\]</span>
-Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una
-muestra de ambos grupos, con el fin de estudiar la diferencia de medias
-para las notas de un examen, los resultados para ambos grupos fueron:</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
-<span id="cb131-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb131-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
-<span id="cb131-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1457</span>)</span>
-<span id="cb131-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb131-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
-<span id="cb131-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb131-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
-<pre><code>##  [1] 79 82 99 30 20 64 94 97
-##  [9] 84 67</code></pre>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb133-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
-<pre><code>##  [1] 73 62 57 23 59 16 65 39
-##  [9] 81 23 74 22 20</code></pre>
-<p>Armar un intervalo de confianza al 95% de confiabilidad suponiendo que
-las varianzas son iguales y otro para varianzas distintas.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
-<span id="cb135-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-2" aria-hidden="true" tabindex="-1"></a>mx2<span class="ot">&lt;-</span><span class="fu">mean</span>(x2)</span>
-<span id="cb135-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-3" aria-hidden="true" tabindex="-1"></a>s21<span class="ot">&lt;-</span><span class="fu">var</span>(x1)</span>
-<span id="cb135-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-4" aria-hidden="true" tabindex="-1"></a>s22<span class="ot">&lt;-</span><span class="fu">var</span>(x2)</span>
-<span id="cb135-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-5" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">&lt;-</span><span class="dv">10</span></span>
-<span id="cb135-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-6" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">&lt;-</span><span class="dv">13</span></span>
-<span id="cb135-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-7" aria-hidden="true" tabindex="-1"></a>ta1<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,n1<span class="sc">+</span>n2<span class="dv">-2</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb135-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-8" aria-hidden="true" tabindex="-1"></a>s2p<span class="ot">&lt;-</span>((n1<span class="dv">-1</span>)<span class="sc">*</span>s21<span class="sc">+</span>(n2<span class="dv">-1</span>)<span class="sc">*</span>s22)<span class="sc">/</span>(n1<span class="sc">+</span>n2<span class="dv">-2</span>)</span>
-<span id="cb135-9"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-9" aria-hidden="true" tabindex="-1"></a>v<span class="ot">&lt;-</span>((s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(((s21<span class="sc">/</span>n1)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n1<span class="sc">+</span><span class="dv">1</span>)<span class="sc">+</span>((s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n2<span class="sc">+</span><span class="dv">1</span>))</span>
-<span id="cb135-10"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-10" aria-hidden="true" tabindex="-1"></a>ta2<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,v,<span class="at">lower.tail =</span> F)</span>
-<span id="cb135-11"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas iguales</span></span>
-<span id="cb135-12"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-12" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta1<span class="sc">*</span><span class="fu">sqrt</span>(s2p)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>n1<span class="sc">+</span><span class="dv">1</span><span class="sc">/</span>n2)</span></code></pre></div>
+<p><span class="math display">\[v=\frac{\left(\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2} \right)^2}{\frac{(\hat{S}_1^2/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}-2\]</span>
+Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de ambos grupos, con el fin de estudiar la diferencia de medias para las notas de un examen, los resultados para ambos grupos fueron:</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
+<span id="cb139-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
+<span id="cb139-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1457</span>)</span>
+<span id="cb139-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
+<span id="cb139-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
+<pre><code>##  [1] 79 82 99 30 20 64 94 97 84
+## [10] 67</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb141-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
+<pre><code>##  [1] 73 62 57 23 59 16 65 39 81
+## [10] 23 74 22 20</code></pre>
+<p>Armar un intervalo de confianza al 95% de confiabilidad suponiendo que las varianzas son iguales y otro para varianzas distintas.</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
+<span id="cb143-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-2" aria-hidden="true" tabindex="-1"></a>mx2<span class="ot">&lt;-</span><span class="fu">mean</span>(x2)</span>
+<span id="cb143-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-3" aria-hidden="true" tabindex="-1"></a>s21<span class="ot">&lt;-</span><span class="fu">var</span>(x1)</span>
+<span id="cb143-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-4" aria-hidden="true" tabindex="-1"></a>s22<span class="ot">&lt;-</span><span class="fu">var</span>(x2)</span>
+<span id="cb143-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-5" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">&lt;-</span><span class="dv">10</span></span>
+<span id="cb143-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-6" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">&lt;-</span><span class="dv">13</span></span>
+<span id="cb143-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimador puntual de diferencia de medias</span></span>
+<span id="cb143-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-8" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2</span></code></pre></div>
+<pre><code>## [1] 24.36923</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas iguales</span></span>
+<span id="cb145-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb145-2" aria-hidden="true" tabindex="-1"></a>ta1<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,n1<span class="sc">+</span>n2<span class="dv">-2</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb145-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb145-3" aria-hidden="true" tabindex="-1"></a>s2p<span class="ot">&lt;-</span>((n1<span class="dv">-1</span>)<span class="sc">*</span>s21<span class="sc">+</span>(n2<span class="dv">-1</span>)<span class="sc">*</span>s22)<span class="sc">/</span>(n1<span class="sc">+</span>n2<span class="dv">-2</span>)</span>
+<span id="cb145-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb145-4" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta1<span class="sc">*</span><span class="fu">sqrt</span>(s2p)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>n1<span class="sc">+</span><span class="dv">1</span><span class="sc">/</span>n2)</span></code></pre></div>
 <pre><code>## [1]  2.132725 46.605736</code></pre>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas desiguales</span></span>
-<span id="cb137-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-2" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta2<span class="sc">*</span><span class="fu">sqrt</span>(s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)</span></code></pre></div>
-<pre><code>## [1]  1.793795 46.944667</code></pre>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
-<span id="cb139-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-2" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas desiguales</span></span>
+<span id="cb147-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb147-2" aria-hidden="true" tabindex="-1"></a>v<span class="ot">&lt;-</span>((s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(((s21<span class="sc">/</span>n1)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n1<span class="sc">+</span><span class="dv">1</span>)<span class="sc">+</span>((s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n2<span class="sc">+</span><span class="dv">1</span>))<span class="sc">-</span><span class="dv">2</span></span>
+<span id="cb147-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb147-3" aria-hidden="true" tabindex="-1"></a>ta2<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,v,<span class="at">lower.tail =</span> F)</span>
+<span id="cb147-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb147-4" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta2<span class="sc">*</span><span class="fu">sqrt</span>(s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)</span></code></pre></div>
+<pre><code>## [1]  1.660652 47.077810</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
+<span id="cb149-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb149-2" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2</span></code></pre></div>
 <pre><code>## [1] 24.36923</code></pre>
 </div>
 <div id="intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados" class="section level3" number="3.3.5">
 <h3><span class="header-section-number">3.3.5</span> Intervalos de confianza para la diferencia de medias de datos pareados</h3>
 <p>En general, supongamos que los datos constan de <span class="math inline">\(n\)</span> pares
-<span class="math inline">\((X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})\)</span>, usualmente esto
-sucede cuando se trabaja con observaciones en 2 puntos distintos de
-tiempo. Definamos las diferencias como
+<span class="math inline">\((X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})\)</span>, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
 <span class="math inline">\(D_1=X_{11}-X_{21},D_2=X_{12}-X{22},\ldots,D_n=X_{1n}-X_{2n}\)</span>,
 estableciendo a <span class="math inline">\(D\)</span> como la va, su intervalo es:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm t_{\alpha/2,n-1}*\sqrt{\frac{\hat{S}^2_D}{n}} \]</span></p>
 <p>Si n es grande, entonces el intervalo es dado por:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm Z_{\alpha/2}*\sqrt{\frac{\hat{S}^2_D}{n}} \]</span></p>
 <p>Ejemplo, se tiene las notas de los parciales de una muestra de 12
-estudiantes, será que los estudiantes mejoraron su rendimiento del
-parcial 1 al parcial 2. Construya un intervalo de confianza al 90%.</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb141-1" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
-<span id="cb141-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb141-2" aria-hidden="true" tabindex="-1"></a>bd<span class="sc">$</span>D<span class="ot">&lt;-</span>bd<span class="sc">$</span>p1<span class="sc">-</span>bd<span class="sc">$</span>p2</span>
-<span id="cb141-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.05</span>,<span class="dv">11</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd<span class="sc">$</span>D)<span class="sc">/</span><span class="dv">12</span>)</span></code></pre></div>
-<pre><code>## [1] -12.359681   9.193015</code></pre>
+estudiantes, será que los estudiantes mejoraron su rendimiento del parcial 1 al parcial 2. Construya un intervalo de confianza al 90%.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
+<span id="cb151-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb151-2" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
+<span id="cb151-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
+<span id="cb151-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb151-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
+<pre><code>## [1] 57.08333</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)</span></code></pre></div>
+<pre><code>## [1] 65.5</code></pre>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
+<pre><code>## [1] 8.416667</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
+<span id="cb157-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb157-2" aria-hidden="true" tabindex="-1"></a>bd<span class="sc">$</span>D<span class="ot">&lt;-</span>bd<span class="sc">$</span>p2<span class="sc">-</span>bd<span class="sc">$</span>p1</span>
+<span id="cb157-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb157-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">11</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd<span class="sc">$</span>D)<span class="sc">/</span><span class="dv">12</span>)</span></code></pre></div>
+<pre><code>## [1] -2.418471 19.251805</code></pre>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="do">##############################</span></span>
+<span id="cb159-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="co">#suponer una muestra de 100 estudiantes</span></span>
+<span id="cb159-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">1000</span></span>
+<span id="cb159-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
+<span id="cb159-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-5" aria-hidden="true" tabindex="-1"></a>bd2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span>n,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
+<span id="cb159-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-6" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
+<span id="cb159-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
+<pre><code>## [1] 60.41</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)</span></code></pre></div>
+<pre><code>## [1] 59.786</code></pre>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
+<pre><code>## [1] -0.624</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
+<span id="cb165-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb165-2" aria-hidden="true" tabindex="-1"></a>bd2<span class="sc">$</span>D<span class="ot">&lt;-</span>bd2<span class="sc">$</span>p2<span class="sc">-</span>bd2<span class="sc">$</span>p1</span>
+<span id="cb165-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qnorm</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd2<span class="sc">$</span>D)<span class="sc">/</span>n)</span></code></pre></div>
+<pre><code>## [1] -1.6782028  0.4302028</code></pre>
 </div>
 <div id="intervalo-de-confianza-para-proporciones" class="section level3" number="3.3.6">
 <h3><span class="header-section-number">3.3.6</span> Intervalo de confianza para proporciones</h3>
 <p>Si asumimos que el estimador del parámetro <span class="math inline">\(P\)</span> (proporción), se
 distribuye normal, es decir, <span class="math inline">\(\hat{P}\sim Normal\)</span>, bajo ciertas
-condiciones como que el tamaño de muestra es grande, se puede plantear
-al intervalo de confianza como:</p>
+condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{V(\hat{P})}\]</span>
 Donde para encontrar la <span class="math inline">\(V(\hat{P})\)</span> basta con resolver la varianza del
 estimador de la media para valores binarios.</p>
@@ -915,9 +951,9 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span></p>
 <p>Ejemplo, en un curso se tomo una muestra aleatoria de 15 personas,
 respecto su estatura en centímetros, las mediciones son:</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb143-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
-<span id="cb143-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb167-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb167-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>##  [1] 161 179 171 152 141 168
 ##  [7] 168 173 155 169 160 177
 ## [13] 164 165 159</code></pre>
@@ -925,25 +961,25 @@ respecto su estatura en centímetros, las mediciones son:</p>
 confianza al 95% de confiabilidad para la proporción de estudiantes con
 estatura de 170 o más.</p>
 <p>Solución,</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb145-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
-<span id="cb145-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb145-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
-<span id="cb145-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb145-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
+<span id="cb169-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
+<span id="cb169-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>##  [1] 0 1 1 0 0 0 0 1 0 0 0 1 0
 ## [14] 0 0</code></pre>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
-<span id="cb147-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb147-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
-<span id="cb147-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb147-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
+<span id="cb171-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
+<span id="cb171-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.2666667</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co">#en porcentaje</span></span>
-<span id="cb149-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="co">#en porcentaje</span></span>
+<span id="cb173-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 26.66667</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo</span></span>
-<span id="cb151-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb151-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo</span></span>
+<span id="cb175-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] 0.04287417 0.49045916</code></pre>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co">#p-1.96*sqrt(p*(1-p)/n)</span></span>
-<span id="cb153-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="co">#p+1.96*sqrt(p*(1-p)/n)</span></span>
-<span id="cb153-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
-<span id="cb153-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb153-4" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co">#p-1.96*sqrt(p*(1-p)/n)</span></span>
+<span id="cb177-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="co">#p+1.96*sqrt(p*(1-p)/n)</span></span>
+<span id="cb177-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
+<span id="cb177-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-4" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1]  4.287417 49.045916</code></pre>
 <div id="tamaño-de-muestra-para-estimar-proporciones" class="section level4" number="3.3.6.1">
 <h4><span class="header-section-number">3.3.6.1</span> Tamaño de muestra para estimar proporciones</h4>
@@ -975,13 +1011,13 @@ tiene un 70% de apoyo.</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}\]</span></p>
 <p>Donde <span class="math inline">\(\hat{P}_1\)</span> y <span class="math inline">\(\hat{P}_2\)</span> son estimaciones de proporción para la población 1 y 2, respecto una misma característica, <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> son los tamaños de muestra es estas poblaciones.</p>
 <p>Ejercicio, en una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
-<span id="cb155-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb155-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
-<span id="cb155-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb155-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
-<span id="cb155-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
-<span id="cb155-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb155-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb179-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb179-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb179-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb179-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
+<span id="cb179-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
+<span id="cb179-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
 <pre><code>##    estatura mujer
 ## 1       161     0
 ## 2       179     0

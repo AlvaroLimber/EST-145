@@ -724,6 +724,24 @@ n<-20
 qt(alpha/2,n-1,lower.tail = F)
 ```
 
+Ejercicio, suponga que se tiene el dato de 15 personas sobre sus ingresos mensuales, estos datos proviene de una muestra aleatoria. Calcular el estimador de la media e intervalos de confianza al 95% y 98% de confiabilidad. 
+
+```{r}
+n<-15
+set.seed(1423)
+x<-round(runif(n,500,10000),0)
+x
+```
+
+Solución, bajo el supuesto que los ingresos tienen un comportamiento normal, se utilizara el intervalo de confianza con la t-student.
+
+```{r}
+mean(x)#estimador puntual
+#intervalos de confianza
+mean(x)+c(-1,1)*qt(0.05/2,n-1,lower.tail = F)*sqrt(var(x)/n)#95%
+mean(x)+c(-1,1)*qt(0.02/2,n-1,lower.tail = F)*sqrt(var(x)/n)#98%
+```
+
 
 Ejemplo, suponga que tenemos las mediciones de la estatura en cm de un grupo de 20 personas que fue seleccionado de forma aleatoria de una determinada población, los datos son:
 
@@ -733,8 +751,7 @@ x<-round(runif(20,140,180))
 x
 ```
 
-Encontrar un intervalo de confianza al 95% de confiabilidad para la
-media poblacional.
+Encontrar un intervalo de confianza al 95% de confiabilidad para la media poblacional.
 
 Solución,
 
@@ -754,6 +771,7 @@ el intervalo de confianza en base a la distribución $t$, para la
 diferencia de medias el IC es:
 
 $$IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,n_1+n_2-2} \hat{S}_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$$
+
 Con $\hat{S^2}_p$
 
 $$\hat{S}^2_p=\frac{(n_1-1)\hat{S}^2_1+(n_2-1)\hat{S}^2_2}{n_1+n_2-2}$$
@@ -762,10 +780,8 @@ Para la diferencia de medias, pero con varianzas no iguales
 
 $$IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,v} \sqrt{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2}}$$
 
-$$v=\frac{\left(\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2} \right)^2}{\frac{(\hat{S}_1^2/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}$$
-Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una
-muestra de ambos grupos, con el fin de estudiar la diferencia de medias
-para las notas de un examen, los resultados para ambos grupos fueron:
+$$v=\frac{\left(\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2} \right)^2}{\frac{(\hat{S}_1^2/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}-2$$
+Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de ambos grupos, con el fin de estudiar la diferencia de medias para las notas de un examen, los resultados para ambos grupos fueron:
 
 ```{r}
 set.seed(1421)
@@ -776,8 +792,7 @@ x1
 x2
 ```
 
-Armar un intervalo de confianza al 95% de confiabilidad suponiendo que
-las varianzas son iguales y otro para varianzas distintas.
+Armar un intervalo de confianza al 95% de confiabilidad suponiendo que las varianzas son iguales y otro para varianzas distintas.
 
 ```{r}
 mx1<-mean(x1)
@@ -786,13 +801,16 @@ s21<-var(x1)
 s22<-var(x2)
 n1<-10
 n2<-13
+# Estimador puntual de diferencia de medias
+mx1-mx2
+# Intervalo con varianzas iguales
 ta1<-qt(0.025,n1+n2-2,lower.tail = F)
 s2p<-((n1-1)*s21+(n2-1)*s22)/(n1+n2-2)
-v<-((s21/n1+s22/n2)^2)/(((s21/n1)^2)/(n1+1)+((s22/n2)^2)/(n2+1))
-ta2<-qt(0.025,v,lower.tail = F)
-# Intervalo con varianzas iguales
 mx1-mx2+c(-1,1)*ta1*sqrt(s2p)*sqrt(1/n1+1/n2)
+
 # Intervalo con varianzas desiguales
+v<-((s21/n1+s22/n2)^2)/(((s21/n1)^2)/(n1+1)+((s22/n2)^2)/(n2+1))-2
+ta2<-qt(0.025,v,lower.tail = F)
 mx1-mx2+c(-1,1)*ta2*sqrt(s21/n1+s22/n2)
 #estimador puntual
 mx1-mx2
@@ -801,9 +819,7 @@ mx1-mx2
 ### Intervalos de confianza para la diferencia de medias de datos pareados
 
 En general, supongamos que los datos constan de $n$ pares
-$(X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})$, usualmente esto
-sucede cuando se trabaja con observaciones en 2 puntos distintos de
-tiempo. Definamos las diferencias como
+$(X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})$, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
 $D_1=X_{11}-X_{21},D_2=X_{12}-X{22},\ldots,D_n=X_{1n}-X_{2n}$,
 estableciendo a $D$ como la va, su intervalo es:
 
@@ -814,21 +830,37 @@ Si n es grande, entonces el intervalo es dado por:
 $$IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm Z_{\alpha/2}*\sqrt{\frac{\hat{S}^2_D}{n}} $$
 
 Ejemplo, se tiene las notas de los parciales de una muestra de 12
-estudiantes, será que los estudiantes mejoraron su rendimiento del
-parcial 1 al parcial 2. Construya un intervalo de confianza al 90%.
+estudiantes, será que los estudiantes mejoraron su rendimiento del parcial 1 al parcial 2. Construya un intervalo de confianza al 90%.
 
 ```{r}
+set.seed(1536)
 bd<-data.frame(id=1:12,p1=round(runif(12,40,80)),p2=round(runif(12,30,90)))
-bd$D<-bd$p1-bd$p2
-mean(bd$D)+c(-1,1)*qt(0.05,11,lower.tail = F)*sqrt(var(bd$D)/12)
+#estimador puntual
+mean(bd$p1)
+mean(bd$p2)
+mean(bd$p2)-mean(bd$p1)
+#creando la variable D=p2-p1
+bd$D<-bd$p2-bd$p1
+mean(bd$D)+c(-1,1)*qt(0.1/2,11,lower.tail = F)*sqrt(var(bd$D)/12)
+##############################
+#suponer una muestra de 100 estudiantes
+n<-1000
+set.seed(1536)
+bd2<-data.frame(id=1:n,p1=round(runif(n,40,80)),p2=round(runif(n,30,90)))
+#estimador puntual
+mean(bd2$p1)
+mean(bd2$p2)
+mean(bd2$p2)-mean(bd2$p1)
+#creando la variable D=p2-p1
+bd2$D<-bd2$p2-bd2$p1
+mean(bd2$D)+c(-1,1)*qnorm(0.1/2,lower.tail=F)*sqrt(var(bd2$D)/n)
 ```
 
 ### Intervalo de confianza para proporciones
 
 Si asumimos que el estimador del parámetro $P$ (proporción), se
 distribuye normal, es decir, $\hat{P}\sim Normal$, bajo ciertas
-condiciones como que el tamaño de muestra es grande, se puede plantear
-al intervalo de confianza como:
+condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:
 
 $$IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{V(\hat{P})}$$
 Donde para encontrar la $V(\hat{P})$ basta con resolver la varianza del
