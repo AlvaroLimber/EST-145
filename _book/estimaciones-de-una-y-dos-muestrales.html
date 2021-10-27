@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-10-20" />
+<meta name="date" content="2021-10-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -221,6 +221,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.3.8" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza"><i class="fa fa-check"></i><b>3.3.8</b> Intervalo de confianza para la varianza</a></li>
 <li class="chapter" data-level="3.3.9" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas"><i class="fa fa-check"></i><b>3.3.9</b> Intervalo de confianza para el cociente de varianzas</a></li>
 </ul></li>
+<li class="chapter" data-level="3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Prueba de Hipótesis</a>
 <ul>
@@ -789,11 +790,11 @@ ambos tamaños de muestra deben ser mayores a 30 <span class="math inline">\((n_
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1534</span>)</span>
 <span id="cb119-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">40</span>,<span class="dv">19</span>,<span class="dv">29</span>))</span>
 <span id="cb119-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 20 26 25 24 22 27 21 28 23
-## [10] 26 23 24 27 22 20 27 23 26
-## [19] 22 23 23 28 21 25 20 19 24
-## [28] 22 27 22 21 28 28 24 23 24
-## [37] 21 28 27 24</code></pre>
+<pre><code>##  [1] 20 26 25 24 22 27 21 28
+##  [9] 23 26 23 24 27 22 20 27
+## [17] 23 26 22 23 23 28 21 25
+## [25] 20 19 24 22 27 22 21 28
+## [33] 28 24 23 24 21 28 27 24</code></pre>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span><span class="dv">40</span>)</span></code></pre></div>
 <pre><code>## [1] 23.12872 24.77128</code></pre>
 </div>
@@ -865,11 +866,11 @@ Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de 
 <span id="cb139-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1457</span>)</span>
 <span id="cb139-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
 <span id="cb139-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
-<pre><code>##  [1] 79 82 99 30 20 64 94 97 84
-## [10] 67</code></pre>
+<pre><code>##  [1] 79 82 99 30 20 64 94 97
+##  [9] 84 67</code></pre>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb141-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
-<pre><code>##  [1] 73 62 57 23 59 16 65 39 81
-## [10] 23 74 22 20</code></pre>
+<pre><code>##  [1] 73 62 57 23 59 16 65 39
+##  [9] 81 23 74 22 20</code></pre>
 <p>Armar un intervalo de confianza al 95% de confiabilidad suponiendo que las varianzas son iguales y otro para varianzas distintas.</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
 <span id="cb143-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-2" aria-hidden="true" tabindex="-1"></a>mx2<span class="ot">&lt;-</span><span class="fu">mean</span>(x2)</span>
@@ -937,72 +938,77 @@ estudiantes, será que los estudiantes mejoraron su rendimiento del parcial 1 al
 </div>
 <div id="intervalo-de-confianza-para-proporciones" class="section level3" number="3.3.6">
 <h3><span class="header-section-number">3.3.6</span> Intervalo de confianza para proporciones</h3>
-<p>Si asumimos que el estimador del parámetro <span class="math inline">\(P\)</span> (proporción), se
-distribuye normal, es decir, <span class="math inline">\(\hat{P}\sim Normal\)</span>, bajo ciertas
-condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:</p>
+<p>Si asumimos que el estimador del parámetro <span class="math inline">\(P\)</span> (proporción), se distribuye normal, es decir, <span class="math inline">\(\hat{P}\sim Normal\)</span>, bajo ciertas condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{V(\hat{P})}\]</span>
-Donde para encontrar la <span class="math inline">\(V(\hat{P})\)</span> basta con resolver la varianza del
-estimador de la media para valores binarios.</p>
+Donde para encontrar la <span class="math inline">\(V(\hat{P})\)</span> basta con resolver la varianza del estimador de la media para valores binarios.</p>
 <p><span class="math display">\[V(\bar{X})=\frac{\sigma^2}{n} =V(\hat{P})=\frac{\sigma^2_p}{n}=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i^2 }{N}-\mu^2 \right)=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i }{N}-P^2 \right)=\]</span></p>
 <p><span class="math display">\[=\frac{1}{n}(P-P^2)=\frac{P(1-P)}{n}\]</span></p>
 <p>Notar que esta varianza esta en términos del parámetro <span class="math inline">\(P\)</span>, por lo que
 recurrimos en el caso muestral a reemplazarlo por su estimador
 <span class="math inline">\(\hat{P}\)</span>. Así, el intervalo de confianza queda como:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span></p>
-<p>Ejemplo, en un curso se tomo una muestra aleatoria de 15 personas,
-respecto su estatura en centímetros, las mediciones son:</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<p>Ejemplo, en un curso se tomó una muestra aleatoria de 15 personas, respecto su estatura en centímetros, las mediciones son:</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1431</span>)</span>
 <span id="cb167-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
 <span id="cb167-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 161 179 171 152 141 168
-##  [7] 168 173 155 169 160 177
-## [13] 164 165 159</code></pre>
-<p>Se pide encontrar al estimador de la proporción y su intervalo de
-confianza al 95% de confiabilidad para la proporción de estudiantes con
-estatura de 170 o más.</p>
+<pre><code>##  [1] 163 167 156 156 178 172
+##  [7] 152 160 140 160 168 175
+## [13] 170 160 164</code></pre>
+<p>Se pide encontrar al estimador de la proporción y su intervalo de confianza al 95% de confiabilidad para la proporción de estudiantes con estatura de 170 o más.</p>
 <p>Solución,</p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
 <span id="cb169-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
 <span id="cb169-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 0 1 1 0 0 0 0 1 0 0 0 1 0
+<pre><code>##  [1] 0 0 0 0 1 1 0 0 0 0 0 1 1
 ## [14] 0 0</code></pre>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
 <span id="cb171-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
 <span id="cb171-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.2666667</code></pre>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="co">#en porcentaje</span></span>
-<span id="cb173-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<span id="cb173-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 26.66667</code></pre>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo</span></span>
 <span id="cb175-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] 0.04287417 0.49045916</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co">#p-1.96*sqrt(p*(1-p)/n)</span></span>
-<span id="cb177-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="co">#p+1.96*sqrt(p*(1-p)/n)</span></span>
-<span id="cb177-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
-<span id="cb177-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-4" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
+<span id="cb177-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-2" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1]  4.287417 49.045916</code></pre>
+<p>Ejercicio, la varianza del estimador de la proporción tiene la forma:</p>
+<p><span class="math display">\[V(\hat{P})=\frac{P(1-P)}{n}\]</span></p>
+<p>Si suponemos un tamaño de muestra <span class="math inline">\(n\)</span> conocido, en que valor de <span class="math inline">\(P\)</span> alcanza la varianza su máximo.</p>
+<p>Solución</p>
+<p><span class="math display">\[\frac{d V(\hat{P})}{dP}=\frac{d}{dP}\left(\frac{P}{n}-\frac{P^2}{n}\right)=\frac{1}{n}-\frac{2P}{n}=0 \rightarrow P=0.5\]</span>
+También,</p>
+<p><span class="math display">\[\frac{d^2 V(\hat{P})}{d^2P}=-\frac{2}{n}&lt;0 \quad (máximo)\]</span></p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-1" aria-hidden="true" tabindex="-1"></a>vp<span class="ot">&lt;-</span><span class="cf">function</span>(x){x<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)}</span>
+<span id="cb179-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(vp,<span class="at">xlab=</span><span class="st">&quot;p&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;v(p)&quot;</span>,<span class="at">main=</span><span class="st">&quot;n=1&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <div id="tamaño-de-muestra-para-estimar-proporciones" class="section level4" number="3.3.6.1">
 <h4><span class="header-section-number">3.3.6.1</span> Tamaño de muestra para estimar proporciones</h4>
 <p>Para la proporción definimos el margen de error (<span class="math inline">\(\epsilon\)</span>) como:</p>
-<p><span class="math display">\[\epsilon= Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span> Ahora,
-podemos usar esta definición como una salida para el calculo del tamaño
-de muestra necesario para cometer un determinado margen de error
-(<span class="math inline">\(epsilon\)</span>), sujeto a un nivel de confiabilidad de <span class="math inline">\(Z_{\alpha/2}\)</span>, basta
-con despejar <span class="math inline">\(n\)</span> de la anterior formula.</p>
-<p><span class="math display">\[n=\left(\frac{Z_{\alpha/2}}{\epsilon}\right)^2 \hat{P}(1-\hat{P})\]</span>
-Dado que definir el tamaño de muestra es un paso previo a la recolección
-de información, notar que se tiene total control sobre el margen de
-error (<span class="math inline">\(\epsilon\)</span>) y el nivel de confiabilidad (<span class="math inline">\(Z_{\alpha/2}\)</span>), sin
-embargo, en la formula aparece el estimador <span class="math inline">\(\hat{P}\)</span> que es el de
-interés, la solución para saltarnos este dilema, es elegir un <span class="math inline">\(\hat{P}\)</span>
-basado en un estudio similar o una prueba piloto, la otra alternativa
-extrema es suponer un <span class="math inline">\(\hat{P}\)</span> que haga máximo a <span class="math inline">\(n\)</span> con lo demás fijo.</p>
-<p>Ejercicio, una carrera en la universidad esta a punto de elegir a sus
-autoridades, se busca hacer una encuesta de intención de votos en los
-estudiantes para el candidato <span class="math inline">\(Z\)</span>, se quiere un nivel de confianza del
-95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo
-<span class="math inline">\(n\)</span> máxima y (2) mediante un sondeo se verifico que el candidato <span class="math inline">\(Z\)</span>
-tiene un 70% de apoyo.</p>
+<p><span class="math display">\[\epsilon= Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span></p>
+<p>Ahora, podemos usar esta definición como una salida para el calculo del tamaño de muestra necesario para cometer un determinado margen de error (<span class="math inline">\(epsilon\)</span>), sujeto a un nivel de confiabilidad de <span class="math inline">\(Z_{\alpha/2}\)</span>, basta con despejar <span class="math inline">\(n\)</span> de la anterior formula.</p>
+<p><span class="math display">\[n=\left(\frac{Z_{\alpha/2}}{\epsilon}\right)^2 \hat{P}(1-\hat{P})\]</span></p>
+<p>Dado que definir el tamaño de muestra es un paso previo a la recolección de información, notar que se tiene total control sobre el margen de error (<span class="math inline">\(\epsilon\)</span>) y el nivel de confiabilidad (<span class="math inline">\(Z_{\alpha/2}\)</span>), sin embargo, en la formula aparece el estimador <span class="math inline">\(\hat{P}\)</span> que es el de interés, la solución para saltarnos este dilema, es elegir un <span class="math inline">\(\hat{P}\)</span>
+basado en un estudio similar o una prueba piloto, la otra alternativa extrema es suponer un <span class="math inline">\(\hat{P}\)</span> que haga máximo a <span class="math inline">\(n\)</span> con lo demás fijo.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb180-1" aria-hidden="true" tabindex="-1"></a>tm_p<span class="ot">&lt;-</span><span class="cf">function</span>(z,e,p){</span>
+<span id="cb180-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb180-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span>((z<span class="sc">/</span>e)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span>
+<span id="cb180-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n)</span>
+<span id="cb180-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb180-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb180-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb180-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))</span></code></pre></div>
+<pre><code>## [1] 385</code></pre>
+<p>Ejercicio, una carrera en la universidad esta a punto de elegir a sus autoridades, se busca hacer una encuesta de intención de votos en los estudiantes para el candidato <span class="math inline">\(Z\)</span>, se quiere un nivel de confianza del 95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo
+<span class="math inline">\(n\)</span> máxima y (2) mediante un sondeo se verifico que el candidato <span class="math inline">\(Z\)</span> tiene un 70% de apoyo.</p>
+<p>Solución,</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))<span class="co">#1</span></span></code></pre></div>
+<pre><code>## [1] 385</code></pre>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.7</span>))<span class="co">#2</span></span></code></pre></div>
+<pre><code>## [1] 323</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.02</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 2%</span></span></code></pre></div>
+<pre><code>## [1] 2401</code></pre>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.01</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 1%</span></span></code></pre></div>
+<pre><code>## [1] 9604</code></pre>
 </div>
 </div>
 <div id="intervalo-de-confianza-para-diferencia-de-proporciones" class="section level3" number="3.3.7">
@@ -1011,13 +1017,13 @@ tiene un 70% de apoyo.</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}\]</span></p>
 <p>Donde <span class="math inline">\(\hat{P}_1\)</span> y <span class="math inline">\(\hat{P}_2\)</span> son estimaciones de proporción para la población 1 y 2, respecto una misma característica, <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> son los tamaños de muestra es estas poblaciones.</p>
 <p>Ejercicio, en una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
-<span id="cb179-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb179-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
-<span id="cb179-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb179-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
-<span id="cb179-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
-<span id="cb179-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb190-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb190-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb190-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb190-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb190-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb190-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb190-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb190-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb190-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
+<span id="cb190-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb190-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
+<span id="cb190-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb190-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
 <pre><code>##    estatura mujer
 ## 1       161     0
 ## 2       179     0
@@ -1066,8 +1072,39 @@ Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inli
 <p>Se busca:</p>
 <p><span class="math display">\[P(F_{1-\alpha/2,n_1-1,n_2-1} \leq F \leq F_{\alpha/2,n_1-1,n_2-1})=1-\alpha\]</span></p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_1-1,n_2-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_1-1,n_2-1}\right]\]</span></p>
-
 </div>
+</div>
+<div id="ejercicios-1" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Ejercicios</h2>
+<ol style="list-style-type: decimal">
+<li>Un ingeniero de control de calidad midió el espesor de la pared de 25 botellas de vidrio de dos litros. La media de la muestra fue 4.05 mm y la desviación estándar de la muestra <span class="math inline">\(\hat{S}=.08\)</span> mm. Determine un intervalo de confianza:</li>
+</ol>
+<ul>
+<li>al 90 % de confiabilidad (dos lados)</li>
+<li>inferior del 90 por ciento</li>
+</ul>
+<p>respecto al espesor de pared medio.</p>
+<p>Solución,</p>
+<p><span class="math display">\[IC(\bar{x})_{90\%}=\bar{x} \pm t_{\alpha/2,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05\pm 1.71 \sqrt{\frac{0.08^2}{25}}\]</span></p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb192-1" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb192-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb192-2" aria-hidden="true" tabindex="-1"></a><span class="fl">4.05</span><span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fl">0.08</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>)</span></code></pre></div>
+<pre><code>## [1] 4.022626 4.077374</code></pre>
+<p><span class="math display">\[IC(\bar{x})_{90\%}=[4.02 \quad 4.08]\]</span>
+Para el intervalo de confianza inferior. Recordar que para el intervalo de confianza de 2 lados, la formula es:</p>
+<p><span class="math display">\[P(L&lt;\theta&lt;U)=1-\alpha\]</span>
+Mientras para un intervalo inferior, la formula es:</p>
+<p><span class="math display">\[P(L&lt;\theta)=1-\alpha\]</span></p>
+<p><span class="math display">\[IC(\bar{x})_{90\%, inferior}=\bar{x} - t_{\alpha,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05- 1.32 \sqrt{\frac{0.08^2}{25}}\]</span></p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.1</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<pre><code>## [1] 1.317836</code></pre>
+<p><span class="math display">\[L: 4.03mm\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Un ingeniero industrial está interesado en estimar el tiempo medio requerido para ensamblar una tarjeta de circuito impreso. ¿Qué tan grande debe ser la muestra si el
+ingeniero desea tener una confianza del 95 por ciento de que el error en la estimación de la media es menor que .25 minutos? La desviación estándar del tiempo de ensamble es .45 minutos.</li>
+</ol>
+<p>Solución, sean los datos <span class="math inline">\(Z_{\alpha/2}=1.96\)</span>, <span class="math inline">\(\sigma=0.45\)</span>, <span class="math inline">\(\epsilon=0.25\)</span></p>
+<p><span class="math display">\[n=\left(\frac{Z_{\alpha/2}*\sigma}{\epsilon} \right)^2=\left(\frac{1.96*0.45}{0.25}\right)^2=12.45\approx13\]</span></p>
+
 </div>
 </div>
             </section>

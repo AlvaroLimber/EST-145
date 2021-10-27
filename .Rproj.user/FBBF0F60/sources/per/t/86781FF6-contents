@@ -858,13 +858,10 @@ mean(bd2$D)+c(-1,1)*qnorm(0.1/2,lower.tail=F)*sqrt(var(bd2$D)/n)
 
 ### Intervalo de confianza para proporciones
 
-Si asumimos que el estimador del parámetro $P$ (proporción), se
-distribuye normal, es decir, $\hat{P}\sim Normal$, bajo ciertas
-condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:
+Si asumimos que el estimador del parámetro $P$ (proporción), se distribuye normal, es decir, $\hat{P}\sim Normal$, bajo ciertas condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:
 
 $$IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{V(\hat{P})}$$
-Donde para encontrar la $V(\hat{P})$ basta con resolver la varianza del
-estimador de la media para valores binarios.
+Donde para encontrar la $V(\hat{P})$ basta con resolver la varianza del estimador de la media para valores binarios.
 
 $$V(\bar{X})=\frac{\sigma^2}{n} =V(\hat{P})=\frac{\sigma^2_p}{n}=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i^2 }{N}-\mu^2 \right)=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i }{N}-P^2 \right)=$$
 
@@ -876,18 +873,15 @@ $\hat{P}$. Así, el intervalo de confianza queda como:
 
 $$IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}$$
 
-Ejemplo, en un curso se tomo una muestra aleatoria de 15 personas,
-respecto su estatura en centímetros, las mediciones son:
+Ejemplo, en un curso se tomó una muestra aleatoria de 15 personas, respecto su estatura en centímetros, las mediciones son:
 
 ```{r}
-set.seed(1501)
+set.seed(1431)
 x<-round(rnorm(15,165,10),0)
 x
 ```
 
-Se pide encontrar al estimador de la proporción y su intervalo de
-confianza al 95% de confiabilidad para la proporción de estudiantes con
-estatura de 170 o más.
+Se pide encontrar al estimador de la proporción y su intervalo de confianza al 95% de confiabilidad para la proporción de estudiantes con estatura de 170 o más.
 
 Solución,
 
@@ -899,43 +893,67 @@ x
 p<-mean(x)
 p
 #en porcentaje
-mean(x)*100
+p*100
 #intervalo
 p+c(-1,1)*1.96*sqrt(p*(1-p)/n)
 
-#p-1.96*sqrt(p*(1-p)/n)
-#p+1.96*sqrt(p*(1-p)/n)
 #intervalo en %
 (p+c(-1,1)*1.96*sqrt(p*(1-p)/n))*100
+```
+
+Ejercicio, la varianza del estimador de la proporción tiene la forma:
+
+$$V(\hat{P})=\frac{P(1-P)}{n}$$
+
+Si suponemos un tamaño de muestra $n$ conocido, en que valor de $P$ alcanza la varianza su máximo.
+
+Solución
+
+$$\frac{d V(\hat{P})}{dP}=\frac{d}{dP}\left(\frac{P}{n}-\frac{P^2}{n}\right)=\frac{1}{n}-\frac{2P}{n}=0 \rightarrow P=0.5$$
+También,
+
+$$\frac{d^2 V(\hat{P})}{d^2P}=-\frac{2}{n}<0 \quad (máximo)$$
+```{r}
+vp<-function(x){x*(1-x)}
+curve(vp,xlab="p",ylab="v(p)",main="n=1")
 ```
 
 #### Tamaño de muestra para estimar proporciones
 
 Para la proporción definimos el margen de error ($\epsilon$) como:
 
-$$\epsilon= Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}$$ Ahora,
-podemos usar esta definición como una salida para el calculo del tamaño
-de muestra necesario para cometer un determinado margen de error
-($epsilon$), sujeto a un nivel de confiabilidad de $Z_{\alpha/2}$, basta
-con despejar $n$ de la anterior formula.
+$$\epsilon= Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}$$
+
+Ahora, podemos usar esta definición como una salida para el calculo del tamaño de muestra necesario para cometer un determinado margen de error ($epsilon$), sujeto a un nivel de confiabilidad de $Z_{\alpha/2}$, basta con despejar $n$ de la anterior formula.
 
 $$n=\left(\frac{Z_{\alpha/2}}{\epsilon}\right)^2 \hat{P}(1-\hat{P})$$
-Dado que definir el tamaño de muestra es un paso previo a la recolección
-de información, notar que se tiene total control sobre el margen de
-error ($\epsilon$) y el nivel de confiabilidad ($Z_{\alpha/2}$), sin
-embargo, en la formula aparece el estimador $\hat{P}$ que es el de
-interés, la solución para saltarnos este dilema, es elegir un $\hat{P}$
-basado en un estudio similar o una prueba piloto, la otra alternativa
-extrema es suponer un $\hat{P}$ que haga máximo a $n$ con lo demás fijo.
 
-Ejercicio, una carrera en la universidad esta a punto de elegir a sus
-autoridades, se busca hacer una encuesta de intención de votos en los
-estudiantes para el candidato $Z$, se quiere un nivel de confianza del
-95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo
-$n$ máxima y (2) mediante un sondeo se verifico que el candidato $Z$
-tiene un 70% de apoyo.
+Dado que definir el tamaño de muestra es un paso previo a la recolección de información, notar que se tiene total control sobre el margen de error ($\epsilon$) y el nivel de confiabilidad ($Z_{\alpha/2}$), sin embargo, en la formula aparece el estimador $\hat{P}$ que es el de interés, la solución para saltarnos este dilema, es elegir un $\hat{P}$
+basado en un estudio similar o una prueba piloto, la otra alternativa extrema es suponer un $\hat{P}$ que haga máximo a $n$ con lo demás fijo.
+
+```{r}
+tm_p<-function(z,e,p){
+  n<-((z/e)^2)*(p*(1-p))
+  return(n)
+}
+ceiling(tm_p(1.96,0.05,0.5))
+```
+
+Ejercicio, una carrera en la universidad esta a punto de elegir a sus autoridades, se busca hacer una encuesta de intención de votos en los estudiantes para el candidato $Z$, se quiere un nivel de confianza del 95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo
+$n$ máxima y (2) mediante un sondeo se verifico que el candidato $Z$ tiene un 70% de apoyo.
+
+Solución,
+
+```{r}
+ceiling(tm_p(1.96,0.05,0.5))#1
+ceiling(tm_p(1.96,0.05,0.7))#2
+ceiling(tm_p(1.96,0.02,0.5))#epsilon 2%
+ceiling(tm_p(1.96,0.01,0.5))#epsilon 1%
+```
+
 
 ### Intervalo de confianza para diferencia de proporciones
+
 Esta diferencia de proporciones son ampliamente usadas cuando se comparan dos poblaciones, respecto una característica de interés sobre dos poblaciones independientes. Así el intervalo de la diferencia de proporciones esta dado por:
 
 $$IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}$$
@@ -971,6 +989,7 @@ $$IC_{100*(1-\alpha)}(P_1-P_2)=-0.4 \pm 1.64 * \sqrt{\frac{0.1*0.9}{10}+\frac{0.
 $$IC_{100*(1-\alpha)}(P_1-P_2)=[-0.702 \quad -0.098]$$
 
 ### Intervalo de confianza para la varianza
+
 Suponga que $X\sim Normal(\mu,\sigma)$ ambos parámetros desconocidos. Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de tamaño $n$ de $X$. Recodar que la varianza muestra sigue una distribución de muestreo tipo $\chi^2$.
 
 $$\chi^2=\frac{(n-1)\hat{S}^2}{\sigma^2}$$
@@ -993,5 +1012,46 @@ Se busca:
 $$P(F_{1-\alpha/2,n_1-1,n_2-1} \leq F \leq F_{\alpha/2,n_1-1,n_2-1})=1-\alpha$$
 
 $$IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_1-1,n_2-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_1-1,n_2-1}\right]$$
+
+## Ejercicios
+
+1. Un ingeniero de control de calidad midió el espesor de la pared de 25 botellas de vidrio de dos litros. La media de la muestra fue 4.05 mm y la desviación estándar de la muestra $\hat{S}=.08$ mm. Determine un intervalo de confianza: 
+
+  * al 90 % de confiabilidad (dos lados)
+  * inferior del 90 por ciento 
+  
+respecto al espesor de pared medio.
+
+Solución,
+
+$$IC(\bar{x})_{90\%}=\bar{x} \pm t_{\alpha/2,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05\pm 1.71 \sqrt{\frac{0.08^2}{25}}$$
+
+```{r}
+ta<-qt(0.1/2,24,lower.tail = F)
+4.05+c(-1,1)*ta*sqrt(0.08^2/25)
+```
+
+
+$$IC(\bar{x})_{90\%}=[4.02 \quad 4.08]$$
+Para el intervalo de confianza inferior. Recordar que para el intervalo de confianza de 2 lados, la formula es:
+
+$$P(L<\theta<U)=1-\alpha$$
+Mientras para un intervalo inferior, la formula es:
+
+$$P(L<\theta)=1-\alpha$$
+
+$$IC(\bar{x})_{90\%, inferior}=\bar{x} - t_{\alpha,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05- 1.32 \sqrt{\frac{0.08^2}{25}}$$
+```{r}
+qt(0.1,24,lower.tail = F)
+```
+
+$$L: 4.03mm$$
+
+2. Un ingeniero industrial está interesado en estimar el tiempo medio requerido para ensamblar una tarjeta de circuito impreso. ¿Qué tan grande debe ser la muestra si el
+ingeniero desea tener una confianza del 95 por ciento de que el error en la estimación de la media es menor que .25 minutos? La desviación estándar del tiempo de ensamble es .45 minutos.
+
+Solución, sean los datos $Z_{\alpha/2}=1.96$, $\sigma=0.45$, $\epsilon=0.25$
+
+$$n=\left(\frac{Z_{\alpha/2}*\sigma}{\epsilon} \right)^2=\left(\frac{1.96*0.45}{0.25}\right)^2=12.45\approx13$$
 
 
