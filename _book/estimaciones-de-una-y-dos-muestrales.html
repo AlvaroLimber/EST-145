@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-10-27" />
+<meta name="date" content="2021-10-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -790,11 +790,10 @@ ambos tamaños de muestra deben ser mayores a 30 <span class="math inline">\((n_
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1534</span>)</span>
 <span id="cb119-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">40</span>,<span class="dv">19</span>,<span class="dv">29</span>))</span>
 <span id="cb119-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb119-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 20 26 25 24 22 27 21 28
-##  [9] 23 26 23 24 27 22 20 27
-## [17] 23 26 22 23 23 28 21 25
-## [25] 20 19 24 22 27 22 21 28
-## [33] 28 24 23 24 21 28 27 24</code></pre>
+<pre><code>##  [1] 20 26 25 24 22 27 21 28 23 26
+## [11] 23 24 27 22 20 27 23 26 22 23
+## [21] 23 28 21 25 20 19 24 22 27 22
+## [31] 21 28 28 24 23 24 21 28 27 24</code></pre>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span><span class="dv">40</span>)</span></code></pre></div>
 <pre><code>## [1] 23.12872 24.77128</code></pre>
 </div>
@@ -822,9 +821,9 @@ encontrar:</p>
 <span id="cb127-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1423</span>)</span>
 <span id="cb127-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">500</span>,<span class="dv">10000</span>),<span class="dv">0</span>)</span>
 <span id="cb127-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb127-4" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 3415 1271 7587 5620 1277
-##  [6] 2620 8805 1811 5152 4956
-## [11] 7823 9186 6785 3465 9672</code></pre>
+<pre><code>##  [1] 3415 1271 7587 5620 1277 2620
+##  [7] 8805 1811 5152 4956 7823 9186
+## [13] 6785 3465 9672</code></pre>
 <p>Solución, bajo el supuesto que los ingresos tienen un comportamiento normal, se utilizara el intervalo de confianza con la t-student.</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="co">#estimador puntual</span></span></code></pre></div>
 <pre><code>## [1] 5296.333</code></pre>
@@ -837,10 +836,9 @@ encontrar:</p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
 <span id="cb135-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
 <span id="cb135-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 171 173 180 152 148 166
-##  [7] 177 179 173 167 175 145
-## [13] 152 142 143 155 179 176
-## [19] 173 147</code></pre>
+<pre><code>##  [1] 171 173 180 152 148 166 177
+##  [8] 179 173 167 175 145 152 142
+## [15] 143 155 179 176 173 147</code></pre>
 <p>Encontrar un intervalo de confianza al 95% de confiabilidad para la media poblacional.</p>
 <p>Solución,</p>
 <div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-1" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
@@ -866,11 +864,10 @@ Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de 
 <span id="cb139-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1457</span>)</span>
 <span id="cb139-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
 <span id="cb139-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb139-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
-<pre><code>##  [1] 79 82 99 30 20 64 94 97
-##  [9] 84 67</code></pre>
+<pre><code>##  [1] 79 82 99 30 20 64 94 97 84 67</code></pre>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb141-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
-<pre><code>##  [1] 73 62 57 23 59 16 65 39
-##  [9] 81 23 74 22 20</code></pre>
+<pre><code>##  [1] 73 62 57 23 59 16 65 39 81 23
+## [11] 74 22 20</code></pre>
 <p>Armar un intervalo de confianza al 95% de confiabilidad suponiendo que las varianzas son iguales y otro para varianzas distintas.</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
 <span id="cb143-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb143-2" aria-hidden="true" tabindex="-1"></a>mx2<span class="ot">&lt;-</span><span class="fu">mean</span>(x2)</span>
@@ -951,16 +948,15 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1431</span>)</span>
 <span id="cb167-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
 <span id="cb167-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 163 167 156 156 178 172
-##  [7] 152 160 140 160 168 175
-## [13] 170 160 164</code></pre>
+<pre><code>##  [1] 163 167 156 156 178 172 152
+##  [8] 160 140 160 168 175 170 160
+## [15] 164</code></pre>
 <p>Se pide encontrar al estimador de la proporción y su intervalo de confianza al 95% de confiabilidad para la proporción de estudiantes con estatura de 170 o más.</p>
 <p>Solución,</p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
 <span id="cb169-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
 <span id="cb169-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 0 0 0 0 1 1 0 0 0 0 0 1 1
-## [14] 0 0</code></pre>
+<pre><code>##  [1] 0 0 0 0 1 1 0 0 0 0 0 1 1 0 0</code></pre>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
 <span id="cb171-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
 <span id="cb171-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
