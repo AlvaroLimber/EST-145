@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-10-30" />
+<meta name="date" content="2021-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -363,22 +363,22 @@ Imaginemos que tomamos una muestra aleatoria de personas del municipio de La Paz
 <ol start="4" style="list-style-type: decimal">
 <li>Región de aceptación y rechazo</li>
 </ol>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="prueba-de-hipótesis.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 10%&quot;</span>)</span>
-<span id="cb196-2"><a href="prueba-de-hipótesis.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb196-3"><a href="prueba-de-hipótesis.html#cb196-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.64</span>,<span class="fl">1.64</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb196-4"><a href="prueba-de-hipótesis.html#cb196-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="prueba-de-hipótesis.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="co"># al 5 %</span></span>
-<span id="cb197-2"><a href="prueba-de-hipótesis.html#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 5%&quot;</span>)</span>
-<span id="cb197-3"><a href="prueba-de-hipótesis.html#cb197-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.96</span>,<span class="fl">1.96</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb197-4"><a href="prueba-de-hipótesis.html#cb197-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-45-2.png" width="672" /></p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="prueba-de-hipótesis.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="co"># al 1 %</span></span>
-<span id="cb198-2"><a href="prueba-de-hipótesis.html#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 1%&quot;</span>)</span>
-<span id="cb198-3"><a href="prueba-de-hipótesis.html#cb198-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.58</span>,<span class="fl">2.58</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb198-4"><a href="prueba-de-hipótesis.html#cb198-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-45-3.png" width="672" /></p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="prueba-de-hipótesis.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co">#qnorm(0.01/2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="prueba-de-hipótesis.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 10%&quot;</span>)</span>
+<span id="cb224-2"><a href="prueba-de-hipótesis.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb224-3"><a href="prueba-de-hipótesis.html#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.64</span>,<span class="fl">1.64</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb224-4"><a href="prueba-de-hipótesis.html#cb224-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="prueba-de-hipótesis.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co"># al 5 %</span></span>
+<span id="cb225-2"><a href="prueba-de-hipótesis.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 5%&quot;</span>)</span>
+<span id="cb225-3"><a href="prueba-de-hipótesis.html#cb225-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.96</span>,<span class="fl">1.96</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb225-4"><a href="prueba-de-hipótesis.html#cb225-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-2.png" width="672" /></p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="prueba-de-hipótesis.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co"># al 1 %</span></span>
+<span id="cb226-2"><a href="prueba-de-hipótesis.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;significancia del 1%&quot;</span>)</span>
+<span id="cb226-3"><a href="prueba-de-hipótesis.html#cb226-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.58</span>,<span class="fl">2.58</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb226-4"><a href="prueba-de-hipótesis.html#cb226-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-3.png" width="672" /></p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="prueba-de-hipótesis.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="co">#qnorm(0.01/2)</span></span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>La decisión; Se rechaza la <span class="math inline">\(H_0\)</span> cuando:</li>
 </ol>
@@ -389,6 +389,28 @@ Los valores usuales para los <span class="math inline">\(Z_{\alpha/2}\)</span> s
 <li>al 5 de significanca: <span class="math inline">\(Z_{\alpha/2}=1.96\)</span></li>
 <li>al 1 de significanca: <span class="math inline">\(Z_{\alpha/2}=2.58\)</span></li>
 </ul>
+<p>Ejemplo, se tiene un curso de estadística con su evaluación final sobre 100 puntos, se sabe por información pasada que la desviación estándar es alrededor de 10 pts. Se desea probar la hipótesis que el grupo tuvo un promedio de notas de 65 pts. Para realizar la prueba se obtuvo una muestra de 30 estudiantes, con el siguiente resultado:</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="prueba-de-hipótesis.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1447</span>)</span>
+<span id="cb228-2"><a href="prueba-de-hipótesis.html#cb228-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">80</span>),<span class="dv">0</span>)</span>
+<span id="cb228-3"><a href="prueba-de-hipótesis.html#cb228-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1] 57 60 59 44 79 59 63 58 68 62
+## [11] 49 77 79 51 78 44 53 58 50 56
+## [21] 64 77 60 49 46 66 45 78 66 60</code></pre>
+<p><span class="math display">\[H0: \mu=65\]</span>
+<span class="math display">\[H1: \mu \neq 65\]</span>
+El estadístico de prueba es:</p>
+<p><span class="math display">\[Z_0=\frac{\bar{X}-\mu_0}{\frac{\sigma}{\sqrt{n}}}=\frac{60.5-65}{\frac{10}{\sqrt{30}}}=-2.465\]</span></p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="prueba-de-hipótesis.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb230-2"><a href="prueba-de-hipótesis.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>(<span class="fl">60.5</span><span class="dv">-65</span>)<span class="sc">/</span>(<span class="dv">10</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">30</span>)),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb230-3"><a href="prueba-de-hipótesis.html#cb230-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.96</span>,<span class="fl">1.96</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb230-4"><a href="prueba-de-hipótesis.html#cb230-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.64</span>,<span class="fl">1.64</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb230-5"><a href="prueba-de-hipótesis.html#cb230-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.58</span>,<span class="fl">2.58</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb230-6"><a href="prueba-de-hipótesis.html#cb230-6" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="dv">0</span>,<span class="fl">3.5</span>),<span class="fu">rep</span>(<span class="fl">0.2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="st">&quot;Rechazo&quot;</span>,<span class="st">&quot;Aceptación&quot;</span>,<span class="st">&quot;Rechazo&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p>Se rechaza H0 si:</p>
+<p><span class="math display">\[-2.465&gt;1.64 \quad ó \quad -2.465&lt;-1.64 \quad 10\%\]</span>
+<span class="math display">\[-2.465&gt;1.96 \quad ó \quad -2.465&lt;-1.96 \quad 5\%\]</span></p>
+<p><span class="math display">\[-2.465&gt;2.58 \quad ó \quad -2.465&lt;-2.58 \quad 1\%\]</span></p>
 <p>Ejercicio. Se sabe que los diámetros de tornillos tienen una desviación estándar de 0.0001 plg. Una muestra aleatoria de 35 tornillos produce un diámetro promedio de 0.2546 plg. Prueba la hipótesis de que el diámetro medio real es de 0.255 plg. empleando un <span class="math inline">\(\alpha=0.05\)</span>.</p>
 <p><span class="math display">\[H_0: \mu=0.255\]</span>
 <span class="math display">\[H_1: \mu\neq0.255\]</span></p>
@@ -396,6 +418,8 @@ Los valores usuales para los <span class="math inline">\(Z_{\alpha/2}\)</span> s
 <p>Se rechaza <span class="math inline">\(H_0\)</span> si:</p>
 <p><span class="math display">\[-23.66&gt;1.96 \quad ó \quad -23.66&lt;-1.96\]</span>
 Por lo tanto rechazamos la hipótesis nula de que la media de diámetro de los tornillos sea de 0.255 plg.</p>
+<div id="para-pruebas-unilaterales" class="section level4" number="4.2.1.1">
+<h4><span class="header-section-number">4.2.1.1</span> Para pruebas unilaterales</h4>
 <p>Para las pruebas unilaterales se utiliza el mismo estadístico de prueba <span class="math inline">\(Z_0\)</span>, con las siguientes hipótesis y región de rechazo.</p>
 <p><span class="math display">\[H_0: \mu=\mu_0\]</span>
 <span class="math display">\[H_1: \mu&gt;\mu_0\]</span>
@@ -403,16 +427,17 @@ Se rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline"
 <p><span class="math display">\[H_0: \mu=\mu_0\]</span></p>
 <p><span class="math display">\[H_1: \mu &lt; \mu_0\]</span>
 Se rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline">\(Z_0&lt;-Z{\alpha}\)</span></p>
-<p>Los valores usuales para los <span class="math inline">\(Z_\{alpha}\)</span> de pruebas unilaterales.</p>
+<p>Los valores usuales para los <span class="math inline">\(Z_{\alpha}\)</span> de pruebas unilaterales.</p>
 <ul>
 <li><span class="math inline">\(Z_{0.1}=1.28\)</span></li>
 <li><span class="math inline">\(Z_{0.05}=1.64\)</span></li>
 <li><span class="math inline">\(Z_{0.01}=2.33\)</span></li>
 </ul>
 </div>
+</div>
 <div id="con-varianza-desconocida" class="section level3" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Con varianza desconocida</h3>
-<p>Si el tamaño de muestra fuera mayor 30, todo lo visto anteriormente se mantiene, el único cambio se da al momento de calcular el estadístico de prueba donde en lugar de <span class="math inline">\(\sigma\)</span> tomamos la varianza muestral <span class="math inline">\(\hat{S}\)</span></p>
+<p>Si el tamaño de muestra fuera mayor 30, todo lo visto anteriormente se mantiene, el único cambio se da al momento de calcular el estadístico de prueba donde en lugar de <span class="math inline">\(\sigma\)</span> tomamos la varianza muestral $^2 $</p>
 <p><span class="math display">\[Z_0=\frac{\bar{X}-\mu_0}{\frac{\hat{S}}{\sqrt{n}}}\]</span>
 Si la muestra no es mayor 30, podemos suponer que los datos son normales y la aproximación para la región de aceptación y rechazo vienen de una t-student.</p>
 <ol start="3" style="list-style-type: decimal">
@@ -424,6 +449,19 @@ Si la muestra no es mayor 30, podemos suponer que los datos son normales y la ap
 <li><p>La decisión; Se rechaza la <span class="math inline">\(H_0\)</span> cuando:</p></li>
 </ol>
 <p><span class="math display">\[t_0&gt;t_{\alpha/2,n-1} \quad ó \quad t_0&lt;-t_{\alpha/2,n-1}\]</span></p>
+<p>Ejemplo, para el caso de las notas finales, probar la hipótesis suponiendo varianza desconocida y usar <span class="math inline">\(z_0\)</span> y en otro caso usando la <span class="math inline">\(t_0\)</span>. Al 5% evaluar si se rechaza H0</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="prueba-de-hipótesis.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x);<span class="fu">length</span>(x);<span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 11.05706</code></pre>
+<pre><code>## [1] 30</code></pre>
+<pre><code>## [1] 60.5</code></pre>
+<p><span class="math display">\[z_0=\frac{\bar{X}-\mu_0}{\frac{\hat{S}}{\sqrt{n}}}=\frac{60.5-65}{\frac{11.057}{\sqrt{30}}}=-2.23\]</span></p>
+<p>Así como <span class="math inline">\(z_0=-2.23&lt;-1.96\)</span> se rechaza H0.</p>
+<p><span class="math display">\[t_0=\frac{\bar{X}-\mu_0}{\frac{\hat{S}}{\sqrt{n}}}=-2.23\]</span></p>
+<p>Para rechazar H0,</p>
+<p><span class="math display">\[-2.23&gt;2.045=t_{\alpha/2,n-1} \quad ó \quad -2.23&lt;-2.045=-t_{\alpha/2,n-1}\]</span></p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="prueba-de-hipótesis.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">30-1</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<pre><code>## [1] 2.04523</code></pre>
+<p>Por lo tanto se rechaza H0</p>
 </div>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-diferencia-de-medias" class="section level2" number="4.3">

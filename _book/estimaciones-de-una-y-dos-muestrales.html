@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-10-30" />
+<meta name="date" content="2021-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -836,9 +836,9 @@ encontrar:</p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
 <span id="cb135-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
 <span id="cb135-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb135-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 171 173 180 152 148 166 177
-##  [8] 179 173 167 175 145 152 142
-## [15] 143 155 179 176 173 147</code></pre>
+<pre><code>##  [1] 171 173 180 152 148 166 177 179
+##  [9] 173 167 175 145 152 142 143 155
+## [17] 179 176 173 147</code></pre>
 <p>Encontrar un intervalo de confianza al 95% de confiabilidad para la media poblacional.</p>
 <p>Solución,</p>
 <div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb137-1" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
@@ -948,9 +948,8 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1431</span>)</span>
 <span id="cb167-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
 <span id="cb167-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 163 167 156 156 178 172 152
-##  [8] 160 140 160 168 175 170 160
-## [15] 164</code></pre>
+<pre><code>##  [1] 163 167 156 156 178 172 152 160
+##  [9] 140 160 168 175 170 160 164</code></pre>
 <p>Se pide encontrar al estimador de la proporción y su intervalo de confianza al 95% de confiabilidad para la proporción de estudiantes con estatura de 170 o más.</p>
 <p>Solución,</p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
@@ -1066,8 +1065,8 @@ Para desarrollar el intervalo usamos esta distribución:</p>
 Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> son va normales con media <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> desconocidas y varianzas <span class="math inline">\(\sigma^2_1\)</span>, <span class="math inline">\(\sigma^2_2\)</span> también desconocidas. Sean dos muestras aleatorias de <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> de tamaño <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> y sean <span class="math inline">\(\hat{S}^2_1\)</span> y <span class="math inline">\(\hat{S}^2_2\)</span> las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución <span class="math inline">\(F\)</span>.</p>
 <p><span class="math display">\[F=\frac{\frac{\hat{S}^2_2}{\sigma^2_2}}{\frac{\hat{S}^2_1}{\sigma^2_1}}\]</span></p>
 <p>Se busca:</p>
-<p><span class="math display">\[P(F_{1-\alpha/2,n_1-1,n_2-1} \leq F \leq F_{\alpha/2,n_1-1,n_2-1})=1-\alpha\]</span></p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_1-1,n_2-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_1-1,n_2-1}\right]\]</span></p>
+<p><span class="math display">\[P(F_{1-\alpha/2,n_2-1,n_1-1} \leq F \leq F_{\alpha/2,n_2-1,n_1-1})=1-\alpha\]</span></p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_2-1,n_1-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_2-1,n_1-1}\right]\]</span></p>
 </div>
 </div>
 <div id="ejercicios-1" class="section level2" number="3.4">
@@ -1095,11 +1094,70 @@ Mientras para un intervalo inferior, la formula es:</p>
 <pre><code>## [1] 1.317836</code></pre>
 <p><span class="math display">\[L: 4.03mm\]</span></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Un ingeniero industrial está interesado en estimar el tiempo medio requerido para ensamblar una tarjeta de circuito impreso. ¿Qué tan grande debe ser la muestra si el
-ingeniero desea tener una confianza del 95 por ciento de que el error en la estimación de la media es menor que .25 minutos? La desviación estándar del tiempo de ensamble es .45 minutos.</li>
+<li>Un ingeniero industrial está interesado en estimar el tiempo medio requerido para ensamblar una tarjeta de circuito impreso. ¿Qué tan grande debe ser la muestra si el ingeniero desea tener una confianza del 95 por ciento de que el error en la estimación de la media es menor que .25 minutos? La desviación estándar del tiempo de ensamble es .45 minutos.</li>
 </ol>
 <p>Solución, sean los datos <span class="math inline">\(Z_{\alpha/2}=1.96\)</span>, <span class="math inline">\(\sigma=0.45\)</span>, <span class="math inline">\(\epsilon=0.25\)</span></p>
-<p><span class="math display">\[n=\left(\frac{Z_{\alpha/2}*\sigma}{\epsilon} \right)^2=\left(\frac{1.96*0.45}{0.25}\right)^2=12.45\approx13\]</span></p>
+<p><span class="math display">\[n=\left(\frac{Z_{\alpha/2}*\sigma}{\epsilon} \right)^2=\left(\frac{1.96*0.45}{0.25}\right)^2=12.45\approx13\]</span>
+3. Dada la siguiente muestra aleatoria por hombre y mujer, respecto sus ingresos:</p>
+<ul>
+<li>Hombre: 2078, 3565, 3767, 3600, 2907, 1299, 3483, 8475, 2425, 3500, 3118, 3377, 3897, 21883, 9717, 2078, 8167</li>
+<li>Mujeres: 1905, 9500, 996, 3250, 3335, 433, 2917, 616, 1625, 1104, 2050, 3000, 1625</li>
+</ul>
+<p>se pide calcular intervalos de confianza para la varianza para ambas poblaciones, y para el cociente de varianzas entre <span class="math inline">\(Hombre/Mujer\)</span> y <span class="math inline">\(Mujer/Hombre\)</span>. Estos intervalos al 95 % de confiabilidad. (Asumir normalidad de los datos de origen).</p>
+<p>Solución:</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb196-1" aria-hidden="true" tabindex="-1"></a>hh<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2078</span>,  <span class="dv">3565</span>,  <span class="dv">3767</span>,  <span class="dv">3600</span>,  <span class="dv">2907</span>,  <span class="dv">1299</span>,  <span class="dv">3483</span>,  <span class="dv">8475</span>,  <span class="dv">2425</span>,  <span class="dv">3500</span>,  <span class="dv">3118</span>,  <span class="dv">3377</span>,  <span class="dv">3897</span>, <span class="dv">21883</span>,  <span class="dv">9717</span>,  <span class="dv">2078</span>,  <span class="dv">8167</span>)</span>
+<span id="cb196-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb196-2" aria-hidden="true" tabindex="-1"></a>mm<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1905</span>, <span class="dv">9500</span>, <span class="dv">996</span>, <span class="dv">3250</span>, <span class="dv">3335</span>, <span class="dv">433</span>, <span class="dv">2917</span>, <span class="dv">616</span>, <span class="dv">1625</span>, <span class="dv">1104</span>, <span class="dv">2050</span>, <span class="dv">3000</span>, <span class="dv">1625</span>)</span>
+<span id="cb196-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb196-3" aria-hidden="true" tabindex="-1"></a>nh<span class="ot">&lt;-</span><span class="dv">17</span>;nm<span class="ot">&lt;-</span><span class="dv">13</span></span>
+<span id="cb196-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb196-4" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador de varianzas</span></span>
+<span id="cb196-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb196-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="co">#puntual hombres S^2</span></span></code></pre></div>
+<pre><code>## [1] 24271163</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="co">#puntual mujeres S^2</span></span></code></pre></div>
+<pre><code>## [1] 5400214</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo hombres</span></span>
+<span id="cb200-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb200-2" aria-hidden="true" tabindex="-1"></a>lih<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb200-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb200-3" aria-hidden="true" tabindex="-1"></a>lsh<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb200-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb200-4" aria-hidden="true" tabindex="-1"></a>lih;<span class="fu">var</span>(hh);lsh</span></code></pre></div>
+<pre><code>## [1] 13462780</code></pre>
+<pre><code>## [1] 24271163</code></pre>
+<pre><code>## [1] 56218511</code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo mujeres</span></span>
+<span id="cb204-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb204-2" aria-hidden="true" tabindex="-1"></a>limj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb204-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb204-3" aria-hidden="true" tabindex="-1"></a>lsmj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb204-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb204-4" aria-hidden="true" tabindex="-1"></a>limj;<span class="fu">var</span>(mm);lsmj</span></code></pre></div>
+<pre><code>## [1] 2776857</code></pre>
+<pre><code>## [1] 5400214</code></pre>
+<pre><code>## [1] 14715187</code></pre>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb208-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb208-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza H/M</span></span>
+<span id="cb208-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb208-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb208-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm)<span class="co">#puntual</span></span></code></pre></div>
+<pre><code>## [1] 4.494481</code></pre>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
+<span id="cb210-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb210-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb210-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb210-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb210-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb210-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
+<pre><code>## [1] 1.426128</code></pre>
+<pre><code>## [1] 4.494481</code></pre>
+<pre><code>## [1] 12.98477</code></pre>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co">#99 confiabilidad</span></span>
+<span id="cb214-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb214-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb214-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb214-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb214-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb214-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
+<pre><code>## [1] 0.9615647</code></pre>
+<pre><code>## [1] 4.494481</code></pre>
+<pre><code>## [1] 18.42446</code></pre>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb218-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza M/H</span></span>
+<span id="cb218-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb218-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb218-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh)<span class="co">#puntual</span></span></code></pre></div>
+<pre><code>## [1] 0.2224951</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
+<span id="cb220-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb220-2" aria-hidden="true" tabindex="-1"></a>limh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb220-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb220-3" aria-hidden="true" tabindex="-1"></a>lsmh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb220-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb220-4" aria-hidden="true" tabindex="-1"></a>limh; <span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh); lsmh</span></code></pre></div>
+<pre><code>## [1] 0.0770133</code></pre>
+<pre><code>## [1] 0.2224951</code></pre>
+<pre><code>## [1] 0.7011992</code></pre>
 
 </div>
 </div>

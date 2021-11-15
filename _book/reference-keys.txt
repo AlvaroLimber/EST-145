@@ -56,6 +56,7 @@ pruebas-unilaterales
 pasos-para-la-prueba-hipótesis-estadística
 prueba-de-hipótesis-sobre-la-media
 con-varianza-conocida
+para-pruebas-unilaterales
 con-varianza-desconocida
 prueba-de-hipótesis-sobre-la-diferencia-de-medias
 prueba-de-hipótesis-sobre-la-proporción

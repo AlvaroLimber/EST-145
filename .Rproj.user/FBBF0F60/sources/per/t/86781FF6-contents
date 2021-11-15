@@ -1009,9 +1009,9 @@ $$F=\frac{\frac{\hat{S}^2_2}{\sigma^2_2}}{\frac{\hat{S}^2_1}{\sigma^2_1}}$$
 
 Se busca:
 
-$$P(F_{1-\alpha/2,n_1-1,n_2-1} \leq F \leq F_{\alpha/2,n_1-1,n_2-1})=1-\alpha$$
+$$P(F_{1-\alpha/2,n_2-1,n_1-1} \leq F \leq F_{\alpha/2,n_2-1,n_1-1})=1-\alpha$$
 
-$$IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_1-1,n_2-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_1-1,n_2-1}\right]$$
+$$IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_2-1,n_1-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_2-1,n_1-1}\right]$$
 
 ## Ejercicios
 
@@ -1047,11 +1047,53 @@ qt(0.1,24,lower.tail = F)
 
 $$L: 4.03mm$$
 
-2. Un ingeniero industrial está interesado en estimar el tiempo medio requerido para ensamblar una tarjeta de circuito impreso. ¿Qué tan grande debe ser la muestra si el
-ingeniero desea tener una confianza del 95 por ciento de que el error en la estimación de la media es menor que .25 minutos? La desviación estándar del tiempo de ensamble es .45 minutos.
+2. Un ingeniero industrial está interesado en estimar el tiempo medio requerido para ensamblar una tarjeta de circuito impreso. ¿Qué tan grande debe ser la muestra si el ingeniero desea tener una confianza del 95 por ciento de que el error en la estimación de la media es menor que .25 minutos? La desviación estándar del tiempo de ensamble es .45 minutos.
 
 Solución, sean los datos $Z_{\alpha/2}=1.96$, $\sigma=0.45$, $\epsilon=0.25$
 
 $$n=\left(\frac{Z_{\alpha/2}*\sigma}{\epsilon} \right)^2=\left(\frac{1.96*0.45}{0.25}\right)^2=12.45\approx13$$
+3. Dada la siguiente muestra aleatoria por hombre y mujer, respecto sus ingresos: 
 
+  * Hombre: 2078,  3565,  3767,  3600,  2907,  1299,  3483,  8475,  2425,  3500,  3118,  3377,  3897, 21883,  9717,  2078,  8167
+  * Mujeres: 1905, 9500, 996, 3250, 3335, 433, 2917, 616, 1625, 1104, 2050, 3000, 1625
 
+se pide calcular intervalos de confianza para la varianza para ambas poblaciones, y para el cociente de varianzas entre $Hombre/Mujer$ y $Mujer/Hombre$. Estos intervalos al 95 % de confiabilidad. (Asumir normalidad de los datos de origen).
+
+Solución: 
+```{r}
+hh<-c(2078,  3565,  3767,  3600,  2907,  1299,  3483,  8475,  2425,  3500,  3118,  3377,  3897, 21883,  9717,  2078,  8167)
+mm<-c(1905, 9500, 996, 3250, 3335, 433, 2917, 616, 1625, 1104, 2050, 3000, 1625)
+nh<-17;nm<-13
+#estimador de varianzas
+var(hh)#puntual hombres S^2
+var(mm)#puntual mujeres S^2
+#intervalo hombres
+lih<-(var(hh)*(nh-1))/qchisq(0.05/2,nh-1,lower.tail = F)
+lsh<-(var(hh)*(nh-1))/qchisq(1-0.05/2,nh-1,lower.tail = F)
+lih;var(hh);lsh
+#intervalo mujeres
+limj<-(var(mm)*(nm-1))/qchisq(0.05/2,nm-1,lower.tail = F)
+lsmj<-(var(mm)*(nm-1))/qchisq(1-0.05/2,nm-1,lower.tail = F)
+limj;var(mm);lsmj
+###########################
+#cociente de varianza H/M
+
+var(hh)/var(mm)#puntual
+#intervalos
+lihm<-(var(hh)/var(mm))*qf(1-0.05/2,nm-1,nh-1,lower.tail = F)
+lshm<-(var(hh)/var(mm))*qf(0.05/2,nm-1,nh-1,lower.tail = F)
+lihm; var(hh)/var(mm); lshm
+#99 confiabilidad
+lihm<-(var(hh)/var(mm))*qf(1-0.01/2,nm-1,nh-1,lower.tail = F)
+lshm<-(var(hh)/var(mm))*qf(0.01/2,nm-1,nh-1,lower.tail = F)
+lihm; var(hh)/var(mm); lshm
+
+###########################
+#cociente de varianza M/H
+
+var(mm)/var(hh)#puntual
+#intervalos
+limh<-(var(mm)/var(hh))*qf(1-0.05/2,nh-1,nm-1,lower.tail = F)
+lsmh<-(var(mm)/var(hh))*qf(0.05/2,nh-1,nm-1,lower.tail = F)
+limh; var(mm)/var(hh); lsmh
+```
