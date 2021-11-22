@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2021-11-15" />
+<meta name="date" content="2021-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -242,7 +242,9 @@ div.csl-indent {
 <li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias</a></li>
 <li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción</a></li>
 <li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones</a></li>
-<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.6</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.6</b> Prueba de hipótesis sobre la varianza</a></li>
+<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la igualdad de varianzas</a></li>
+<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.8</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
 </ul></li>
 </ul>
 
@@ -393,9 +395,9 @@ Los valores usuales para los <span class="math inline">\(Z_{\alpha/2}\)</span> s
 <div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="prueba-de-hipótesis.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1447</span>)</span>
 <span id="cb228-2"><a href="prueba-de-hipótesis.html#cb228-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">80</span>),<span class="dv">0</span>)</span>
 <span id="cb228-3"><a href="prueba-de-hipótesis.html#cb228-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 57 60 59 44 79 59 63 58 68 62
-## [11] 49 77 79 51 78 44 53 58 50 56
-## [21] 64 77 60 49 46 66 45 78 66 60</code></pre>
+<pre><code>##  [1] 57 60 59 44 79 59 63 58 68 62 49 77 79
+## [14] 51 78 44 53 58 50 56 64 77 60 49 46 66
+## [27] 45 78 66 60</code></pre>
 <p><span class="math display">\[H0: \mu=65\]</span>
 <span class="math display">\[H1: \mu \neq 65\]</span>
 El estadístico de prueba es:</p>
@@ -539,13 +541,27 @@ Ejercicio, De 1000 casos seleccionados de cáncer en el pulmón, 823 terminaron 
 <p><span class="math display">\[H_0: P=0.9\]</span>
 <span class="math display">\[H_1: P\neq0.9\]</span>
 <span class="math display">\[H_2: P &gt; 0.9\]</span>
-El estadístico de prueba:</p>
-<p><span class="math display">\[Z_0=\frac{823-1000*0.9}{\sqrt{1000*0.9*0.1}}=-8.11\]</span>
-Para la prueba bilateral a un <span class="math inline">\(\alpha=0.05\)</span>:</p>
+<span class="math display">\[H_3: P &lt; 0.9\]</span></p>
+<p>El estadístico de prueba:</p>
+<p><span class="math display">\[Z_0=\frac{823-1000*0.9}{\sqrt{1000*0.9*0.1}}=-8.11\]</span></p>
+<p>Para la prueba bilateral a un <span class="math inline">\(\alpha=0.05\)</span>:</p>
 <p><span class="math display">\[-8.11&lt; - 1.96 \quad ó \quad -8.11&gt;  1.96\]</span>
-Por lo tanto se rechaza la <span class="math inline">\(H_0\)</span>. Mientras que para la prueba unilateral</p>
+Por lo tanto se rechaza la <span class="math inline">\(H_0\)</span>.</p>
+<p>Para <span class="math inline">\(H_2\)</span>,</p>
 <p><span class="math display">\[-8.11&gt;1.64\]</span></p>
 <p>No hay evidencia estadística para rechazar <span class="math inline">\(H_0\)</span> y aceptar <span class="math inline">\(H_2\)</span>.</p>
+<p>Para <span class="math inline">\(H_3\)</span>,</p>
+<p><span class="math display">\[-8.11&lt; - 1.64\]</span></p>
+<p>Rechazar <span class="math inline">\(H_0\)</span> y aceptar <span class="math inline">\(H_3\)</span>.</p>
+<p>Ejercicio, se tomo una muestra de 40 personas al azar en un supermercado y se encontró que 25% de ellas tenían COVID-19, ¿es posible afirmar que más del 30% de las personas tienen COVID-19 en el supermercado? (tomar un 5% de significancia).</p>
+<p>Solución,</p>
+<p><span class="math display">\[H_0: P=0.3\]</span>
+<span class="math display">\[H_1: P&gt;0.3\]</span></p>
+<p><span class="math display">\[Z_0=\frac{X-nP_0}{\sqrt{n*P_0*(1-P_0)}}=\frac{\hat{P}-P_0}{\sqrt{\frac{P_0*(1-P_0)}{n}}}\]</span>
+<span class="math display">\[Z_0=\frac{10-40*0.3}{\sqrt{40*0.3*0.7}}=\frac{0.25-0.3}{\sqrt{\frac{0.3*0.7}{40}}}=-0.69\]</span></p>
+<p>Se rechaza <span class="math inline">\(H_0\)</span> si se cumple:</p>
+<p><span class="math display">\[-0.69&gt; 1.64\]</span>
+Por lo que no se rechaza <span class="math inline">\(H_0\)</span>, lo que implica que el porcentaje de personas con COVID-19 en el supermercado no es superior a 30%.</p>
 </div>
 <div id="prueba-de-hipótesis-sobre-la-diferencia-de-proporciones" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Prueba de hipótesis sobre la diferencia de Proporciones</h2>
@@ -556,7 +572,7 @@ Por lo tanto se rechaza la <span class="math inline">\(H_0\)</span>. Mientras qu
 <span class="math display">\[H_1: P_1 &lt; P_2\]</span></p>
 <p>Se parte con dos muestras aleatorias de tamaños <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> de ambas poblaciones, y sea <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span> el número de observaciones que pertenecen a la clase de interés en las muestras. Si aproximamos a <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> como normales al ser estas binomiales, si se trabaja a nivel de los estimadores, sean <span class="math inline">\(\hat{P}_1\)</span> y <span class="math inline">\(\hat{P}_2\)</span> se sabe que:</p>
 <p><span class="math display">\[Z_0=\frac{\hat{P_1}-\hat{P_2}}{\sqrt{\hat{P}(1-\hat{P})*\left[\frac{1}{n_1}+\frac{1}{n_2} \right]}}\sim N(0,1)\]</span>
-<span class="math display">\[\hat{P}=\frac{X_1+X_2}{n_1+n_2}\]</span>
+<span class="math display">\[\hat{P}=\frac{X_1+X_2}{n_1+n_2}=\frac{n_1\hat{P}_1+n_2*\hat{P}_2}{n_1+n_2}\]</span>
 De esta forma en una prueba bilateral se rechaza la <span class="math inline">\(H_0\)</span> si</p>
 <p><span class="math display">\[Z_0&lt; - Z_{\alpha/2} \quad ó \quad Z_0&gt;  Z_{\alpha/2}\]</span>
 Para las pruebas unilaterales, con <span class="math inline">\(H_1: P_1&gt; P_2\)</span>, se rechaza <span class="math inline">\(H_0\)</span> cuando:</p>
@@ -564,9 +580,108 @@ Para las pruebas unilaterales, con <span class="math inline">\(H_1: P_1&gt; P_2\
 Con <span class="math inline">\(H_1: P_1&lt; P_2\)</span>, se rechaza <span class="math inline">\(H_0\)</span> cuando:</p>
 <p><span class="math display">\[Z_0&lt;-Z_\alpha\]</span>
 Ejercicio, del libro guía del capítulo resolver el ejercicio 11.41 y 11.42</p>
+<p>Ejercicio 11.42. Dos tipos diferentes de maquinas de moldeo de inyección se utilizan para formar piezas plásticas. Una parte se considera defectuosa si tiene un encogimiento excesivo o si se decolora. Se selecciona 2 muestras aleatorios, cada una de tamaño 500, y se encuentran 21 piezas defectuosas en la muestra de la máquina 2. ¿Es razonable concluir que ambas máquinas producen la misma fracción de piezas defectuosas?</p>
+<p>Solución,</p>
+<p><span class="math display">\[H_0: P_1=P_2\]</span></p>
+<p><span class="math display">\[H_1: P_1 \neq P_2\]</span></p>
+<p><span class="math display">\[Z_0=\frac{\hat{P_1}-\hat{P_2}}{\sqrt{\hat{P}(1-\hat{P})*\left[\frac{1}{n_1}+\frac{1}{n_2} \right]}}=\frac{\frac{X_1}{500}-\frac{27}{500}}{\sqrt{\frac{X_1+27}{1000}(1-\frac{X_1+27}{1000})*\left[\frac{1}{500}+\frac{1}{500} \right]}}\]</span></p>
+<p>La pregunta es cuando se rechaza <span class="math inline">\(H_0\)</span>, esto sucede cuando:</p>
+<p><span class="math display">\[Z_0&lt; - 1.96 \quad ó \quad Z_0&gt;  1.96\]</span></p>
+<p>Tarea, despejar <span class="math inline">\(X_1\)</span> y encontrar el rango de esta para mantener <span class="math inline">\(H_0\)</span>.</p>
 </div>
-<div id="tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Tamaño de muestra y su relación con el error de tipo I y tipo II</h2>
+<div id="prueba-de-hipótesis-sobre-la-varianza" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Prueba de hipótesis sobre la varianza</h2>
+<p>Para esta prueba estamos interesados en plantear hipótesis sobre el valor de la varianza poblacional, muchas veces esta necesidad esta vinculada a conocer la variabilidad de la información. Recordar que la varianza poblacional se define como:</p>
+<p><span class="math display">\[\sigma^2=V(x)=\frac{\sum_U (x_i-\mu_x)^2}{N}\]</span></p>
+<p>Vamos a suponer que la variable <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>, tanto <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span> no se conocen, Suponer que se toma una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, <span class="math inline">\(X_1, X_2, \ldots,X_n\)</span>. Sea:</p>
+<p><span class="math display">\[H_0: \sigma^2=\sigma^2_0\]</span></p>
+<p><span class="math display">\[H_1: \sigma^2 \neq \sigma^2_0\]</span></p>
+<p>La estadística de prueba es:</p>
+<p><span class="math display">\[\chi^2_0=\frac{(n-1)\hat{S}^2}{\sigma^2_0}\]</span></p>
+<p>Si <span class="math inline">\(H_0\)</span> es cierta, entonces:</p>
+<p><span class="math display">\[\chi^2_0\sim \chi^2(n-1)\]</span></p>
+<p>Finalmente, se rechaza <span class="math inline">\(H_0\)</span> si:</p>
+<p><span class="math display">\[\chi^2_0&gt;\chi^2_{\alpha/2,n-1}\quad ó \quad \chi^2_0&lt;\chi^2_{1-\alpha/2,n-1}\]</span></p>
+<p>Como ejemplo, la zona de aceptación y rechazo para una muestra de <span class="math inline">\(n=20\)</span> y <span class="math inline">\(\alpha=0.05\)</span> es:</p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="prueba-de-hipótesis.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">80</span>),<span class="at">main=</span><span class="st">&quot;X^2 (n-1)&quot;</span>)</span>
+<span id="cb237-2"><a href="prueba-de-hipótesis.html#cb237-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb237-3"><a href="prueba-de-hipótesis.html#cb237-3" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb237-4"><a href="prueba-de-hipótesis.html#cb237-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(x1,x2),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="prueba-de-hipótesis.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(x1,<span class="dv">19</span>)<span class="sc">-</span><span class="fu">pchisq</span>(x2,<span class="dv">19</span>)</span></code></pre></div>
+<pre><code>## [1] 0.95</code></pre>
+<p>Para las pruebas unilaterales,</p>
+<p><span class="math display">\[H_0: \sigma^2=\sigma^2_0\]</span>
+<span class="math display">\[H_1: \sigma^2&gt;\sigma^2_0\]</span>
+Se rechaza <span class="math inline">\(H_0\)</span> si:</p>
+<p><span class="math display">\[\chi^2_0&gt; \chi^2_{\alpha,n-1}\]</span></p>
+<p><span class="math display">\[H_0: \sigma^2=\sigma^2_0\]</span>
+<span class="math display">\[H_1: \sigma^2&lt;\sigma^2_0\]</span>
+Se rechaza <span class="math inline">\(H_0\)</span> si:</p>
+<p><span class="math display">\[\chi^2_0 &lt; \chi^2_{1-\alpha,n-1}\]</span></p>
+<p>En el R para el ejemplo anterior.</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="prueba-de-hipótesis.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<pre><code>## [1] 30.14353</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="prueba-de-hipótesis.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<pre><code>## [1] 10.11701</code></pre>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="prueba-de-hipótesis.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb244-2"><a href="prueba-de-hipótesis.html#cb244-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">80</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma&gt;sigma_0&quot;</span>)</span>
+<span id="cb244-3"><a href="prueba-de-hipótesis.html#cb244-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qchisq</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb244-4"><a href="prueba-de-hipótesis.html#cb244-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">80</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma&lt;sigma_0&quot;</span>)</span>
+<span id="cb244-5"><a href="prueba-de-hipótesis.html#cb244-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+</div>
+<div id="prueba-de-hipótesis-sobre-la-igualdad-de-varianzas" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Prueba de hipótesis sobre la igualdad de varianzas</h2>
+<p>La idea inicial es contar con dos poblaciones, sobre la cuales se observa una variable <span class="math inline">\(X_1\)</span> para la población uno y <span class="math inline">\(X_2\)</span> para la población dos. Suponer que <span class="math inline">\(X_1\sim N(\mu_1,\sigma^2_1)\)</span>, <span class="math inline">\(X_2\sim N(\mu_2,\sigma^2_2)\)</span>, para las dos poblaciones no se conocen sus parámetros. Si tomamos muestras aleatorias de ambas poblaciones, con <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> los tamaños de muestra respectivos, la prueba de igualdad de varianzas es:</p>
+<p><span class="math display">\[H_0: \sigma^2_1=\sigma^2_2\]</span></p>
+<p><span class="math display">\[H_1: \sigma^2_1\neq\sigma^2_2\]</span></p>
+<p>El estadístico de prueba es:</p>
+<p><span class="math display">\[F_0=\frac{\hat{S}^2_1}{\hat{S}^2_2}\]</span>
+Si <span class="math inline">\(H_0\)</span> es cierta, entonces:</p>
+<p><span class="math display">\[F_0\sim F(n_1-1,n_2-1)\]</span>
+Finalmente, se rechaza <span class="math inline">\(H_0\)</span>, cuando:</p>
+<p><span class="math display">\[F_0&gt;F_{\alpha/2,n_1-1,n_2-1} \quad ó\quad F_0&lt;F_{1-\alpha/2,n_1-1,n_2-1}\]</span></p>
+<p>En el R, para dos muestras de tamaño 20 con una significancia del 5%.</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="prueba-de-hipótesis.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<pre><code>## RStudioGD 
+##         2</code></pre>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="prueba-de-hipótesis.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="prueba-de-hipótesis.html#cb248-1" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb248-2"><a href="prueba-de-hipótesis.html#cb248-2" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb248-3"><a href="prueba-de-hipótesis.html#cb248-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(x1,x2),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb248-4"><a href="prueba-de-hipótesis.html#cb248-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb248-5"><a href="prueba-de-hipótesis.html#cb248-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(x1,<span class="dv">19</span>,<span class="dv">19</span>)<span class="sc">-</span><span class="fu">pf</span>(x2,<span class="dv">19</span>,<span class="dv">19</span>)</span></code></pre></div>
+<pre><code>## [1] 0.95</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-53-2.png" width="672" /></p>
+<p>Para las pruebas unilaterales,</p>
+<p><span class="math display">\[H_0: \sigma^2_1=\sigma^2_2\]</span>
+<span class="math display">\[H_1: \sigma^2_1&gt;\sigma^2_2\]</span></p>
+<p>Se rechaza <span class="math inline">\(H_0\)</span> si:</p>
+<p><span class="math display">\[F_0&gt;F_{\alpha,n_1-1,n_2-1}\]</span></p>
+<p>Para las pruebas unilaterales,</p>
+<p><span class="math display">\[H_0: \sigma^2_1=\sigma^2_2\]</span>
+<span class="math display">\[H_1: \sigma^2_1&lt;\sigma^2_2\]</span></p>
+<p>Se rechaza <span class="math inline">\(H_0\)</span> si:</p>
+<p><span class="math display">\[F_0&lt;F_{1-\alpha,n_1-1,n_2-1}\]</span>
+En el R, para el ejemplo anterior.</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="prueba-de-hipótesis.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)<span class="co">#sigma1&gt;sigma2</span></span></code></pre></div>
+<pre><code>## [1] 2.168252</code></pre>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="prueba-de-hipótesis.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)<span class="co">#sigma1&lt;sigma2</span></span></code></pre></div>
+<pre><code>## [1] 0.4612011</code></pre>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="prueba-de-hipótesis.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb254-2"><a href="prueba-de-hipótesis.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma1&gt;sigma2&quot;</span>)</span>
+<span id="cb254-3"><a href="prueba-de-hipótesis.html#cb254-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qf</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb254-4"><a href="prueba-de-hipótesis.html#cb254-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma1&lt;sigma2&quot;</span>)</span>
+<span id="cb254-5"><a href="prueba-de-hipótesis.html#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="prueba-de-hipótesis.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<pre><code>## RStudioGD 
+##         2</code></pre>
+</div>
+<div id="tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> Tamaño de muestra y su relación con el error de tipo I y tipo II</h2>
 <p>Recordar que el error de tipo 1 denotado por <span class="math inline">\(\alpha\)</span> es el falso positivo o también establece el riesgo de rechazar algo que es verdadero. Mientras que el error de tipo 2, denotado por <span class="math inline">\(\beta\)</span> es el falso negativo, que establece el riesgo de aceptar algo que es falso.</p>
 <p>Para la prueba de hipótesis para la media, la formula para el tamaño de muestra es:</p>
 <p>Bilateral,</p>
@@ -574,8 +689,7 @@ Ejercicio, del libro guía del capítulo resolver el ejercicio 11.41 y 11.42</p>
 Unilaterales</p>
 <p><span class="math display">\[n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }\]</span></p>
 <p>Ejercicio, 11.2 del libro guía.</p>
-<p>Se está estudiando el rendimiento de un proceso químico. De la experiencia previa
-se sabe que la varianza del rendimiento con este proceso es 5. Los últimos cinco días de operación de la planta han dado como resultado los siguientes rendimientos (en porcentajes):</p>
+<p>Se está estudiando el rendimiento de un proceso químico. De la experiencia previa se sabe que la varianza del rendimiento con este proceso es 5. Los últimos cinco días de operación de la planta han dado como resultado los siguientes rendimientos (en porcentajes):</p>
 <p><span class="math display">\[91.6,88.75,90.8,89.95,91.3.\]</span></p>
 <ul>
 <li>¿Hay razón para creer que el rendimiento es menor al 90%?</li>

@@ -348,17 +348,43 @@ Solución, el parámetro de interés es la proporción de muertes por el cáncer
 $$H_0: P=0.9$$
 $$H_1: P\neq0.9$$
 $$H_2: P > 0.9$$
+$$H_3: P < 0.9$$
+
 El estadístico de prueba:
 
 $$Z_0=\frac{823-1000*0.9}{\sqrt{1000*0.9*0.1}}=-8.11$$
+
 Para la prueba bilateral a un $\alpha=0.05$:
 
 $$-8.11< - 1.96 \quad ó \quad -8.11>  1.96$$
-Por lo tanto se rechaza la $H_0$. Mientras que para la prueba unilateral 
+Por lo tanto se rechaza la $H_0$. 
+
+Para $H_2$,
 
 $$-8.11>1.64$$
 
 No hay evidencia estadística para rechazar $H_0$ y aceptar $H_2$.
+
+Para $H_3$,
+
+$$-8.11< - 1.64$$
+
+Rechazar $H_0$ y aceptar $H_3$.
+
+Ejercicio, se tomo una muestra de 40 personas al azar en un supermercado y se encontró que 25% de ellas tenían COVID-19, ¿es posible afirmar que más del 30% de las personas tienen COVID-19 en el supermercado? (tomar un 5% de significancia).
+
+Solución, 
+
+$$H_0: P=0.3$$
+$$H_1: P>0.3$$
+
+$$Z_0=\frac{X-nP_0}{\sqrt{n*P_0*(1-P_0)}}=\frac{\hat{P}-P_0}{\sqrt{\frac{P_0*(1-P_0)}{n}}}$$
+$$Z_0=\frac{10-40*0.3}{\sqrt{40*0.3*0.7}}=\frac{0.25-0.3}{\sqrt{\frac{0.3*0.7}{40}}}=-0.69$$
+
+Se rechaza $H_0$ si se cumple:
+
+$$-0.69> 1.64$$
+Por lo que no se rechaza $H_0$, lo que implica que el porcentaje de personas con COVID-19 en el supermercado no es superior a 30%.
 
 ## Prueba de hipótesis sobre la diferencia de Proporciones
 
@@ -372,7 +398,7 @@ $$H_1: P_1 < P_2$$
 Se parte con dos muestras aleatorias de tamaños $n_1$ y $n_2$ de ambas poblaciones, y sea $X_1$, $X_2$ el número de observaciones que pertenecen a la clase de interés en las muestras. Si aproximamos a $X_1$ y $X_2$ como normales al ser estas binomiales, si se trabaja a nivel de los estimadores, sean $\hat{P}_1$ y $\hat{P}_2$ se sabe que:
 
 $$Z_0=\frac{\hat{P_1}-\hat{P_2}}{\sqrt{\hat{P}(1-\hat{P})*\left[\frac{1}{n_1}+\frac{1}{n_2} \right]}}\sim N(0,1)$$
-$$\hat{P}=\frac{X_1+X_2}{n_1+n_2}$$
+$$\hat{P}=\frac{X_1+X_2}{n_1+n_2}=\frac{n_1\hat{P}_1+n_2*\hat{P}_2}{n_1+n_2}$$
 De esta forma en una prueba bilateral se rechaza la $H_0$ si
 
 $$Z_0< - Z_{\alpha/2} \quad ó \quad Z_0>  Z_{\alpha/2}$$
@@ -383,6 +409,143 @@ Con $H_1: P_1< P_2$, se rechaza $H_0$ cuando:
 
 $$Z_0<-Z_\alpha$$
 Ejercicio, del libro guía del capítulo resolver el ejercicio 11.41 y 11.42
+
+Ejercicio 11.42. Dos tipos diferentes de maquinas de moldeo de inyección se utilizan para formar piezas plásticas. Una parte se considera defectuosa si tiene un encogimiento excesivo o si se decolora. Se selecciona 2 muestras aleatorios, cada una de tamaño 500, y se encuentran 21 piezas defectuosas en la muestra de la máquina 2. ¿Es razonable concluir que ambas máquinas producen la misma fracción de piezas defectuosas?
+
+Solución,
+
+$$H_0: P_1=P_2$$
+
+$$H_1: P_1 \neq P_2$$
+
+$$Z_0=\frac{\hat{P_1}-\hat{P_2}}{\sqrt{\hat{P}(1-\hat{P})*\left[\frac{1}{n_1}+\frac{1}{n_2} \right]}}=\frac{\frac{X_1}{500}-\frac{27}{500}}{\sqrt{\frac{X_1+27}{1000}(1-\frac{X_1+27}{1000})*\left[\frac{1}{500}+\frac{1}{500} \right]}}$$
+
+La pregunta es cuando se rechaza $H_0$, esto sucede cuando:
+
+$$Z_0< - 1.96 \quad ó \quad Z_0>  1.96$$
+
+Tarea, despejar $X_1$ y encontrar el rango de esta para mantener $H_0$.
+
+## Prueba de hipótesis sobre la varianza 
+
+Para esta prueba estamos interesados en plantear hipótesis sobre el valor de la varianza poblacional, muchas veces esta necesidad esta vinculada a conocer la variabilidad de la información. Recordar que la varianza poblacional se define como:
+
+$$\sigma^2=V(x)=\frac{\sum_U (x_i-\mu_x)^2}{N}$$
+
+Vamos a suponer que la variable $X\sim N(\mu,\sigma^2)$, tanto $\mu$ y $\sigma^2$ no se conocen, Suponer que se toma una muestra aleatoria de tamaño $n$, $X_1, X_2, \ldots,X_n$. Sea:
+
+$$H_0: \sigma^2=\sigma^2_0$$
+
+$$H_1: \sigma^2 \neq \sigma^2_0$$
+
+La estadística de prueba es:
+
+$$\chi^2_0=\frac{(n-1)\hat{S}^2}{\sigma^2_0}$$
+
+Si $H_0$ es cierta, entonces: 
+
+$$\chi^2_0\sim \chi^2(n-1)$$
+
+Finalmente, se rechaza $H_0$ si:
+
+$$\chi^2_0>\chi^2_{\alpha/2,n-1}\quad ó \quad \chi^2_0<\chi^2_{1-\alpha/2,n-1}$$
+
+Como ejemplo, la zona de aceptación y rechazo para una muestra de $n=20$ y $\alpha=0.05$ es:
+
+```{r}
+curve(dchisq(x,19),xlim=c(0,80),main="X^2 (n-1)")
+x1<-qchisq(0.05/2,19,lower.tail = F)
+x2<-qchisq(1-0.05/2,19,lower.tail = F)
+abline(v=c(x1,x2),col="red")
+
+pchisq(x1,19)-pchisq(x2,19)
+```
+
+Para las pruebas unilaterales, 
+
+$$H_0: \sigma^2=\sigma^2_0$$
+$$H_1: \sigma^2>\sigma^2_0$$
+Se rechaza $H_0$ si:
+
+$$\chi^2_0> \chi^2_{\alpha,n-1}$$
+
+$$H_0: \sigma^2=\sigma^2_0$$
+$$H_1: \sigma^2<\sigma^2_0$$
+Se rechaza $H_0$ si:
+
+$$\chi^2_0 < \chi^2_{1-\alpha,n-1}$$
+
+En el R para el ejemplo anterior.
+
+```{r}
+qchisq(0.05,19,lower.tail = F)
+qchisq(1-0.05,19,lower.tail = F)
+par(mfrow=c(1,2))
+curve(dchisq(x,19),xlim=c(0,80),main="H_1: sigma>sigma_0")
+abline(v=qchisq(0.05,19,lower.tail = F),col="blue")
+curve(dchisq(x,19),xlim=c(0,80),main="H_1: sigma<sigma_0")
+abline(v=qchisq(1-0.05,19,lower.tail = F),col="blue")
+```
+
+## Prueba de hipótesis sobre la igualdad de varianzas
+
+La idea inicial es contar con dos poblaciones, sobre la cuales se observa una variable $X_1$ para la población uno y $X_2$ para la población dos. Suponer que $X_1\sim N(\mu_1,\sigma^2_1)$, $X_2\sim N(\mu_2,\sigma^2_2)$, para las dos poblaciones no se conocen sus parámetros. Si tomamos muestras aleatorias de ambas poblaciones, con $n_1$ y $n_2$ los tamaños de muestra respectivos, la prueba de igualdad de varianzas es:
+
+$$H_0: \sigma^2_1=\sigma^2_2$$
+
+$$H_1: \sigma^2_1\neq\sigma^2_2$$
+
+El estadístico de prueba es:
+
+$$F_0=\frac{\hat{S}^2_1}{\hat{S}^2_2}$$
+Si $H_0$ es cierta, entonces:
+
+$$F_0\sim F(n_1-1,n_2-1)$$
+Finalmente, se rechaza $H_0$, cuando:
+
+$$F_0>F_{\alpha/2,n_1-1,n_2-1} \quad ó\quad F_0<F_{1-\alpha/2,n_1-1,n_2-1}$$
+
+En el R, para dos muestras de tamaño 20 con una significancia del 5%.
+```{r}
+dev.off()
+curve(df(x,19,19),xlim=c(0,4))
+x1<-qf(0.05/2,19,19,lower.tail = F)
+x2<-qf(1-0.05/2,19,19,lower.tail = F)
+abline(v=c(x1,x2),col="red")
+
+pf(x1,19,19)-pf(x2,19,19)
+```
+
+Para las pruebas unilaterales, 
+
+$$H_0: \sigma^2_1=\sigma^2_2$$
+$$H_1: \sigma^2_1>\sigma^2_2$$
+
+Se rechaza $H_0$ si:
+
+$$F_0>F_{\alpha,n_1-1,n_2-1}$$
+
+Para las pruebas unilaterales, 
+
+$$H_0: \sigma^2_1=\sigma^2_2$$
+$$H_1: \sigma^2_1<\sigma^2_2$$
+
+Se rechaza $H_0$ si:
+
+$$F_0<F_{1-\alpha,n_1-1,n_2-1}$$
+En el R, para el ejemplo anterior.
+
+```{r}
+qf(0.05,19,19,lower.tail = F)#sigma1>sigma2
+qf(1-0.05,19,19,lower.tail = F)#sigma1<sigma2
+par(mfrow=c(1,2))
+curve(df(x,19,19),xlim=c(0,4),main="H_1: sigma1>sigma2")
+abline(v=qf(0.05,19,19,lower.tail = F),col="blue")
+curve(df(x,19,19),xlim=c(0,4),main="H_1: sigma1<sigma2")
+abline(v=qf(1-0.05,19,19,lower.tail = F),col="blue")
+dev.off()
+```
+
 
 ## Tamaño de muestra y su relación con el error de tipo I y tipo II
 
@@ -399,8 +562,7 @@ $$n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }$$
 
 Ejercicio, 11.2 del libro guía.
 
-Se está estudiando el rendimiento de un proceso químico. De la experiencia previa
-se sabe que la varianza del rendimiento con este proceso es 5. Los últimos cinco días de operación de la planta han dado como resultado los siguientes rendimientos (en porcentajes):
+Se está estudiando el rendimiento de un proceso químico. De la experiencia previa se sabe que la varianza del rendimiento con este proceso es 5. Los últimos cinco días de operación de la planta han dado como resultado los siguientes rendimientos (en porcentajes):
 
 $$91.6,88.75,90.8,89.95,91.3.$$
 
@@ -416,7 +578,6 @@ Se rechaza $H_0$ si (a un $\alpha=0.05$):
 
 $$0.48<-Z_{\alpha}=-1.64$$
 Por lo tanto no hay evidencia estadística para rechazar $H_0$.
-
 
 
 $$n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }=\frac{(1.64+1.64)^2 5}{(-5)^2 }=2.15 \approx 3$$

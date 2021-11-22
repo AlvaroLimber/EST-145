@@ -61,4 +61,6 @@ con-varianza-desconocida
 prueba-de-hipótesis-sobre-la-diferencia-de-medias
 prueba-de-hipótesis-sobre-la-proporción
 prueba-de-hipótesis-sobre-la-diferencia-de-proporciones
+prueba-de-hipótesis-sobre-la-varianza
+prueba-de-hipótesis-sobre-la-igualdad-de-varianzas
 tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii
