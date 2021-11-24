@@ -33,7 +33,7 @@ $$H_1: \theta > k \quad(\text{1 lado})$$
 
 ### Región de aceptación y región de rechazo
 
-Al plantear un hipótesis estadística sobre un parámetro de alguna población, la manera de verificar dicha hipótesis pasara por estudiar una muestra aleatoria sobre la cual se establecera una regla que nos permita decir si la hipótesis es correcta o no. Tradicionalmente se definirá un estadístico de prueba que nos permitirá decidir. Por ejemplo, estamos interesados en conocer el promedio de ingresos laborales mensuales de las personas que viven en el municipio de La Paz. Planteamos la hipótesis nula:
+Al plantear un hipótesis estadística sobre un parámetro de alguna población, la manera de verificar dicha hipótesis pasara por estudiar una muestra aleatoria sobre la cual se establecerá una regla que nos permita decir si la hipótesis es correcta o no. Tradicionalmente se definirá un estadístico de prueba que nos permitirá decidir. Por ejemplo, estamos interesados en conocer el promedio de ingresos laborales mensuales de las personas que viven en el municipio de La Paz. Planteamos la hipótesis nula:
 
 $$H_0: \mu_{ingreso}=3000.Bs$$
 La hipótesis alternativa
@@ -600,13 +600,21 @@ Donde $P$ es el valor propuesto para $H_1$.
 Unilateral
 
 $$n=\left(\frac{Z_{\alpha} \sqrt{P_0(1-P_0)}+Z_{\beta} \sqrt{P(1-P)}}{P-P_0} \right)^2$$
+Ejercicio, Se busca realizar una encuesta para estimar la proporción de apoyo a un candidato para la elección en un determinado municipio. Se pide calcular el tamaño de muestra tomando en cuanta tener un nivel de significancia del 5%, un poder del 80% y que las estimaciones sean validas hasta una diferencia del 9%. Suponer que $\sqrt{P_0*(1-P_0)}=\sqrt{P*(1-P)}=0.5$.
+
+Solución. $P-P_0=0.09$
+
+```{r}
+za2<-qnorm(0.05/2,lower.tail = F)
+zb<-qnorm(0.2,lower.tail = F)
+n<-((za2*0.5+zb*0.5)/0.09)^2
+n
+```
 
 Tareas, revisar el libro guía el capítulo 11, en los apartados:
 
   * 11-10.2. Tamaño de muestra para la diferencia de proporciones
   * Revisar la tabla 11.7
-  * Revisar la Prueba de hipótesis sobre la varianza 
-  * Revisar la Prueba de hipótesis sobre la igualdad de varianzas
   * Se recomienda ir resolviendo los ejercicios del capitulo 11
   
   
