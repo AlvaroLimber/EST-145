@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II</title>
+  <meta name="description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
+  <meta name="github-repo" content="alvarolimber/EST-145" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Tema 1: Distribuciones bivariadas (multivariadas) | Estadística II" />
+  
+  <meta name="twitter:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
+  
+
+<meta name="author" content="Alvaro Chirino Gutierrez" />
+
+
+<meta name="date" content="2021-11-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="tema-2-distribuciones-muestrales.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#bases-de-datos"><i class="fa fa-check"></i>Bases de datos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimiento"><i class="fa fa-check"></i>Agradecimiento</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Distribuciones bivariadas (multivariadas)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes</a></li>
+<li class="chapter" data-level="1.2" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada</a></li>
+<li class="chapter" data-level="1.3" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)</a></li>
+<li class="chapter" data-level="1.4" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal</a></li>
+<li class="chapter" data-level="1.5" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia</a></li>
+<li class="chapter" data-level="1.6" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados</a></li>
+<li class="chapter" data-level="1.7" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.7.1</b> Esperanza condicional</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
+<li class="chapter" data-level="1.9" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#transformaciones"><i class="fa fa-check"></i><b>1.9</b> Transformaciones</a></li>
+<li class="chapter" data-level="1.10" data-path="tema-1-distribuciones-bivariadas-multivariadas.html"><a href="tema-1-distribuciones-bivariadas-multivariadas.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.10</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
+<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
+<li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral</a></li>
+<li class="chapter" data-level="2.4" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-media"><i class="fa fa-check"></i><b>2.4</b> Distribución muestral para la media</a></li>
+<li class="chapter" data-level="2.5" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>2.5</b> Teorema del límite central</a></li>
+<li class="chapter" data-level="2.6" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-diferencia-de-medias"><i class="fa fa-check"></i><b>2.6</b> Distribución muestral para la diferencia de medias</a></li>
+<li class="chapter" data-level="2.7" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-proporción"><i class="fa fa-check"></i><b>2.7</b> Distribución muestral para la proporción</a></li>
+<li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la varianza</a></li>
+<li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.9</b> Distribución <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.10</b> Distribución t-student</a></li>
+<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.11</b> Distribución Fisher</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.11.1</b> Para las varianzas muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.12</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
+<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
+<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
+<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao</a></li>
+<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud</a></li>
+<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza"><i class="fa fa-check"></i><b>3.3.2</b> Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30."><i class="fa fa-check"></i><b>3.3.3</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.</a></li>
+<li class="chapter" data-level="3.3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30."><i class="fa fa-check"></i><b>3.3.4</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.</a></li>
+<li class="chapter" data-level="3.3.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados"><i class="fa fa-check"></i><b>3.3.5</b> Intervalos de confianza para la diferencia de medias de datos pareados</a></li>
+<li class="chapter" data-level="3.3.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones"><i class="fa fa-check"></i><b>3.3.6</b> Intervalo de confianza para proporciones</a></li>
+<li class="chapter" data-level="3.3.7" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.3.7</b> Intervalo de confianza para diferencia de proporciones</a></li>
+<li class="chapter" data-level="3.3.8" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza"><i class="fa fa-check"></i><b>3.3.8</b> Intervalo de confianza para la varianza</a></li>
+<li class="chapter" data-level="3.3.9" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas"><i class="fa fa-check"></i><b>3.3.9</b> Intervalo de confianza para el cociente de varianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Prueba de Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística</a></li>
+<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo</a></li>
+<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II</a></li>
+<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-bilaterales"><i class="fa fa-check"></i><b>4.1.4</b> Pruebas bilaterales</a></li>
+<li class="chapter" data-level="4.1.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-unilaterales"><i class="fa fa-check"></i><b>4.1.5</b> Pruebas unilaterales</a></li>
+<li class="chapter" data-level="4.1.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.6</b> Pasos para la prueba hipótesis estadística</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-conocida"><i class="fa fa-check"></i><b>4.2.1</b> Con varianza conocida</a></li>
+<li class="chapter" data-level="4.2.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-desconocida"><i class="fa fa-check"></i><b>4.2.2</b> Con varianza desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias</a></li>
+<li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción</a></li>
+<li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones</a></li>
+<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.6</b> Prueba de hipótesis sobre la varianza</a></li>
+<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la igualdad de varianzas</a></li>
+<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.8</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística II</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tema-1-distribuciones-bivariadas-multivariadas" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Tema 1: Distribuciones bivariadas (multivariadas)</h1>
+<p>En el caso univariado se tenia a una va <span class="math inline">\(X\)</span> definida en los reales <span class="math inline">\(IR\)</span>, a esta va se le asignaba una función de distribución <span class="math inline">\(F(x)\)</span> y una función de densidad <span class="math inline">\(f(x)\)</span>. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:</p>
+<p>Caso discreto:</p>
+<p><span class="math display">\[\sum_{Rx} P(X=x)=1\]</span>
+<span class="math display">\[F(t)=P(X\leq t)=\sum_{x\leq t} P(X=x)\]</span></p>
+<p>Caso continuo:</p>
+<p><span class="math display">\[\int_{Rx}f(x)dx=1\]</span></p>
+<p><span class="math display">\[F(t)=P(X\leq t)=\int_{-\infty}^{t}f(x)dx\]</span></p>
+<p>La idea de este capitulo es ver las propiedades en el caso bivariante y generalizar para el caso multivariante.</p>
+<div id="variables-aleatorias-bivariantes" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Variables aleatorias bivariantes</h2>
+<p>Son un par de variables aleatorias con una distribución conjunta, son típicamente representadas con mayúscula <span class="math inline">\((X, Y)\)</span> o <span class="math inline">\((X_1,X_2)\)</span>, las realizaciones de estas variables aleatorias se representan como <span class="math inline">\((x,y)\)</span> o <span class="math inline">\((x_1,x_2)\)</span>.</p>
+<blockquote>
+<p>Definición 1.
+Un par de variables aleatorias bivariadas es un par numérico de resultados; una función definida en <span class="math inline">\(IR^2\)</span></p>
+</blockquote>
+<p>Ejemplos:</p>
+<ul>
+<li>Considerar el par (edad, estatura):
+<ul>
+<li><span class="math inline">\((23,170)\)</span></li>
+<li><span class="math inline">\((20,172)\)</span></li>
+<li><span class="math inline">\((20,154)\)</span></li>
+<li><span class="math inline">\((26,159)\)</span></li>
+<li><span class="math inline">\((19,175)\)</span></li>
+</ul></li>
+<li>Considerar el par: (ingreso, años experiencia)</li>
+</ul>
+<p>Imaginar lanzar 2 monedas simultáneamente, <span class="math inline">\(\Omega=\{CC,CS,SC,SS\}\)</span>, si definimos a <span class="math inline">\(Cara=1\)</span> y <span class="math inline">\(Sello=0\)</span>, <span class="math inline">\(R_{(X,Y)}=\{(1,1),(1,0),(0,1),(0,0)\}\)</span>.</p>
+</div>
+<div id="función-de-distribución-bivariada" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Función de distribución bivariada</h2>
+<blockquote>
+<p>Definición 2.</p>
+</blockquote>
+<p>La función de distribución conjunta de <span class="math inline">\((X,Y)\)</span> es</p>
+<p><span class="math display">\[F(x,y)=P(X\leq x,Y\leq y)=P\left[\{X\leq x\} \cap \{Y\leq y\}  \right]\]</span>
+Las propiedades de <span class="math inline">\(F\)</span> son similares al caso univariante, <span class="math inline">\(0\leq F(x,y)\leq 1\)</span>.</p>
+<p>Ejemplo:</p>
+<p><span class="math display">\[F(x,y)=(1-e^{-x})(1-e^{-y});\hspace{2cm} x,y\geq0 \]</span>
+* <span class="math inline">\(F(0,0)=0\)</span>
+* <span class="math inline">\(F(\infty,\infty)=1\)</span></p>
+<p>Calcular:</p>
+<p><span class="math display">\[P(X\leq 10,Y\leq 100)=F(10,100)=(1-e^{-10})(1-e^{-100})=0.9999546\]</span>
+<span class="math display">\[P(X\leq 5,Y\leq 20)=F(5,20)=0.99326\]</span></p>
+<p>La distribución conjunta satisface:</p>
+<p><span class="math display">\[P(a&lt;X\leq b,c&lt; Y\leq d)=F(b,d)-F(b,c)-F(a,d)+F(a,c)\]</span></p>
+<p>Para <span class="math inline">\(a&lt;b\)</span> y <span class="math inline">\(c&lt;d\)</span></p>
+</div>
+<div id="función-masa-de-probabilidad-función-de-densidad" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Función masa de probabilidad (función de densidad)</h2>
+<p>Para el par <span class="math inline">\((X,Y)\)</span> con una función de distribución conjunta <span class="math inline">\(F(x,y)\)</span>.</p>
+<p>Para el caso continuo,</p>
+<blockquote>
+<p>Definición 3.</p>
+</blockquote>
+<p><span class="math display">\[f(x,y)=\frac{\partial^2}{\partial x \partial y}F(x,y)\]</span></p>
+<p>Por un tema de notación, a veces escribiremos <span class="math inline">\(f_{X,Y}(x,y)\)</span></p>
+<p>Ejercicio: encontrar <span class="math inline">\(f(x,y)\)</span> para la <span class="math inline">\(F\)</span> dada en el ejemplo anterior</p>
+<p><span class="math display">\[f(x,y)=\frac{\partial^2}{\partial x \partial y}\left[(1-e^{-x})(1-e^{-y})\right]=e^{-x}e^{-y}\]</span></p>
+<p><span class="math inline">\(f\)</span> satisface de forma similar las propiedades vistas en el caso univariante.</p>
+<p><span class="math display">\[\int_{Rx}\int_{Ry}f(x,y)dydx=1\]</span></p>
+<p>Para el ejercicio:</p>
+<p><span class="math display">\[\int_0^{\infty} \int_0^{\infty}e^{-x}e^{-y} dx dy=\int_0^{\infty} e^{-y} \left[-e^{-x}/_0^{\infty} \right] dy =1\]</span></p>
+<p><span class="math display">\[P(a&lt;X\leq b,c&lt; Y\leq d)=\int_a^b \int_c^d f(x,y)dxdy\]</span></p>
+<p>Para el caso discreto podemos definirlo de la siguiente forma:</p>
+<p><span class="math display">\[f(x,y)=\pi(x,y)=P(X=x,Y=y)\]</span>
+<span class="math display">\[\sum_{Rx}\sum_{Ry}\pi(x,y)=1\]</span>
+Ejemplo, en un restaurante de pizza se vende porciones de pizza y gaseosa, el dueño del local realizó un monitoreo del patrón de como los clientes ordenan sus pedidos, respecto la cantidad de porciones de pizza con la cantidad de gaseosas, encontrando el siguiente resultado:</p>
+<p>Cuál sera la probabilidad de:</p>
+<ul>
+<li><span class="math inline">\(P(X=3,Y=2)=0.13\)</span></li>
+<li><span class="math inline">\(P(X\geq 2, Y=1)=P(X=2, Y=1)+P(X=3,Y=1)=\pi_{21}+\pi_{31}=0.17+0.05=0.22\)</span></li>
+</ul>
+</div>
+<div id="distribución-marginal" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Distribución marginal</h2>
+<p>La distribución conjunta del vector aleatorio <span class="math inline">\((X,Y)\)</span> describe la distribución del vector aleatorio, sin embargo, es posible a partir de la distribución conjunta, generar las distribuciones para cada componente del vector aleatorio.</p>
+<blockquote>
+<p>Definición 4, la distribución marginal de X es:</p>
+</blockquote>
+<p><span class="math display">\[F_X(x)=P(X\leq x)=P(X\leq x, Y\leq \infty)=lim_{y\rightarrow \infty} F(x,y)\]</span></p>
+<p><span class="math display">\[F_Y(y)=P(Y\leq y)=P(X\leq \infty, Y\leq y)=lim_{x\rightarrow \infty} F(x,y)\]</span>
+De manera más usual se tiene:</p>
+<p>Para el caso discreto:</p>
+<p><span class="math display">\[P(X=x)=\pi(x)=\sum_{Ry} \pi(x,y)\]</span></p>
+<p><span class="math display">\[P(Y=y)=\pi(y)=\sum_{Rx} \pi(x,y)\]</span>
+Para el caso continuo:</p>
+<p><span class="math display">\[f(x)=\int_{Ry} f(x,y)dy\]</span></p>
+<p><span class="math display">\[f(y)=\int_{Rx} f(x,y)dx\]</span>
+Ejercicio, para la función:</p>
+<p><span class="math display">\[f(x,y)=e^{-x}e^{-y}\]</span></p>
+<p>Con <span class="math inline">\(x,y\geq 0\)</span>, encontrar las marginales de <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(f(y)\)</span>.</p>
+<p>Solución:</p>
+<p><span class="math display">\[f(x)=\int_0^{\infty}e^{-x}e^{-y} dy=e^{-x}\]</span></p>
+<p><span class="math display">\[f(y)=\int_0^{\infty}e^{-x}e^{-y} dx=e^{-y}\]</span></p>
+<p>Nota: las marginales deben estar en función de su propia variable aleatoria y no contener otras variables, dado que son marginales.</p>
+<p>Notar que en este ejercicio:</p>
+<p><span class="math display">\[f(x,y)=e^{-x}e^{-y}=f(x)*f(y)\]</span>
+Esto no siempre sucede, este caso se da cuando las variables son independientes.</p>
+<p>Ejercicio, Sea la función conjunta</p>
+<p><span class="math display">\[f(x,y)=\frac{1}{500}\]</span></p>
+<p>Para <span class="math inline">\(0&lt;X&lt;0.25\)</span> y <span class="math inline">\(0&lt;y&lt;2000\)</span>.</p>
+<ul>
+<li>Verificar que es una función de probabilidad</li>
+<li>Encontrar la marginal de <span class="math inline">\(x\)</span></li>
+<li>Encontrar la marginal de <span class="math inline">\(y\)</span></li>
+</ul>
+<p><span class="math display">\[\int_0^{0.25}\int_0^{2000}\frac{1}{500}dydx=1\]</span></p>
+<p><span class="math display">\[f(x)=\int_{Ry} f(x,y) dy=\int_0^{2000}\frac{1}{500}dy=4\]</span>
+<span class="math display">\[f(y)=\int_{Rx} f(x,y) dx=\int_0^{0.25}\frac{1}{500}dx=\frac{1}{2000}\]</span></p>
+</div>
+<div id="independencia" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Independencia</h2>
+<blockquote>
+<p>Definición 6, dos variables aleatorias son independientes si:</p>
+</blockquote>
+<p><span class="math display">\[f(x,y)=f(x)*f(y)\]</span>
+<span class="math display">\[\pi(x,y)=\pi(x)*\pi(y)\]</span></p>
+<p>Ejemplo, para la distribución conjunta:</p>
+<p><span class="math display">\[f(x,y)=\frac{1}{500}\]</span></p>
+<p>Si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes, se debe cumplir:</p>
+<p><span class="math display">\[f(x,y)=f(x)*f(y)=4*\frac{1}{2000}=\frac{1}{500}\]</span></p>
+<p>Ejercicio, verificar si la siguiente función esta bien definida y si las variables son independientes.</p>
+<p><span class="math display">\[f(x,y)=\frac{1}{4}(x+y)*xy*e^{-x-y}; \hspace{2cm} x,y&gt;0\]</span>
+Solución,</p>
+<p>Si esta bien definida, esto significa:</p>
+<p><span class="math display">\[\int_0^{\infty}\int_0^{\infty}\frac{1}{4}(x+y)*xy*e^{-x-y}=1\]</span></p>
+<p><span class="math display">\[f(x)=\int_{Ry}f(x,y)dy=\frac{x^2+2x}{4} ( e^{-x})\]</span>
+Ejercicio,</p>
+<p>Sea la función conjunta:</p>
+<p><span class="math display">\[f(x,y)=k (6-x-y) \quad 0&lt;x&lt;2, 2&lt;y&lt;4\]</span></p>
+<ul>
+<li>Encontrar el valor de <span class="math inline">\(k\)</span> para que <span class="math inline">\(f\)</span> sea una función de densidad</li>
+<li>Encontrar las marginales de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span></li>
+<li>¿Son independientes?</li>
+</ul>
+<p><span class="math display">\[\int_{0}^2 \int_2^4 k (6-x-y) dydx=1\]</span>
+Así <span class="math inline">\(k=\frac{1}{8}\)</span>, de esta forma:</p>
+<p><span class="math display">\[f(x,y)=\frac{6-x-y}{8} \quad 0&lt;x&lt;2, 2&lt;y&lt;4\]</span></p>
+<p><span class="math display">\[f(x)=\int_2^4 \frac{6-x-y}{8} dy=\frac{3-x}{4}\]</span></p>
+<p><span class="math display">\[f(y)=\int_0^2 \frac{6-x-y}{8} dx=\frac{5-y}{4}\]</span>
+<span class="math display">\[f(x)*f(y)=\frac{3-x}{4}*\frac{5-y}{4}\neq \frac{6-x-y}{8}\]</span>
+Por lo tanto <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> no son independientes.</p>
+</div>
+<div id="valores-esperados" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Valores esperados</h2>
+<p>En el caso univariado, sea <span class="math inline">\(X\)</span> una variable aleatoria con función de probabilidad <span class="math inline">\(\pi(x)\)</span> para el caso discreto o <span class="math inline">\(f(x)\)</span> para el caso continuo, el operador matemático esperanza se define como:</p>
+<p>Para el caso discreto,
+<span class="math display">\[E[g(X)]=\sum_{Rx}g(x)P(X=x)\]</span></p>
+<p>Para el caso continuo,
+<span class="math display">\[E[g(X)]=\int_{Rx}g(x)f(x)dx\]</span></p>
+<blockquote>
+<p>Definición 6,
+El valor esperado para la función <span class="math inline">\(g(X,Y)\)</span>, se define como:</p>
+</blockquote>
+<p>Para el caso discreto:</p>
+<p><span class="math display">\[E[g(X,Y)]=\sum_{Rx}\sum_{Ry}g(x,y)\pi(x,y)\]</span></p>
+<p>Para el caso continuo:</p>
+<p><span class="math display">\[E[g(X,Y)]=\int_{Rx}\int_{Ry}g(x,y)f(x.y)dydx\]</span>
+Nota, hay valores esperados más usuales que otros,</p>
+<p>Por ejemplo, las varianzas para cada variable
+<span class="math display">\[E[(X-E[X])^2]=V(X)\]</span>
+<span class="math display">\[E[(Y-E[Y])^2]=V(Y)\]</span></p>
+<p>Otras medidas son <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(E[Y]\)</span> que son referencias muy similares a un promedio aritmético. Otra valor esperado bastante usado en los casos bivariados es:</p>
+<p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx\]</span>
+Encontrar la forma de <span class="math inline">\(E[X]\)</span> usando la definición anterior.</p>
+<p><span class="math display">\[E[X]=\int_{Rx}\int_{Ry} x f(x,y) dy dx=\int_{Rx}xf(x) dx\]</span>
+<span class="math display">\[E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx\]</span></p>
+<p>Ejercicio, Sea la función conjunta</p>
+<p><span class="math display">\[f(x,y)=\frac{1}{500}, \quad 0&lt;X&lt;0.25 \quad 0&lt;y&lt;2000\]</span>
+Encontrar:</p>
+<ul>
+<li><span class="math inline">\(E[X]=1/8\)</span>, <span class="math inline">\(V[X]=\frac{0.25^2}{12}=\frac{1}{192}\)</span>, <span class="math inline">\(E[Y]=1000\)</span>, <span class="math inline">\(V[Y]=\frac{2000^2}{12}=\frac{1000000}{3}\)</span></li>
+<li><span class="math inline">\(E[XY]\)</span></li>
+</ul>
+<p><span class="math display">\[E[X]=\int_0^{0.25}\int_0^{2000} x \frac{1}{500}dy dx=\int_0^{0.25}x\int_0^{2000}  \frac{1}{500}dy dx=4\int_0^{0.25}x dx=4*\frac{(x^2)_0^{0.25}}{2}=\frac{1}{8}\]</span></p>
+<p><span class="math display">\[E[XY]=125\]</span></p>
+<p>Nota: Si dos variables aleatorias son independientes:</p>
+<p><span class="math display">\[E[XY]=E[X]E[Y]\]</span>
+Demostración,</p>
+<p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xyf(x,y)dydx=\int_{Rx}\int_{Ry} xyf(x)f(y)dydx=\int_{Rx}x f(x)\left(\int_{Ry} yf(y)dy\right)dx=E[X]*E[Y]\]</span></p>
+<p>Ejemplo para el caso discreto, de las pizza y las gaseosas.</p>
+<p><span class="math display">\[E[X]=1*0.5+2*0.31+3*0.19=1.69\]</span>
+<span class="math display">\[E[Y]=0*0.12+1*0.63+2*0.25=1.13\]</span></p>
+<p><span class="math display">\[E[X^2]=\sum_{x=1}^{x=3}x^2 \pi(x)=1^2*0.5+2^2*0.31+3^2*0.19=3.45\]</span>
+<span class="math display">\[E[Y^2]=0^2*0.12+1^2*0.63+2^2*0.25=1.63\]</span>
+<span class="math display">\[E[XY]=\sum_{Rx}\sum_{Ry}xy \pi(x,y)=1*0*0.04+1*1*0.42+\ldots+3*2*0.13=2.067\]</span></p>
+</div>
+<div id="distribuciones-condicionales" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> Distribuciones condicionales</h2>
+<p>Recordar de estadística I:</p>
+<p><span class="math display">\[P(B/A)=\frac{P(A\cap B)}{P(A)}\]</span></p>
+<p>Estas distribuciones nos ayudan a entender el comportamiento de una variable, cuando fijamos a otra.</p>
+<blockquote>
+<p>Definición, una distribución condicional se define como:</p>
+</blockquote>
+<p>Caso discreto,</p>
+<p><span class="math display">\[\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}\]</span></p>
+<p>Caso continuo,</p>
+<p><span class="math display">\[f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}\]</span>
+<span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}\]</span>
+Estas funciones condicionales cumplen todas las propiedades de una función de probabilidad.</p>
+<p>Demostrar que:</p>
+<p><span class="math display">\[\int_{Rx} f_{X/Y}(x/y) dx=1\]</span></p>
+<p><span class="math display">\[\int_{Rx} f_{X/Y}(x/y) dx=\int_{Rx} \frac{f(x,y)}{f(y)} dx=\frac{1}{f(y)}\int_{Rx} f(x,y)dx=\frac{f(y)}{f(y)}=1\]</span>
+Que sucede si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son variables independientes:</p>
+<p><span class="math display">\[f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}=\frac{f(x)f(y)}{f(y)}=f(x)\]</span>
+<span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}=\frac{f(x)f(y)}{f(x)}=f(y)\]</span>
+Ejercicio,</p>
+<p>Sea la densidad conjunta de <span class="math inline">\(X,Y\)</span>:</p>
+<p><span class="math display">\[f(x,y)=x^2+\frac{xy}{3}, \quad 0&lt;x\leq 1, \quad 0\leq y \leq2\]</span>
+Se pide:</p>
+<ul>
+<li>Verificar que es una función de probabilidad</li>
+<li>Encontrar las marginales</li>
+<li>Encontrar las condicionales (<span class="math inline">\(X/Y\)</span>, <span class="math inline">\(Y/X\)</span>)</li>
+<li>Encontrar <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(E[Y]\)</span>, <span class="math inline">\(E[XY]\)</span>, <span class="math inline">\(E[X/Y]\)</span>, <span class="math inline">\(E[Y/X]\)</span></li>
+<li>¿Son independientes?</li>
+</ul>
+<p><span class="math display">\[\int_{Rx} \int_{Ry}f(x,y)dydx=\int_0^1 \int_0^2 x^2+\frac{xy}{3} dy dx=1\]</span></p>
+<p><span class="math display">\[f(x)=\int_{Ry}f(x,y)dy=2x^2 +\frac{2x}{3}\]</span></p>
+<p><span class="math display">\[f(y)=\int_{Rx}f(x,y)dx=\frac{1}{3}+\frac{y}{6}\]</span></p>
+<p><span class="math display">\[f_{X/Y}(x/y)=\frac{x^2+\frac{xy}{3}}{\frac{1}{3}+\frac{y}{6}}=\frac{x(3x+y)}{1+\frac{y}{2}}\]</span></p>
+<p><span class="math display">\[f_{Y/X}(y/x)=\frac{x^2+\frac{xy}{3}}{2x^2 +\frac{2x}{3}}=\frac{3x^2+xy}{6x^2+2x}\]</span></p>
+<p><span class="math display">\[E[X]=\int_0^1 x\left( 2x^2 +\frac{2x}{3} \right)dx=\frac{13}{18}\]</span></p>
+<p><span class="math display">\[E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dx=\frac{10}{9}\]</span></p>
+<p><span class="math display">\[E[XY]=\int_{Rx} \int_{Ry} xy f(x,y)dydx=\int_0^1 \int_0^2 xy \left(x^2+\frac{xy}{3}\right) dy dx=\frac{43}{54}\]</span></p>
+<div id="esperanza-condicional" class="section level3" number="1.7.1">
+<h3><span class="header-section-number">1.7.1</span> Esperanza condicional</h3>
+<p>Se refiere a calcular el valor esperado sobre la función condicional.</p>
+<p><span class="math display">\[E[Y/X]=\int_{Ry} y*  f_{Y/X}(y/x)dy\]</span>
+<span class="math display">\[E[X/Y]=\int_{Rx} x*  f_{X/Y}(x/y)dx\]</span>
+Para el ejercicio anterior,</p>
+<p><span class="math display">\[E[Y/X]=\int_0^2 y* \left(\frac{3x^2+xy}{6x^2+2x}\right) dy=\frac{9x+4}{9x+3}\]</span></p>
+<p><span class="math display">\[E[Y/X=0.5]=\frac{17}{15}\]</span>
+<span class="math display">\[E[X/Y]=\frac{9+4y}{12+6y}\]</span></p>
+</div>
+</div>
+<div id="medidas-de-relación-entre-dos-variables" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Medidas de relación entre dos variables</h2>
+<p>Estas medidas nos ayudan a conocer si dos variables <em>están relacionadas</em> y nos permite saber el <em>tipo de relación</em> (directa, inversa) y también podemos saber la <em>intensidad de la relación</em>. Las medidas son:</p>
+<p>La Covarianza <span class="math inline">\(cov(X,Y)\)</span> es una medida absoluta de relación:</p>
+<p><span class="math display">\[cov(X,Y)=E\left\[(X-E[X])(Y-E[Y])\right\]\]</span>
+Una alternativa a esta formula (versión corta).</p>
+<p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]\]</span>
+Tarea, demostrar lo anterior.</p>
+<p>Otra medida importantes es la correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, esta es una medida relativa, que cumple la propiedad: <span class="math inline">\(-1 \leq corr(X,Y) \leq 1\)</span>, esta se define como:</p>
+<p><span class="math display">\[corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(cov_{xy}\)</span> o <span class="math inline">\(corr_{xy}\)</span> son distintas de 0, podemos afirmar que existe relación</li>
+<li>Si <span class="math inline">\(cov_{xy}&gt;0\)</span> o <span class="math inline">\(corr_{xy}&gt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es directa</li>
+<li>Si <span class="math inline">\(cov_{xy}&lt;0\)</span> o <span class="math inline">\(corr_{xy}&lt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es inversa</li>
+<li>La intensidad de la dirección de la relación nos la da <span class="math inline">\(corr_{xy}\)</span>, mientras más cercana a <span class="math inline">\(corr_{xy}\rightarrow 1\)</span> la relación directa es más fuerte, <span class="math inline">\(corr_{xy}\rightarrow -1\)</span> la relación inversa es más fuerte</li>
+<li>Si <span class="math inline">\(corr_{xy}\rightarrow 0\)</span> podemos decir que las variables no están relacionadas (“cuasi-independencia”) la correlación mide principalmente relaciones lineales.</li>
+</ul>
+<p>Tarea,</p>
+<p>Calcular la Covarianza y la correlación de las variables aleatorias <span class="math inline">\(X,Y\)</span>.</p>
+<p><span class="math display">\[cov(X,Y)=\frac{43}{54}-\frac{13}{18}*\frac{10}{9}=-\frac{1}{162}\]</span></p>
+<p>Ejercicio,</p>
+<p>Demostrar que si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes entonces:
+<span class="math display">\[E[XY]=E[X]*E[Y]\]</span></p>
+<p>Demostración,</p>
+<p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx=\int_{Rx}\int_{Ry} xy f(x)f(y) dy dx\]</span>
+<span class="math display">\[=\int_{Rx} x f(x)\left( \int_{Ry} y f(y) dy \right) dx=E[Y] \int_{Rx} xf(x)  dx=E[X]E[Y] \]</span>
+Como resultado de lo anterior, si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes:</p>
+<p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0\]</span></p>
+<p>Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.</p>
+<p>Nota:</p>
+<p><span class="math display">\[E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy\]</span>
+### Ejercicio</p>
+<p>Para</p>
+<p><span class="math display">\[f(x,y)=\frac{x(1+3y^2)}{4} \quad 0&lt;x&lt;2, \quad 0&lt;y&lt;1\]</span></p>
+<p>Calcular</p>
+<p><span class="math display">\[P(1/4&lt;X&lt;1/2 | Y=1/3)\]</span></p>
+<p>Solución</p>
+<p>Se debe encontrar <span class="math inline">\(f_{X|Y}(X|Y)=\frac{f(x,y)}{f(y)}\)</span></p>
+<p><span class="math display">\[f(y)=\int_0^2 \frac{x(1+3y^2)}{4} dx=\frac{(1+3y^2)}{4} \int_0^2 x dx=\frac{(1+3y^2)}{4} \frac{x^2}{2}/_0^2=\]</span>
+<span class="math display">\[=\frac{(1+3y^2)}{4}(2)=\frac{(1+3y^2)}{2}\]</span></p>
+<p><span class="math display">\[f_{X|Y}(X|Y)=\frac{\frac{x(1+3y^2)}{4}}{\frac{(1+3y^2)}{2}}=\frac{x}{2}\]</span>
+Verificando que sea correcta</p>
+<p><span class="math display">\[\int_0^2 \frac{x}{2}dx=\frac{x^2}{4}/_0^2=1\]</span>
+<span class="math display">\[P(1/4&lt;X&lt;1/2 | Y=1/3)=\int_{1/4}^{1/2} f_{X|Y}(X|Y) dx=\int_{1/4}^{1/2} \frac{x}{2} dx=\frac{x^2}{4}/_{0.25}^{0.5}=\]</span></p>
+<p><span class="math display">\[=\frac{0.5^2}{4}-\frac{0.25^2}{4}=\frac{3}{64}\]</span></p>
+<p>Ejercicio de práctica,</p>
+<p>Sea la función de densidad:</p>
+<p><span class="math display">\[f(x,y)=24xy, \quad x&gt;0 \quad y&gt;0 \quad x+y&lt;1\]</span></p>
+<ul>
+<li>Verificar si es una función de probabilidad</li>
+<li>Encontrar la función de distribución <span class="math inline">\(F\)</span></li>
+<li>Calcular la probabilidad que</li>
+</ul>
+<p><span class="math display">\[P(X&gt;0.3 , Y&lt;0.5 )\]</span></p>
+<p>Recordar;</p>
+<p><span class="math display">\[F(x,y)=P(X&lt;x,Y&lt;y)\]</span></p>
+<p>Hay que tomar al menos 2 casos:</p>
+<ul>
+<li><span class="math inline">\(0&lt;x&lt;1\)</span>, <span class="math inline">\(x+y&lt;1\)</span></li>
+<li><span class="math inline">\(0&lt;x&lt;1\)</span>, <span class="math inline">\(1-x\leq y\leq1\)</span></li>
+</ul>
+<p>Para el primer caso:</p>
+<p><span class="math display">\[\int_0^y \int_0^x 24xy dxdy=6x^2 y^2\]</span>
+Para el segundo caso:</p>
+<p><span class="math display">\[\int_0^y \int_0^{1-y} 24xy dxdy=\]</span>
+Ejercicio de práctica,</p>
+<p>Sea la función de densidad</p>
+<p><span class="math display">\[f(x,y)=4 e^{-2(x+y)} \quad x&gt;0 \quad y&gt;0\]</span>
+* Verificar si es una función de probabilidad
+* Suponer que estamos interesados en el comportamiento de la variable:</p>
+<p><span class="math display">\[Z=\frac{X}{Y}\]</span></p>
+<p>encontrar la distribución de <span class="math inline">\(Z\)</span>.</p>
+<p>Definimos a <span class="math inline">\(z=\frac{x}{y}\)</span> y <span class="math inline">\(w=x+y\)</span>. Ahora encontramos las funciones <span class="math inline">\(G\)</span></p>
+<p><span class="math display">\[x=\frac{zw}{1+z}; \quad y=\frac{w}{1+z}\]</span></p>
+<p><span class="math display">\[l(w,z)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|=4 e^{-2(\frac{zw}{1+z}+\frac{w}{1+z})}*\frac{w}{(1+z)^2}\]</span>
+<span class="math display">\[l(z,w)=\frac{4w e^{-2w}}{(1+z)^2}, \quad w&gt;0, \quad z&gt;0\]</span>
+finalmente:</p>
+<p><span class="math display">\[f(z)=\int_0^{\infty} \frac{4w e^{-2w}}{(1+z)^2} dw=\frac{1}{(1+z)^2}\]</span></p>
+</div>
+<div id="transformaciones" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> Transformaciones</h2>
+<p>Supongamos que se busca encontrar a partir de la función de densidad <span class="math inline">\(f(X,Y)\)</span> de dos variables X, Y una tercera variable <span class="math inline">\(Z=H_1(X,Y)\)</span>. La estrategia para resolver este tipo de problemas es:</p>
+<ul>
+<li>Definir una cuarta variable <span class="math inline">\(W=H_2(X,Y)\)</span>, es elegida por conveniencia</li>
+<li>Se encuentran <span class="math inline">\(X=G_1(Z,W)\)</span>, <span class="math inline">\(Y=G_2(Z,W)\)</span></li>
+<li>Una vez con estos valores la función conjunta de <span class="math inline">\(Z,W\)</span> es:</li>
+</ul>
+<p><span class="math display">\[l(Z,W)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|\]</span></p>
+<p>Donde <span class="math inline">\(J(Z,W)\)</span> se llama jacobiano de la transformación y es dado por:</p>
+<p><span class="math display">\[J(Z,W)=\left|
+\begin{array}
+&amp; \frac{\partial X }{\partial Z} &amp; \frac{\partial X }{\partial W} \\
+\frac{\partial Y }{\partial Z} &amp; \frac{\partial Y }{\partial W}
+\end{array}
+\right|
+\]</span></p>
+</div>
+<div id="distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="section level2" number="1.10">
+<h2><span class="header-section-number">1.10</span> Distrubuciones conjuntas de más de 2 variables aleatorias</h2>
+<p>Estamos introduciendo ahora <span class="math inline">\(n\)</span> variables aleatorias, que se puede denotar por vector</p>
+<p><span class="math display">\[\left[X_1,X_2,\ldots,X_n \right]\]</span></p>
+<p>Se puede definir su función de densidad conjunta:</p>
+<p><span class="math display">\[f(X_1,X_2,\ldots,X_n)=\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1\]</span>
+<span class="math display">\[f(X_1,X_2,\ldots,X_n)\geq 0\]</span></p>
+<p>Las marginales de cada variables se obtienen integrando la función de densidad sobre todas las variables aleatorias excepto la variable de interés.</p>
+<p><span class="math display">\[f(x_i)=\int \ldots\int_{Rx_{j\neq i}} f(X_1,X_2,\ldots,X_n)dx\ldots dx_{j \neq i}\]</span>
+Notar también que si las <span class="math inline">\(n\)</span> variables aleatorias son independientes entre ellas:</p>
+<p><span class="math display">\[f(X_1,X_2,\ldots,X_n)=f(X_1)*f(X_2)*\ldots f(X_n)\]</span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tema-2-distribuciones-muestrales.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

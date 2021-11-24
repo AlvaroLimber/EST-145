@@ -1,0 +1,503 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Tema 1:  Distribuciones bivariadas (multivariadas)
+
+En el caso univariado se tenia a una va $X$ definida en los reales $IR$, a esta va se le asignaba una función de distribución $F(x)$ y una función de densidad $f(x)$. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:
+
+Caso discreto:
+
+$$\sum_{Rx} P(X=x)=1$$
+$$F(t)=P(X\leq t)=\sum_{x\leq t} P(X=x)$$
+
+Caso continuo:
+
+$$\int_{Rx}f(x)dx=1$$
+
+$$F(t)=P(X\leq t)=\int_{-\infty}^{t}f(x)dx$$
+
+
+La idea de este capitulo es ver las propiedades en el caso bivariante y generalizar para el caso multivariante.
+
+## Variables aleatorias bivariantes
+
+Son un par de variables aleatorias con una distribución conjunta, son típicamente representadas con mayúscula $(X, Y)$ o $(X_1,X_2)$, las realizaciones de estas variables aleatorias se representan como $(x,y)$ o $(x_1,x_2)$.
+
+> Definición 1. 
+Un par de variables aleatorias bivariadas es un par numérico de resultados; una función definida en $IR^2$
+
+Ejemplos: 
+
+  * Considerar el par (edad, estatura):
+    + $(23,170)$
+    + $(20,172)$
+    + $(20,154)$
+    + $(26,159)$
+    + $(19,175)$
+  * Considerar el par: (ingreso, años experiencia)
+  
+Imaginar lanzar 2 monedas simultáneamente, $\Omega=\{CC,CS,SC,SS\}$, si definimos a $Cara=1$ y $Sello=0$, $R_{(X,Y)}=\{(1,1),(1,0),(0,1),(0,0)\}$.
+
+## Función de distribución bivariada
+
+> Definición 2.
+
+La función de distribución conjunta de $(X,Y)$ es 
+
+$$F(x,y)=P(X\leq x,Y\leq y)=P\left[\{X\leq x\} \cap \{Y\leq y\}  \right]$$
+Las propiedades de $F$ son similares al caso univariante, $0\leq F(x,y)\leq 1$.
+
+Ejemplo: 
+
+$$F(x,y)=(1-e^{-x})(1-e^{-y});\hspace{2cm} x,y\geq0 $$
+  * $F(0,0)=0$
+  * $F(\infty,\infty)=1$
+
+
+Calcular: 
+
+  $$P(X\leq 10,Y\leq 100)=F(10,100)=(1-e^{-10})(1-e^{-100})=0.9999546$$
+  $$P(X\leq 5,Y\leq 20)=F(5,20)=0.99326$$
+
+ La distribución conjunta satisface:
+ 
+ $$P(a<X\leq b,c< Y\leq d)=F(b,d)-F(b,c)-F(a,d)+F(a,c)$$
+
+Para $a<b$ y $c<d$
+
+## Función masa de probabilidad (función de densidad)
+
+Para el par $(X,Y)$ con una función de distribución conjunta $F(x,y)$.
+
+Para el caso continuo,
+
+> Definición 3. 
+
+$$f(x,y)=\frac{\partial^2}{\partial x \partial y}F(x,y)$$
+
+Por un tema de notación, a veces escribiremos $f_{X,Y}(x,y)$
+
+Ejercicio: encontrar $f(x,y)$ para la $F$ dada en el ejemplo anterior
+
+$$f(x,y)=\frac{\partial^2}{\partial x \partial y}\left[(1-e^{-x})(1-e^{-y})\right]=e^{-x}e^{-y}$$
+
+$f$ satisface de forma similar las propiedades vistas en el caso univariante.
+
+$$\int_{Rx}\int_{Ry}f(x,y)dydx=1$$
+
+Para el ejercicio:
+
+$$\int_0^{\infty} \int_0^{\infty}e^{-x}e^{-y} dx dy=\int_0^{\infty} e^{-y} \left[-e^{-x}/_0^{\infty} \right] dy =1$$
+
+$$P(a<X\leq b,c< Y\leq d)=\int_a^b \int_c^d f(x,y)dxdy$$
+
+Para el caso discreto podemos definirlo de la siguiente forma:
+
+$$f(x,y)=\pi(x,y)=P(X=x,Y=y)$$
+$$\sum_{Rx}\sum_{Ry}\pi(x,y)=1$$
+Ejemplo, en un restaurante de pizza se vende porciones de pizza y gaseosa, el dueño del local realizó un monitoreo del patrón de como los clientes ordenan sus pedidos, respecto la cantidad de porciones de pizza con la cantidad de gaseosas, encontrando el siguiente resultado:
+
+Cuál sera la probabilidad de:
+
+  * $P(X=3,Y=2)=0.13$
+  * $P(X\geq 2, Y=1)=P(X=2, Y=1)+P(X=3,Y=1)=\pi_{21}+\pi_{31}=0.17+0.05=0.22$
+  
+## Distribución marginal
+La distribución conjunta del vector aleatorio $(X,Y)$ describe la distribución del vector aleatorio, sin embargo, es posible a partir de la distribución conjunta, generar las distribuciones para cada componente del vector aleatorio. 
+
+> Definición 4, la distribución marginal de X es:
+
+$$F_X(x)=P(X\leq x)=P(X\leq x, Y\leq \infty)=lim_{y\rightarrow \infty} F(x,y)$$
+
+$$F_Y(y)=P(Y\leq y)=P(X\leq \infty, Y\leq y)=lim_{x\rightarrow \infty} F(x,y)$$
+De manera más usual se tiene:
+
+Para el caso discreto:
+
+$$P(X=x)=\pi(x)=\sum_{Ry} \pi(x,y)$$
+
+$$P(Y=y)=\pi(y)=\sum_{Rx} \pi(x,y)$$
+Para el caso continuo:
+
+$$f(x)=\int_{Ry} f(x,y)dy$$
+
+$$f(y)=\int_{Rx} f(x,y)dx$$
+Ejercicio, para la función:
+
+$$f(x,y)=e^{-x}e^{-y}$$
+
+Con $x,y\geq 0$, encontrar las marginales de $f(x)$ y $f(y)$.
+
+Solución:
+
+$$f(x)=\int_0^{\infty}e^{-x}e^{-y} dy=e^{-x}$$
+
+$$f(y)=\int_0^{\infty}e^{-x}e^{-y} dx=e^{-y}$$
+
+
+Nota: las marginales deben estar en función de su propia variable aleatoria y no contener otras variables, dado que son marginales.
+
+Notar que en este ejercicio:
+
+$$f(x,y)=e^{-x}e^{-y}=f(x)*f(y)$$
+Esto no siempre sucede, este caso se da cuando las variables son independientes.
+
+Ejercicio, Sea la función conjunta 
+
+$$f(x,y)=\frac{1}{500}$$
+
+Para $0<X<0.25$ y $0<y<2000$.
+
+  * Verificar que es una función de probabilidad
+  * Encontrar la marginal de $x$
+  * Encontrar la marginal de $y$
+
+$$\int_0^{0.25}\int_0^{2000}\frac{1}{500}dydx=1$$
+
+$$f(x)=\int_{Ry} f(x,y) dy=\int_0^{2000}\frac{1}{500}dy=4$$
+$$f(y)=\int_{Rx} f(x,y) dx=\int_0^{0.25}\frac{1}{500}dx=\frac{1}{2000}$$
+
+
+
+## Independencia
+
+> Definición 6, dos variables aleatorias son independientes si:
+
+$$f(x,y)=f(x)*f(y)$$
+$$\pi(x,y)=\pi(x)*\pi(y)$$
+
+
+Ejemplo, para la distribución conjunta:
+
+$$f(x,y)=\frac{1}{500}$$
+
+Si $X$ e $Y$ son independientes, se debe cumplir:
+
+$$f(x,y)=f(x)*f(y)=4*\frac{1}{2000}=\frac{1}{500}$$
+
+Ejercicio, verificar si la siguiente función esta bien definida y si las variables son independientes.
+
+$$f(x,y)=\frac{1}{4}(x+y)*xy*e^{-x-y}; \hspace{2cm} x,y>0$$
+Solución,
+
+Si esta bien definida, esto significa:
+
+$$\int_0^{\infty}\int_0^{\infty}\frac{1}{4}(x+y)*xy*e^{-x-y}=1$$
+
+$$f(x)=\int_{Ry}f(x,y)dy=\frac{x^2+2x}{4} ( e^{-x})$$
+Ejercicio,
+
+Sea la función conjunta:
+
+$$f(x,y)=k (6-x-y) \quad 0<x<2, 2<y<4$$
+
+  * Encontrar el valor de $k$ para que $f$ sea una función de densidad
+  * Encontrar las marginales de $x$ e $y$
+  * ¿Son independientes?
+  
+$$\int_{0}^2 \int_2^4 k (6-x-y) dydx=1$$
+Así $k=\frac{1}{8}$, de esta forma:
+
+$$f(x,y)=\frac{6-x-y}{8} \quad 0<x<2, 2<y<4$$
+
+$$f(x)=\int_2^4 \frac{6-x-y}{8} dy=\frac{3-x}{4}$$
+
+$$f(y)=\int_0^2 \frac{6-x-y}{8} dx=\frac{5-y}{4}$$
+$$f(x)*f(y)=\frac{3-x}{4}*\frac{5-y}{4}\neq \frac{6-x-y}{8}$$
+Por lo tanto $x$ e $y$ no son independientes.
+
+## Valores esperados 
+
+En el caso univariado, sea $X$ una variable aleatoria con función de probabilidad $\pi(x)$ para el caso discreto o $f(x)$ para el caso continuo, el operador matemático esperanza se define como:
+
+Para el caso discreto,
+$$E[g(X)]=\sum_{Rx}g(x)P(X=x)$$
+
+Para el caso continuo,
+$$E[g(X)]=\int_{Rx}g(x)f(x)dx$$
+
+> Definición 6, 
+El valor esperado para la función $g(X,Y)$, se define como:
+
+Para el caso discreto:
+
+$$E[g(X,Y)]=\sum_{Rx}\sum_{Ry}g(x,y)\pi(x,y)$$
+
+Para el caso continuo:
+
+$$E[g(X,Y)]=\int_{Rx}\int_{Ry}g(x,y)f(x.y)dydx$$
+Nota, hay valores esperados más usuales que otros,
+
+Por ejemplo, las varianzas para cada variable
+$$E[(X-E[X])^2]=V(X)$$
+$$E[(Y-E[Y])^2]=V(Y)$$
+
+Otras medidas son $E[X]$, $E[Y]$ que son referencias muy similares a un promedio aritmético. Otra valor esperado bastante usado en los casos bivariados es:
+
+$$E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx$$
+Encontrar la forma de $E[X]$ usando la definición anterior.
+
+$$E[X]=\int_{Rx}\int_{Ry} x f(x,y) dy dx=\int_{Rx}xf(x) dx$$
+$$E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx$$
+
+Ejercicio, Sea la función conjunta 
+
+$$f(x,y)=\frac{1}{500}, \quad 0<X<0.25 \quad 0<y<2000$$
+Encontrar:
+
+  * $E[X]=1/8$, $V[X]=\frac{0.25^2}{12}=\frac{1}{192}$, $E[Y]=1000$, $V[Y]=\frac{2000^2}{12}=\frac{1000000}{3}$
+  * $E[XY]$
+  
+
+$$E[X]=\int_0^{0.25}\int_0^{2000} x \frac{1}{500}dy dx=\int_0^{0.25}x\int_0^{2000}  \frac{1}{500}dy dx=4\int_0^{0.25}x dx=4*\frac{(x^2)_0^{0.25}}{2}=\frac{1}{8}$$
+
+$$E[XY]=125$$
+
+Nota: Si dos variables aleatorias son independientes:
+
+$$E[XY]=E[X]E[Y]$$
+Demostración,
+
+$$E[XY]=\int_{Rx}\int_{Ry} xyf(x,y)dydx=\int_{Rx}\int_{Ry} xyf(x)f(y)dydx=\int_{Rx}x f(x)\left(\int_{Ry} yf(y)dy\right)dx=E[X]*E[Y]$$
+
+Ejemplo para el caso discreto, de las pizza y las gaseosas.
+
+$$E[X]=1*0.5+2*0.31+3*0.19=1.69$$
+$$E[Y]=0*0.12+1*0.63+2*0.25=1.13$$
+
+$$E[X^2]=\sum_{x=1}^{x=3}x^2 \pi(x)=1^2*0.5+2^2*0.31+3^2*0.19=3.45$$
+$$E[Y^2]=0^2*0.12+1^2*0.63+2^2*0.25=1.63$$
+$$E[XY]=\sum_{Rx}\sum_{Ry}xy \pi(x,y)=1*0*0.04+1*1*0.42+\ldots+3*2*0.13=2.067$$
+
+## Distribuciones condicionales
+
+Recordar de estadística I:
+
+$$P(B/A)=\frac{P(A\cap B)}{P(A)}$$
+
+Estas distribuciones nos ayudan a entender el comportamiento de una variable, cuando fijamos a otra.
+
+> Definición, una distribución condicional se define como:
+
+Caso discreto,
+
+$$\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}$$
+
+Caso continuo,
+
+$$f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}$$
+$$f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}$$
+Estas funciones condicionales cumplen todas las propiedades de una función de probabilidad.
+
+Demostrar que:
+
+$$\int_{Rx} f_{X/Y}(x/y) dx=1$$
+
+$$\int_{Rx} f_{X/Y}(x/y) dx=\int_{Rx} \frac{f(x,y)}{f(y)} dx=\frac{1}{f(y)}\int_{Rx} f(x,y)dx=\frac{f(y)}{f(y)}=1$$
+Que sucede si $X$ e $Y$ son variables independientes:
+
+$$f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}=\frac{f(x)f(y)}{f(y)}=f(x)$$
+$$f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}=\frac{f(x)f(y)}{f(x)}=f(y)$$
+Ejercicio, 
+
+Sea la densidad conjunta de $X,Y$:
+
+$$f(x,y)=x^2+\frac{xy}{3}, \quad 0<x\leq 1, \quad 0\leq y \leq2$$
+Se pide: 
+
+  * Verificar que es una función de probabilidad 
+  * Encontrar las marginales 
+  * Encontrar las condicionales ($X/Y$, $Y/X$)
+  * Encontrar $E[X]$, $E[Y]$, $E[XY]$, $E[X/Y]$, $E[Y/X]$
+  * ¿Son independientes?
+
+$$\int_{Rx} \int_{Ry}f(x,y)dydx=\int_0^1 \int_0^2 x^2+\frac{xy}{3} dy dx=1$$
+
+$$f(x)=\int_{Ry}f(x,y)dy=2x^2 +\frac{2x}{3}$$
+
+$$f(y)=\int_{Rx}f(x,y)dx=\frac{1}{3}+\frac{y}{6}$$
+
+$$f_{X/Y}(x/y)=\frac{x^2+\frac{xy}{3}}{\frac{1}{3}+\frac{y}{6}}=\frac{x(3x+y)}{1+\frac{y}{2}}$$
+
+$$f_{Y/X}(y/x)=\frac{x^2+\frac{xy}{3}}{2x^2 +\frac{2x}{3}}=\frac{3x^2+xy}{6x^2+2x}$$
+
+$$E[X]=\int_0^1 x\left( 2x^2 +\frac{2x}{3} \right)dx=\frac{13}{18}$$
+
+$$E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dx=\frac{10}{9}$$
+
+$$E[XY]=\int_{Rx} \int_{Ry} xy f(x,y)dydx=\int_0^1 \int_0^2 xy \left(x^2+\frac{xy}{3}\right) dy dx=\frac{43}{54}$$
+
+### Esperanza condicional
+
+Se refiere a calcular el valor esperado sobre la función condicional.
+
+$$E[Y/X]=\int_{Ry} y*  f_{Y/X}(y/x)dy$$
+$$E[X/Y]=\int_{Rx} x*  f_{X/Y}(x/y)dx$$
+Para el ejercicio anterior,
+
+$$E[Y/X]=\int_0^2 y* \left(\frac{3x^2+xy}{6x^2+2x}\right) dy=\frac{9x+4}{9x+3}$$
+
+$$E[Y/X=0.5]=\frac{17}{15}$$
+$$E[X/Y]=\frac{9+4y}{12+6y}$$
+
+
+## Medidas de relación entre dos variables
+
+Estas medidas nos ayudan a conocer si dos variables *están relacionadas* y nos permite saber el *tipo de relación* (directa, inversa) y también podemos saber la *intensidad de la relación*. Las medidas son:
+
+La Covarianza $cov(X,Y)$ es una medida absoluta de relación:
+
+$$cov(X,Y)=E\left\[(X-E[X])(Y-E[Y])\right\]$$
+Una alternativa a esta formula (versión corta).
+
+$$cov(X,Y)=E[XY]-E[X]*E[Y]$$
+Tarea, demostrar lo anterior.
+
+Otra medida importantes es la correlación entre $X$ e $Y$, esta es una medida relativa, que cumple la propiedad:  $-1 \leq corr(X,Y) \leq 1$, esta se define como:
+
+$$corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}$$
+
+  * Si $cov_{xy}$ o $corr_{xy}$ son distintas de 0, podemos afirmar que existe relación
+  * Si $cov_{xy}>0$ o $corr_{xy}>0$ la relación entre $X$ e $Y$ es directa
+  * Si $cov_{xy}<0$ o $corr_{xy}<0$ la relación entre $X$ e $Y$ es inversa
+  * La intensidad de la dirección de la relación nos la da $corr_{xy}$, mientras más cercana a $corr_{xy}\rightarrow 1$ la relación directa es más fuerte, $corr_{xy}\rightarrow -1$ la relación inversa es más fuerte 
+  * Si $corr_{xy}\rightarrow 0$ podemos decir que las variables no están relacionadas ("cuasi-independencia") la correlación mide principalmente relaciones lineales.
+  
+Tarea, 
+
+Calcular la Covarianza y la correlación de las variables aleatorias $X,Y$.
+
+$$cov(X,Y)=\frac{43}{54}-\frac{13}{18}*\frac{10}{9}=-\frac{1}{162}$$
+
+Ejercicio, 
+
+Demostrar que si $X$ y $Y$ son independientes entonces: 
+$$E[XY]=E[X]*E[Y]$$
+
+Demostración,
+
+$$E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx=\int_{Rx}\int_{Ry} xy f(x)f(y) dy dx$$
+$$=\int_{Rx} x f(x)\left( \int_{Ry} y f(y) dy \right) dx=E[Y] \int_{Rx} xf(x)  dx=E[X]E[Y] $$
+Como resultado de lo anterior, si $X$ e $Y$ son independientes:
+
+$$cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0$$
+
+Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.
+
+Nota: 
+
+$$E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy$$
+### Ejercicio
+
+Para 
+
+$$f(x,y)=\frac{x(1+3y^2)}{4} \quad 0<x<2, \quad 0<y<1$$
+
+Calcular 
+
+$$P(1/4<X<1/2 | Y=1/3)$$
+
+Solución
+
+Se debe encontrar $f_{X|Y}(X|Y)=\frac{f(x,y)}{f(y)}$
+
+$$f(y)=\int_0^2 \frac{x(1+3y^2)}{4} dx=\frac{(1+3y^2)}{4} \int_0^2 x dx=\frac{(1+3y^2)}{4} \frac{x^2}{2}/_0^2=$$
+$$=\frac{(1+3y^2)}{4}(2)=\frac{(1+3y^2)}{2}$$
+
+$$f_{X|Y}(X|Y)=\frac{\frac{x(1+3y^2)}{4}}{\frac{(1+3y^2)}{2}}=\frac{x}{2}$$
+Verificando que sea correcta
+
+$$\int_0^2 \frac{x}{2}dx=\frac{x^2}{4}/_0^2=1$$
+$$P(1/4<X<1/2 | Y=1/3)=\int_{1/4}^{1/2} f_{X|Y}(X|Y) dx=\int_{1/4}^{1/2} \frac{x}{2} dx=\frac{x^2}{4}/_{0.25}^{0.5}=$$
+
+$$=\frac{0.5^2}{4}-\frac{0.25^2}{4}=\frac{3}{64}$$
+
+Ejercicio de práctica, 
+
+Sea la función de densidad:
+
+$$f(x,y)=24xy, \quad x>0 \quad y>0 \quad x+y<1$$
+
+  * Verificar si es una función de probabilidad
+  * Encontrar la función de distribución $F$
+  * Calcular la probabilidad que 
+  
+$$P(X>0.3 , Y<0.5 )$$
+
+Recordar;
+
+$$F(x,y)=P(X<x,Y<y)$$
+
+Hay que tomar al menos 2 casos:
+
+  * $0<x<1$, $x+y<1$
+  * $0<x<1$, $1-x\leq y\leq1$
+
+Para el primer caso:
+
+$$\int_0^y \int_0^x 24xy dxdy=6x^2 y^2$$
+Para el segundo caso:
+
+$$\int_0^y \int_0^{1-y} 24xy dxdy=$$
+Ejercicio de práctica,
+
+Sea la función de densidad
+
+$$f(x,y)=4 e^{-2(x+y)} \quad x>0 \quad y>0$$
+  * Verificar si es una función de probabilidad
+  * Suponer que estamos interesados en el comportamiento de la variable: 
+
+$$Z=\frac{X}{Y}$$
+
+encontrar la distribución de $Z$.
+
+Definimos a $z=\frac{x}{y}$ y $w=x+y$. Ahora encontramos las funciones $G$
+
+$$x=\frac{zw}{1+z}; \quad y=\frac{w}{1+z}$$
+
+$$l(w,z)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|=4 e^{-2(\frac{zw}{1+z}+\frac{w}{1+z})}*\frac{w}{(1+z)^2}$$
+$$l(z,w)=\frac{4w e^{-2w}}{(1+z)^2}, \quad w>0, \quad z>0$$
+finalmente:
+
+$$f(z)=\int_0^{\infty} \frac{4w e^{-2w}}{(1+z)^2} dw=\frac{1}{(1+z)^2}$$
+
+## Transformaciones
+
+Supongamos que se busca encontrar a partir de la función de densidad $f(X,Y)$ de dos variables X, Y una tercera variable $Z=H_1(X,Y)$. La estrategia para resolver este tipo de problemas es:
+
+  * Definir una cuarta variable $W=H_2(X,Y)$, es elegida por conveniencia 
+  * Se encuentran $X=G_1(Z,W)$, $Y=G_2(Z,W)$
+  * Una vez con estos valores la función conjunta de $Z,W$ es:
+
+$$l(Z,W)=f(X=G_1(Z,W),Y=G_2(Z,W))*|J(Z,W)|$$
+
+Donde $J(Z,W)$ se llama jacobiano de la transformación y es dado por:
+
+$$J(Z,W)=\left|
+\begin{array}
+& \frac{\partial X }{\partial Z} & \frac{\partial X }{\partial W} \\
+\frac{\partial Y }{\partial Z} & \frac{\partial Y }{\partial W}
+\end{array}
+\right|
+$$
+
+## Distrubuciones conjuntas de más de 2 variables aleatorias
+
+Estamos introduciendo ahora $n$ variables aleatorias, que se puede denotar por vector 
+
+$$\left[X_1,X_2,\ldots,X_n \right]$$
+
+Se puede definir su función de densidad conjunta:
+
+$$f(X_1,X_2,\ldots,X_n)=\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1$$
+$$f(X_1,X_2,\ldots,X_n)\geq 0$$
+
+Las marginales de cada variables se obtienen integrando la función de densidad sobre todas las variables aleatorias excepto la variable de interés.
+
+$$f(x_i)=\int \ldots\int_{Rx_{j\neq i}} f(X_1,X_2,\ldots,X_n)dx\ldots dx_{j \neq i}$$
+Notar también que si las $n$ variables aleatorias son independientes entre ellas:
+
+$$f(X_1,X_2,\ldots,X_n)=f(X_1)*f(X_2)*\ldots f(X_n)$$
+
