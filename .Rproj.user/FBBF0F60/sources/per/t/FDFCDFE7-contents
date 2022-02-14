@@ -3,7 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Tema 1:  Distribuciones bivariadas (multivariadas)
+# Distribuciones conjuntas de probabilidad
 
 En el caso univariado se tenia a una va $X$ definida en los reales $IR$, a esta va se le asignaba una función de distribución $F(x)$ y una función de densidad $f(x)$. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:
 
@@ -58,6 +58,8 @@ $$F(x,y)=(1-e^{-x})(1-e^{-y});\hspace{2cm} x,y\geq0 $$
 
 Calcular: 
 
+$$P(X<2,Y<70)=F(2,70)=0.8647$$
+
   $$P(X\leq 10,Y\leq 100)=F(10,100)=(1-e^{-10})(1-e^{-100})=0.9999546$$
   $$P(X\leq 5,Y\leq 20)=F(5,20)=0.99326$$
 
@@ -86,6 +88,15 @@ $$f(x,y)=\frac{\partial^2}{\partial x \partial y}\left[(1-e^{-x})(1-e^{-y})\righ
 $f$ satisface de forma similar las propiedades vistas en el caso univariante.
 
 $$\int_{Rx}\int_{Ry}f(x,y)dydx=1$$
+> Ejercicio
+
+Probar que la siguiente función es una función de densidad
+
+$$f(x,y)=x+y \quad ;0 \leq x \leq 1   \quad 0\leq  y \leq 1$$
+
+$$\int_0^1 \int_0^1 (x+y)  dydx=\int_0^1 \left(x*y/_0^1+\frac{y^2}{2}/_0^1  \right)dx =\int_0^1 x+\frac{1}{2} dx$$
+$$=\frac{x^2}{2}/_0^1+\frac{1}{2}=\frac{1}{2}+\frac{1}{2}=1$$
+
 
 Para el ejercicio:
 
@@ -104,7 +115,58 @@ Cuál sera la probabilidad de:
   * $P(X=3,Y=2)=0.13$
   * $P(X\geq 2, Y=1)=P(X=2, Y=1)+P(X=3,Y=1)=\pi_{21}+\pi_{31}=0.17+0.05=0.22$
   
+  
+Ejercicios.
+
+Sea la función de probabilidad discreta:
+
+$$\pi(x,y)=\frac{x+y}{30}, \quad x=0,1,2,3; y=0,1,2$$
+
+Verificar que se trata de una función de probabilidad y luego encontrar:
+
+$$P(X\leq 2, Y=1)=\pi_{0,1}+\pi_{1,1}+\pi_{2,1}=0.2$$
+$$P(X> 2, Y\leq 1)=\pi_{3,0}+\pi_{3,1}=0.233$$
+
+Solución en R.
+
+```{r}
+#crear la función
+fxy<-function(x,y){
+  z<-(x+y)/30
+  return(z)
+}
+aux<-0
+for(x in 0:3){
+  for(y in 0:2){
+    aux<-aux+fxy(x,y)
+  }
+}
+aux
+sum(fxy(0:2,1))
+sum(fxy(3,0:1))
+```
+
+> Ejercicio
+
+Sea la función de densidad:
+
+$$f(x,y)=\frac{x}{8}; \quad 0\leq x\leq 2;0\leq y\leq 4 $$
+Verificar si es una función de densidad y calcular:
+
+$$P(X>1,Y>2)$$
+Obtener la función de distribución ($F$)
+
+Solución
+
+$$\int_0^2 \int_0^4 \frac{x}{8}dy dx=\int_0^2 \frac{x}{8} y/_0^4=\int_0^2\frac{x}{2}dx=\frac{x^2}{4}/_0^2=1$$
+$$P(X\geq1,Y\geq2)=P(X>1,Y>2)=\int_1^2 \int_2^4 \frac{x}{8}dy dx=$$
+$$=\int_1^2 \frac{x}{8} y/_2^4 dx=\int_1^2 \frac{x}{4} dx= \frac{x^2}{8}/_1^2=\frac{4-1}{8}=\frac{3}{8}$$  
+Tarea:
+
+$$F(x,y)=F(t,r)=\int_0^t \int_0^r \frac{x}{8} dy dx$$
+  
 ## Distribución marginal
+
 La distribución conjunta del vector aleatorio $(X,Y)$ describe la distribución del vector aleatorio, sin embargo, es posible a partir de la distribución conjunta, generar las distribuciones para cada componente del vector aleatorio. 
 
 > Definición 4, la distribución marginal de X es:
@@ -124,7 +186,22 @@ Para el caso continuo:
 $$f(x)=\int_{Ry} f(x,y)dy$$
 
 $$f(y)=\int_{Rx} f(x,y)dx$$
-Ejercicio, para la función:
+
+> Ejercicio
+
+Encontrar las distribuciones marginales de la función
+
+$$f(x,y)=\frac{x}{8}; \quad 0\leq x\leq 2;0\leq y\leq 4$$
+Solución:
+$$f(x)=\int_0^4 \frac{x}{8} dy= \frac{x}{2}; \quad 0\leq x \leq2$$
+$$f(y)=\int_0^2 \frac{x}{8} dx=\frac{1}{4}; \quad 0\leq y \leq 4$$
+Notar que:
+
+$$f(x)*f(y)=\frac{x}{2}*\frac{1}{4}=\frac{x}{8}=f(x,y)$$
+
+Nota: Si el producto de las marginales da la densidad conjunta, las variables son independientes.
+
+> Ejercicio, para la función:
 
 $$f(x,y)=e^{-x}e^{-y}$$
 
@@ -158,8 +235,6 @@ $$\int_0^{0.25}\int_0^{2000}\frac{1}{500}dydx=1$$
 
 $$f(x)=\int_{Ry} f(x,y) dy=\int_0^{2000}\frac{1}{500}dy=4$$
 $$f(y)=\int_{Rx} f(x,y) dx=\int_0^{0.25}\frac{1}{500}dx=\frac{1}{2000}$$
-
-
 
 ## Independencia
 
