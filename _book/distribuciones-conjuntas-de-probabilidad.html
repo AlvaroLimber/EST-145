@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-02-14" />
+<meta name="date" content="2022-02-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -439,8 +439,27 @@ Esto no siempre sucede, este caso se da cuando las variables son independientes.
 <p>Definición 6, dos variables aleatorias son independientes si:</p>
 </blockquote>
 <p><span class="math display">\[f(x,y)=f(x)*f(y)\]</span>
-<span class="math display">\[\pi(x,y)=\pi(x)*\pi(y)\]</span></p>
+<span class="math display">\[\pi(x,y)=\pi(x)*\pi(y)\]</span>
+&gt; Ejercicio</p>
+<p>Dada la siguiente función de densidad conjunta:</p>
+<p><span class="math display">\[f(x,y)=ke^{-2x-3y}; \quad x,y\geq 0\]</span></p>
+<ul>
+<li>Encontrar el valor de <span class="math inline">\(k\)</span> para que la función se una función de densidad</li>
+<li>Encontrar las marginales</li>
+<li>Verificar si <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> son independientes</li>
+</ul>
+<p>Solución</p>
+<p><span class="math display">\[1=\int_0^\infty \int_0^\infty ke^{-2x-3y}dx dy=k\int_0^\infty e^{-2x} dx \int_0^\infty e^{-3y} dy=k*\frac{1}{2}*\frac{1}{3}\]</span></p>
+<p>Siendo <span class="math inline">\(k=6\)</span>, de esta forma la función queda como:</p>
+<p><span class="math display">\[f(x,y)=6e^{-2x-3y}; \quad x,y\geq 0\]</span></p>
+<p>Para las marginales:</p>
+<p><span class="math display">\[f(x)=\int_0^\infty 6e^{-2x-3y}dy=6 e^{-2x} \left(-\frac{e^{-3y}}{3} \right)/_0^\infty=2e^{-2x}\]</span></p>
+<p><span class="math display">\[f(y)=\int_0^\infty 6e^{-2x-3y}dx=3 e^{-3y}\]</span></p>
+<p>Evidentemente las variables son independientes, ya que:</p>
+<p><span class="math display">\[f(x)f(y)=2e^{-2x}3e^{-3y}=6e^{-2x-3y}=f(x,y)\]</span></p>
+<blockquote>
 <p>Ejemplo, para la distribución conjunta:</p>
+</blockquote>
 <p><span class="math display">\[f(x,y)=\frac{1}{500}\]</span></p>
 <p>Si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes, se debe cumplir:</p>
 <p><span class="math display">\[f(x,y)=f(x)*f(y)=4*\frac{1}{2000}=\frac{1}{500}\]</span></p>
@@ -469,28 +488,50 @@ Por lo tanto <span class="math inline">\(x\)</span> e <span class="math inline">
 <div id="valores-esperados" class="section level2" number="1.6">
 <h2><span class="header-section-number">1.6</span> Valores esperados</h2>
 <p>En el caso univariado, sea <span class="math inline">\(X\)</span> una variable aleatoria con función de probabilidad <span class="math inline">\(\pi(x)\)</span> para el caso discreto o <span class="math inline">\(f(x)\)</span> para el caso continuo, el operador matemático esperanza se define como:</p>
-<p>Para el caso discreto,
-<span class="math display">\[E[g(X)]=\sum_{Rx}g(x)P(X=x)\]</span></p>
-<p>Para el caso continuo,
-<span class="math display">\[E[g(X)]=\int_{Rx}g(x)f(x)dx\]</span></p>
+<p>Para el caso discreto,</p>
+<p><span class="math display">\[E[g(X)]=\sum_{Rx}g(x)P(X=x)\]</span></p>
+<p>Para el caso continuo,</p>
+<p><span class="math display">\[E[g(X)]=\int_{Rx}g(x)f(x)dx\]</span></p>
 <blockquote>
-<p>Definición 6,
-El valor esperado para la función <span class="math inline">\(g(X,Y)\)</span>, se define como:</p>
+<p>Definición 6, el valor esperado para la función <span class="math inline">\(g(X,Y)\)</span>, se define como:</p>
 </blockquote>
 <p>Para el caso discreto:</p>
 <p><span class="math display">\[E[g(X,Y)]=\sum_{Rx}\sum_{Ry}g(x,y)\pi(x,y)\]</span></p>
 <p>Para el caso continuo:</p>
 <p><span class="math display">\[E[g(X,Y)]=\int_{Rx}\int_{Ry}g(x,y)f(x.y)dydx\]</span>
 Nota, hay valores esperados más usuales que otros,</p>
-<p>Por ejemplo, las varianzas para cada variable
-<span class="math display">\[E[(X-E[X])^2]=V(X)\]</span>
+<p>Por ejemplo, las varianzas para cada variable</p>
+<p><span class="math display">\[E[(X-E[X])^2]=V(X)\]</span>
 <span class="math display">\[E[(Y-E[Y])^2]=V(Y)\]</span></p>
 <p>Otras medidas son <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(E[Y]\)</span> que son referencias muy similares a un promedio aritmético. Otra valor esperado bastante usado en los casos bivariados es:</p>
 <p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx\]</span>
 Encontrar la forma de <span class="math inline">\(E[X]\)</span> usando la definición anterior.</p>
 <p><span class="math display">\[E[X]=\int_{Rx}\int_{Ry} x f(x,y) dy dx=\int_{Rx}xf(x) dx\]</span>
 <span class="math display">\[E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx\]</span></p>
+<blockquote>
+<p>Ejercicio</p>
+</blockquote>
+<p>Sea la función de densidad:</p>
+<p><span class="math display">\[f(x,y)=6 e^{-2x-3y}; \quad x,y \geq 0\]</span></p>
+<p>Encontrar:
+<span class="math display">\[E[XY]=\int_0^\infty \int_0^\infty xy 6 e^{-2x-3y}dxdy=6 \int_0^\infty x e^{-2x}dx\int_0^\infty y e^{-3y}dy= \alpha \]</span></p>
+<p>Usando la función gamma.</p>
+<p><span class="math display">\[t=2x\quad x=\frac{t}{2} \quad \frac{dx}{dt}=\frac{1}{2}\quad \]</span></p>
+<p><span class="math display">\[\int_0^\infty x e^{-2x}dx=\int_0^\infty\frac{t}{2}e^{-t}\frac{dt}{2}=\frac{1}{4}\int_0^\infty t^{2-1}e^{-t}dt=\frac{\Gamma(2)}{4}=\frac{1!}{4}=\frac{1}{4}\]</span>
+<span class="math display">\[t=3y\quad y=\frac{t}{3} \quad \frac{dy}{dt}=\frac{1}{3}\quad \]</span></p>
+<p><span class="math display">\[\int_0^\infty y e^{-3x}dx=\int_0^\infty\frac{t}{3}e^{-t}\frac{dt}{3}=\frac{1}{9}\int_0^\infty t^{2-1}e^{-t}dt=\frac{\Gamma(2)}{9}=\frac{1!}{9}=\frac{1}{9}\]</span>
+Retomando</p>
+<p><span class="math display">\[\alpha=6\frac{1}{4}\frac{1}{9}=\frac{1}{6}=E[XY]\]</span></p>
+<p><span class="math display">\[E[X]=\int_0^\infty x 2e^{-2x}dx=2\int_0^\infty x e^{-2x}dx=\frac{2}{4}=\frac{1}{2}\]</span></p>
+<p><span class="math display">\[E[X^2]=\int_0^\infty x^2 2e^{-2x}dx=2\int_0^\infty x^2 e^{-2x}dx=Tarea\]</span>
+<span class="math display">\[E[Y]=3*\frac{1}{9}=\frac{1}{3}\]</span>
+<span class="math display">\[E[Y^2]=tarea\]</span></p>
+<p>Notar que</p>
+<p><span class="math display">\[E[X]E[Y]=\frac{1}{2}\frac{1}{3}=\frac{1}{6}=E[XY]\]</span></p>
+<p>Esto sucede únicamente cuando las variables son independientes</p>
+<blockquote>
 <p>Ejercicio, Sea la función conjunta</p>
+</blockquote>
 <p><span class="math display">\[f(x,y)=\frac{1}{500}, \quad 0&lt;X&lt;0.25 \quad 0&lt;y&lt;2000\]</span>
 Encontrar:</p>
 <ul>
@@ -519,7 +560,8 @@ Demostración,</p>
 <p>Definición, una distribución condicional se define como:</p>
 </blockquote>
 <p>Caso discreto,</p>
-<p><span class="math display">\[\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}\]</span></p>
+<p><span class="math display">\[\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}\]</span>
+<span class="math display">\[\pi_{y/x}(Y/X=x)=\frac{\pi(x,y)}{\pi(x)}\]</span></p>
 <p>Caso continuo,</p>
 <p><span class="math display">\[f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}\]</span>
 <span class="math display">\[f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}\]</span>

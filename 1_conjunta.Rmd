@@ -242,9 +242,35 @@ $$f(y)=\int_{Rx} f(x,y) dx=\int_0^{0.25}\frac{1}{500}dx=\frac{1}{2000}$$
 
 $$f(x,y)=f(x)*f(y)$$
 $$\pi(x,y)=\pi(x)*\pi(y)$$
+> Ejercicio 
 
+Dada la siguiente función de densidad conjunta:
 
-Ejemplo, para la distribución conjunta:
+$$f(x,y)=ke^{-2x-3y}; \quad x,y\geq 0$$
+
+  * Encontrar el valor de $k$ para que la función se una función de densidad
+  * Encontrar las marginales
+  * Verificar si $X$, $Y$ son independientes
+  
+Solución
+
+$$1=\int_0^\infty \int_0^\infty ke^{-2x-3y}dx dy=k\int_0^\infty e^{-2x} dx \int_0^\infty e^{-3y} dy=k*\frac{1}{2}*\frac{1}{3}$$
+
+Siendo $k=6$, de esta forma la función queda como:
+
+$$f(x,y)=6e^{-2x-3y}; \quad x,y\geq 0$$
+
+Para las marginales:
+
+$$f(x)=\int_0^\infty 6e^{-2x-3y}dy=6 e^{-2x} \left(-\frac{e^{-3y}}{3} \right)/_0^\infty=2e^{-2x}$$
+
+$$f(y)=\int_0^\infty 6e^{-2x-3y}dx=3 e^{-3y}$$
+
+Evidentemente las variables son independientes, ya que:
+
+$$f(x)f(y)=2e^{-2x}3e^{-3y}=6e^{-2x-3y}=f(x,y)$$
+
+> Ejemplo, para la distribución conjunta:
 
 $$f(x,y)=\frac{1}{500}$$
 
@@ -288,13 +314,14 @@ Por lo tanto $x$ e $y$ no son independientes.
 En el caso univariado, sea $X$ una variable aleatoria con función de probabilidad $\pi(x)$ para el caso discreto o $f(x)$ para el caso continuo, el operador matemático esperanza se define como:
 
 Para el caso discreto,
+
 $$E[g(X)]=\sum_{Rx}g(x)P(X=x)$$
 
 Para el caso continuo,
+
 $$E[g(X)]=\int_{Rx}g(x)f(x)dx$$
 
-> Definición 6, 
-El valor esperado para la función $g(X,Y)$, se define como:
+> Definición 6, el valor esperado para la función $g(X,Y)$, se define como:
 
 Para el caso discreto:
 
@@ -306,6 +333,7 @@ $$E[g(X,Y)]=\int_{Rx}\int_{Ry}g(x,y)f(x.y)dydx$$
 Nota, hay valores esperados más usuales que otros,
 
 Por ejemplo, las varianzas para cada variable
+
 $$E[(X-E[X])^2]=V(X)$$
 $$E[(Y-E[Y])^2]=V(Y)$$
 
@@ -317,7 +345,41 @@ Encontrar la forma de $E[X]$ usando la definición anterior.
 $$E[X]=\int_{Rx}\int_{Ry} x f(x,y) dy dx=\int_{Rx}xf(x) dx$$
 $$E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx$$
 
-Ejercicio, Sea la función conjunta 
+> Ejercicio
+
+Sea la función de densidad:
+
+$$f(x,y)=6 e^{-2x-3y}; \quad x,y \geq 0$$
+
+Encontrar: 
+$$E[XY]=\int_0^\infty \int_0^\infty xy 6 e^{-2x-3y}dxdy=6 \int_0^\infty x e^{-2x}dx\int_0^\infty y e^{-3y}dy= \alpha $$
+
+Usando la función gamma.
+
+$$t=2x\quad x=\frac{t}{2} \quad \frac{dx}{dt}=\frac{1}{2}\quad $$
+
+$$\int_0^\infty x e^{-2x}dx=\int_0^\infty\frac{t}{2}e^{-t}\frac{dt}{2}=\frac{1}{4}\int_0^\infty t^{2-1}e^{-t}dt=\frac{\Gamma(2)}{4}=\frac{1!}{4}=\frac{1}{4}$$
+$$t=3y\quad y=\frac{t}{3} \quad \frac{dy}{dt}=\frac{1}{3}\quad $$
+
+$$\int_0^\infty y e^{-3x}dx=\int_0^\infty\frac{t}{3}e^{-t}\frac{dt}{3}=\frac{1}{9}\int_0^\infty t^{2-1}e^{-t}dt=\frac{\Gamma(2)}{9}=\frac{1!}{9}=\frac{1}{9}$$
+Retomando
+
+$$\alpha=6\frac{1}{4}\frac{1}{9}=\frac{1}{6}=E[XY]$$
+
+$$E[X]=\int_0^\infty x 2e^{-2x}dx=2\int_0^\infty x e^{-2x}dx=\frac{2}{4}=\frac{1}{2}$$
+
+$$E[X^2]=\int_0^\infty x^2 2e^{-2x}dx=2\int_0^\infty x^2 e^{-2x}dx=Tarea$$
+$$E[Y]=3*\frac{1}{9}=\frac{1}{3}$$ 
+$$E[Y^2]=tarea$$
+
+Notar que 
+
+$$E[X]E[Y]=\frac{1}{2}\frac{1}{3}=\frac{1}{6}=E[XY]$$
+
+Esto sucede únicamente cuando las variables son independientes
+
+
+> Ejercicio, Sea la función conjunta 
 
 $$f(x,y)=\frac{1}{500}, \quad 0<X<0.25 \quad 0<y<2000$$
 Encontrar:
@@ -359,6 +421,7 @@ Estas distribuciones nos ayudan a entender el comportamiento de una variable, cu
 Caso discreto,
 
 $$\pi_{x/y}(X/Y=y)=\frac{\pi(x,y)}{\pi(y)}$$
+$$\pi_{y/x}(Y/X=x)=\frac{\pi(x,y)}{\pi(x)}$$
 
 Caso continuo,
 
