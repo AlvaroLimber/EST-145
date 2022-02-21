@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-02-16" />
+<meta name="date" content="2022-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,13 +171,14 @@ div.csl-indent {
 <li class="chapter" data-level="1.4" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal</a></li>
 <li class="chapter" data-level="1.5" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia</a></li>
 <li class="chapter" data-level="1.6" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados</a></li>
-<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a>
+<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
+<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.8</b> Esperanza condicional</a></li>
+<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.9</b> Medidas de relación entre dos variables</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.7.1</b> Esperanza condicional</a></li>
+<li class="chapter" data-level="1.9.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#ejercicio-por-1-punto."><i class="fa fa-check"></i><b>1.9.1</b> Ejercicio por 1 punto.</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
-<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.9</b> Transformaciones</a></li>
-<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.10</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
+<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.10</b> Transformaciones</a></li>
+<li class="chapter" data-level="1.11" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.11</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
 <ul>
@@ -267,7 +268,7 @@ div.csl-indent {
 <h1 class="title">Estadística II</h1>
 <h2 class="subtitle"><em>EST-145</em></h2>
 <p class="author"><em>Alvaro Chirino Gutierrez</em></p>
-<p class="date"><em>2022-02-16</em></p>
+<p class="date"><em>2022-02-21</em></p>
 </div>
 <div id="prefacio" class="section level1 unnumbered">
 <h1>Prefacio</h1>
@@ -312,28 +313,17 @@ div.csl-indent {
 ## [7] base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bookdown_0.24  
-##  [2] digest_0.6.28  
-##  [3] R6_2.5.1       
-##  [4] jsonlite_1.7.2 
-##  [5] magrittr_2.0.1 
-##  [6] evaluate_0.14  
-##  [7] highr_0.9      
-##  [8] stringi_1.7.5  
-##  [9] rlang_0.4.11   
-## [10] rstudioapi_0.13
-## [11] jquerylib_0.1.4
-## [12] bslib_0.3.1    
-## [13] rmarkdown_2.11 
-## [14] tools_4.1.2    
-## [15] stringr_1.4.0  
-## [16] xfun_0.26      
-## [17] yaml_2.2.1     
-## [18] fastmap_1.1.0  
-## [19] compiler_4.1.2 
-## [20] htmltools_0.5.2
-## [21] knitr_1.36     
-## [22] sass_0.4.0</code></pre>
+##  [1] bookdown_0.24   digest_0.6.28  
+##  [3] R6_2.5.1        jsonlite_1.7.2 
+##  [5] magrittr_2.0.1  evaluate_0.14  
+##  [7] highr_0.9       stringi_1.7.5  
+##  [9] rlang_0.4.11    rstudioapi_0.13
+## [11] jquerylib_0.1.4 bslib_0.3.1    
+## [13] rmarkdown_2.11  tools_4.1.2    
+## [15] stringr_1.4.0   xfun_0.26      
+## [17] yaml_2.2.1      fastmap_1.1.0  
+## [19] compiler_4.1.2  htmltools_0.5.2
+## [21] knitr_1.36      sass_0.4.0</code></pre>
 </div>
 <div id="bases-de-datos" class="section level2 unnumbered">
 <h2>Bases de datos</h2>

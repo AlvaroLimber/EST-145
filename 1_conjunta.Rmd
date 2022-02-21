@@ -463,11 +463,11 @@ $$f_{Y/X}(y/x)=\frac{x^2+\frac{xy}{3}}{2x^2 +\frac{2x}{3}}=\frac{3x^2+xy}{6x^2+2
 
 $$E[X]=\int_0^1 x\left( 2x^2 +\frac{2x}{3} \right)dx=\frac{13}{18}$$
 
-$$E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dx=\frac{10}{9}$$
+$$E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dy=\frac{10}{9}$$
 
 $$E[XY]=\int_{Rx} \int_{Ry} xy f(x,y)dydx=\int_0^1 \int_0^2 xy \left(x^2+\frac{xy}{3}\right) dy dx=\frac{43}{54}$$
 
-### Esperanza condicional
+## Esperanza condicional
 
 Se refiere a calcular el valor esperado sobre la función condicional.
 
@@ -476,10 +476,20 @@ $$E[X/Y]=\int_{Rx} x*  f_{X/Y}(x/y)dx$$
 Para el ejercicio anterior,
 
 $$E[Y/X]=\int_0^2 y* \left(\frac{3x^2+xy}{6x^2+2x}\right) dy=\frac{9x+4}{9x+3}$$
+Calcular:
+
+$$E[Y/X=0.5]=\frac{9*0.5+4}{9*0.5+3}=\frac{8.5}{7.5}=1.13$$
+
+$$E[Y/X=1]=\frac{9*1+4}{9*1+3}=\frac{13}{12}=1.083$$
+
 
 $$E[Y/X=0.5]=\frac{17}{15}$$
 $$E[X/Y]=\frac{9+4y}{12+6y}$$
 
+Nota, si $X$ e $Y$ son independientes,
+
+$$E[X/Y=y]=E[X] \quad;\quad E[Y/X=x]=E[Y] \quad ; \quad E[XY]=E[X]E[Y]$$
+Tarea, demostrar lo anterior.
 
 ## Medidas de relación entre dos variables
 
@@ -487,15 +497,18 @@ Estas medidas nos ayudan a conocer si dos variables *están relacionadas* y nos 
 
 La Covarianza $cov(X,Y)$ es una medida absoluta de relación:
 
-$$cov(X,Y)=E\left\[(X-E[X])(Y-E[Y])\right\]$$
+$$cov(X,Y)=E\left\{(X-E[X])(Y-E[Y]) \right\}$$
+
 Una alternativa a esta formula (versión corta).
 
 $$cov(X,Y)=E[XY]-E[X]*E[Y]$$
 Tarea, demostrar lo anterior.
 
-Otra medida importantes es la correlación entre $X$ e $Y$, esta es una medida relativa, que cumple la propiedad:  $-1 \leq corr(X,Y) \leq 1$, esta se define como:
+Nota: La covarianza es una medida absoluta, nos ayuda a conocer el tipo de relación entre las variables, pero no es útil para conocer la intensidad de la relación
 
-$$corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}$$
+Otra medida importantes es la correlación ($corr(X,Y)=\rho_{xy} $) entre $X$ e $Y$, esta es una medida **relativa**, que cumple la propiedad:  $-1 \leq corr(X,Y) \leq 1$, esta se define como:
+
+$$\rho_{xy}=corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}$$
 
   * Si $cov_{xy}$ o $corr_{xy}$ son distintas de 0, podemos afirmar que existe relación
   * Si $cov_{xy}>0$ o $corr_{xy}>0$ la relación entre $X$ e $Y$ es directa
@@ -508,10 +521,10 @@ Tarea,
 Calcular la Covarianza y la correlación de las variables aleatorias $X,Y$.
 
 $$cov(X,Y)=\frac{43}{54}-\frac{13}{18}*\frac{10}{9}=-\frac{1}{162}$$
-
-Ejercicio, 
+> Nota
 
 Demostrar que si $X$ y $Y$ son independientes entonces: 
+
 $$E[XY]=E[X]*E[Y]$$
 
 Demostración,
@@ -524,10 +537,21 @@ $$cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0$$
 
 Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.
 
-Nota: 
+### Ejercicio por 1 punto.
 
-$$E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy$$
-### Ejercicio
+Sea la función de densidad:
+
+$$f(x,y)=\frac{3}{2}(x^2+y^2); \quad 0<x<1;\quad 0<y<1$$
+Se pide:
+
+  * Verificar que es una función de densidad
+  * Encontrar las marginales
+  * Encontrar las distribuciones condicionales
+  * Calcular la covarianza y correlación
+  * Verificar si son independientes
+
+
+> Ejercicio
 
 Para 
 

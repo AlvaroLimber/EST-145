@@ -8,6 +8,7 @@ valores-esperados
 distribuciones-condicionales
 esperanza-condicional
 medidas-de-relación-entre-dos-variables
+ejercicio-por-1-punto.
 transformaciones
 distrubuciones-conjuntas-de-más-de-2-variables-aleatorias
 tema-2-distribuciones-muestrales

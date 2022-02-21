@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-02-16" />
+<meta name="date" content="2022-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,13 +171,14 @@ div.csl-indent {
 <li class="chapter" data-level="1.4" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal</a></li>
 <li class="chapter" data-level="1.5" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia</a></li>
 <li class="chapter" data-level="1.6" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados</a></li>
-<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a>
+<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
+<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.8</b> Esperanza condicional</a></li>
+<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.9</b> Medidas de relación entre dos variables</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.7.1</b> Esperanza condicional</a></li>
+<li class="chapter" data-level="1.9.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#ejercicio-por-1-punto."><i class="fa fa-check"></i><b>1.9.1</b> Ejercicio por 1 punto.</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de relación entre dos variables</a></li>
-<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.9</b> Transformaciones</a></li>
-<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.10</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
+<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.10</b> Transformaciones</a></li>
+<li class="chapter" data-level="1.11" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.11</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
 <ul>
@@ -589,29 +590,36 @@ Se pide:</p>
 <p><span class="math display">\[f_{X/Y}(x/y)=\frac{x^2+\frac{xy}{3}}{\frac{1}{3}+\frac{y}{6}}=\frac{x(3x+y)}{1+\frac{y}{2}}\]</span></p>
 <p><span class="math display">\[f_{Y/X}(y/x)=\frac{x^2+\frac{xy}{3}}{2x^2 +\frac{2x}{3}}=\frac{3x^2+xy}{6x^2+2x}\]</span></p>
 <p><span class="math display">\[E[X]=\int_0^1 x\left( 2x^2 +\frac{2x}{3} \right)dx=\frac{13}{18}\]</span></p>
-<p><span class="math display">\[E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dx=\frac{10}{9}\]</span></p>
+<p><span class="math display">\[E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dy=\frac{10}{9}\]</span></p>
 <p><span class="math display">\[E[XY]=\int_{Rx} \int_{Ry} xy f(x,y)dydx=\int_0^1 \int_0^2 xy \left(x^2+\frac{xy}{3}\right) dy dx=\frac{43}{54}\]</span></p>
-<div id="esperanza-condicional" class="section level3" number="1.7.1">
-<h3><span class="header-section-number">1.7.1</span> Esperanza condicional</h3>
+</div>
+<div id="esperanza-condicional" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Esperanza condicional</h2>
 <p>Se refiere a calcular el valor esperado sobre la función condicional.</p>
 <p><span class="math display">\[E[Y/X]=\int_{Ry} y*  f_{Y/X}(y/x)dy\]</span>
 <span class="math display">\[E[X/Y]=\int_{Rx} x*  f_{X/Y}(x/y)dx\]</span>
 Para el ejercicio anterior,</p>
-<p><span class="math display">\[E[Y/X]=\int_0^2 y* \left(\frac{3x^2+xy}{6x^2+2x}\right) dy=\frac{9x+4}{9x+3}\]</span></p>
+<p><span class="math display">\[E[Y/X]=\int_0^2 y* \left(\frac{3x^2+xy}{6x^2+2x}\right) dy=\frac{9x+4}{9x+3}\]</span>
+Calcular:</p>
+<p><span class="math display">\[E[Y/X=0.5]=\frac{9*0.5+4}{9*0.5+3}=\frac{8.5}{7.5}=1.13\]</span></p>
+<p><span class="math display">\[E[Y/X=1]=\frac{9*1+4}{9*1+3}=\frac{13}{12}=1.083\]</span></p>
 <p><span class="math display">\[E[Y/X=0.5]=\frac{17}{15}\]</span>
 <span class="math display">\[E[X/Y]=\frac{9+4y}{12+6y}\]</span></p>
+<p>Nota, si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes,</p>
+<p><span class="math display">\[E[X/Y=y]=E[X] \quad;\quad E[Y/X=x]=E[Y] \quad ; \quad E[XY]=E[X]E[Y]\]</span>
+Tarea, demostrar lo anterior.</p>
 </div>
-</div>
-<div id="medidas-de-relación-entre-dos-variables" class="section level2" number="1.8">
-<h2><span class="header-section-number">1.8</span> Medidas de relación entre dos variables</h2>
+<div id="medidas-de-relación-entre-dos-variables" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> Medidas de relación entre dos variables</h2>
 <p>Estas medidas nos ayudan a conocer si dos variables <em>están relacionadas</em> y nos permite saber el <em>tipo de relación</em> (directa, inversa) y también podemos saber la <em>intensidad de la relación</em>. Las medidas son:</p>
 <p>La Covarianza <span class="math inline">\(cov(X,Y)\)</span> es una medida absoluta de relación:</p>
-<p><span class="math display">\[cov(X,Y)=E\left\[(X-E[X])(Y-E[Y])\right\]\]</span>
-Una alternativa a esta formula (versión corta).</p>
+<p><span class="math display">\[cov(X,Y)=E\left\{(X-E[X])(Y-E[Y]) \right\}\]</span></p>
+<p>Una alternativa a esta formula (versión corta).</p>
 <p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]\]</span>
 Tarea, demostrar lo anterior.</p>
-<p>Otra medida importantes es la correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, esta es una medida relativa, que cumple la propiedad: <span class="math inline">\(-1 \leq corr(X,Y) \leq 1\)</span>, esta se define como:</p>
-<p><span class="math display">\[corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}\]</span></p>
+<p>Nota: La covarianza es una medida absoluta, nos ayuda a conocer el tipo de relación entre las variables, pero no es útil para conocer la intensidad de la relación</p>
+<p>Otra medida importantes es la correlación ($corr(X,Y)=_{xy} $) entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, esta es una medida <strong>relativa</strong>, que cumple la propiedad: <span class="math inline">\(-1 \leq corr(X,Y) \leq 1\)</span>, esta se define como:</p>
+<p><span class="math display">\[\rho_{xy}=corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}\]</span></p>
 <ul>
 <li>Si <span class="math inline">\(cov_{xy}\)</span> o <span class="math inline">\(corr_{xy}\)</span> son distintas de 0, podemos afirmar que existe relación</li>
 <li>Si <span class="math inline">\(cov_{xy}&gt;0\)</span> o <span class="math inline">\(corr_{xy}&gt;0\)</span> la relación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es directa</li>
@@ -621,19 +629,31 @@ Tarea, demostrar lo anterior.</p>
 </ul>
 <p>Tarea,</p>
 <p>Calcular la Covarianza y la correlación de las variables aleatorias <span class="math inline">\(X,Y\)</span>.</p>
-<p><span class="math display">\[cov(X,Y)=\frac{43}{54}-\frac{13}{18}*\frac{10}{9}=-\frac{1}{162}\]</span></p>
-<p>Ejercicio,</p>
-<p>Demostrar que si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes entonces:
-<span class="math display">\[E[XY]=E[X]*E[Y]\]</span></p>
+<p><span class="math display">\[cov(X,Y)=\frac{43}{54}-\frac{13}{18}*\frac{10}{9}=-\frac{1}{162}\]</span>
+&gt; Nota</p>
+<p>Demostrar que si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes entonces:</p>
+<p><span class="math display">\[E[XY]=E[X]*E[Y]\]</span></p>
 <p>Demostración,</p>
 <p><span class="math display">\[E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx=\int_{Rx}\int_{Ry} xy f(x)f(y) dy dx\]</span>
 <span class="math display">\[=\int_{Rx} x f(x)\left( \int_{Ry} y f(y) dy \right) dx=E[Y] \int_{Rx} xf(x)  dx=E[X]E[Y] \]</span>
 Como resultado de lo anterior, si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes:</p>
 <p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0\]</span></p>
 <p>Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.</p>
-<p>Nota:</p>
-<p><span class="math display">\[E[Y/X=x]=\int_{Ry} y * f_{Y/X}(y/x) dy\]</span>
-### Ejercicio</p>
+<div id="ejercicio-por-1-punto." class="section level3" number="1.9.1">
+<h3><span class="header-section-number">1.9.1</span> Ejercicio por 1 punto.</h3>
+<p>Sea la función de densidad:</p>
+<p><span class="math display">\[f(x,y)=\frac{3}{2}(x^2+y^2); \quad 0&lt;x&lt;1;\quad 0&lt;y&lt;1\]</span>
+Se pide:</p>
+<ul>
+<li>Verificar que es una función de densidad</li>
+<li>Encontrar las marginales</li>
+<li>Encontrar las distribuciones condicionales</li>
+<li>Calcular la covarianza y correlación</li>
+<li>Verificar si son independientes</li>
+</ul>
+<blockquote>
+<p>Ejercicio</p>
+</blockquote>
 <p>Para</p>
 <p><span class="math display">\[f(x,y)=\frac{x(1+3y^2)}{4} \quad 0&lt;x&lt;2, \quad 0&lt;y&lt;1\]</span></p>
 <p>Calcular</p>
@@ -681,8 +701,9 @@ Ejercicio de práctica,</p>
 finalmente:</p>
 <p><span class="math display">\[f(z)=\int_0^{\infty} \frac{4w e^{-2w}}{(1+z)^2} dw=\frac{1}{(1+z)^2}\]</span></p>
 </div>
-<div id="transformaciones" class="section level2" number="1.9">
-<h2><span class="header-section-number">1.9</span> Transformaciones</h2>
+</div>
+<div id="transformaciones" class="section level2" number="1.10">
+<h2><span class="header-section-number">1.10</span> Transformaciones</h2>
 <p>Supongamos que se busca encontrar a partir de la función de densidad <span class="math inline">\(f(X,Y)\)</span> de dos variables X, Y una tercera variable <span class="math inline">\(Z=H_1(X,Y)\)</span>. La estrategia para resolver este tipo de problemas es:</p>
 <ul>
 <li>Definir una cuarta variable <span class="math inline">\(W=H_2(X,Y)\)</span>, es elegida por conveniencia</li>
@@ -699,8 +720,8 @@ finalmente:</p>
 \right|
 \]</span></p>
 </div>
-<div id="distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="section level2" number="1.10">
-<h2><span class="header-section-number">1.10</span> Distrubuciones conjuntas de más de 2 variables aleatorias</h2>
+<div id="distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="section level2" number="1.11">
+<h2><span class="header-section-number">1.11</span> Distrubuciones conjuntas de más de 2 variables aleatorias</h2>
 <p>Estamos introduciendo ahora <span class="math inline">\(n\)</span> variables aleatorias, que se puede denotar por vector</p>
 <p><span class="math display">\[\left[X_1,X_2,\ldots,X_n \right]\]</span></p>
 <p>Se puede definir su función de densidad conjunta:</p>
