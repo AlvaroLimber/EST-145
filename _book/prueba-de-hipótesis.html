@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-02-21" />
+<meta name="date" content="2022-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -396,9 +396,9 @@ Los valores usuales para los <span class="math inline">\(Z_{\alpha/2}\)</span> s
 <div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="prueba-de-hipótesis.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1447</span>)</span>
 <span id="cb234-2"><a href="prueba-de-hipótesis.html#cb234-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">80</span>),<span class="dv">0</span>)</span>
 <span id="cb234-3"><a href="prueba-de-hipótesis.html#cb234-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 57 60 59 44 79 59 63 58 68 62 49 77
-## [13] 79 51 78 44 53 58 50 56 64 77 60 49
-## [25] 46 66 45 78 66 60</code></pre>
+<pre><code>##  [1] 57 60 59 44 79 59 63 58 68 62
+## [11] 49 77 79 51 78 44 53 58 50 56
+## [21] 64 77 60 49 46 66 45 78 66 60</code></pre>
 <p><span class="math display">\[H0: \mu=65\]</span>
 <span class="math display">\[H1: \mu \neq 65\]</span>
 El estadístico de prueba es:</p>
@@ -645,14 +645,14 @@ Finalmente, se rechaza <span class="math inline">\(H_0\)</span>, cuando:</p>
 <p><span class="math display">\[F_0&gt;F_{\alpha/2,n_1-1,n_2-1} \quad ó\quad F_0&lt;F_{1-\alpha/2,n_1-1,n_2-1}\]</span></p>
 <p>En el R, para dos muestras de tamaño 20 con una significancia del 5%.</p>
 <div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="prueba-de-hipótesis.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
-<pre><code>## RStudioGD 
-##         2</code></pre>
+<pre><code>## null device 
+##           1</code></pre>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="prueba-de-hipótesis.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</span>
 <span id="cb253-2"><a href="prueba-de-hipótesis.html#cb253-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
 <span id="cb253-3"><a href="prueba-de-hipótesis.html#cb253-3" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb253-4"><a href="prueba-de-hipótesis.html#cb253-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(x1,x2),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="prueba-de-hipótesis.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(x1,<span class="dv">19</span>,<span class="dv">19</span>)<span class="sc">-</span><span class="fu">pf</span>(x2,<span class="dv">19</span>,<span class="dv">19</span>)</span></code></pre></div>
+<span id="cb253-4"><a href="prueba-de-hipótesis.html#cb253-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(x1,x2),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb253-5"><a href="prueba-de-hipótesis.html#cb253-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb253-6"><a href="prueba-de-hipótesis.html#cb253-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(x1,<span class="dv">19</span>,<span class="dv">19</span>)<span class="sc">-</span><span class="fu">pf</span>(x2,<span class="dv">19</span>,<span class="dv">19</span>)</span></code></pre></div>
 <pre><code>## [1] 0.95</code></pre>
 <p>Para las pruebas unilaterales,</p>
 <p><span class="math display">\[H_0: \sigma^2_1=\sigma^2_2\]</span>
@@ -665,19 +665,19 @@ Finalmente, se rechaza <span class="math inline">\(H_0\)</span>, cuando:</p>
 <p>Se rechaza <span class="math inline">\(H_0\)</span> si:</p>
 <p><span class="math display">\[F_0&lt;F_{1-\alpha,n_1-1,n_2-1}\]</span>
 En el R, para el ejemplo anterior.</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="prueba-de-hipótesis.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)<span class="co">#sigma1&gt;sigma2</span></span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="prueba-de-hipótesis.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)<span class="co">#sigma1&gt;sigma2</span></span></code></pre></div>
 <pre><code>## [1] 2.168252</code></pre>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="prueba-de-hipótesis.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)<span class="co">#sigma1&lt;sigma2</span></span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="prueba-de-hipótesis.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)<span class="co">#sigma1&lt;sigma2</span></span></code></pre></div>
 <pre><code>## [1] 0.4612011</code></pre>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="prueba-de-hipótesis.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb260-2"><a href="prueba-de-hipótesis.html#cb260-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma1&gt;sigma2&quot;</span>)</span>
-<span id="cb260-3"><a href="prueba-de-hipótesis.html#cb260-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qf</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb260-4"><a href="prueba-de-hipótesis.html#cb260-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma1&lt;sigma2&quot;</span>)</span>
-<span id="cb260-5"><a href="prueba-de-hipótesis.html#cb260-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="prueba-de-hipótesis.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb259-2"><a href="prueba-de-hipótesis.html#cb259-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma1&gt;sigma2&quot;</span>)</span>
+<span id="cb259-3"><a href="prueba-de-hipótesis.html#cb259-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qf</span>(<span class="fl">0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb259-4"><a href="prueba-de-hipótesis.html#cb259-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">df</span>(x,<span class="dv">19</span>,<span class="dv">19</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>),<span class="at">main=</span><span class="st">&quot;H_1: sigma1&lt;sigma2&quot;</span>)</span>
+<span id="cb259-5"><a href="prueba-de-hipótesis.html#cb259-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="prueba-de-hipótesis.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
-<pre><code>## RStudioGD 
-##         2</code></pre>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="prueba-de-hipótesis.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<pre><code>## null device 
+##           1</code></pre>
 </div>
 <div id="tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> Tamaño de muestra y su relación con el error de tipo I y tipo II</h2>
@@ -715,10 +715,10 @@ Donde <span class="math inline">\(P\)</span> es el valor propuesto para <span cl
 <p><span class="math display">\[n=\left(\frac{Z_{\alpha} \sqrt{P_0(1-P_0)}+Z_{\beta} \sqrt{P(1-P)}}{P-P_0} \right)^2\]</span>
 Ejercicio, Se busca realizar una encuesta para estimar la proporción de apoyo a un candidato para la elección en un determinado municipio. Se pide calcular el tamaño de muestra tomando en cuanta tener un nivel de significancia del 5%, un poder del 80% y que las estimaciones sean validas hasta una diferencia del 9%. Suponer que <span class="math inline">\(\sqrt{P_0*(1-P_0)}=\sqrt{P*(1-P)}=0.5\)</span>.</p>
 <p>Solución. <span class="math inline">\(P-P_0=0.09\)</span></p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="prueba-de-hipótesis.html#cb263-1" aria-hidden="true" tabindex="-1"></a>za2<span class="ot">&lt;-</span><span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb263-2"><a href="prueba-de-hipótesis.html#cb263-2" aria-hidden="true" tabindex="-1"></a>zb<span class="ot">&lt;-</span><span class="fu">qnorm</span>(<span class="fl">0.2</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb263-3"><a href="prueba-de-hipótesis.html#cb263-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span>((za2<span class="sc">*</span><span class="fl">0.5</span><span class="sc">+</span>zb<span class="sc">*</span><span class="fl">0.5</span>)<span class="sc">/</span><span class="fl">0.09</span>)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb263-4"><a href="prueba-de-hipótesis.html#cb263-4" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="prueba-de-hipótesis.html#cb262-1" aria-hidden="true" tabindex="-1"></a>za2<span class="ot">&lt;-</span><span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb262-2"><a href="prueba-de-hipótesis.html#cb262-2" aria-hidden="true" tabindex="-1"></a>zb<span class="ot">&lt;-</span><span class="fu">qnorm</span>(<span class="fl">0.2</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb262-3"><a href="prueba-de-hipótesis.html#cb262-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span>((za2<span class="sc">*</span><span class="fl">0.5</span><span class="sc">+</span>zb<span class="sc">*</span><span class="fl">0.5</span>)<span class="sc">/</span><span class="fl">0.09</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb262-4"><a href="prueba-de-hipótesis.html#cb262-4" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
 <pre><code>## [1] 242.2494</code></pre>
 <p>Tareas, revisar el libro guía el capítulo 11, en los apartados:</p>
 <ul>

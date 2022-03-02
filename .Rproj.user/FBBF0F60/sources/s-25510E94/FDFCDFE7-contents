@@ -645,6 +645,48 @@ $$J(Z,W)=\left|
 \right|
 $$
 
+> Ejemplo, 
+
+Suponer que tenemos una función de densidad conjunto $f(x,y)$, ahora estamos interesados en encontrar la función de densidad de la variable z, definida como:
+
+$$Z=X+Y=H_1(X,Y)$$
+$$Z=XY=H_1(X,Y)$$
+
+> Ejemplo 
+
+Sea la función de densidad conjunta definida como:
+
+$$f(x,y)=4 e^{-2(x+y)} \quad x>0 \quad y>0$$
+
+Encontrar la función de densidad de la variable $Z=X+Y$
+
+$$Z=X+Y=H_1(X,Y); \quad W=Y=H_2(X,Y)$$
+$$X=Z-W=G_1(Z,W) \quad Y=W=G_2(Z,W)$$
+
+$$J(Z,W)=\left|
+\begin{array}
+& \frac{\partial X }{\partial Z} & \frac{\partial X }{\partial W} \\
+\frac{\partial Y }{\partial Z} & \frac{\partial Y }{\partial W}
+\end{array}
+\right|=\left|
+\begin{array}
+& 1 & -1 \\
+0 & 1 
+\end{array}
+\right|=1
+$$
+
+$$l(z,w)=4 e^{-2(z-w+w)}|1|=4e^{-2z}; z>0,w>0$$
+
+$$l(z)=\int_0^\infty 4e^{-2z}dw=4e^{-2z} w/_0^\infty=$$
+
+Se debe volver a plantear una nueva forma de $W$
+
+Tarea
+
+  * Encontrar una W para el ejercicio anterior, que permita encontrar la función de densidad de $Z$ (Recomendación $W=X/Y$)
+  * Sea $X$ y $Y$ variables aleatorias independientes, cada una con la misma distribución exponencial. Encuentre la función de densidad de $Z=X/Y$, Recomendación $W=X+Y$
+
 ## Distrubuciones conjuntas de más de 2 variables aleatorias
 
 Estamos introduciendo ahora $n$ variables aleatorias, que se puede denotar por vector 
@@ -653,7 +695,11 @@ $$\left[X_1,X_2,\ldots,X_n \right]$$
 
 Se puede definir su función de densidad conjunta:
 
-$$f(X_1,X_2,\ldots,X_n)=\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1$$
+$$f(X_1,X_2,\ldots,X_n)$$
+Evidentemente esta función cumple con:
+
+$$\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1$$
+
 $$f(X_1,X_2,\ldots,X_n)\geq 0$$
 
 Las marginales de cada variables se obtienen integrando la función de densidad sobre todas las variables aleatorias excepto la variable de interés.

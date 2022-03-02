@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-02-21" />
+<meta name="date" content="2022-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -266,40 +266,38 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="tema-2-distribuciones-muestrales" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Tema 2: Distribuciones muestrales</h1>
-<p>A partir de este tema la estadística esta vinculada con la <em>inferencia</em>
-sobre los <em>parámetros</em> de la información/datos.</p>
+<p>A partir de este tema la estadística esta vinculada con la <em>inferencia</em> sobre los <em>parámetros</em> de la información/datos.</p>
 <div id="muestras-y-población" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Muestras y población</h2>
 <blockquote>
-<p>Definición: Una población es una colección de objetos, estos objetos
-tienen variables.</p>
+<p>Definición: Una población es una colección “completa” de objetos, estos objetos tienen variables.</p>
 </blockquote>
 <p>Sea nuestra población <span class="math inline">\(U\)</span>, esta población puede ser finita o infinita</p>
-<p>Finitas, <span class="math display">\[U=\{u_1, u_2, \ldots , u_i,...,u_N \}\]</span> Infinita,</p>
+<p><span class="math display">\[U=\{u_1, u_2, \ldots , u_i,...,u_N \}\]</span></p>
 <p><span class="math display">\[U=\{u_1, u_2, \ldots , u_i,... \}\]</span></p>
-<p>Cada elemento de <span class="math inline">\(U\)</span> tiene variables o características asociadas:</p>
+<p>Cada elemento de <span class="math inline">\(U\)</span> tiene <em>variables</em> o características asociadas:</p>
 <p><span class="math display">\[u_i=\{X_{i1}, X_{i2}, \ldots, X_{iP} \}\]</span>
 <span class="math display">\[u_j=\{X_{j1}, X_{j2}, \ldots, X_{jP} \}\]</span></p>
 <blockquote>
 <p>Definición, Muestra: Una muestra es un subconjunto de U.</p>
 </blockquote>
-<p>Normalmente una muestra tiene un tamaño <span class="math inline">\(n\)</span>, el mecanismo para obtener
-la muestra de <span class="math inline">\(U\)</span> puede ser con reposición o sin reposición, en
-cualquier caso podemos anotar esto de la siguiente forma, sea <span class="math inline">\(s\)</span> una
-muestra:</p>
-<p><span class="math display">\[s=\{u_{1}^*,u_2^*, \ldots, u_n^* \}\]</span> Note que los elementos <span class="math inline">\(u_1\)</span> y
-<span class="math inline">\(u_1^*\)</span> no necesariamente son los mismos.</p>
-<p>El subconjunto <span class="math inline">\(s\)</span> no es único y en realidad existen muchas muestras
-posibles, según el contexto, esto depende:</p>
+<p><span class="math display">\[s \subset U ,\quad s \in U \quad \]</span>
+Donde <span class="math inline">\(s\)</span> representa al conjunto denominado “muestra”</p>
+<p>Normalmente una muestra tiene un tamaño <span class="math inline">\(n\)</span> (puede ser <strong>fijo</strong> y aleatorio), el mecanismo para obtener la muestra de <span class="math inline">\(U\)</span> puede ser con reposición o sin reposición, en
+cualquier caso podemos anotar esto de la siguiente forma, sea <span class="math inline">\(s\)</span> una muestra:</p>
+<p><span class="math display">\[s=\{u_{1}^*,u_2^*, \ldots, u_n^*\}\]</span>
+En un caso extremo para el muestreo con reposición</p>
+<p><span class="math display">\[u_i^*=u_j^* \quad i,j=1, \ldots ,n\]</span></p>
+<p>Note que los elementos <span class="math inline">\(u_1\)</span> y <span class="math inline">\(u_1^*\)</span> no necesariamente son los mismos.</p>
+<p>Una característica ideal al momento de obtener la muestra, es que todos los elementos de la población tengan alguna probabilidad de ser parte de la muestra. (Esto depende del esquema de selección)</p>
+<p>El subconjunto <span class="math inline">\(s\)</span> no es único y en realidad existen muchas muestras posibles, según el contexto, esto depende:</p>
 <ul>
 <li>Del tamaño de <span class="math inline">\(N\)</span>, <span class="math inline">\(n\)</span></li>
 <li>Del mecanismo s/rep, c/rep.</li>
 </ul>
 <p>Ejemplo,</p>
 <ol style="list-style-type: decimal">
-<li>Sea la población <span class="math inline">\(U=\{a,b,c,d,e,f\}\)</span>, se define una muestra de
-<span class="math inline">\(n=3\)</span>, escriba todas las muestras posibles según ambos mecanismos de
-reposición.</li>
+<li>Sea la población <span class="math inline">\(U=\{a,b,c,d,e,f\}\)</span>, se define una muestra de <span class="math inline">\(n=3\)</span>, escriba todas las muestras posibles según ambos mecanismos de reposición.</li>
 </ol>
 <p>Solución,</p>
 <ul>
@@ -313,75 +311,77 @@ reposición.</li>
 <pre><code>## [1] 20</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tema-2-distribuciones-muestrales.html#cb11-1" aria-hidden="true" tabindex="-1"></a>U<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;d&quot;</span>,<span class="st">&quot;e&quot;</span>,<span class="st">&quot;f&quot;</span>)</span>
 <span id="cb11-2"><a href="tema-2-distribuciones-muestrales.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">combn</span>(U,n)</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-## [1,] &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot; 
-## [2,] &quot;b&quot;  &quot;b&quot;  &quot;b&quot;  &quot;b&quot;  &quot;c&quot;  &quot;c&quot;  &quot;c&quot; 
-## [3,] &quot;c&quot;  &quot;d&quot;  &quot;e&quot;  &quot;f&quot;  &quot;d&quot;  &quot;e&quot;  &quot;f&quot; 
-##      [,8] [,9] [,10] [,11] [,12] [,13]
-## [1,] &quot;a&quot;  &quot;a&quot;  &quot;a&quot;   &quot;b&quot;   &quot;b&quot;   &quot;b&quot;  
-## [2,] &quot;d&quot;  &quot;d&quot;  &quot;e&quot;   &quot;c&quot;   &quot;c&quot;   &quot;c&quot;  
-## [3,] &quot;e&quot;  &quot;f&quot;  &quot;f&quot;   &quot;d&quot;   &quot;e&quot;   &quot;f&quot;  
-##      [,14] [,15] [,16] [,17] [,18] [,19]
-## [1,] &quot;b&quot;   &quot;b&quot;   &quot;b&quot;   &quot;c&quot;   &quot;c&quot;   &quot;c&quot;  
-## [2,] &quot;d&quot;   &quot;d&quot;   &quot;e&quot;   &quot;d&quot;   &quot;d&quot;   &quot;e&quot;  
-## [3,] &quot;e&quot;   &quot;f&quot;   &quot;f&quot;   &quot;e&quot;   &quot;f&quot;   &quot;f&quot;  
-##      [,20]
-## [1,] &quot;d&quot;  
-## [2,] &quot;e&quot;  
-## [3,] &quot;f&quot;</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,] &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot; 
+## [2,] &quot;b&quot;  &quot;b&quot;  &quot;b&quot;  &quot;b&quot;  &quot;c&quot; 
+## [3,] &quot;c&quot;  &quot;d&quot;  &quot;e&quot;  &quot;f&quot;  &quot;d&quot; 
+##      [,6] [,7] [,8] [,9] [,10]
+## [1,] &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  &quot;a&quot;  
+## [2,] &quot;c&quot;  &quot;c&quot;  &quot;d&quot;  &quot;d&quot;  &quot;e&quot;  
+## [3,] &quot;e&quot;  &quot;f&quot;  &quot;e&quot;  &quot;f&quot;  &quot;f&quot;  
+##      [,11] [,12] [,13] [,14]
+## [1,] &quot;b&quot;   &quot;b&quot;   &quot;b&quot;   &quot;b&quot;  
+## [2,] &quot;c&quot;   &quot;c&quot;   &quot;c&quot;   &quot;d&quot;  
+## [3,] &quot;d&quot;   &quot;e&quot;   &quot;f&quot;   &quot;e&quot;  
+##      [,15] [,16] [,17] [,18]
+## [1,] &quot;b&quot;   &quot;b&quot;   &quot;c&quot;   &quot;c&quot;  
+## [2,] &quot;d&quot;   &quot;e&quot;   &quot;d&quot;   &quot;d&quot;  
+## [3,] &quot;f&quot;   &quot;f&quot;   &quot;e&quot;   &quot;f&quot;  
+##      [,19] [,20]
+## [1,] &quot;c&quot;   &quot;d&quot;  
+## [2,] &quot;e&quot;   &quot;e&quot;  
+## [3,] &quot;f&quot;   &quot;f&quot;</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tema-2-distribuciones-muestrales.html#cb13-1" aria-hidden="true" tabindex="-1"></a>N<span class="sc">^</span>n</span></code></pre></div>
 <pre><code>## [1] 216</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>En una población de 90 estudiantes, si se define una muestra de 10
-estudiantes, según ambos mecanismos de selección ¿Cuantas muestras
-se pueden armar?</li>
+<li>En una población de 58 estudiantes, si se define una muestra de 15 estudiantes, según ambos mecanismos de selección ¿Cuántas muestras se pueden armar?</li>
 </ol>
 <ul>
-<li>s/rep: 5720645481903</li>
-<li>c/rep: 34867844009999998976</li>
+<li>(s/r) 2.9752626^{13}`</li>
+<li>(c/r) 2.8276126^{26} Doscientos ochenta y dos cuatrillones setecientos sesenta y un mil doscientos cincuenta y seis trillones ochocientos ochenta y un mil doscientos noventa y siete billones trescientos tres mil setecientos seis millones seiscientos sesenta y seis mil cuatrocientos cuatro</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>En la carrera de informática de la UMSA se planea realizar una encuesta de opinión con una muestra de 500 estudiantes, según ambos mecanismos de selección ¿Cuántas muestras se pueden armar? (Suponer que <span class="math inline">\(N=2500\)</span>)</li>
+</ol>
+<ul>
+<li>(s/r, c/r) Es un número muy grande. Para s/r son 542 dígitos</li>
 </ul>
 <p>Sin reposición:</p>
 <p><span class="math display">\[Muestras_{Posibles}=\binom{N}{n}\]</span></p>
 <p>Con reposición:</p>
 <p><span class="math display">\[Muestras_{Posibles}=N^n\]</span></p>
-<p>Imaginemos a la primera variable de interés <span class="math inline">\(X_1\)</span>, para el universo esta
-variable tiene los elementos:</p>
+<p>Imaginemos a la primera variable de interés <span class="math inline">\(X_1\)</span>, para el universo esta variable tiene los elementos:</p>
 <p><span class="math display">\[X_1=\{X_{11}, X_{21}, X_{31}, \ldots, X_{N1} \}\]</span></p>
 <p>Imaginemos que observamos a <span class="math inline">\(X_1\)</span>, para la muestra.</p>
 <p><span class="math display">\[X_1^*=\{X_{11}^*, X_{21}^*, X_{31}^*, \ldots, X_{n1}^* \}\]</span></p>
-<p>Estos <span class="math inline">\(X_{i1}^*\)</span> para los <span class="math inline">\(i=1,\ldots,n\)</span> son variables aleatorias. Por
-lo tanto <span class="math inline">\(X_1^*\)</span> es un vector aleatorio de tamaño <span class="math inline">\(n\)</span>.</p>
-<p>De ahora en adelante vamos a trabajar con un solo vector aleatorio
-denominado <span class="math inline">\(X\)</span>, de tal forma que este sea la colección de <span class="math inline">\(n\)</span> variables
-aleatorias.</p>
+<p>Estos <span class="math inline">\(X_{i1}^*\)</span> para los <span class="math inline">\(i=1,\ldots,n\)</span> son variables aleatorias. Por lo tanto <span class="math inline">\(X_1^*\)</span> es un vector aleatorio de tamaño <span class="math inline">\(n\)</span>.</p>
+<p>De ahora en adelante vamos a trabajar con un solo vector aleatorio denominado <span class="math inline">\(X\)</span>, de tal forma que este sea la colección de <span class="math inline">\(n\)</span> variables aleatorias.</p>
 <p><span class="math display">\[X=\{X_1,X_2,\ldots,X_n \}\]</span></p>
 <blockquote>
 <p>Definición.</p>
 </blockquote>
-<p>La colección del vector aleatorio <span class="math inline">\(X=\{X_1,X_2,\ldots,X_n \}\)</span>, son
-independientes e idénticamente distribuidas (iid) si la distribución
-conjunta de las <span class="math inline">\(n\)</span> variables puede ser escrita como
-<span class="math inline">\(f(x_1,x_2,\ldots,x_n)=f(x_1)*f(x_2)*\ldots*f(x_n)\)</span> y además todas las
-<span class="math inline">\(x_i\)</span> tienen la misma función de distribución <span class="math inline">\(F(x)\)</span>.</p>
+<p>La colección del vector aleatorio <span class="math inline">\(X=\{X_1,X_2,\ldots,X_n \}\)</span>, son independientes e idénticamente distribuidas (iid) si la distribución conjunta de las <span class="math inline">\(n\)</span> variables puede ser escrita como:</p>
+<p><span class="math display">\[f(x_1,x_2,\ldots,x_n)=f(x_1)*f(x_2)*\ldots*f(x_n)\]</span></p>
+<p>y además todas las <span class="math inline">\(x_i\)</span> tienen la misma función de distribución <span class="math inline">\(F(x)\)</span>.</p>
 <blockquote>
 <p>Definición</p>
 </blockquote>
-<p>Sea <span class="math inline">\(N\)</span> el tamaño de la población y <span class="math inline">\(n\)</span> el tamaño de la muestra, ambos
-valores para fines de este capítulo son fijas o constantes.</p>
+<p>Sea <span class="math inline">\(N\)</span> el tamaño de la población y <span class="math inline">\(n\)</span> el tamaño de la muestra, ambos valores para fines de este capítulo son constantes.</p>
 </div>
 <div id="parámetros-estadísticas-y-estimadores." class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Parámetros, estadísticas y estimadores.</h2>
-<p>El objetivo de la estadística es aprender acerca de las características
-de una población. Estas características las vamos a llamar <em>parámetros</em>.</p>
+<p>El objetivo de la estadística es aprender acerca de las características de una población. Estas características las vamos a llamar <em>parámetros</em>.</p>
 <blockquote>
 <p>Definición,</p>
 </blockquote>
-<p>Un parámetro <span class="math inline">\(\theta\)</span> es una función sobre la población <span class="math inline">\(U\)</span>.</p>
-<p><span class="math display">\[\theta=f(U,X,Y,Z,\ldots)\]</span> Nota: Los parámetros de una población son
-constantes.</p>
-<p>Ejemplo, sea el universo los 10 primeros números naturales y sus
-valores. <span class="math inline">\(Y=\{1,2,3,4,5,6,7,8,9,10\}\)</span>. Sobre estos valores de esta
-población de <span class="math inline">\(N=10\)</span> se pueden calcular los siguientes parámetros.</p>
+<p>Un parámetro <span class="math inline">\(\theta\)</span> es una <strong>función</strong> sobre la población <span class="math inline">\(U\)</span>.</p>
+<p><span class="math display">\[\theta=f(U,X,Y,Z,\ldots)\]</span></p>
+<p>Nota: Los parámetros de una población son constantes.</p>
+<p>Los parámetros más usuales son, el total, la media, la proporción, la varianza, las razones.</p>
+<blockquote>
+<p>Ejemplo,</p>
+</blockquote>
+<p>Sea el universo los 10 primeros números naturales y sus valores. <span class="math inline">\(Y=\{1,2,3,4,5,6,7,8,9,10\}\)</span>. Sobre estos valores de esta población de <span class="math inline">\(N=10\)</span> se pueden calcular los siguientes parámetros.</p>
 <ul>
 <li>Total</li>
 </ul>
@@ -391,17 +391,16 @@ población de <span class="math inline">\(N=10\)</span> se pueden calcular los s
 </ul>
 <p><span class="math display">\[\theta_2=\mu_y=\frac{t_y}{N}=\frac{55}{10}=5.5\]</span></p>
 <ul>
-<li>Máximo: <span class="math inline">\(\theta_3=max(y)=10\)</span></li>
-<li>Mínimo: <span class="math inline">\(\theta_4=min(y)=1\)</span></li>
+<li><p>Máximo: <span class="math inline">\(\theta_3=max(y)=10\)</span></p></li>
+<li><p>Mínimo: <span class="math inline">\(\theta_4=min(y)=1\)</span></p></li>
+<li><p>Proporción</p></li>
 </ul>
-<p>Es posibles hacer transformaciones sobre <span class="math inline">\(Y\)</span>, sea <span class="math inline">\(Z\)</span> una variables
-binaria que identifique a los números primos de <span class="math inline">\(Y\)</span>; <span class="math inline">\(1=primo\)</span>,
-<span class="math inline">\(0=\sim primo\)</span></p>
+<p><span class="math display">\[P_{pares}=\frac{5}{10}=0.5\]</span></p>
+<p>Es posibles hacer transformaciones sobre <span class="math inline">\(Y\)</span>, sea <span class="math inline">\(Z\)</span> una variables binaria que identifique a los números primos de <span class="math inline">\(Y\)</span>; <span class="math inline">\(1=primo\)</span>, <span class="math inline">\(0=\sim primo\)</span></p>
 <p><span class="math display">\[Z=\{1,1,1,0,1,0,1,0,0,0 \}\]</span></p>
 <p>Calcular el promedio de <span class="math inline">\(Z\)</span></p>
 <p><span class="math display">\[\theta_5=\mu_z=\frac{5}{10}=0.5\]</span></p>
-<p>Cuando obtenemos la media de un vector binario, obtenemos lo que se
-denomina un proporción</p>
+<p>Cuando obtenemos la media de un vector binario, obtenemos lo que se denomina un proporción.</p>
 <p><span class="math display">\[\theta_5=P_a=\frac{\#A}{N}\]</span></p>
 <p><span class="math display">\[\theta_5=P_{primos}=\frac{\#primos}{N}\]</span></p>
 <ul>
@@ -410,23 +409,21 @@ de tamaño <span class="math inline">\(N_1\)</span> y <span class="math inline">
 </ul>
 <p><span class="math display">\[\theta_6=\mu_1-\mu_2\]</span></p>
 <ul>
-<li>Diferencias de proporciones: asume que tenemos a 2 poblaciones de
-interés, de tamaño <span class="math inline">\(N_1\)</span> y <span class="math inline">\(N_2\)</span></li>
+<li>Diferencias de proporciones: asume que tenemos a 2 poblaciones de interés, de tamaño <span class="math inline">\(N_1\)</span> y <span class="math inline">\(N_2\)</span></li>
 </ul>
 <p><span class="math display">\[\theta_7=P_1-P_2\]</span></p>
 <blockquote>
 <p>Definición, estadística</p>
 </blockquote>
-<p>Se denomina estadística a una función sobre la muestra</p>
+<p>Se denomina <strong>estadística</strong> a una <strong>función</strong> sobre la muestra.</p>
 <blockquote>
 <p>Definición, estimador</p>
 </blockquote>
+<p><span class="math display">\[Aleatorio\quad:f(s,X)=\hat{\theta} \rightarrow \theta=f(U,X): \quad fijo\]</span></p>
 <p>Un estimador <span class="math inline">\(\hat{\theta}\)</span> para el parámetro <span class="math inline">\(\theta\)</span> es una
 <strong>estadística</strong> que busca aproximar/adivinar el valor de <span class="math inline">\(\theta\)</span></p>
-<p>Ejemplo, para la variable <span class="math inline">\(Y=\{1,2,3,4,5,6,7,8,9,10\}\)</span>, imaginar que se
-selecciona un muestra de tamaño <span class="math inline">\(n=4\)</span> s/rep.</p>
-<p>La cantidad de muestras posibles es de 210, supongamos que realizamos 2
-procesos de selección para la muestra y obtenemos:</p>
+<p>Ejemplo, para la variable <span class="math inline">\(Y=\{1,2,3,4,5,6,7,8,9,10\}\)</span>, imaginar que se selecciona un muestra de tamaño <span class="math inline">\(n=4\)</span> s/rep.</p>
+<p>La cantidad de muestras posibles es de 210, supongamos que realizamos 2 procesos de selección para la muestra y obtenemos:</p>
 <ul>
 <li><span class="math inline">\(s_1=\{8, 1, 3, 7\}\)</span></li>
 <li><span class="math inline">\(s_2=\{8, 2, 6, 5\}\)</span></li>
@@ -487,22 +484,26 @@ para ambos mecanismos:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tema-2-distribuciones-muestrales.html#cb15-1" aria-hidden="true" tabindex="-1"></a>Y<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">3000</span>,<span class="dv">3500</span>,<span class="dv">0</span>,<span class="dv">6000</span>,<span class="dv">4500</span>)</span>
 <span id="cb15-2"><a href="tema-2-distribuciones-muestrales.html#cb15-2" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(Y,<span class="dv">3</span>)</span>
 <span id="cb15-3"><a href="tema-2-distribuciones-muestrales.html#cb15-3" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-## [1,] 2000 2000 2000 2000 2000 2000 2000
-## [2,] 3000 3000 3000 3000 3500 3500 3500
-## [3,] 3500    0 6000 4500    0 6000 4500
-##      [,8] [,9] [,10] [,11] [,12] [,13]
-## [1,] 2000 2000  2000  3000  3000  3000
-## [2,]    0    0  6000  3500  3500  3500
-## [3,] 6000 4500  4500     0  6000  4500
-##      [,14] [,15] [,16] [,17] [,18] [,19]
-## [1,]  3000  3000  3000  3500  3500  3500
-## [2,]     0     0  6000     0     0  6000
-## [3,]  6000  4500  4500  6000  4500  4500
-##      [,20]
-## [1,]     0
-## [2,]  6000
-## [3,]  4500</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,] 2000 2000 2000 2000 2000
+## [2,] 3000 3000 3000 3000 3500
+## [3,] 3500    0 6000 4500    0
+##      [,6] [,7] [,8] [,9] [,10]
+## [1,] 2000 2000 2000 2000  2000
+## [2,] 3500 3500    0    0  6000
+## [3,] 6000 4500 6000 4500  4500
+##      [,11] [,12] [,13] [,14]
+## [1,]  3000  3000  3000  3000
+## [2,]  3500  3500  3500     0
+## [3,]     0  6000  4500  6000
+##      [,15] [,16] [,17] [,18]
+## [1,]  3000  3000  3500  3500
+## [2,]     0  6000     0     0
+## [3,]  4500  4500  6000  4500
+##      [,19] [,20]
+## [1,]  3500     0
+## [2,]  6000  6000
+## [3,]  4500  4500</code></pre>
 <p>Para el estimador de la media;</p>
 <p>Tomar en cuenta que el valor del parámetro de la media poblacional es:
 <span class="math inline">\(\mu_y=\sum_U y_i /N=3166.667\)</span></p>
@@ -10653,7 +10654,7 @@ los siguientes resultados:</p>
 <span id="cb31-2"><a href="tema-2-distribuciones-muestrales.html#cb31-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(N,<span class="dv">18</span>,<span class="dv">60</span>))</span>
 <span id="cb31-3"><a href="tema-2-distribuciones-muestrales.html#cb31-3" aria-hidden="true" tabindex="-1"></a>a<span class="ot">&lt;-</span>(x<span class="sc">&gt;</span><span class="dv">30</span>)<span class="sc">*</span><span class="dv">1</span></span>
 <span id="cb31-4"><a href="tema-2-distribuciones-muestrales.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(a)<span class="co">#P_A</span></span></code></pre></div>
-<pre><code>## [1] 0.70362</code></pre>
+<pre><code>## [1] 0.70148</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tema-2-distribuciones-muestrales.html#cb33-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">100</span></span>
 <span id="cb33-2"><a href="tema-2-distribuciones-muestrales.html#cb33-2" aria-hidden="true" tabindex="-1"></a>r<span class="ot">&lt;-</span><span class="dv">10000</span></span>
 <span id="cb33-3"><a href="tema-2-distribuciones-muestrales.html#cb33-3" aria-hidden="true" tabindex="-1"></a>pa<span class="ot">&lt;-</span><span class="cn">NULL</span></span>
@@ -10718,14 +10719,14 @@ media, promedio de <span class="math inline">\(X\)</span>, la otra medida puede 
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tema-2-distribuciones-muestrales.html#cb34-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
 <span id="cb34-2"><a href="tema-2-distribuciones-muestrales.html#cb34-2" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(x,<span class="dv">3</span>)</span>
 <span id="cb34-3"><a href="tema-2-distribuciones-muestrales.html#cb34-3" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-## [1,]   10   10   10   10   10   10   15
-## [2,]   15   15   15   20   20   20   20
-## [3,]   20   20   35   20   35   35   20
-##      [,8] [,9] [,10]
-## [1,]   15   15    20
-## [2,]   20   20    20
-## [3,]   35   35    35</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]   10   10   10   10   10
+## [2,]   15   15   15   20   20
+## [3,]   20   20   35   20   35
+##      [,6] [,7] [,8] [,9] [,10]
+## [1,]   10   15   15   15    20
+## [2,]   20   20   20   20    20
+## [3,]   35   20   35   35    35</code></pre>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="tema-2-distribuciones-muestrales.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la media</span></span>
 <span id="cb36-2"><a href="tema-2-distribuciones-muestrales.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(s, <span class="dv">2</span>, mean)) </span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
@@ -10736,14 +10737,14 @@ media, promedio de <span class="math inline">\(X\)</span>, la otra medida puede 
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="tema-2-distribuciones-muestrales.html#cb38-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
 <span id="cb38-2"><a href="tema-2-distribuciones-muestrales.html#cb38-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">3</span>;N<span class="ot">&lt;-</span><span class="dv">5</span></span>
 <span id="cb38-3"><a href="tema-2-distribuciones-muestrales.html#cb38-3" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-## [1,]   10   10   10   10   10   10   15
-## [2,]   15   15   15   20   20   20   20
-## [3,]   20   20   35   20   35   35   20
-##      [,8] [,9] [,10]
-## [1,]   15   15    20
-## [2,]   20   20    20
-## [3,]   35   35    35</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]   10   10   10   10   10
+## [2,]   15   15   15   20   20
+## [3,]   20   20   35   20   35
+##      [,6] [,7] [,8] [,9] [,10]
+## [1,]   10   15   15   15    20
+## [2,]   20   20   20   20    20
+## [3,]   35   20   35   35    35</code></pre>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tema-2-distribuciones-muestrales.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x)<span class="sc">*</span>((N<span class="dv">-1</span>)<span class="sc">/</span>N)</span></code></pre></div>
 <pre><code>## [1] 70</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="tema-2-distribuciones-muestrales.html#cb42-1" aria-hidden="true" tabindex="-1"></a>theta1<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,var)<span class="sc">*</span>((n<span class="dv">-1</span>)<span class="sc">/</span>n)</span>

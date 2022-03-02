@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-02-21" />
+<meta name="date" content="2022-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -719,14 +719,50 @@ finalmente:</p>
 \end{array}
 \right|
 \]</span></p>
+<blockquote>
+<p>Ejemplo,</p>
+</blockquote>
+<p>Suponer que tenemos una función de densidad conjunto <span class="math inline">\(f(x,y)\)</span>, ahora estamos interesados en encontrar la función de densidad de la variable z, definida como:</p>
+<p><span class="math display">\[Z=X+Y=H_1(X,Y)\]</span>
+<span class="math display">\[Z=XY=H_1(X,Y)\]</span></p>
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+<p>Sea la función de densidad conjunta definida como:</p>
+<p><span class="math display">\[f(x,y)=4 e^{-2(x+y)} \quad x&gt;0 \quad y&gt;0\]</span></p>
+<p>Encontrar la función de densidad de la variable <span class="math inline">\(Z=X+Y\)</span></p>
+<p><span class="math display">\[Z=X+Y=H_1(X,Y); \quad W=Y=H_2(X,Y)\]</span>
+<span class="math display">\[X=Z-W=G_1(Z,W) \quad Y=W=G_2(Z,W)\]</span></p>
+<p><span class="math display">\[J(Z,W)=\left|
+\begin{array}
+&amp; \frac{\partial X }{\partial Z} &amp; \frac{\partial X }{\partial W} \\
+\frac{\partial Y }{\partial Z} &amp; \frac{\partial Y }{\partial W}
+\end{array}
+\right|=\left|
+\begin{array}
+&amp; 1 &amp; -1 \\
+0 &amp; 1 
+\end{array}
+\right|=1
+\]</span></p>
+<p><span class="math display">\[l(z,w)=4 e^{-2(z-w+w)}|1|=4e^{-2z}; z&gt;0,w&gt;0\]</span></p>
+<p><span class="math display">\[l(z)=\int_0^\infty 4e^{-2z}dw=4e^{-2z} w/_0^\infty=\]</span></p>
+<p>Se debe volver a plantear una nueva forma de <span class="math inline">\(W\)</span></p>
+<p>Tarea</p>
+<ul>
+<li>Encontrar una W para el ejercicio anterior, que permita encontrar la función de densidad de <span class="math inline">\(Z\)</span> (Recomendación <span class="math inline">\(W=X/Y\)</span>)</li>
+<li>Sea <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> variables aleatorias independientes, cada una con la misma distribución exponencial. Encuentre la función de densidad de <span class="math inline">\(Z=X/Y\)</span>, Recomendación <span class="math inline">\(W=X+Y\)</span></li>
+</ul>
 </div>
 <div id="distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="section level2" number="1.11">
 <h2><span class="header-section-number">1.11</span> Distrubuciones conjuntas de más de 2 variables aleatorias</h2>
 <p>Estamos introduciendo ahora <span class="math inline">\(n\)</span> variables aleatorias, que se puede denotar por vector</p>
 <p><span class="math display">\[\left[X_1,X_2,\ldots,X_n \right]\]</span></p>
 <p>Se puede definir su función de densidad conjunta:</p>
-<p><span class="math display">\[f(X_1,X_2,\ldots,X_n)=\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1\]</span>
-<span class="math display">\[f(X_1,X_2,\ldots,X_n)\geq 0\]</span></p>
+<p><span class="math display">\[f(X_1,X_2,\ldots,X_n)\]</span>
+Evidentemente esta función cumple con:</p>
+<p><span class="math display">\[\int_{Rx_1}\int_{Rx_2}\ldots \int_{Rx_n}f(X_1,X_2,\ldots,X_n)dx_n\ldots dx_2dx_1=1\]</span></p>
+<p><span class="math display">\[f(X_1,X_2,\ldots,X_n)\geq 0\]</span></p>
 <p>Las marginales de cada variables se obtienen integrando la función de densidad sobre todas las variables aleatorias excepto la variable de interés.</p>
 <p><span class="math display">\[f(x_i)=\int \ldots\int_{Rx_{j\neq i}} f(X_1,X_2,\ldots,X_n)dx\ldots dx_{j \neq i}\]</span>
 Notar también que si las <span class="math inline">\(n\)</span> variables aleatorias son independientes entre ellas:</p>
