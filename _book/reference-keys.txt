@@ -15,6 +15,9 @@ tema-2-distribuciones-muestrales
 muestras-y-población
 parámetros-estadísticas-y-estimadores.
 distribución-muestral
+propiedades-de-los-estimadores
+estimador-insesgado
+estimador-eficiente
 distribución-muestral-para-la-media
 teorema-del-límite-central
 distribución-muestral-para-la-diferencia-de-medias
@@ -28,8 +31,8 @@ ejercicios
 estimaciones-de-una-y-dos-muestrales
 inferencia-estadística
 estimadores-puntuales
-estimador-insesgado
-estimador-eficiente
+estimador-insesgado-1
+estimador-eficiente-1
 error-cuadrático-medio-ecm
 cota-de-cramer-rao
 método-de-maxima-verosimilitud

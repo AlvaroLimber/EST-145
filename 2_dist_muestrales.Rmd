@@ -168,80 +168,104 @@ $$Aleatorio\quad:f(s,X)=\hat{\theta} \rightarrow \theta=f(U,X): \quad fijo$$
 Un estimador $\hat{\theta}$ para el parámetro $\theta$ es una
 **estadística** que busca aproximar/adivinar el valor de $\theta$
 
-Ejemplo, para la variable $Y=\{1,2,3,4,5,6,7,8,9,10\}$, imaginar que se selecciona un muestra de tamaño $n=4$ s/rep.
+> Ejemplo 
 
-La cantidad de muestras posibles es de 210, supongamos que realizamos 2 procesos de selección para la muestra y obtenemos:
+Imaginemos una población de 10 estudiantes sobre la cuales nos interesa conocer el gasto diario en pasajes a la universidad (pasaje ida y vuelta desde su casa al monoblock), para ello se planea tomar una muestra de 3 estudiantes. 
 
--   $s_1=\{8, 1, 3, 7\}$
--   $s_2=\{8, 2, 6, 5\}$
+El objetivo de este estudio es conocer el gasto total de estos 10 estudiantes.
 
-Sabemos que el parámetro del total de $Y$ es $t_y=55$, ¿Qué? función se
-puede aplicar sobre la muestra para postular a un estimador que se
-aproxime a $t_y$ sobre las 2 muestras seleccionadas
+Sea $y_i$ la variable gasto es pasajes del estudiante $i$. 
 
-$$\hat{\theta}_1=\hat{t}_y=\frac{(\sum_s y_i)^2}{7}$$
-$$\hat{\theta}_2=n*\sum_s y_i-25$$
+$$\theta=t_y=\sum_U y_i=\sum_{i=1}^{10} y_i$$
 
-$$\hat{\theta}_3=\frac{N \sum_s y_i}{n}=N*\bar{y}$$
-$$\hat{\theta}_4=\hat{t}_y=\sum_s y_i$$
+```{r}
+N<-10
+y<-c(5.2,6,8,10,3,4,7,4,4,10.5)
+ty<-sum(y)#parámetro
+```
 
-Para $s_1$ el valor del estimador es de $\hat{t}_{y,s1}=19$,
-$\hat{t}_{y,s2}=21$, los valores evaluados sobre una muestra y un
-estimador se conoce como estimación
+Ahora vamos a obtener una muestra de tamaño 3 de esta población. (s/rep)
 
-$$\hat{\theta}_5=\hat{t}_y=\prod_s y_i$$
+```{r}
+n<-3
+choose(10,3)#muestra posibles
+set.seed(1439)#semilla
+ys<-sample(y,n)
+ys
+```
 
-Las estimaciones con el estimador propuesto
-$\hat{t}_{y,s1}=8*1*3*7=168$, $\hat{t}_{y,s1}=480$
+$$\hat{\theta}_1=\hat{t}_y=\frac{\prod_s y_i}{n}=54.6$$
 
-$$\hat{\theta}_6=\frac{\prod_s y_i}{3}$$
+$$\hat{\theta}_2=N*\frac{\sum_s y_i}{n}=62.3$$
 
-$\hat{t}_{y,s1}=56$, $\hat{t}_{y,s2}=160$
+$$\hat{\theta}_3=y_{min}+\prod_{s(-y_{min})}y_i=57.6$$
 
-$$\hat{\theta}_7=\frac{\sum_{s}y_i^2}{2}$$
+$$\hat{\theta}_4=n\sum_s y_i=56.1$$
 
-$\hat{t}_{y,s1}=61.5$, $\hat{t}_{y,s2}=64.5$
+> Nota, el estimador hace referencia a la función matemática, mientras que una estimación es una evaluación de esa función matemática usando la muestra seleccionada.
 
-$$\hat{\theta}_8=N* \bar{x}_{me}$$
+```{r}
+s<-combn(y,n)#muestras posibles
+#theta1
+et1<-apply(s,2,prod)/n
+#theta2
+et2<-N*apply(s, 2,mean)
+#theta4
+et4<-n*apply(s, 2,sum)
+
+par(mfrow=c(2,2))
+plot(density(et1),"theta1",xlim=c(0,150))
+abline(v=ty,col="red")
+
+plot(density(et2),"theta2",xlim=c(0,150))
+abline(v=ty,col="red")
+
+plot(density(et4),"theta4",xlim=c(0,150))
+abline(v=ty,col="red")
+
+dev.off()
+e1<-sum(et1*(1/120))
+e2<-sum(et2*(1/120))
+e4<-sum(et4*(1/120))
+
+sum(((et1-e1)^2)*(1/120))
+sum(((et2-e2)^2)*(1/120))
+sum(((et4-e4)^2)*(1/120))
+```
+
+$$E[X]=\sum_{Rx}x*P(X=x)$$
+
+$$E[\hat{\theta}]=\theta$$
 
 ## Distribución muestral
 
-Recordar que una estadística es una función sobre la muestra y sobre los
-valores que toman las variables aleatorias vinculadas a esta. Como la
-estadística es una función sobre las muestras aleatorias (muestras
-posibles) las evaluaciones que se realizan para cada una de las muestras
-posibles (estimaciones) conforman lo que vamos a denominar una
-distribución muestral.
+Recordar que una estadística es una función sobre la muestra y sobre los valores que toman las variables aleatorias vinculadas a esta. Como la estadística es una función sobre las muestras aleatorias (muestras posibles) las evaluaciones que se realizan para cada una de las muestras posibles (estimaciones) conforman lo que vamos a denominar una distribución muestral.
 
-Por ejemplo si planteamos al estimador del parámetro del total,
-recordar:
+Por ejemplo si planteamos al estimador del parámetro del total, recordar:
 
-$$\theta=t_y=\sum_U y_i$$ Un estimador para este parámetro será:
+$$\theta=t_y=\sum_U y_i$$ 
+Un estimador para este parámetro será:
 
 $$\hat{\theta}=\hat{t}_y=\frac{N}{n} \sum_s y_i$$
 
-Este $\hat{\theta}$ es una estadística sobre las muestras aleatorias,
-por lo tanto podemos decir que existe una distribución de probabilidad
-para este estimador, a esa distribución de probabilidad se conoce como
-distribución muestral.
+Este $\hat{\theta}$ es una estadística sobre las muestras aleatorias, por lo tanto podemos decir que existe una distribución de probabilidad para este estimador, a esa distribución de probabilidad se conoce como distribución muestral.
 
 Ejemplo práctico.
 
-Supongamos que de una población de 6 personas tenemos la información de
-sus ingresos mensuales. $Y_{Ingresos}=\{2000,3000,3500,0,6000,4500\}$.
+Supongamos que de una población de 6 personas tenemos la información de sus ingresos mensuales. $Y_{Ingresos}=\{2000,3000,3500,0,6000,4500\}$.
 $N=6$
 
-Supongamos que seleccionamos una muestra de tamaño $n=3$ de esta
-población, para ambos mecanismos de selección (s/rep, c/rep), se pide
+Supongamos que seleccionamos una muestra de tamaño $n=3$ de esta población, para ambos mecanismos de selección (s/rep, c/rep), se pide
 para ambos mecanismos:
 
--   Conocer la cantidad de muestras posibles y mostrar estas.
--   Para el estimador
+  - Conocer la cantidad de muestras posibles y mostrar estas.
+  - Para el estimador
 
 $$\hat{\bar{Y}}=\frac{1}{n}\sum_s y_i$$
 
-construir su distribución muestral y calcular su esperanza y su varianza
-\* Para el estimador;
+construir su distribución muestral y calcular su esperanza y su varianza 
+
+Para el estimador;
 
 $$\hat{t}_y=\frac{N}{n}\sum_s y_i$$
 
@@ -260,6 +284,7 @@ s
 Para el estimador de la media;
 
 Tomar en cuenta que el valor del parámetro de la media poblacional es:
+
 $\mu_y=\sum_U y_i /N=3166.667$
 
 ```{r}
@@ -275,16 +300,13 @@ $$E[\hat{\theta}]=\sum_{Rs} \hat{\theta_s} P(\hat{\theta}=\hat{\theta_s})$$
 
 $$V(\hat{\theta})=E[(\hat{\theta}-E[\hat{\theta}])^2]=\sum_{s}(\hat{\theta_s}-E[\hat{\theta}])^2*P(\hat{\theta}=\hat{\theta})$$
 
-Nota, Si $E[\hat{\theta}]=\theta$ decimos que el estimador
-$\hat{\theta}$ es un estimador insesgado (sin **sesgo**)
+Nota, Si $E[\hat{\theta}]=\theta$ decimos que el estimador $\hat{\theta}$ es un estimador insesgado (sin **sesgo**)
 
-El estimador de la media muestral, es un estimador insesgado de la media
-poblacional.
+El estimador de la media muestral, es un estimador insesgado de la media poblacional.
 
 Para el estimador del total;
 
-Tomar en cuenta que el valor del parámetro del total poblacional es:
-$t_y=\sum_U y_i=19000$
+Tomar en cuenta que el valor del parámetro del total poblacional es: $t_y=\sum_U y_i=19000$
 
 ```{r}
 ty<-apply(s,2,sum)*(6/3) #Distribución muestral para el estimador del total
@@ -306,10 +328,23 @@ hist(y)
 abline(v=mean(Y),col="red",lwd=2)
 ```
 
+## Propiedades de los estimadores
+
+Se busca que un estimador cumpla al menos 2 de las siguientes propiedades:
+
+### Estimador insesgado
+
+$$E[\hat{\theta}]=\theta$$
+
+### Estimador eficiente
+
+$$V[\hat{\theta}_1]<V[\hat{\theta}_2]$$
+
+Se dice que $\hat{\theta}_1$ es más eficiente que $\hat{\theta}_2$ si tiene una menor varianza
+
 ## Distribución muestral para la media
 
-Recordar que para una población ($U$) con alguna variable $X$ de tipo
-cuantitativa se puede obtener el parámetro de la media, definido como:
+Recordar que para una población ($U$) con alguna variable $X$ de tipo cuantitativa se puede obtener el parámetro de la media, definido como:
 
 $$\mu_x=\frac{\sum_U x_i}{N}$$
 
