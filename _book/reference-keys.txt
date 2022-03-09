@@ -20,6 +20,7 @@ estimador-insesgado
 estimador-eficiente
 distribución-muestral-para-la-media
 teorema-del-límite-central
+simulación-del-teorema-del-límite-central
 distribución-muestral-para-la-diferencia-de-medias
 distribución-muestral-para-la-proporción
 distribución-muestral-para-la-varianza
