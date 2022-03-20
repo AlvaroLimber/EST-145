@@ -453,6 +453,21 @@ plot(density(xbar),col="blue",lwd=2)
 points(density(rnorm(10^6,mean(x),sqrt(var(x)*((n-1)/n))/sqrt(n))),type="l",col="red",lwd=2)
 ```
 
+> Ejemplo,
+
+Se tiene una muestra de 50 personas de una población, sobre la cual se mide su estatura en centímetros, se calculó la media muestral de 167.6 cm. Suponiendo un varianza poblacional de 44. Calcular la probabilidad que el estimador de la media sea mayor a 170 cm. 
+
+Solución. 
+
+Se pide:
+
+$$P(\bar{X}>170)$$
+Por el teorema del limite central ya que $n=50$
+
+$$\bar{X}\sim N(\hat{\mu}_{\bar{x}}=167.6,\sigma_{\bar{x}}=\sqrt{\frac{44}{50}})=N(167.6,0.94)$$
+$$P(\bar{X}>170)=P(Z>2.55)=1-P(Z\leq2.55)=1-\phi(2.55)=$$
+$$=1-0.9946139=0.005486$$
+
 ## Distribución muestral para la diferencia de medias
 
 Sean dos poblaciones $U_1$ y $U_2$ independientes con medias y varianzas respectivamente: $\mu_{x_1}$ y $\mu_{x_2}$, $\sigma^2_{x_1}$ y $\sigma^2_{x_2}$.
@@ -472,6 +487,20 @@ $$V(\bar{X_1}-\bar{X_2})=V(\bar{X_1})+V(\bar{X_2})=\frac{\sigma^2_{x_1}}{n_1}+\f
 Por el teorema del limite central con $n\geq30$:
 
 $$\bar{X_1}-\bar{X_2}\sim N\left(\mu_{x_1}-\mu_{x_2},\frac{\sigma^2_{x_1}}{n_1}+\frac{\sigma^2_{x_2}}{n_2}\right)$$
+
+> Ejercicio de clase.
+
+Se tienen 2 paralelos de la materia de estadística 2, se obtuvo una muestra de ambos paralelos tal que $n_1=40$, $n_2=25$, las medias muestrales de las notas sobre un examen similar fueron de 15.9 y 17.1, suponer que la varianza poblacional es igual en ambos paralelos y es de 27. Calcular la probabilidad que el rendimiento de ambos paralelos sea el mismo.
+
+Solución, por el teorema del limite central
+
+$$\bar{X_1}-\bar{X_2}\sim N\left(15.9-17.1,\frac{27}{40}+\frac{27}{25}\right)=N(-1.2,\sigma=1.32)$$
+
+$$P(\bar{X_1}-\bar{X_2}=0)=0$$
+
+$$P(|\bar{X_1}-\bar{X_2}|< \epsilon)=P(|\bar{X_1}-\bar{X_2}|< 0.5)=P(-0.5<\bar{X_1}-\bar{X_2}<0.5)=$$
+$$=P(-1.29<\bar{X_1}-\bar{X_2}<-0.53)=\phi(-0.53)-\phi(-1.29)=$$
+$$=0.2980-0.0985=0.199$$
 
 ## Distribución muestral para la proporción
 
