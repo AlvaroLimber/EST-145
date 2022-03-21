@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Estimaciones de una y dos muestrales | Estadística II</title>
   <meta name="description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Estimaciones de una y dos muestrales | Estadística II" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
   <meta name="github-repo" content="alvarolimber/EST-145" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-03-09" />
+<meta name="date" content="2022-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="tema-2-distribuciones-muestrales.html"/>
 <link rel="next" href="prueba-de-hipótesis.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -155,105 +154,105 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<li><a href="index.html#prefacio">Prefacio<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#bases-de-datos"><i class="fa fa-check"></i>Bases de datos</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimiento"><i class="fa fa-check"></i>Agradecimiento</a></li>
+<li><a href="index.html#audiencia">Audiencia<span></span></a></li>
+<li><a href="index.html#estructura-del-libro">Estructura del libro<span></span></a></li>
+<li><a href="index.html#software-y-acuerdos">Software y acuerdos<span></span></a></li>
+<li><a href="index.html#bases-de-datos">Bases de datos<span></span></a></li>
+<li><a href="index.html#agradecimiento">Agradecimiento<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html"><i class="fa fa-check"></i><b>1</b> Distribuciones conjuntas de probabilidad</a>
+<li class="chapter" data-level="1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html"><i class="fa fa-check"></i><b>1</b> Distribuciones conjuntas de probabilidad<span></span></a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes</a></li>
-<li class="chapter" data-level="1.2" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada</a></li>
-<li class="chapter" data-level="1.3" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)</a></li>
-<li class="chapter" data-level="1.4" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal</a></li>
-<li class="chapter" data-level="1.5" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia</a></li>
-<li class="chapter" data-level="1.6" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados</a></li>
-<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
-<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.8</b> Esperanza condicional</a></li>
-<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.9</b> Medidas de relación entre dos variables</a>
+<li class="chapter" data-level="1.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)<span></span></a></li>
+<li class="chapter" data-level="1.4" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal<span></span></a></li>
+<li class="chapter" data-level="1.5" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia<span></span></a></li>
+<li class="chapter" data-level="1.6" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados<span></span></a></li>
+<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales<span></span></a></li>
+<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.8</b> Esperanza condicional<span></span></a></li>
+<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.9</b> Medidas de relación entre dos variables<span></span></a>
 <ul>
-<li class="chapter" data-level="1.9.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#ejercicio-por-1-punto."><i class="fa fa-check"></i><b>1.9.1</b> Ejercicio por 1 punto.</a></li>
+<li class="chapter" data-level="1.9.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#ejercicio-por-1-punto."><i class="fa fa-check"></i><b>1.9.1</b> Ejercicio por 1 punto.<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.10</b> Transformaciones</a></li>
-<li class="chapter" data-level="1.11" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.11</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
+<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.10</b> Transformaciones<span></span></a></li>
+<li class="chapter" data-level="1.11" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.11</b> Distrubuciones conjuntas de más de 2 variables aleatorias<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
+<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales<span></span></a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
-<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
-<li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral</a></li>
-<li class="chapter" data-level="2.4" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#propiedades-de-los-estimadores"><i class="fa fa-check"></i><b>2.4</b> Propiedades de los estimadores</a>
+<li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#propiedades-de-los-estimadores"><i class="fa fa-check"></i><b>2.4</b> Propiedades de los estimadores<span></span></a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>2.4.1</b> Estimador insesgado</a></li>
-<li class="chapter" data-level="2.4.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>2.4.2</b> Estimador eficiente</a></li>
+<li class="chapter" data-level="2.4.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>2.4.1</b> Estimador insesgado<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>2.4.2</b> Estimador eficiente<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-media"><i class="fa fa-check"></i><b>2.5</b> Distribución muestral para la media</a></li>
-<li class="chapter" data-level="2.6" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6</b> Teorema del límite central</a>
+<li class="chapter" data-level="2.5" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-media"><i class="fa fa-check"></i><b>2.5</b> Distribución muestral para la media<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6</b> Teorema del límite central<span></span></a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#simulación-del-teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6.1</b> Simulación del teorema del límite central</a></li>
+<li class="chapter" data-level="2.6.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#simulación-del-teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6.1</b> Simulación del teorema del límite central<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-diferencia-de-medias"><i class="fa fa-check"></i><b>2.7</b> Distribución muestral para la diferencia de medias</a></li>
-<li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-proporción"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la proporción</a></li>
-<li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.9</b> Distribución muestral para la varianza</a></li>
-<li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.10</b> Distribución <span class="math inline">\(\chi^2\)</span></a></li>
-<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.11</b> Distribución t-student</a></li>
-<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.12</b> Distribución Fisher</a>
+<li class="chapter" data-level="2.7" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-diferencia-de-medias"><i class="fa fa-check"></i><b>2.7</b> Distribución muestral para la diferencia de medias<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-proporción"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la proporción<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.9</b> Distribución muestral para la varianza<span></span></a></li>
+<li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.10</b> Distribución <span class="math inline">\(\chi^2\)</span><span></span></a></li>
+<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.11</b> Distribución t-student<span></span></a></li>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.12</b> Distribución Fisher<span></span></a>
 <ul>
-<li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.12.1</b> Para las varianzas muestrales</a></li>
+<li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.12.1</b> Para las varianzas muestrales<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.13" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios</a></li>
+<li class="chapter" data-level="2.13" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
-<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a>
+<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales<span></span></a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado-1"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
-<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente-1"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
-<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
-<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao</a></li>
-<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud</a></li>
-<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos</a></li>
+<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado-1"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente-1"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente<span></span></a></li>
+<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)<span></span></a></li>
+<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao<span></span></a></li>
+<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud<span></span></a></li>
+<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza</a>
+<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza<span></span></a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
-<li class="chapter" data-level="3.3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza"><i class="fa fa-check"></i><b>3.3.2</b> Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza</a></li>
-<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30."><i class="fa fa-check"></i><b>3.3.3</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.</a></li>
-<li class="chapter" data-level="3.3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30."><i class="fa fa-check"></i><b>3.3.4</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.</a></li>
-<li class="chapter" data-level="3.3.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados"><i class="fa fa-check"></i><b>3.3.5</b> Intervalos de confianza para la diferencia de medias de datos pareados</a></li>
-<li class="chapter" data-level="3.3.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones"><i class="fa fa-check"></i><b>3.3.6</b> Intervalo de confianza para proporciones</a></li>
-<li class="chapter" data-level="3.3.7" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.3.7</b> Intervalo de confianza para diferencia de proporciones</a></li>
-<li class="chapter" data-level="3.3.8" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza"><i class="fa fa-check"></i><b>3.3.8</b> Intervalo de confianza para la varianza</a></li>
-<li class="chapter" data-level="3.3.9" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas"><i class="fa fa-check"></i><b>3.3.9</b> Intervalo de confianza para el cociente de varianzas</a></li>
+<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza"><i class="fa fa-check"></i><b>3.3.2</b> Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30."><i class="fa fa-check"></i><b>3.3.3</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.<span></span></a></li>
+<li class="chapter" data-level="3.3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30."><i class="fa fa-check"></i><b>3.3.4</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.<span></span></a></li>
+<li class="chapter" data-level="3.3.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados"><i class="fa fa-check"></i><b>3.3.5</b> Intervalos de confianza para la diferencia de medias de datos pareados<span></span></a></li>
+<li class="chapter" data-level="3.3.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones"><i class="fa fa-check"></i><b>3.3.6</b> Intervalo de confianza para proporciones<span></span></a></li>
+<li class="chapter" data-level="3.3.7" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.3.7</b> Intervalo de confianza para diferencia de proporciones<span></span></a></li>
+<li class="chapter" data-level="3.3.8" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza"><i class="fa fa-check"></i><b>3.3.8</b> Intervalo de confianza para la varianza<span></span></a></li>
+<li class="chapter" data-level="3.3.9" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas"><i class="fa fa-check"></i><b>3.3.9</b> Intervalo de confianza para el cociente de varianzas<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
+<li class="chapter" data-level="3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Prueba de Hipótesis</a>
+<li class="chapter" data-level="4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Prueba de Hipótesis<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a>
+<li class="chapter" data-level="4.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística</a></li>
-<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo</a></li>
-<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II</a></li>
-<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-bilaterales"><i class="fa fa-check"></i><b>4.1.4</b> Pruebas bilaterales</a></li>
-<li class="chapter" data-level="4.1.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-unilaterales"><i class="fa fa-check"></i><b>4.1.5</b> Pruebas unilaterales</a></li>
-<li class="chapter" data-level="4.1.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.6</b> Pasos para la prueba hipótesis estadística</a></li>
+<li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística<span></span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo<span></span></a></li>
+<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II<span></span></a></li>
+<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-bilaterales"><i class="fa fa-check"></i><b>4.1.4</b> Pruebas bilaterales<span></span></a></li>
+<li class="chapter" data-level="4.1.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-unilaterales"><i class="fa fa-check"></i><b>4.1.5</b> Pruebas unilaterales<span></span></a></li>
+<li class="chapter" data-level="4.1.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.6</b> Pasos para la prueba hipótesis estadística<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media</a>
+<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media<span></span></a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-conocida"><i class="fa fa-check"></i><b>4.2.1</b> Con varianza conocida</a></li>
-<li class="chapter" data-level="4.2.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-desconocida"><i class="fa fa-check"></i><b>4.2.2</b> Con varianza desconocida</a></li>
+<li class="chapter" data-level="4.2.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-conocida"><i class="fa fa-check"></i><b>4.2.1</b> Con varianza conocida<span></span></a></li>
+<li class="chapter" data-level="4.2.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-desconocida"><i class="fa fa-check"></i><b>4.2.2</b> Con varianza desconocida<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias</a></li>
-<li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción</a></li>
-<li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones</a></li>
-<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.6</b> Prueba de hipótesis sobre la varianza</a></li>
-<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la igualdad de varianzas</a></li>
-<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.8</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.6</b> Prueba de hipótesis sobre la varianza<span></span></a></li>
+<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la igualdad de varianzas<span></span></a></li>
+<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.8</b> Tamaño de muestra y su relación con el error de tipo I y tipo II<span></span></a></li>
 </ul></li>
 </ul>
 
@@ -272,10 +271,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estimaciones-de-una-y-dos-muestrales" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Estimaciones de una y dos muestrales</h1>
-<div id="inferencia-estadística" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Inferencia estadística</h2>
+<div id="estimaciones-de-una-y-dos-muestrales" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Estimaciones de una y dos muestrales<a href="estimaciones-de-una-y-dos-muestrales.html#estimaciones-de-una-y-dos-muestrales" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="inferencia-estadística" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Inferencia estadística<a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>El proceso por el cual, mediante una muestra estadísticamente
 seleccionada se busca describir a la población/universo de la cual esta
 proviene. Podemos clasificar a la inferencia estadística en:</p>
@@ -314,8 +313,8 @@ entre variables. <span class="math inline">\(X \rightarrow Y\)</span></p>
 </ul>
 <p>Tarea: Indagar a que se refiere la inferencia bayesiana.</p>
 </div>
-<div id="estimadores-puntuales" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Estimadores puntuales</h2>
+<div id="estimadores-puntuales" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Estimadores puntuales<a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Recordemos que tenemos un universo <span class="math inline">\(U\)</span> de tamaño <span class="math inline">\(N\)</span>.</p>
 <p><span class="math display">\[U=\{u_1, u_2,\ldots,u_N\}\]</span> Donde cada unidad del universo tiene
 variables (características) asociadas, pensemos en <span class="math inline">\(p\)</span> características.</p>
@@ -332,12 +331,12 @@ aleatoria (<span class="math inline">\(s\)</span>) de tamaño <span class="math 
 <p>Para un parámetro <span class="math inline">\(\theta\)</span>, pueden existir muchos estimadores
 candidatos: <span class="math inline">\(\hat{\theta}_1,\hat{\theta}_2, \hat{\theta}_3,...\)</span>, la
 pregunta es ¿Cuál es mejor?. Existen al menos dos criterios:</p>
-<div id="estimador-insesgado-1" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Estimador insesgado</h3>
+<div id="estimador-insesgado-1" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Estimador insesgado<a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[E[\hat{\theta}]=\theta\]</span></p>
 </div>
-<div id="estimador-eficiente-1" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Estimador eficiente</h3>
+<div id="estimador-eficiente-1" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Estimador eficiente<a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Supongamos que tenemos dos estimadores para <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\hat{\theta}_1\)</span>,
 <span class="math inline">\(\hat{\theta}_2\)</span>, el estimador más eficiente entre los dos será quien
 tenga el valor más pequeño en su varianza.</p>
@@ -353,32 +352,32 @@ Determinar:</p>
 </ul>
 <p>Suponga un muestreo sin reposición.</p>
 <p>Solución.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb142-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>)</span>
-<span id="cb142-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb142-2" aria-hidden="true" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb152-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>)</span>
+<span id="cb152-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-1" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(x,<span class="dv">3</span>)</span>
-<span id="cb144-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-2" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la media muestral</span></span>
-<span id="cb144-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-3" aria-hidden="true" tabindex="-1"></a>dmedia<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,mean)</span>
-<span id="cb144-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-4" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la mediana muestral</span></span>
-<span id="cb144-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-5" aria-hidden="true" tabindex="-1"></a>dmediana<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,median)</span>
-<span id="cb144-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Son estimadores insesgados</span></span>
-<span id="cb144-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-7" aria-hidden="true" tabindex="-1"></a><span class="co">#media</span></span>
-<span id="cb144-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb144-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dmedia<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-1" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(x,<span class="dv">3</span>)</span>
+<span id="cb154-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la media muestral</span></span>
+<span id="cb154-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-3" aria-hidden="true" tabindex="-1"></a>dmedia<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,mean)</span>
+<span id="cb154-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-4" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la mediana muestral</span></span>
+<span id="cb154-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-5" aria-hidden="true" tabindex="-1"></a>dmediana<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,median)</span>
+<span id="cb154-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Son estimadores insesgados</span></span>
+<span id="cb154-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-7" aria-hidden="true" tabindex="-1"></a><span class="co">#media</span></span>
+<span id="cb154-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dmedia<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dmedia)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dmedia)</span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="co">#media</span></span>
-<span id="cb148-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dmediana<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="co">#media</span></span>
+<span id="cb158-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dmediana<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)) <span class="co"># E[]</span></span></code></pre></div>
 <pre><code>## [1] 18.5</code></pre>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dmediana)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dmediana)</span></code></pre></div>
 <pre><code>## [1] 18.5</code></pre>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="co">#parámetro media poblacional</span></span>
-<span id="cb152-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="co">#parámetro media poblacional</span></span>
+<span id="cb162-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuál estimador es más eficiente</span></span>
-<span id="cb154-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((dmedia<span class="sc">-</span><span class="fu">mean</span>(dmedia))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>) <span class="co"># media muestral</span></span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuál estimador es más eficiente</span></span>
+<span id="cb164-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb164-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((dmedia<span class="sc">-</span><span class="fu">mean</span>(dmedia))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>) <span class="co"># media muestral</span></span></code></pre></div>
 <pre><code>## [1] 10.66667</code></pre>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((dmediana<span class="sc">-</span><span class="fu">mean</span>(dmediana))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>) <span class="co"># mediana muestral</span></span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((dmediana<span class="sc">-</span><span class="fu">mean</span>(dmediana))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>) <span class="co"># mediana muestral</span></span></code></pre></div>
 <pre><code>## [1] 35.25</code></pre>
 <p>Para este ejercicio, la media muestral es insesgado y más eficiente que
 la mediana muestral.</p>
@@ -440,8 +439,8 @@ Notar</p>
 <span class="math inline">\(E[\bar{X}^2]=\frac{\sigma^2}{n}+\mu^2\)</span>, Así:</p>
 <p><span class="math display">\[\alpha=\frac{1}{n-1}\left[\sum_s (\sigma^2+\mu) -n \left(\frac{\sigma^2}{n}+\mu \right) \right]=\frac{1}{n-1}\left[ n \sigma^2+n\mu -\sigma^2-n\mu  \right]=\frac{\sigma^2(n-1)}{n-1}=\sigma^2\]</span></p>
 </div>
-<div id="error-cuadrático-medio-ecm" class="section level3" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Error cuadrático medio (ECM)</h3>
+<div id="error-cuadrático-medio-ecm" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Error cuadrático medio (ECM)<a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Este se define para un estimador como:</p>
 <p><span class="math display">\[ECM(\hat{\theta})=E\left[(\hat{\theta}-\theta)^2\right]\]</span></p>
 <p>Recordar que
@@ -450,8 +449,8 @@ Notar</p>
 <p><span class="math display">\[=E[(\hat{\theta}-E[\hat{\theta}])^2]-2(\theta-E[\hat\theta])E\left[\hat{\theta}-E[\hat{\theta}]\right]+E[(\theta-E[\hat\theta])^2]=V(\hat\theta)=V(\hat{\theta})+E[(\theta-E[\hat\theta])^2]=\]</span></p>
 <p><span class="math display">\[=V(\hat{\theta})+sesgo(\hat\theta)^2\]</span></p>
 </div>
-<div id="cota-de-cramer-rao" class="section level3" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> Cota de Cramer Rao</h3>
+<div id="cota-de-cramer-rao" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Cota de Cramer Rao<a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Es posible obtener una cota inferior de la varianza de todos los
 estimadores (<span class="math inline">\(\hat{\theta}_1, \hat{\theta}_2,\ldots\)</span>) insesgados de
 <span class="math inline">\(\theta\)</span>. Sea <span class="math inline">\(\hat{\theta}\)</span> un estimador insesgado del parámetro
@@ -474,8 +473,8 @@ varianza conocida.</p>
 cota de Cramer-Rao</p>
 <p><span class="math display">\[V(\bar{X})\geq \frac{1}{\frac{n}{\sigma^2}}=\frac{\sigma^2}{n}=V(\bar{X})\]</span></p>
 </div>
-<div id="método-de-maxima-verosimilitud" class="section level3" number="3.2.5">
-<h3><span class="header-section-number">3.2.5</span> Método de Maxima verosimilitud</h3>
+<div id="método-de-maxima-verosimilitud" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Método de Maxima verosimilitud<a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suponga que <span class="math inline">\(X\)</span> es una va, con distribución <span class="math inline">\(f(X,\theta)\)</span>, donde
 <span class="math inline">\(\theta\)</span> es un parámetro desconocido. Sean <span class="math inline">\(X_1, X_2,\ldots, X_n\)</span> va.
 iid. como <span class="math inline">\(X\)</span>, la muestra de tamaño <span class="math inline">\(n\)</span>. La función de probabilidad de
@@ -561,8 +560,8 @@ dada por:</p>
 <span class="math display">\[\hat{\mu}=\frac{\sum_{i=1}^n x_i}{n}=\bar{X}\]</span></p>
 <p><span class="math display">\[\hat{\sigma}^2=\frac{\sum_{i=1}^n \left(x_i-\bar{X}\right)^2}{n}\]</span></p>
 </div>
-<div id="método-de-momentos" class="section level3" number="3.2.6">
-<h3><span class="header-section-number">3.2.6</span> Método de momentos</h3>
+<div id="método-de-momentos" class="section level3 hasAnchor" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> Método de momentos<a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Este método fue desarrollado por 1894 por Pearson, a diferencia del
 método de máxima verosimilitud que fue ampliamente utilizado por Fisher
 a partir 1912.</p>
@@ -665,8 +664,8 @@ Entonces,</p>
 <p><span class="math display">\[E[\hat{\theta}]=E[2\bar{X}]=2E\left[\frac{\sum_s x_i}{n}\right]=\frac{2}{n}\sum_s E[x_i]=\frac{2}{n}\sum_s \frac{\theta}{3}=\frac{2}{3}\theta\]</span></p>
 </div>
 </div>
-<div id="estimación-por-intervalos-de-confianza" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Estimación por intervalos de confianza</h2>
+<div id="estimación-por-intervalos-de-confianza" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Estimación por intervalos de confianza<a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para construir un intervalo de confianza del parámetro desconocido
 <span class="math inline">\(\theta\)</span>, se debe encontrar dos estadísticas <span class="math inline">\(L\)</span> y <span class="math inline">\(U\)</span> tales que:</p>
 <p><span class="math display">\[P(L\leq\theta\leq U)=1-\alpha\]</span> El intervalo <span class="math inline">\(L\leq\theta\leq U\)</span> se
@@ -677,8 +676,8 @@ muchas muestras aleatorias y se calcula un intervalo de confianza del
 <span class="math inline">\(100*(1-\alpha)\)</span> por ciento en <span class="math inline">\(\theta\)</span> de cada muestra, entonces
 <span class="math inline">\(100*(1-\alpha)\)</span> por ciento de estos intervalos contendrán el verdadero
 valor de <span class="math inline">\(\theta\)</span>.</p>
-<div id="intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida." class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Intervalo de confianza para la media, asumiendo varianza conocida.</h3>
+<div id="intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida." class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Intervalo de confianza para la media, asumiendo varianza conocida.<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sea <span class="math inline">\(X\)</span> una va con media desconocida <span class="math inline">\(\mu\)</span> y varianza conocida
 <span class="math inline">\(\sigma^2\)</span>. Suponga que se toma una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>,
 <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>. Puede obtenerse un intervalo de confianza del
@@ -692,14 +691,14 @@ sobre:</p>
 <p><span class="math display">\[P(L\leq Z\leq U)=1-\alpha\]</span> Para un intervalo de confianza
 <span class="math inline">\(L \leq \theta \le U\)</span> se debe asegurar que la precisión de los lados sea
 la misma, <span class="math inline">\(\theta-L=U-\theta\)</span>.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fl">3.5</span>),<span class="at">xlab=</span><span class="st">&quot;z&quot;</span>)</span>
-<span id="cb158-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span>
-<span id="cb158-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-3" aria-hidden="true" tabindex="-1"></a>sx<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">seq</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">qnorm</span>(<span class="fl">0.025</span>),<span class="fl">0.01</span>),<span class="fu">qnorm</span>(<span class="fl">0.025</span>))</span>
-<span id="cb158-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-4" aria-hidden="true" tabindex="-1"></a>sy<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">qnorm</span>(<span class="fl">0.025</span>),<span class="fl">0.01</span>)),<span class="dv">0</span>)</span>
-<span id="cb158-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-5" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(sx,sy,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb158-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb158-6" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>sx,sy,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fl">3.5</span>),<span class="at">xlab=</span><span class="st">&quot;z&quot;</span>)</span>
+<span id="cb168-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span>
+<span id="cb168-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb168-3" aria-hidden="true" tabindex="-1"></a>sx<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">seq</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">qnorm</span>(<span class="fl">0.025</span>),<span class="fl">0.01</span>),<span class="fu">qnorm</span>(<span class="fl">0.025</span>))</span>
+<span id="cb168-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb168-4" aria-hidden="true" tabindex="-1"></a>sy<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="fl">3.5</span>,<span class="fu">qnorm</span>(<span class="fl">0.025</span>),<span class="fl">0.01</span>)),<span class="dv">0</span>)</span>
+<span id="cb168-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb168-5" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(sx,sy,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb168-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb168-6" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>sx,sy,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] -1.959964</code></pre>
 <p>Si <span class="math inline">\(\alpha=0.05\)</span></p>
 <p><span class="math display">\[P(L\leq Z\leq U)=0.95\]</span></p>
@@ -734,8 +733,8 @@ Al 90%</p>
 <p><span class="math display">\[1003.043 \leq \mu \leq 1024.957\]</span> Al 99%</p>
 <p><span class="math display">\[1014-2.58 \frac{25}{\sqrt{20}}\leq\mu \leq 1014+2.58 \frac{25}{\sqrt{20}}\]</span></p>
 <p><span class="math display">\[999.5774 \leq \mu \leq 1028.423\]</span></p>
-<div id="tamaño-de-muestra" class="section level4" number="3.3.1.1">
-<h4><span class="header-section-number">3.3.1.1</span> Tamaño de muestra</h4>
+<div id="tamaño-de-muestra" class="section level4 hasAnchor" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Tamaño de muestra<a href="estimaciones-de-una-y-dos-muestrales.html#tamaño-de-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Definamos al margen de error absoluto como:</p>
 <p><span class="math display">\[\epsilon=Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</span> Notar que es posible
 despejar <span class="math inline">\(n\)</span> y esto permitirá tener una formula para definir un tamaño
@@ -754,8 +753,8 @@ simples.</p>
 <p><span class="math display">\[n=\left(\frac{1.64*650}{300} \right)^2= 12.62\approx 13 \]</span></p>
 </div>
 </div>
-<div id="intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza</h3>
+<div id="intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Tenemos dos va independientes, <span class="math inline">\(X_1\)</span> con media <span class="math inline">\(\mu_1\)</span> desconocida y varianza <span class="math inline">\(\sigma^2_1\)</span> conocida y <span class="math inline">\(X_2\)</span> con media <span class="math inline">\(\mu_2\)</span> desconocida y varianza <span class="math inline">\(\sigma^2_2\)</span> conocida. El objetivo es encontrar un intervalo para <span class="math inline">\(\mu_1-\mu_2\)</span>. Sea dos muestras aleatorias recopíladas para ambas va, de tal forma que <span class="math inline">\(n_1\)</span> representa el tamaño de muestra para <span class="math inline">\(X_1\)</span> y <span class="math inline">\(n_2\)</span> para <span class="math inline">\(X_2\)</span>. Recordar por el teorema del limite central, esta diferencia de medias puede ser estimada por sus medias muestrales y además se aproxima a una normal, tal que:</p>
 <p><span class="math display">\[\bar{X}_1-\bar{X}_2 \sim N\left(\mu_{\bar{X}_1-\bar{X}_2}=\mu_1-\mu_2,\sigma^2_{\bar{X}_1-\bar{X}_2}=\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}\right)\]</span>
 Ahora,</p>
@@ -778,8 +777,8 @@ ambas clases de largueros. Encuentre intervalos de confianza al 90% y
 <p><span class="math display">\[IC_{90\%}(\mu_1-\mu_2): 85.9-73.3 \pm 1.64*\sqrt{\frac{1^2}{18}+\frac{1.5^2}{16}}=12.6 \pm 0.73: [11.87\quad 13.33]\]</span>
 <span class="math display">\[IC_{95\%}(\mu_1-\mu_2): 85.9-73.3 \pm 1.96*\sqrt{\frac{1^2}{18}+\frac{1.5^2}{16}}=12.6 \pm 0.87: [11.73\quad 13.47]\]</span></p>
 </div>
-<div id="intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30." class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.</h3>
+<div id="intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30." class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para los 2 anteriores intervalos definidos se suponía que la varianza es conocida, cuando no sucede esto la mejor alternativa para reemplazar a <span class="math inline">\(\sigma^2\)</span> es usando <span class="math inline">\(\hat{S}^2\)</span>, esto siempre y cuando el tamaño de muestra sea grande (<span class="math inline">\(n&gt;30\)</span>), para el caso de la diferencia de medias,
 ambos tamaños de muestra deben ser mayores a 30 <span class="math inline">\((n_1,n_2&gt;30)\)</span>. Esto debido al teorema del limite central.</p>
 <p>Para la media</p>
@@ -787,29 +786,28 @@ ambos tamaños de muestra deben ser mayores a 30 <span class="math inline">\((n_
 <p>Para la diferencia de medias</p>
 <p><span class="math display">\[IC_{100(1-\alpha)}(\mu_1-\mu_2): \bar{X}_1-\bar{X}_2 \pm Z_{\alpha/2} \sqrt{\frac{\hat{S_1}^2}{n_1}+\frac{\hat{S_2}^2}{n_2}}\]</span></p>
 <p>Ejercicio, se tiene el dato de una muestra aleatoria de 35 estudiantes sobre la variable horas/día en la computadora, se pide calcular los intervalos de confianza al 90, 95 y 99% de confiabilidad, los datos son:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb161-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">35</span></span>
-<span id="cb161-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1517</span>)</span>
-<span id="cb161-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb161-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="fl">7.6</span>,<span class="fl">2.72</span>),<span class="dv">0</span>)</span>
-<span id="cb161-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb161-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb161-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb161-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.64</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#90%</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">35</span></span>
+<span id="cb171-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1517</span>)</span>
+<span id="cb171-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="fl">7.6</span>,<span class="fl">2.72</span>),<span class="dv">0</span>)</span>
+<span id="cb171-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb171-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.64</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#90%</span></span></code></pre></div>
 <pre><code>## [1] 6.277474 7.608240</code></pre>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#95%</span></span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#95%</span></span></code></pre></div>
 <pre><code>## [1] 6.147643 7.738071</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">2.58</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#99%</span></span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">2.58</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#99%</span></span></code></pre></div>
 <pre><code>## [1] 5.896096 7.989618</code></pre>
 <p>Ejercicio, se tiene el dato de una muestra aleatoria de 40 personas, respecto su edad. Construya el intervalo de confianza al 95% de confiabilidad. Los datos son:</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1534</span>)</span>
-<span id="cb167-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">40</span>,<span class="dv">19</span>,<span class="dv">29</span>))</span>
-<span id="cb167-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb167-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 20 26 25 24 22 27 21 28 23 26 23 24 27
-## [14] 22 20 27 23 26 22 23 23 28 21 25 20 19
-## [27] 24 22 27 22 21 28 28 24 23 24 21 28 27
-## [40] 24</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span><span class="dv">40</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1534</span>)</span>
+<span id="cb177-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">40</span>,<span class="dv">19</span>,<span class="dv">29</span>))</span>
+<span id="cb177-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1] 20 26 25 24 22 27 21 28 23 26 23 24 27 22
+## [15] 20 27 23 26 22 23 23 28 21 25 20 19 24 22
+## [29] 27 22 21 28 28 24 23 24 21 28 27 24</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span><span class="dv">40</span>)</span></code></pre></div>
 <pre><code>## [1] 23.12872 24.77128</code></pre>
 </div>
-<div id="intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30." class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.</h3>
+<div id="intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30." class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para producir un intervalo de confianza valido en estos casos, se debe realizar supuestos fuertes respecto la población de la cual proviene la información. La suposición mas usual es que la población de base viene de una normal, lo que nos lleva en distribuciones muestrales a trabajar con un distribución <span class="math inline">\(t-student\)</span>.</p>
 <p>Para la media, sea:</p>
 <p><span class="math display">\[t=\frac{\bar{X}-\mu}{\frac{\hat{S}}{\sqrt{n}}}\]</span></p>
@@ -820,43 +818,41 @@ encontrar:</p>
 <p>Lo que nos a:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(\mu): \bar{X} \pm t_{\alpha/2,n-1} \sqrt{\frac{\hat{S}^2}{n}}\]</span></p>
 <p>Nota: El valor de <span class="math inline">\(t_{\alpha/2,n-1}\)</span> en R.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail =</span> F)<span class="co">#PARA LA NORMAL</span></span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail =</span> F)<span class="co">#PARA LA NORMAL</span></span></code></pre></div>
 <pre><code>## [1] 1.959964</code></pre>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="co">#para la t-student</span></span>
-<span id="cb173-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-2" aria-hidden="true" tabindex="-1"></a>alpha<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.05</span>,<span class="fl">0.01</span>)</span>
-<span id="cb173-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
-<span id="cb173-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb173-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co">#para la t-student</span></span>
+<span id="cb183-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb183-2" aria-hidden="true" tabindex="-1"></a>alpha<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.05</span>,<span class="fl">0.01</span>)</span>
+<span id="cb183-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb183-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb183-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb183-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 1.729133 2.093024 2.860935</code></pre>
 <p>Ejercicio, suponga que se tiene el dato de 15 personas sobre sus ingresos mensuales, estos datos proviene de una muestra aleatoria. Calcular el estimador de la media e intervalos de confianza al 95% y 98% de confiabilidad.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
-<span id="cb175-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1423</span>)</span>
-<span id="cb175-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">500</span>,<span class="dv">10000</span>),<span class="dv">0</span>)</span>
-<span id="cb175-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb175-4" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 3415 1271 7587 5620 1277 2620 8805
-##  [8] 1811 5152 4956 7823 9186 6785 3465
-## [15] 9672</code></pre>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
+<span id="cb185-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1423</span>)</span>
+<span id="cb185-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">500</span>,<span class="dv">10000</span>),<span class="dv">0</span>)</span>
+<span id="cb185-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-4" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1] 3415 1271 7587 5620 1277 2620 8805 1811
+##  [9] 5152 4956 7823 9186 6785 3465 9672</code></pre>
 <p>Solución, bajo el supuesto que los ingresos tienen un comportamiento normal, se utilizara el intervalo de confianza con la t-student.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="co">#estimador puntual</span></span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="co">#estimador puntual</span></span></code></pre></div>
 <pre><code>## [1] 5296.333</code></pre>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos de confianza</span></span>
-<span id="cb179-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#95%</span></span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos de confianza</span></span>
+<span id="cb189-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#95%</span></span></code></pre></div>
 <pre><code>## [1] 3680.188 6912.479</code></pre>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.02</span><span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#98%</span></span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.02</span><span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span>n)<span class="co">#98%</span></span></code></pre></div>
 <pre><code>## [1] 3318.717 7273.950</code></pre>
 <p>Ejemplo, suponga que tenemos las mediciones de la estatura en cm de un grupo de 20 personas que fue seleccionado de forma aleatoria de una determinada población, los datos son:</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
-<span id="cb183-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb183-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
-<span id="cb183-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb183-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 171 173 180 152 148 166 177 179 173
-## [10] 167 175 145 152 142 143 155 179 176
-## [19] 173 147</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
+<span id="cb193-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb193-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
+<span id="cb193-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb193-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1] 171 173 180 152 148 166 177 179 173 167 175
+## [12] 145 152 142 143 155 179 176 173 147</code></pre>
 <p>Encontrar un intervalo de confianza al 95% de confiabilidad para la media poblacional.</p>
 <p>Solución,</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-1" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
-<span id="cb185-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-2" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb185-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-3" aria-hidden="true" tabindex="-1"></a>s2<span class="ot">&lt;-</span><span class="fu">var</span>(x)</span>
-<span id="cb185-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-4" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
-<span id="cb185-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb185-5" aria-hidden="true" tabindex="-1"></a>mx<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(s2<span class="sc">/</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-1" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
+<span id="cb195-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-2" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">19</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb195-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-3" aria-hidden="true" tabindex="-1"></a>s2<span class="ot">&lt;-</span><span class="fu">var</span>(x)</span>
+<span id="cb195-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-4" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb195-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-5" aria-hidden="true" tabindex="-1"></a>mx<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(s2<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] 157.1698 170.1302</code></pre>
 <p>Para la diferencia de medias, pero con varianzas iguales
 <span class="math inline">\(\sigma_1=\sigma_2\)</span></p>
@@ -870,40 +866,40 @@ diferencia de medias el IC es:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,v} \sqrt{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2}}\]</span></p>
 <p><span class="math display">\[v=\frac{\left(\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2} \right)^2}{\frac{(\hat{S}_1^2/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}-2\]</span>
 Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de ambos grupos, con el fin de estudiar la diferencia de medias para las notas de un examen, los resultados para ambos grupos fueron:</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
-<span id="cb187-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb187-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
-<span id="cb187-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb187-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1457</span>)</span>
-<span id="cb187-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb187-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
-<span id="cb187-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb187-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
+<span id="cb197-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb197-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
+<span id="cb197-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb197-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1457</span>)</span>
+<span id="cb197-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb197-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
+<span id="cb197-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb197-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
 <pre><code>##  [1] 79 82 99 30 20 64 94 97 84 67</code></pre>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb189-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb199-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
 <pre><code>##  [1] 73 62 57 23 59 16 65 39 81 23 74 22 20</code></pre>
 <p>Armar un intervalo de confianza al 95% de confiabilidad suponiendo que las varianzas son iguales y otro para varianzas distintas.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
-<span id="cb191-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-2" aria-hidden="true" tabindex="-1"></a>mx2<span class="ot">&lt;-</span><span class="fu">mean</span>(x2)</span>
-<span id="cb191-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-3" aria-hidden="true" tabindex="-1"></a>s21<span class="ot">&lt;-</span><span class="fu">var</span>(x1)</span>
-<span id="cb191-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-4" aria-hidden="true" tabindex="-1"></a>s22<span class="ot">&lt;-</span><span class="fu">var</span>(x2)</span>
-<span id="cb191-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-5" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">&lt;-</span><span class="dv">10</span></span>
-<span id="cb191-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-6" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">&lt;-</span><span class="dv">13</span></span>
-<span id="cb191-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimador puntual de diferencia de medias</span></span>
-<span id="cb191-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb191-8" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
+<span id="cb201-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-2" aria-hidden="true" tabindex="-1"></a>mx2<span class="ot">&lt;-</span><span class="fu">mean</span>(x2)</span>
+<span id="cb201-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-3" aria-hidden="true" tabindex="-1"></a>s21<span class="ot">&lt;-</span><span class="fu">var</span>(x1)</span>
+<span id="cb201-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-4" aria-hidden="true" tabindex="-1"></a>s22<span class="ot">&lt;-</span><span class="fu">var</span>(x2)</span>
+<span id="cb201-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-5" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">&lt;-</span><span class="dv">10</span></span>
+<span id="cb201-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-6" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">&lt;-</span><span class="dv">13</span></span>
+<span id="cb201-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimador puntual de diferencia de medias</span></span>
+<span id="cb201-8"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-8" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2</span></code></pre></div>
 <pre><code>## [1] 24.36923</code></pre>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas iguales</span></span>
-<span id="cb193-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb193-2" aria-hidden="true" tabindex="-1"></a>ta1<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,n1<span class="sc">+</span>n2<span class="dv">-2</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb193-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb193-3" aria-hidden="true" tabindex="-1"></a>s2p<span class="ot">&lt;-</span>((n1<span class="dv">-1</span>)<span class="sc">*</span>s21<span class="sc">+</span>(n2<span class="dv">-1</span>)<span class="sc">*</span>s22)<span class="sc">/</span>(n1<span class="sc">+</span>n2<span class="dv">-2</span>)</span>
-<span id="cb193-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb193-4" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta1<span class="sc">*</span><span class="fu">sqrt</span>(s2p)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>n1<span class="sc">+</span><span class="dv">1</span><span class="sc">/</span>n2)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas iguales</span></span>
+<span id="cb203-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb203-2" aria-hidden="true" tabindex="-1"></a>ta1<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,n1<span class="sc">+</span>n2<span class="dv">-2</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb203-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb203-3" aria-hidden="true" tabindex="-1"></a>s2p<span class="ot">&lt;-</span>((n1<span class="dv">-1</span>)<span class="sc">*</span>s21<span class="sc">+</span>(n2<span class="dv">-1</span>)<span class="sc">*</span>s22)<span class="sc">/</span>(n1<span class="sc">+</span>n2<span class="dv">-2</span>)</span>
+<span id="cb203-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb203-4" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta1<span class="sc">*</span><span class="fu">sqrt</span>(s2p)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>n1<span class="sc">+</span><span class="dv">1</span><span class="sc">/</span>n2)</span></code></pre></div>
 <pre><code>## [1]  2.132725 46.605736</code></pre>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas desiguales</span></span>
-<span id="cb195-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-2" aria-hidden="true" tabindex="-1"></a>v<span class="ot">&lt;-</span>((s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(((s21<span class="sc">/</span>n1)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n1<span class="sc">+</span><span class="dv">1</span>)<span class="sc">+</span>((s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n2<span class="sc">+</span><span class="dv">1</span>))<span class="sc">-</span><span class="dv">2</span></span>
-<span id="cb195-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-3" aria-hidden="true" tabindex="-1"></a>ta2<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,v,<span class="at">lower.tail =</span> F)</span>
-<span id="cb195-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb195-4" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta2<span class="sc">*</span><span class="fu">sqrt</span>(s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo con varianzas desiguales</span></span>
+<span id="cb205-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb205-2" aria-hidden="true" tabindex="-1"></a>v<span class="ot">&lt;-</span>((s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(((s21<span class="sc">/</span>n1)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n1<span class="sc">+</span><span class="dv">1</span>)<span class="sc">+</span>((s22<span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n2<span class="sc">+</span><span class="dv">1</span>))<span class="sc">-</span><span class="dv">2</span></span>
+<span id="cb205-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb205-3" aria-hidden="true" tabindex="-1"></a>ta2<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.025</span>,v,<span class="at">lower.tail =</span> F)</span>
+<span id="cb205-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb205-4" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta2<span class="sc">*</span><span class="fu">sqrt</span>(s21<span class="sc">/</span>n1<span class="sc">+</span>s22<span class="sc">/</span>n2)</span></code></pre></div>
 <pre><code>## [1]  1.660652 47.077810</code></pre>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
-<span id="cb197-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb197-2" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
+<span id="cb207-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-2" aria-hidden="true" tabindex="-1"></a>mx1<span class="sc">-</span>mx2</span></code></pre></div>
 <pre><code>## [1] 24.36923</code></pre>
 </div>
-<div id="intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados" class="section level3" number="3.3.5">
-<h3><span class="header-section-number">3.3.5</span> Intervalos de confianza para la diferencia de medias de datos pareados</h3>
+<div id="intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados" class="section level3 hasAnchor" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> Intervalos de confianza para la diferencia de medias de datos pareados<a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>En general, supongamos que los datos constan de <span class="math inline">\(n\)</span> pares
 <span class="math inline">\((X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})\)</span>, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
 <span class="math inline">\(D_1=X_{11}-X_{21},D_2=X_{12}-X{22},\ldots,D_n=X_{1n}-X_{2n}\)</span>,
@@ -913,38 +909,38 @@ estableciendo a <span class="math inline">\(D\)</span> como la va, su intervalo 
 <p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm Z_{\alpha/2}*\sqrt{\frac{\hat{S}^2_D}{n}} \]</span></p>
 <p>Ejemplo, se tiene las notas de los parciales de una muestra de 12
 estudiantes, será que los estudiantes mejoraron su rendimiento del parcial 1 al parcial 2. Construya un intervalo de confianza al 90%.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
-<span id="cb199-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb199-2" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
-<span id="cb199-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
-<span id="cb199-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb199-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
+<span id="cb209-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb209-2" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
+<span id="cb209-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
+<span id="cb209-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
 <pre><code>## [1] 57.08333</code></pre>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)</span></code></pre></div>
 <pre><code>## [1] 65.5</code></pre>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
 <pre><code>## [1] 8.416667</code></pre>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
-<span id="cb205-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb205-2" aria-hidden="true" tabindex="-1"></a>bd<span class="sc">$</span>D<span class="ot">&lt;-</span>bd<span class="sc">$</span>p2<span class="sc">-</span>bd<span class="sc">$</span>p1</span>
-<span id="cb205-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb205-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">11</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd<span class="sc">$</span>D)<span class="sc">/</span><span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
+<span id="cb215-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb215-2" aria-hidden="true" tabindex="-1"></a>bd<span class="sc">$</span>D<span class="ot">&lt;-</span>bd<span class="sc">$</span>p2<span class="sc">-</span>bd<span class="sc">$</span>p1</span>
+<span id="cb215-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb215-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">11</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd<span class="sc">$</span>D)<span class="sc">/</span><span class="dv">12</span>)</span></code></pre></div>
 <pre><code>## [1] -2.418471 19.251805</code></pre>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="do">##############################</span></span>
-<span id="cb207-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="co">#suponer una muestra de 100 estudiantes</span></span>
-<span id="cb207-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">1000</span></span>
-<span id="cb207-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
-<span id="cb207-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-5" aria-hidden="true" tabindex="-1"></a>bd2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span>n,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
-<span id="cb207-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-6" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
-<span id="cb207-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb207-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="do">##############################</span></span>
+<span id="cb217-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="co">#suponer una muestra de 100 estudiantes</span></span>
+<span id="cb217-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">1000</span></span>
+<span id="cb217-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
+<span id="cb217-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-5" aria-hidden="true" tabindex="-1"></a>bd2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span>n,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
+<span id="cb217-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-6" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
+<span id="cb217-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
 <pre><code>## [1] 60.41</code></pre>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)</span></code></pre></div>
 <pre><code>## [1] 59.786</code></pre>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
 <pre><code>## [1] -0.624</code></pre>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
-<span id="cb213-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb213-2" aria-hidden="true" tabindex="-1"></a>bd2<span class="sc">$</span>D<span class="ot">&lt;-</span>bd2<span class="sc">$</span>p2<span class="sc">-</span>bd2<span class="sc">$</span>p1</span>
-<span id="cb213-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb213-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qnorm</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd2<span class="sc">$</span>D)<span class="sc">/</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
+<span id="cb223-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb223-2" aria-hidden="true" tabindex="-1"></a>bd2<span class="sc">$</span>D<span class="ot">&lt;-</span>bd2<span class="sc">$</span>p2<span class="sc">-</span>bd2<span class="sc">$</span>p1</span>
+<span id="cb223-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb223-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qnorm</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd2<span class="sc">$</span>D)<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] -1.6782028  0.4302028</code></pre>
 </div>
-<div id="intervalo-de-confianza-para-proporciones" class="section level3" number="3.3.6">
-<h3><span class="header-section-number">3.3.6</span> Intervalo de confianza para proporciones</h3>
+<div id="intervalo-de-confianza-para-proporciones" class="section level3 hasAnchor" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Intervalo de confianza para proporciones<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Si asumimos que el estimador del parámetro <span class="math inline">\(P\)</span> (proporción), se distribuye normal, es decir, <span class="math inline">\(\hat{P}\sim Normal\)</span>, bajo ciertas condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{V(\hat{P})}\]</span>
 Donde para encontrar la <span class="math inline">\(V(\hat{P})\)</span> basta con resolver la varianza del estimador de la media para valores binarios.</p>
@@ -955,29 +951,29 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 <span class="math inline">\(\hat{P}\)</span>. Así, el intervalo de confianza queda como:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span></p>
 <p>Ejemplo, en un curso se tomó una muestra aleatoria de 15 personas, respecto su estatura en centímetros, las mediciones son:</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1431</span>)</span>
-<span id="cb215-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb215-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
-<span id="cb215-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb215-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 163 167 156 156 178 172 152 160 140
-## [10] 160 168 175 170 160 164</code></pre>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1431</span>)</span>
+<span id="cb225-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb225-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb225-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb225-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1] 163 167 156 156 178 172 152 160 140 160 168
+## [12] 175 170 160 164</code></pre>
 <p>Se pide encontrar al estimador de la proporción y su intervalo de confianza al 95% de confiabilidad para la proporción de estudiantes con estatura de 170 o más.</p>
 <p>Solución,</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
-<span id="cb217-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
-<span id="cb217-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb217-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb227-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
+<span id="cb227-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb227-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
+<span id="cb227-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb227-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>##  [1] 0 0 0 0 1 1 0 0 0 0 0 1 1 0 0</code></pre>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
-<span id="cb219-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb219-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
-<span id="cb219-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb219-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
+<span id="cb229-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb229-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
+<span id="cb229-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb229-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.2666667</code></pre>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="co">#en porcentaje</span></span>
-<span id="cb221-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb221-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="co">#en porcentaje</span></span>
+<span id="cb231-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb231-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 26.66667</code></pre>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo</span></span>
-<span id="cb223-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb223-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo</span></span>
+<span id="cb233-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb233-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] 0.04287417 0.49045916</code></pre>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
-<span id="cb225-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb225-2" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
+<span id="cb235-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb235-2" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1]  4.287417 49.045916</code></pre>
 <p>Ejercicio, la varianza del estimador de la proporción tiene la forma:</p>
 <p><span class="math display">\[V(\hat{P})=\frac{P(1-P)}{n}\]</span></p>
@@ -986,49 +982,49 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 <p><span class="math display">\[\frac{d V(\hat{P})}{dP}=\frac{d}{dP}\left(\frac{P}{n}-\frac{P^2}{n}\right)=\frac{1}{n}-\frac{2P}{n}=0 \rightarrow P=0.5\]</span>
 También,</p>
 <p><span class="math display">\[\frac{d^2 V(\hat{P})}{d^2P}=-\frac{2}{n}&lt;0 \quad (máximo)\]</span></p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb227-1" aria-hidden="true" tabindex="-1"></a>vp<span class="ot">&lt;-</span><span class="cf">function</span>(x){x<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)}</span>
-<span id="cb227-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb227-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(vp,<span class="at">xlab=</span><span class="st">&quot;p&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;v(p)&quot;</span>,<span class="at">main=</span><span class="st">&quot;n=1&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
-<div id="tamaño-de-muestra-para-estimar-proporciones" class="section level4" number="3.3.6.1">
-<h4><span class="header-section-number">3.3.6.1</span> Tamaño de muestra para estimar proporciones</h4>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb237-1" aria-hidden="true" tabindex="-1"></a>vp<span class="ot">&lt;-</span><span class="cf">function</span>(x){x<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)}</span>
+<span id="cb237-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb237-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(vp,<span class="at">xlab=</span><span class="st">&quot;p&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;v(p)&quot;</span>,<span class="at">main=</span><span class="st">&quot;n=1&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<div id="tamaño-de-muestra-para-estimar-proporciones" class="section level4 hasAnchor" number="3.3.6.1">
+<h4><span class="header-section-number">3.3.6.1</span> Tamaño de muestra para estimar proporciones<a href="estimaciones-de-una-y-dos-muestrales.html#tamaño-de-muestra-para-estimar-proporciones" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Para la proporción definimos el margen de error (<span class="math inline">\(\epsilon\)</span>) como:</p>
 <p><span class="math display">\[\epsilon= Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span></p>
 <p>Ahora, podemos usar esta definición como una salida para el calculo del tamaño de muestra necesario para cometer un determinado margen de error (<span class="math inline">\(epsilon\)</span>), sujeto a un nivel de confiabilidad de <span class="math inline">\(Z_{\alpha/2}\)</span>, basta con despejar <span class="math inline">\(n\)</span> de la anterior formula.</p>
 <p><span class="math display">\[n=\left(\frac{Z_{\alpha/2}}{\epsilon}\right)^2 \hat{P}(1-\hat{P})\]</span></p>
 <p>Dado que definir el tamaño de muestra es un paso previo a la recolección de información, notar que se tiene total control sobre el margen de error (<span class="math inline">\(\epsilon\)</span>) y el nivel de confiabilidad (<span class="math inline">\(Z_{\alpha/2}\)</span>), sin embargo, en la formula aparece el estimador <span class="math inline">\(\hat{P}\)</span> que es el de interés, la solución para saltarnos este dilema, es elegir un <span class="math inline">\(\hat{P}\)</span>
 basado en un estudio similar o una prueba piloto, la otra alternativa extrema es suponer un <span class="math inline">\(\hat{P}\)</span> que haga máximo a <span class="math inline">\(n\)</span> con lo demás fijo.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb228-1" aria-hidden="true" tabindex="-1"></a>tm_p<span class="ot">&lt;-</span><span class="cf">function</span>(z,e,p){</span>
-<span id="cb228-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb228-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span>((z<span class="sc">/</span>e)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span>
-<span id="cb228-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb228-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n)</span>
-<span id="cb228-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb228-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb228-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb228-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-1" aria-hidden="true" tabindex="-1"></a>tm_p<span class="ot">&lt;-</span><span class="cf">function</span>(z,e,p){</span>
+<span id="cb238-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span>((z<span class="sc">/</span>e)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span>
+<span id="cb238-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n)</span>
+<span id="cb238-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb238-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))</span></code></pre></div>
 <pre><code>## [1] 385</code></pre>
 <p>Ejercicio, una carrera en la universidad esta a punto de elegir a sus autoridades, se busca hacer una encuesta de intención de votos en los estudiantes para el candidato <span class="math inline">\(Z\)</span>, se quiere un nivel de confianza del 95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo
 <span class="math inline">\(n\)</span> máxima y (2) mediante un sondeo se verifico que el candidato <span class="math inline">\(Z\)</span> tiene un 70% de apoyo.</p>
 <p>Solución,</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))<span class="co">#1</span></span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))<span class="co">#1</span></span></code></pre></div>
 <pre><code>## [1] 385</code></pre>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.7</span>))<span class="co">#2</span></span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.7</span>))<span class="co">#2</span></span></code></pre></div>
 <pre><code>## [1] 323</code></pre>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.02</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 2%</span></span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.02</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 2%</span></span></code></pre></div>
 <pre><code>## [1] 2401</code></pre>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.01</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 1%</span></span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.01</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 1%</span></span></code></pre></div>
 <pre><code>## [1] 9604</code></pre>
 </div>
 </div>
-<div id="intervalo-de-confianza-para-diferencia-de-proporciones" class="section level3" number="3.3.7">
-<h3><span class="header-section-number">3.3.7</span> Intervalo de confianza para diferencia de proporciones</h3>
+<div id="intervalo-de-confianza-para-diferencia-de-proporciones" class="section level3 hasAnchor" number="3.3.7">
+<h3><span class="header-section-number">3.3.7</span> Intervalo de confianza para diferencia de proporciones<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Esta diferencia de proporciones son ampliamente usadas cuando se comparan dos poblaciones, respecto una característica de interés sobre dos poblaciones independientes. Así el intervalo de la diferencia de proporciones esta dado por:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}\]</span></p>
 <p>Donde <span class="math inline">\(\hat{P}_1\)</span> y <span class="math inline">\(\hat{P}_2\)</span> son estimaciones de proporción para la población 1 y 2, respecto una misma característica, <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> son los tamaños de muestra es estas poblaciones.</p>
 <p>Ejercicio, en una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
-<span id="cb238-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb238-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
-<span id="cb238-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb238-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
-<span id="cb238-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
-<span id="cb238-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb238-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb248-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb248-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb248-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb248-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
+<span id="cb248-6"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
+<span id="cb248-7"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
 <pre><code>##    estatura mujer
 ## 1       161     0
 ## 2       179     0
@@ -1060,16 +1056,16 @@ basado en un estudio similar o una prueba piloto, la otra alternativa extrema es
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=-0.4 \pm 1.64 * \sqrt{\frac{0.1*0.9}{10}+\frac{0.5*0.5}{10}}=-0.4 \pm 0.3024\]</span>
 <span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=[-0.702 \quad -0.098]\]</span></p>
 </div>
-<div id="intervalo-de-confianza-para-la-varianza" class="section level3" number="3.3.8">
-<h3><span class="header-section-number">3.3.8</span> Intervalo de confianza para la varianza</h3>
+<div id="intervalo-de-confianza-para-la-varianza" class="section level3 hasAnchor" number="3.3.8">
+<h3><span class="header-section-number">3.3.8</span> Intervalo de confianza para la varianza<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suponga que <span class="math inline">\(X\sim Normal(\mu,\sigma)\)</span> ambos parámetros desconocidos. Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> de <span class="math inline">\(X\)</span>. Recodar que la varianza muestra sigue una distribución de muestreo tipo <span class="math inline">\(\chi^2\)</span>.</p>
 <p><span class="math display">\[\chi^2=\frac{(n-1)\hat{S}^2}{\sigma^2}\]</span>
 Para desarrollar el intervalo usamos esta distribución:</p>
 <p><span class="math display">\[P(\chi^2_{1-\alpha/2,n-1} \leq \chi^2 \leq \chi^2_{\alpha/2,n-1})=1-\alpha\]</span>
 <span class="math display">\[IC_{100*(1-\alpha)}(\sigma^2): \left[\frac{(n-1)\hat{S}^2}{\chi^2_{\alpha/2,n-1}} \quad  \frac{(n-1)\hat{S}^2}{\chi^2_{1-\alpha/2,n-1}}\right]\]</span></p>
 </div>
-<div id="intervalo-de-confianza-para-el-cociente-de-varianzas" class="section level3" number="3.3.9">
-<h3><span class="header-section-number">3.3.9</span> Intervalo de confianza para el cociente de varianzas</h3>
+<div id="intervalo-de-confianza-para-el-cociente-de-varianzas" class="section level3 hasAnchor" number="3.3.9">
+<h3><span class="header-section-number">3.3.9</span> Intervalo de confianza para el cociente de varianzas<a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El objetivo de esta medida es tener un intervalo para el cociente de las varianzas de dos poblaciones, esto puede servir para identificar que población (con que variable) tiene mayor variabilidad. El parámetro es:</p>
 <p><span class="math display">\[\theta=\frac{\sigma^2_1}{\sigma^2_2}\]</span>
 Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> son va normales con media <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> desconocidas y varianzas <span class="math inline">\(\sigma^2_1\)</span>, <span class="math inline">\(\sigma^2_2\)</span> también desconocidas. Sean dos muestras aleatorias de <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> de tamaño <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> y sean <span class="math inline">\(\hat{S}^2_1\)</span> y <span class="math inline">\(\hat{S}^2_2\)</span> las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución <span class="math inline">\(F\)</span>.</p>
@@ -1079,8 +1075,8 @@ Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inli
 <p><span class="math display">\[IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_2-1,n_1-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_2-1,n_1-1}\right]\]</span></p>
 </div>
 </div>
-<div id="ejercicios-1" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Ejercicios</h2>
+<div id="ejercicios-1" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Ejercicios<a href="estimaciones-de-una-y-dos-muestrales.html#ejercicios-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Un ingeniero de control de calidad midió el espesor de la pared de 25 botellas de vidrio de dos litros. La media de la muestra fue 4.05 mm y la desviación estándar de la muestra <span class="math inline">\(\hat{S}=.08\)</span> mm. Determine un intervalo de confianza:</li>
 </ol>
@@ -1091,8 +1087,8 @@ Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inli
 <p>respecto al espesor de pared medio.</p>
 <p>Solución,</p>
 <p><span class="math display">\[IC(\bar{x})_{90\%}=\bar{x} \pm t_{\alpha/2,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05\pm 1.71 \sqrt{\frac{0.08^2}{25}}\]</span></p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb240-1" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb240-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb240-2" aria-hidden="true" tabindex="-1"></a><span class="fl">4.05</span><span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fl">0.08</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb250-1" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb250-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fl">4.05</span><span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fl">0.08</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>)</span></code></pre></div>
 <pre><code>## [1] 4.022626 4.077374</code></pre>
 <p><span class="math display">\[IC(\bar{x})_{90\%}=[4.02 \quad 4.08]\]</span>
 Para el intervalo de confianza inferior. Recordar que para el intervalo de confianza de 2 lados, la formula es:</p>
@@ -1100,7 +1096,7 @@ Para el intervalo de confianza inferior. Recordar que para el intervalo de confi
 Mientras para un intervalo inferior, la formula es:</p>
 <p><span class="math display">\[P(L&lt;\theta)=1-\alpha\]</span></p>
 <p><span class="math display">\[IC(\bar{x})_{90\%, inferior}=\bar{x} - t_{\alpha,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05- 1.32 \sqrt{\frac{0.08^2}{25}}\]</span></p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.1</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.1</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 1.317836</code></pre>
 <p><span class="math display">\[L: 4.03mm\]</span></p>
 <ol start="2" style="list-style-type: decimal">
@@ -1115,56 +1111,56 @@ Mientras para un intervalo inferior, la formula es:</p>
 </ul>
 <p>se pide calcular intervalos de confianza para la varianza para ambas poblaciones, y para el cociente de varianzas entre <span class="math inline">\(Hombre/Mujer\)</span> y <span class="math inline">\(Mujer/Hombre\)</span>. Estos intervalos al 95 % de confiabilidad. (Asumir normalidad de los datos de origen).</p>
 <p>Solución:</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb244-1" aria-hidden="true" tabindex="-1"></a>hh<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2078</span>,  <span class="dv">3565</span>,  <span class="dv">3767</span>,  <span class="dv">3600</span>,  <span class="dv">2907</span>,  <span class="dv">1299</span>,  <span class="dv">3483</span>,  <span class="dv">8475</span>,  <span class="dv">2425</span>,  <span class="dv">3500</span>,  <span class="dv">3118</span>,  <span class="dv">3377</span>,  <span class="dv">3897</span>, <span class="dv">21883</span>,  <span class="dv">9717</span>,  <span class="dv">2078</span>,  <span class="dv">8167</span>)</span>
-<span id="cb244-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb244-2" aria-hidden="true" tabindex="-1"></a>mm<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1905</span>, <span class="dv">9500</span>, <span class="dv">996</span>, <span class="dv">3250</span>, <span class="dv">3335</span>, <span class="dv">433</span>, <span class="dv">2917</span>, <span class="dv">616</span>, <span class="dv">1625</span>, <span class="dv">1104</span>, <span class="dv">2050</span>, <span class="dv">3000</span>, <span class="dv">1625</span>)</span>
-<span id="cb244-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb244-3" aria-hidden="true" tabindex="-1"></a>nh<span class="ot">&lt;-</span><span class="dv">17</span>;nm<span class="ot">&lt;-</span><span class="dv">13</span></span>
-<span id="cb244-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb244-4" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador de varianzas</span></span>
-<span id="cb244-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb244-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="co">#puntual hombres S^2</span></span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb254-1" aria-hidden="true" tabindex="-1"></a>hh<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2078</span>,  <span class="dv">3565</span>,  <span class="dv">3767</span>,  <span class="dv">3600</span>,  <span class="dv">2907</span>,  <span class="dv">1299</span>,  <span class="dv">3483</span>,  <span class="dv">8475</span>,  <span class="dv">2425</span>,  <span class="dv">3500</span>,  <span class="dv">3118</span>,  <span class="dv">3377</span>,  <span class="dv">3897</span>, <span class="dv">21883</span>,  <span class="dv">9717</span>,  <span class="dv">2078</span>,  <span class="dv">8167</span>)</span>
+<span id="cb254-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb254-2" aria-hidden="true" tabindex="-1"></a>mm<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1905</span>, <span class="dv">9500</span>, <span class="dv">996</span>, <span class="dv">3250</span>, <span class="dv">3335</span>, <span class="dv">433</span>, <span class="dv">2917</span>, <span class="dv">616</span>, <span class="dv">1625</span>, <span class="dv">1104</span>, <span class="dv">2050</span>, <span class="dv">3000</span>, <span class="dv">1625</span>)</span>
+<span id="cb254-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb254-3" aria-hidden="true" tabindex="-1"></a>nh<span class="ot">&lt;-</span><span class="dv">17</span>;nm<span class="ot">&lt;-</span><span class="dv">13</span></span>
+<span id="cb254-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb254-4" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador de varianzas</span></span>
+<span id="cb254-5"><a href="estimaciones-de-una-y-dos-muestrales.html#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="co">#puntual hombres S^2</span></span></code></pre></div>
 <pre><code>## [1] 24271163</code></pre>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="co">#puntual mujeres S^2</span></span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="co">#puntual mujeres S^2</span></span></code></pre></div>
 <pre><code>## [1] 5400214</code></pre>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo hombres</span></span>
-<span id="cb248-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-2" aria-hidden="true" tabindex="-1"></a>lih<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb248-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-3" aria-hidden="true" tabindex="-1"></a>lsh<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb248-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb248-4" aria-hidden="true" tabindex="-1"></a>lih;<span class="fu">var</span>(hh);lsh</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo hombres</span></span>
+<span id="cb258-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-2" aria-hidden="true" tabindex="-1"></a>lih<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb258-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-3" aria-hidden="true" tabindex="-1"></a>lsh<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb258-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-4" aria-hidden="true" tabindex="-1"></a>lih;<span class="fu">var</span>(hh);lsh</span></code></pre></div>
 <pre><code>## [1] 13462780</code></pre>
 <pre><code>## [1] 24271163</code></pre>
 <pre><code>## [1] 56218511</code></pre>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo mujeres</span></span>
-<span id="cb252-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb252-2" aria-hidden="true" tabindex="-1"></a>limj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb252-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb252-3" aria-hidden="true" tabindex="-1"></a>lsmj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb252-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb252-4" aria-hidden="true" tabindex="-1"></a>limj;<span class="fu">var</span>(mm);lsmj</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo mujeres</span></span>
+<span id="cb262-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-2" aria-hidden="true" tabindex="-1"></a>limj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb262-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-3" aria-hidden="true" tabindex="-1"></a>lsmj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb262-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-4" aria-hidden="true" tabindex="-1"></a>limj;<span class="fu">var</span>(mm);lsmj</span></code></pre></div>
 <pre><code>## [1] 2776857</code></pre>
 <pre><code>## [1] 5400214</code></pre>
 <pre><code>## [1] 14715187</code></pre>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
-<span id="cb256-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza H/M</span></span>
-<span id="cb256-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb256-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb256-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb256-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm)<span class="co">#puntual</span></span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb266-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza H/M</span></span>
+<span id="cb266-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb266-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm)<span class="co">#puntual</span></span></code></pre></div>
 <pre><code>## [1] 4.494481</code></pre>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
-<span id="cb258-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb258-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb258-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb258-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
+<span id="cb268-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb268-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb268-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
 <pre><code>## [1] 1.426128</code></pre>
 <pre><code>## [1] 4.494481</code></pre>
 <pre><code>## [1] 12.98477</code></pre>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="co">#99 confiabilidad</span></span>
-<span id="cb262-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb262-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb262-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb262-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="co">#99 confiabilidad</span></span>
+<span id="cb272-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb272-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb272-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb272-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb272-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb272-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
 <pre><code>## [1] 0.9615647</code></pre>
 <pre><code>## [1] 4.494481</code></pre>
 <pre><code>## [1] 18.42446</code></pre>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
-<span id="cb266-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza M/H</span></span>
-<span id="cb266-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb266-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb266-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh)<span class="co">#puntual</span></span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb276-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza M/H</span></span>
+<span id="cb276-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb276-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb276-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh)<span class="co">#puntual</span></span></code></pre></div>
 <pre><code>## [1] 0.2224951</code></pre>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
-<span id="cb268-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-2" aria-hidden="true" tabindex="-1"></a>limh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb268-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-3" aria-hidden="true" tabindex="-1"></a>lsmh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb268-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb268-4" aria-hidden="true" tabindex="-1"></a>limh; <span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh); lsmh</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="estimaciones-de-una-y-dos-muestrales.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
+<span id="cb278-2"><a href="estimaciones-de-una-y-dos-muestrales.html#cb278-2" aria-hidden="true" tabindex="-1"></a>limh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb278-3"><a href="estimaciones-de-una-y-dos-muestrales.html#cb278-3" aria-hidden="true" tabindex="-1"></a>lsmh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb278-4"><a href="estimaciones-de-una-y-dos-muestrales.html#cb278-4" aria-hidden="true" tabindex="-1"></a>limh; <span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh); lsmh</span></code></pre></div>
 <pre><code>## [1] 0.0770133</code></pre>
 <pre><code>## [1] 0.2224951</code></pre>
 <pre><code>## [1] 0.7011992</code></pre>

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Distribuciones conjuntas de probabilidad | Estadística II</title>
   <meta name="description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Distribuciones conjuntas de probabilidad | Estadística II" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Este libro esta destinado a la materia de Estadística II de la carrera de Estadística de la Universidad Mayor de San Andres." />
   <meta name="github-repo" content="alvarolimber/EST-145" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-03-09" />
+<meta name="date" content="2022-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="tema-2-distribuciones-muestrales.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -155,105 +154,105 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<li><a href="index.html#prefacio">Prefacio<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#bases-de-datos"><i class="fa fa-check"></i>Bases de datos</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimiento"><i class="fa fa-check"></i>Agradecimiento</a></li>
+<li><a href="index.html#audiencia">Audiencia<span></span></a></li>
+<li><a href="index.html#estructura-del-libro">Estructura del libro<span></span></a></li>
+<li><a href="index.html#software-y-acuerdos">Software y acuerdos<span></span></a></li>
+<li><a href="index.html#bases-de-datos">Bases de datos<span></span></a></li>
+<li><a href="index.html#agradecimiento">Agradecimiento<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html"><i class="fa fa-check"></i><b>1</b> Distribuciones conjuntas de probabilidad</a>
+<li class="chapter" data-level="1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html"><i class="fa fa-check"></i><b>1</b> Distribuciones conjuntas de probabilidad<span></span></a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes</a></li>
-<li class="chapter" data-level="1.2" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada</a></li>
-<li class="chapter" data-level="1.3" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)</a></li>
-<li class="chapter" data-level="1.4" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal</a></li>
-<li class="chapter" data-level="1.5" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia</a></li>
-<li class="chapter" data-level="1.6" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados</a></li>
-<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales</a></li>
-<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.8</b> Esperanza condicional</a></li>
-<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.9</b> Medidas de relación entre dos variables</a>
+<li class="chapter" data-level="1.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#variables-aleatorias-bivariantes"><i class="fa fa-check"></i><b>1.1</b> Variables aleatorias bivariantes<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-de-distribución-bivariada"><i class="fa fa-check"></i><b>1.2</b> Función de distribución bivariada<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#función-masa-de-probabilidad-función-de-densidad"><i class="fa fa-check"></i><b>1.3</b> Función masa de probabilidad (función de densidad)<span></span></a></li>
+<li class="chapter" data-level="1.4" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribución-marginal"><i class="fa fa-check"></i><b>1.4</b> Distribución marginal<span></span></a></li>
+<li class="chapter" data-level="1.5" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independencia<span></span></a></li>
+<li class="chapter" data-level="1.6" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#valores-esperados"><i class="fa fa-check"></i><b>1.6</b> Valores esperados<span></span></a></li>
+<li class="chapter" data-level="1.7" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales"><i class="fa fa-check"></i><b>1.7</b> Distribuciones condicionales<span></span></a></li>
+<li class="chapter" data-level="1.8" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional"><i class="fa fa-check"></i><b>1.8</b> Esperanza condicional<span></span></a></li>
+<li class="chapter" data-level="1.9" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables"><i class="fa fa-check"></i><b>1.9</b> Medidas de relación entre dos variables<span></span></a>
 <ul>
-<li class="chapter" data-level="1.9.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#ejercicio-por-1-punto."><i class="fa fa-check"></i><b>1.9.1</b> Ejercicio por 1 punto.</a></li>
+<li class="chapter" data-level="1.9.1" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#ejercicio-por-1-punto."><i class="fa fa-check"></i><b>1.9.1</b> Ejercicio por 1 punto.<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.10</b> Transformaciones</a></li>
-<li class="chapter" data-level="1.11" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.11</b> Distrubuciones conjuntas de más de 2 variables aleatorias</a></li>
+<li class="chapter" data-level="1.10" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones"><i class="fa fa-check"></i><b>1.10</b> Transformaciones<span></span></a></li>
+<li class="chapter" data-level="1.11" data-path="distribuciones-conjuntas-de-probabilidad.html"><a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias"><i class="fa fa-check"></i><b>1.11</b> Distrubuciones conjuntas de más de 2 variables aleatorias<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales</a>
+<li class="chapter" data-level="2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Distribuciones muestrales<span></span></a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población</a></li>
-<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.</a></li>
-<li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral</a></li>
-<li class="chapter" data-level="2.4" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#propiedades-de-los-estimadores"><i class="fa fa-check"></i><b>2.4</b> Propiedades de los estimadores</a>
+<li class="chapter" data-level="2.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#muestras-y-población"><i class="fa fa-check"></i><b>2.1</b> Muestras y población<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#parámetros-estadísticas-y-estimadores."><i class="fa fa-check"></i><b>2.2</b> Parámetros, estadísticas y estimadores.<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral"><i class="fa fa-check"></i><b>2.3</b> Distribución muestral<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#propiedades-de-los-estimadores"><i class="fa fa-check"></i><b>2.4</b> Propiedades de los estimadores<span></span></a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>2.4.1</b> Estimador insesgado</a></li>
-<li class="chapter" data-level="2.4.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>2.4.2</b> Estimador eficiente</a></li>
+<li class="chapter" data-level="2.4.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-insesgado"><i class="fa fa-check"></i><b>2.4.1</b> Estimador insesgado<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#estimador-eficiente"><i class="fa fa-check"></i><b>2.4.2</b> Estimador eficiente<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-media"><i class="fa fa-check"></i><b>2.5</b> Distribución muestral para la media</a></li>
-<li class="chapter" data-level="2.6" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6</b> Teorema del límite central</a>
+<li class="chapter" data-level="2.5" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-media"><i class="fa fa-check"></i><b>2.5</b> Distribución muestral para la media<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6</b> Teorema del límite central<span></span></a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#simulación-del-teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6.1</b> Simulación del teorema del límite central</a></li>
+<li class="chapter" data-level="2.6.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#simulación-del-teorema-del-límite-central"><i class="fa fa-check"></i><b>2.6.1</b> Simulación del teorema del límite central<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-diferencia-de-medias"><i class="fa fa-check"></i><b>2.7</b> Distribución muestral para la diferencia de medias</a></li>
-<li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-proporción"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la proporción</a></li>
-<li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.9</b> Distribución muestral para la varianza</a></li>
-<li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.10</b> Distribución <span class="math inline">\(\chi^2\)</span></a></li>
-<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.11</b> Distribución t-student</a></li>
-<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.12</b> Distribución Fisher</a>
+<li class="chapter" data-level="2.7" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-diferencia-de-medias"><i class="fa fa-check"></i><b>2.7</b> Distribución muestral para la diferencia de medias<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-proporción"><i class="fa fa-check"></i><b>2.8</b> Distribución muestral para la proporción<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-muestral-para-la-varianza"><i class="fa fa-check"></i><b>2.9</b> Distribución muestral para la varianza<span></span></a></li>
+<li class="chapter" data-level="2.10" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-chi2"><i class="fa fa-check"></i><b>2.10</b> Distribución <span class="math inline">\(\chi^2\)</span><span></span></a></li>
+<li class="chapter" data-level="2.11" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-t-student"><i class="fa fa-check"></i><b>2.11</b> Distribución t-student<span></span></a></li>
+<li class="chapter" data-level="2.12" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#distribución-fisher"><i class="fa fa-check"></i><b>2.12</b> Distribución Fisher<span></span></a>
 <ul>
-<li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.12.1</b> Para las varianzas muestrales</a></li>
+<li class="chapter" data-level="2.12.1" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#para-las-varianzas-muestrales"><i class="fa fa-check"></i><b>2.12.1</b> Para las varianzas muestrales<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.13" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios</a></li>
+<li class="chapter" data-level="2.13" data-path="tema-2-distribuciones-muestrales.html"><a href="tema-2-distribuciones-muestrales.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales</a>
+<li class="chapter" data-level="3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html"><i class="fa fa-check"></i><b>3</b> Estimaciones de una y dos muestrales<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística</a></li>
-<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales</a>
+<li class="chapter" data-level="3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#inferencia-estadística"><i class="fa fa-check"></i><b>3.1</b> Inferencia estadística<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimadores-puntuales"><i class="fa fa-check"></i><b>3.2</b> Estimadores puntuales<span></span></a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado-1"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado</a></li>
-<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente-1"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente</a></li>
-<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)</a></li>
-<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao</a></li>
-<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud</a></li>
-<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos</a></li>
+<li class="chapter" data-level="3.2.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-insesgado-1"><i class="fa fa-check"></i><b>3.2.1</b> Estimador insesgado<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimador-eficiente-1"><i class="fa fa-check"></i><b>3.2.2</b> Estimador eficiente<span></span></a></li>
+<li class="chapter" data-level="3.2.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#error-cuadrático-medio-ecm"><i class="fa fa-check"></i><b>3.2.3</b> Error cuadrático medio (ECM)<span></span></a></li>
+<li class="chapter" data-level="3.2.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#cota-de-cramer-rao"><i class="fa fa-check"></i><b>3.2.4</b> Cota de Cramer Rao<span></span></a></li>
+<li class="chapter" data-level="3.2.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-maxima-verosimilitud"><i class="fa fa-check"></i><b>3.2.5</b> Método de Maxima verosimilitud<span></span></a></li>
+<li class="chapter" data-level="3.2.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#método-de-momentos"><i class="fa fa-check"></i><b>3.2.6</b> Método de momentos<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza</a>
+<li class="chapter" data-level="3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#estimación-por-intervalos-de-confianza"><i class="fa fa-check"></i><b>3.3</b> Estimación por intervalos de confianza<span></span></a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.</a></li>
-<li class="chapter" data-level="3.3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza"><i class="fa fa-check"></i><b>3.3.2</b> Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza</a></li>
-<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30."><i class="fa fa-check"></i><b>3.3.3</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.</a></li>
-<li class="chapter" data-level="3.3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30."><i class="fa fa-check"></i><b>3.3.4</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.</a></li>
-<li class="chapter" data-level="3.3.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados"><i class="fa fa-check"></i><b>3.3.5</b> Intervalos de confianza para la diferencia de medias de datos pareados</a></li>
-<li class="chapter" data-level="3.3.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones"><i class="fa fa-check"></i><b>3.3.6</b> Intervalo de confianza para proporciones</a></li>
-<li class="chapter" data-level="3.3.7" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.3.7</b> Intervalo de confianza para diferencia de proporciones</a></li>
-<li class="chapter" data-level="3.3.8" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza"><i class="fa fa-check"></i><b>3.3.8</b> Intervalo de confianza para la varianza</a></li>
-<li class="chapter" data-level="3.3.9" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas"><i class="fa fa-check"></i><b>3.3.9</b> Intervalo de confianza para el cociente de varianzas</a></li>
+<li class="chapter" data-level="3.3.1" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-asumiendo-varianza-conocida."><i class="fa fa-check"></i><b>3.3.1</b> Intervalo de confianza para la media, asumiendo varianza conocida.<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-sobre-la-diferencia-de-dos-medias-conocida-la-varianza"><i class="fa fa-check"></i><b>3.3.2</b> Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-mayor-a-30."><i class="fa fa-check"></i><b>3.3.3</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra mayor a 30.<span></span></a></li>
+<li class="chapter" data-level="3.3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-media-y-la-diferencia-de-medias-con-varianza-desconocida-pero-muestra-menor-a-30."><i class="fa fa-check"></i><b>3.3.4</b> Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.<span></span></a></li>
+<li class="chapter" data-level="3.3.5" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados"><i class="fa fa-check"></i><b>3.3.5</b> Intervalos de confianza para la diferencia de medias de datos pareados<span></span></a></li>
+<li class="chapter" data-level="3.3.6" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-proporciones"><i class="fa fa-check"></i><b>3.3.6</b> Intervalo de confianza para proporciones<span></span></a></li>
+<li class="chapter" data-level="3.3.7" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-diferencia-de-proporciones"><i class="fa fa-check"></i><b>3.3.7</b> Intervalo de confianza para diferencia de proporciones<span></span></a></li>
+<li class="chapter" data-level="3.3.8" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-la-varianza"><i class="fa fa-check"></i><b>3.3.8</b> Intervalo de confianza para la varianza<span></span></a></li>
+<li class="chapter" data-level="3.3.9" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#intervalo-de-confianza-para-el-cociente-de-varianzas"><i class="fa fa-check"></i><b>3.3.9</b> Intervalo de confianza para el cociente de varianzas<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
+<li class="chapter" data-level="3.4" data-path="estimaciones-de-una-y-dos-muestrales.html"><a href="estimaciones-de-una-y-dos-muestrales.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Prueba de Hipótesis</a>
+<li class="chapter" data-level="4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Prueba de Hipótesis<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a>
+<li class="chapter" data-level="4.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística</a></li>
-<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo</a></li>
-<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II</a></li>
-<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-bilaterales"><i class="fa fa-check"></i><b>4.1.4</b> Pruebas bilaterales</a></li>
-<li class="chapter" data-level="4.1.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-unilaterales"><i class="fa fa-check"></i><b>4.1.5</b> Pruebas unilaterales</a></li>
-<li class="chapter" data-level="4.1.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.6</b> Pasos para la prueba hipótesis estadística</a></li>
+<li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística<span></span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo<span></span></a></li>
+<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II<span></span></a></li>
+<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-bilaterales"><i class="fa fa-check"></i><b>4.1.4</b> Pruebas bilaterales<span></span></a></li>
+<li class="chapter" data-level="4.1.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-unilaterales"><i class="fa fa-check"></i><b>4.1.5</b> Pruebas unilaterales<span></span></a></li>
+<li class="chapter" data-level="4.1.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.6</b> Pasos para la prueba hipótesis estadística<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media</a>
+<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media<span></span></a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-conocida"><i class="fa fa-check"></i><b>4.2.1</b> Con varianza conocida</a></li>
-<li class="chapter" data-level="4.2.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-desconocida"><i class="fa fa-check"></i><b>4.2.2</b> Con varianza desconocida</a></li>
+<li class="chapter" data-level="4.2.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-conocida"><i class="fa fa-check"></i><b>4.2.1</b> Con varianza conocida<span></span></a></li>
+<li class="chapter" data-level="4.2.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-desconocida"><i class="fa fa-check"></i><b>4.2.2</b> Con varianza desconocida<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias</a></li>
-<li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción</a></li>
-<li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones</a></li>
-<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.6</b> Prueba de hipótesis sobre la varianza</a></li>
-<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la igualdad de varianzas</a></li>
-<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.8</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.6</b> Prueba de hipótesis sobre la varianza<span></span></a></li>
+<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la igualdad de varianzas<span></span></a></li>
+<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.8</b> Tamaño de muestra y su relación con el error de tipo I y tipo II<span></span></a></li>
 </ul></li>
 </ul>
 
@@ -272,8 +271,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="distribuciones-conjuntas-de-probabilidad" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Distribuciones conjuntas de probabilidad</h1>
+<div id="distribuciones-conjuntas-de-probabilidad" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Distribuciones conjuntas de probabilidad<a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-conjuntas-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>En el caso univariado se tenia a una va <span class="math inline">\(X\)</span> definida en los reales <span class="math inline">\(IR\)</span>, a esta va se le asignaba una función de distribución <span class="math inline">\(F(x)\)</span> y una función de densidad <span class="math inline">\(f(x)\)</span>. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:</p>
 <p>Caso discreto:</p>
 <p><span class="math display">\[\sum_{Rx} P(X=x)=1\]</span>
@@ -282,8 +281,8 @@ div.csl-indent {
 <p><span class="math display">\[\int_{Rx}f(x)dx=1\]</span></p>
 <p><span class="math display">\[F(t)=P(X\leq t)=\int_{-\infty}^{t}f(x)dx\]</span></p>
 <p>La idea de este capitulo es ver las propiedades en el caso bivariante y generalizar para el caso multivariante.</p>
-<div id="variables-aleatorias-bivariantes" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Variables aleatorias bivariantes</h2>
+<div id="variables-aleatorias-bivariantes" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Variables aleatorias bivariantes<a href="distribuciones-conjuntas-de-probabilidad.html#variables-aleatorias-bivariantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Son un par de variables aleatorias con una distribución conjunta, son típicamente representadas con mayúscula <span class="math inline">\((X, Y)\)</span> o <span class="math inline">\((X_1,X_2)\)</span>, las realizaciones de estas variables aleatorias se representan como <span class="math inline">\((x,y)\)</span> o <span class="math inline">\((x_1,x_2)\)</span>.</p>
 <blockquote>
 <p>Definición 1.
@@ -303,8 +302,8 @@ Un par de variables aleatorias bivariadas es un par numérico de resultados; una
 </ul>
 <p>Imaginar lanzar 2 monedas simultáneamente, <span class="math inline">\(\Omega=\{CC,CS,SC,SS\}\)</span>, si definimos a <span class="math inline">\(Cara=1\)</span> y <span class="math inline">\(Sello=0\)</span>, <span class="math inline">\(R_{(X,Y)}=\{(1,1),(1,0),(0,1),(0,0)\}\)</span>.</p>
 </div>
-<div id="función-de-distribución-bivariada" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Función de distribución bivariada</h2>
+<div id="función-de-distribución-bivariada" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Función de distribución bivariada<a href="distribuciones-conjuntas-de-probabilidad.html#función-de-distribución-bivariada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p>Definición 2.</p>
 </blockquote>
@@ -323,8 +322,8 @@ Las propiedades de <span class="math inline">\(F\)</span> son similares al caso 
 <p><span class="math display">\[P(a&lt;X\leq b,c&lt; Y\leq d)=F(b,d)-F(b,c)-F(a,d)+F(a,c)\]</span></p>
 <p>Para <span class="math inline">\(a&lt;b\)</span> y <span class="math inline">\(c&lt;d\)</span></p>
 </div>
-<div id="función-masa-de-probabilidad-función-de-densidad" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Función masa de probabilidad (función de densidad)</h2>
+<div id="función-masa-de-probabilidad-función-de-densidad" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Función masa de probabilidad (función de densidad)<a href="distribuciones-conjuntas-de-probabilidad.html#función-masa-de-probabilidad-función-de-densidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para el par <span class="math inline">\((X,Y)\)</span> con una función de distribución conjunta <span class="math inline">\(F(x,y)\)</span>.</p>
 <p>Para el caso continuo,</p>
 <blockquote>
@@ -392,8 +391,8 @@ Obtener la función de distribución (<span class="math inline">\(F\)</span>)</p
 Tarea:</p>
 <p><span class="math display">\[F(x,y)=F(t,r)=\int_0^t \int_0^r \frac{x}{8} dy dx\]</span></p>
 </div>
-<div id="distribución-marginal" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Distribución marginal</h2>
+<div id="distribución-marginal" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Distribución marginal<a href="distribuciones-conjuntas-de-probabilidad.html#distribución-marginal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La distribución conjunta del vector aleatorio <span class="math inline">\((X,Y)\)</span> describe la distribución del vector aleatorio, sin embargo, es posible a partir de la distribución conjunta, generar las distribuciones para cada componente del vector aleatorio.</p>
 <blockquote>
 <p>Definición 4, la distribución marginal de X es:</p>
@@ -442,8 +441,8 @@ Esto no siempre sucede, este caso se da cuando las variables son independientes.
 <p><span class="math display">\[f(x)=\int_{Ry} f(x,y) dy=\int_0^{2000}\frac{1}{500}dy=4\]</span>
 <span class="math display">\[f(y)=\int_{Rx} f(x,y) dx=\int_0^{0.25}\frac{1}{500}dx=\frac{1}{2000}\]</span></p>
 </div>
-<div id="independencia" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Independencia</h2>
+<div id="independencia" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Independencia<a href="distribuciones-conjuntas-de-probabilidad.html#independencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p>Definición 6, dos variables aleatorias son independientes si:</p>
 </blockquote>
@@ -494,8 +493,8 @@ Así <span class="math inline">\(k=\frac{1}{8}\)</span>, de esta forma:</p>
 <span class="math display">\[f(x)*f(y)=\frac{3-x}{4}*\frac{5-y}{4}\neq \frac{6-x-y}{8}\]</span>
 Por lo tanto <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> no son independientes.</p>
 </div>
-<div id="valores-esperados" class="section level2" number="1.6">
-<h2><span class="header-section-number">1.6</span> Valores esperados</h2>
+<div id="valores-esperados" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Valores esperados<a href="distribuciones-conjuntas-de-probabilidad.html#valores-esperados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En el caso univariado, sea <span class="math inline">\(X\)</span> una variable aleatoria con función de probabilidad <span class="math inline">\(\pi(x)\)</span> para el caso discreto o <span class="math inline">\(f(x)\)</span> para el caso continuo, el operador matemático esperanza se define como:</p>
 <p>Para el caso discreto,</p>
 <p><span class="math display">\[E[g(X)]=\sum_{Rx}g(x)P(X=x)\]</span></p>
@@ -560,8 +559,8 @@ Demostración,</p>
 <span class="math display">\[E[Y^2]=0^2*0.12+1^2*0.63+2^2*0.25=1.63\]</span>
 <span class="math display">\[E[XY]=\sum_{Rx}\sum_{Ry}xy \pi(x,y)=1*0*0.04+1*1*0.42+\ldots+3*2*0.13=2.067\]</span></p>
 </div>
-<div id="distribuciones-condicionales" class="section level2" number="1.7">
-<h2><span class="header-section-number">1.7</span> Distribuciones condicionales</h2>
+<div id="distribuciones-condicionales" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Distribuciones condicionales<a href="distribuciones-conjuntas-de-probabilidad.html#distribuciones-condicionales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Recordar de estadística I:</p>
 <p><span class="math display">\[P(B/A)=\frac{P(A\cap B)}{P(A)}\]</span></p>
 <p>Estas distribuciones nos ayudan a entender el comportamiento de una variable, cuando fijamos a otra.</p>
@@ -601,8 +600,8 @@ Se pide:</p>
 <p><span class="math display">\[E[Y]=\int_0^2 y\left( \frac{1}{3}+\frac{y}{6} \right)dy=\frac{10}{9}\]</span></p>
 <p><span class="math display">\[E[XY]=\int_{Rx} \int_{Ry} xy f(x,y)dydx=\int_0^1 \int_0^2 xy \left(x^2+\frac{xy}{3}\right) dy dx=\frac{43}{54}\]</span></p>
 </div>
-<div id="esperanza-condicional" class="section level2" number="1.8">
-<h2><span class="header-section-number">1.8</span> Esperanza condicional</h2>
+<div id="esperanza-condicional" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Esperanza condicional<a href="distribuciones-conjuntas-de-probabilidad.html#esperanza-condicional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Se refiere a calcular el valor esperado sobre la función condicional.</p>
 <p><span class="math display">\[E[Y/X]=\int_{Ry} y*  f_{Y/X}(y/x)dy\]</span>
 <span class="math display">\[E[X/Y]=\int_{Rx} x*  f_{X/Y}(x/y)dx\]</span>
@@ -617,8 +616,8 @@ Calcular:</p>
 <p><span class="math display">\[E[X/Y=y]=E[X] \quad;\quad E[Y/X=x]=E[Y] \quad ; \quad E[XY]=E[X]E[Y]\]</span>
 Tarea, demostrar lo anterior.</p>
 </div>
-<div id="medidas-de-relación-entre-dos-variables" class="section level2" number="1.9">
-<h2><span class="header-section-number">1.9</span> Medidas de relación entre dos variables</h2>
+<div id="medidas-de-relación-entre-dos-variables" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Medidas de relación entre dos variables<a href="distribuciones-conjuntas-de-probabilidad.html#medidas-de-relación-entre-dos-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Estas medidas nos ayudan a conocer si dos variables <em>están relacionadas</em> y nos permite saber el <em>tipo de relación</em> (directa, inversa) y también podemos saber la <em>intensidad de la relación</em>. Las medidas son:</p>
 <p>La Covarianza <span class="math inline">\(cov(X,Y)\)</span> es una medida absoluta de relación:</p>
 <p><span class="math display">\[cov(X,Y)=E\left\{(X-E[X])(Y-E[Y]) \right\}\]</span></p>
@@ -647,8 +646,8 @@ Tarea, demostrar lo anterior.</p>
 Como resultado de lo anterior, si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes:</p>
 <p><span class="math display">\[cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0\]</span></p>
 <p>Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.</p>
-<div id="ejercicio-por-1-punto." class="section level3" number="1.9.1">
-<h3><span class="header-section-number">1.9.1</span> Ejercicio por 1 punto.</h3>
+<div id="ejercicio-por-1-punto." class="section level3 hasAnchor" number="1.9.1">
+<h3><span class="header-section-number">1.9.1</span> Ejercicio por 1 punto.<a href="distribuciones-conjuntas-de-probabilidad.html#ejercicio-por-1-punto." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sea la función de densidad:</p>
 <p><span class="math display">\[f(x,y)=\frac{3}{2}(x^2+y^2); \quad 0&lt;x&lt;1;\quad 0&lt;y&lt;1\]</span>
 Se pide:</p>
@@ -710,8 +709,8 @@ finalmente:</p>
 <p><span class="math display">\[f(z)=\int_0^{\infty} \frac{4w e^{-2w}}{(1+z)^2} dw=\frac{1}{(1+z)^2}\]</span></p>
 </div>
 </div>
-<div id="transformaciones" class="section level2" number="1.10">
-<h2><span class="header-section-number">1.10</span> Transformaciones</h2>
+<div id="transformaciones" class="section level2 hasAnchor" number="1.10">
+<h2><span class="header-section-number">1.10</span> Transformaciones<a href="distribuciones-conjuntas-de-probabilidad.html#transformaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Supongamos que se busca encontrar a partir de la función de densidad <span class="math inline">\(f(X,Y)\)</span> de dos variables X, Y una tercera variable <span class="math inline">\(Z=H_1(X,Y)\)</span>. La estrategia para resolver este tipo de problemas es:</p>
 <ul>
 <li>Definir una cuarta variable <span class="math inline">\(W=H_2(X,Y)\)</span>, es elegida por conveniencia</li>
@@ -749,7 +748,7 @@ finalmente:</p>
 \right|=\left|
 \begin{array}
 &amp; 1 &amp; -1 \\
-0 &amp; 1 
+0 &amp; 1
 \end{array}
 \right|=1
 \]</span></p>
@@ -762,8 +761,8 @@ finalmente:</p>
 <li>Sea <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> variables aleatorias independientes, cada una con la misma distribución exponencial. Encuentre la función de densidad de <span class="math inline">\(Z=X/Y\)</span>, Recomendación <span class="math inline">\(W=X+Y\)</span></li>
 </ul>
 </div>
-<div id="distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="section level2" number="1.11">
-<h2><span class="header-section-number">1.11</span> Distrubuciones conjuntas de más de 2 variables aleatorias</h2>
+<div id="distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="section level2 hasAnchor" number="1.11">
+<h2><span class="header-section-number">1.11</span> Distrubuciones conjuntas de más de 2 variables aleatorias<a href="distribuciones-conjuntas-de-probabilidad.html#distrubuciones-conjuntas-de-más-de-2-variables-aleatorias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Estamos introduciendo ahora <span class="math inline">\(n\)</span> variables aleatorias, que se puede denotar por vector</p>
 <p><span class="math display">\[\left[X_1,X_2,\ldots,X_n \right]\]</span></p>
 <p>Se puede definir su función de densidad conjunta:</p>
