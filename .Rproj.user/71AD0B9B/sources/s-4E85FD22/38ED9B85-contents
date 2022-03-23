@@ -441,7 +441,6 @@ for(i in 1:k){
   s2<-sample(x2,n)
   xbar1[i]<-mean(s1)
   xbar2[i]<-mean(s2)
-  print(i)
 }
 #teorema 1
 abs(mean(x1)-mean(xbar1))
@@ -809,7 +808,7 @@ $$
 En R, para obtener $P(X<t)=F(t)$ con $X\sim t(v)$.
 
 ```{r}
-curve(dt(x,df=10),xlim=c(-5,5))
+curve(dt(x,df=10),xlim=c(-5,5),main="v=10")
 # P(X<2)=F(2), X ~ t(v=10)
 pt(2,10)
 pt(0,10)
@@ -817,13 +816,44 @@ pt(0,10)
 
 > Ejercicio 
 
-## Distribución Fisher
+Calcular, si $X\sim t(v=30)$
+
+  * $P(X>0.5)=1-P(X\leq 0.5)= 0.3103615$
+  * $P(-1<X<1.2)=F(1.2)-F(-1)=0.7175805$
+  * $P(X<3)=F(3)=0.997305$
+  
+```{r}
+curve(dt(x,df=30),xlim=c(-5,5),main="v=30")
+abline(v=0.5)
+1-pt(0.5,30)
+pt(1.2,30)-pt(-1,30)
+pt(3,30)
+```
+
+Suponer que se puede utilizar la norma para aproximar a la variable anterior, usando esa aproximación calcular las mismas probabilidades.
+
+$$X\sim N\left(0,\sigma^2=\frac{30}{28}\right)$$
+
+  * $P(X>0.5)=1-P(X\le 0.5)=0.3145316$
+  * $P(-1<X<1.2)=F(1.2)-F(-1)=0.709836$
+  * $P(X<3)=F(3)=0.9981239$
+
+```{r}
+1-pnorm(0.5,0,sqrt(30/28))
+pnorm(1.2,0,sqrt(30/28))-pnorm(-1,0,sqrt(30/28))
+pnorm(3,0,sqrt(30/28))
+```
+
+
+## Distribución Fisher (F)
 
 > Teorema
 
 Sean $U$ y $V$ dos variables aleatorias independientes, con $U\sim \chi^2(v_1)$ y $V \sim \chi^2(v_2)$. Y sea la variable $X$ definida como:
 
-$$X=\frac{U/v_1}{V/v_2}$$ Así, decimos que $X$ se distribuye como una Fisher, $X\sim F(v_1,v_2)$, donde estas $v_1$ y $v_2$ son los grados de libertad de la Fisher. La forma de la distribución $f(x)$ es:
+$$X=\frac{U/v_1}{V/v_2}$$ 
+
+Así, decimos que $X$ se distribuye como una Fisher, $X\sim F(v_1,v_2)$, donde estas $v_1$ y $v_2$ son los grados de libertad de la Fisher. La forma de la distribución $f(x)$ es:
 
 $$
 f(x)=\frac{\left(\frac{v_1}{v_2} \right)^{v_1/2} x^{v_1/2-1}\Gamma{(\frac{v_1+v_2}{2})} }{\Gamma{(\frac{v_1}{2})} \Gamma{(\frac{v_2}{2})}\left(1+\frac{v_1}{v_2}x \right)^{(v_1+v_2)/2}}, \quad x>0
@@ -831,116 +861,116 @@ $$
 
 ### Para las varianzas muestrales
 
-Suponga que las muetsras aleatorias de tamaños $n_1$ y $n_2$ se selecciona de 2 poblaciones normales con varianzas $\sigma^2_1$ y $\sigma^2_2$ respectivamente. Sabemos:
+Suponga que las muestras aleatorias de tamaños $n_1$ y $n_2$ se selecciona de 2 poblaciones **normales** con varianzas $\sigma^2_1$ y $\sigma^2_2$ respectivamente. Sabemos:
 
 $$\chi^2_1=\frac{(n_1-1)\hat{S}_1^2}{\sigma^2_1}\sim \chi^2(v_1=n_1-1)$$
 
-$$\chi^2_2=\frac{(n_2-1)\hat{S}_2^2}{\sigma^2_2}\sim \chi^2(v_2=n_2-1)$$ \> Teorema:
+$$\chi^2_2=\frac{(n_2-1)\hat{S}_2^2}{\sigma^2_2}\sim \chi^2(v_2=n_2-1)$$
+
+
+> Teorema:
 
 Si $\hat{S_1}$ y $\hat{S_2}$ son los estimadores de la varianza de muestras aleatorias independientes entre ellas de tamaño $n_1$ y $n_2$, tomadas de poblaciones normales con varianzas $\sigma^2_1$ y $\sigma^2_2$ entonces:
 
 $$\frac{\hat{S_1}^2/\sigma^2_1}{\hat{S_2}^2/\sigma^2_2}=\frac{\hat{S}_1^2*\sigma^2_2}{\hat{S}_2^2*\sigma^2_1}\sim F(v_1=n_1-1,v_2=n_2-1)$$
 
 ```{r}
-curve(df(x,10,10),xlim=c(0,6))
-curve(df(x,15,10),xlim=c(0,6))
-curve(df(x,100,100),xlim=c(0,6))
-curve(df(x,1000,1000),xlim=c(0,6))
-curve(df(x,30,30),xlim=c(0,6))
+curve(df(x,10,10),xlim=c(0,6),ylim=c(0,2))
+curve(df(x,50,50),xlim=c(0,6),add = T,col="red")
+curve(df(x,100,100),xlim=c(0,6),add = T,col="blue")
+abline(v=1,lty=2)
+
+curve(df(x,20,100),xlim=c(0,6),ylim=c(0,2))
+curve(df(x,100,20),xlim=c(0,6),ylim=c(0,2),col="red",add=T)
+curve(df(x,50,200),xlim=c(0,6),ylim=c(0,2),col="blue",add=T)
+abline(v=1,lty=2)
 ```
 
 En R
 
+$$P(X<t)=F(t)$$
+
+Donde  $X \sim F(v1,v2)$. Suponer que 
+
+$$X\sim F(15,16)$$
+$$P(X<1.5)= 0.7851078$$
+
 ```{r}
-#P(X<t)=F(t), donde  X ~ F(v1,v2). F(10,10), P(X<1)=F(1)
-pf(1,10,10)
-pf(1,50,50)
-pf(1,30,30)
-pf(1,25,60)
-pf(1,25,15)
+pf(1.5,15,16)
+#P(0.5<X<1)
+pf(1,15,16)-pf(0.5,15,16)
 ```
 
 ## Ejercicios
 
-1.  Suponga que una variable aleatoria se distribuye normalmente con media $\mu$ y varianza $\sigma^2$. Extraiga una muestra aleatoria de cinco observaciones. ¿Cuál es la función de densidad conjunta de la muestra?
+1. Suponga que una variable aleatoria se distribuye como una normal con media $\mu$ y varianza $\sigma^2$. Extraiga una muestra aleatoria de cinco observaciones. ¿Cuál es la función de densidad conjunta de la muestra?
 
-Solución, $x\sim N(\mu,\sigma^2)$, $n=5$, $x_1,x_2,x_3,x_4,x_5$
+Solución, 
 
-Se busca:
+$$X\sim N(\mu,\sigma^2); \quad X_1,X_2,\ldots,X_5$$
 
-$$f(x_1,x_2,x_3,x_4,x_5)=f(x_1)*f(x_2)*\ldots*f(x_5)$$
-
-Notar que las muestras son independientes e identicamente distribuidas.
+$$f(X_1,X_2,\ldots,X_5)=f(X_1)*f(X_2)*\ldots*f(X_5)$$
+Notar que estas $X_i$ son independientes e idénticamente distribuidas. 
 
 $$f(x_1,x_2,x_3,x_4,x_5)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(\frac{x_1-\mu}{\sigma})^2}*\ldots*\frac{1}{\sigma\sqrt{2\pi}}e^{-(\frac{x_5-\mu}{\sigma})^2}$$
 
-2.  Los transistores tienen una vida de servicios que se distribuye exponencialmente con parámetro $\lambda$. Se toma una muestra aleatoria de $n$ transistores. ¿Cuál es la función de densidad conjunta de la muestra?
+2. Para cierta prueba de aptitud se sabe con base en la experiencia que el número de aciertos es 1000 con una desviación estándar de 125. Si se aplica la prueba a 100 personas seleccionadas al azar, aproximar las siguientes probabilidades que involucran a la media muestral:
 
-Solución, como información $x\sim exp(\lambda)$, donde x: La vida de un transistor.
+$$P(985<\bar{x}< 1015)$$
+$$P(\bar{x}> 1020)$$  
+Solución, $X=$ Nota de la prueba de aptitud. 
 
-$$f(x_1, \ldots,x_n)=\prod_{i=1}^n f(x_i)=\prod_{i=1}^n \lambda e^{-\lambda x_i}=\lambda^n e^{-\lambda \sum_{i=1}^n x_i}$$
+$$X\sim .(\mu=1000,\sigma=125)$$
+Ya que $n$ es "grande", podemos usar el teorema del limite central:
 
-3.  Se tiene una población de 6 personas, de las cuales se toma una muestra aleatoria sin reposición de tamaño 3. Demostrar que el estimador de la media es insesgado. Los valores de la población para una variable X son {20,20,25,28,30,26}.
+$$\bar{x}\sim N(1000,125/\sqrt{100})=N(1000,12.5)$$
 
-Solución, recordar que:
+$$P(985<\bar{x}< 1015)=P(-1.2<z<1.2)=\phi(1.2)-\phi(-1.2)=0.7698607$$
+$$P(\bar{x}> 1020)=1-P(\bar{x}\leq 1020)= 0.05479929$$
 
-$$E[\bar{X}]=\mu$$
+3. Si se obtiene una muestra aleatoria de tamaño 16 de una distribución normal con media y varianza desconocida. obtener:
 
-```{r}
-x<-c(20,20,25,28,30,26)
-N<-6
-n<-3
-choose(N,n)
-s<-combn(x,3)
-xbar<-apply(s,2,mean)
-mean(x)#mu
-sum(xbar*1/20)#E[xbar]
-```
+$$P\left(\hat{S}^2/\sigma^2\leq 2.041\right)=?$$
+> Solución.
 
-$$6C3= \frac{6!}{(6-3)!3!}=\frac{4*5*6}{6}=20$$
+Se tiene que $n=16$. $X\sim N(\mu,\sigma^2)$.
 
-4.  Del ejercicio anterior demostrar que la varianza del estimador de la media para poblaciones finitas queda como:
+$$P\left((n-1)\hat{S}^2/\sigma^2\leq 2.041*15\right)=P(X\leq 30.614)= 0.9901098$$
+$$X\sim \chi^2(15)$$
 
-$$V(\bar{X})=\left(1-\frac{n}{N}\right) \frac{S_x^2}{n}$$
+4. La calificación promedio de los estudiantes de primer año en un examen de aptitudes en cierta universidad es 540, con una desviación estándar de 50. Suponga que las medias se miden con cualquier grado de precisión. ¿Cuál es la probabilidad de que dos grupos seleccionados al azar, que constan de 32 y 50 estudiantes, respectivamente, difieran en sus calificaciones promedio por:
 
-```{r}
-sum((1/20)*(xbar-mean(xbar))^2)#V(xbar)
-s2<-sum(((x-mean(x))^2)/(N-1))
-s2<-var(x)
-(1-n/N)*(s2/n)#formula
-```
+  - más de 20 puntos?
+  - una cantidad entre 5 y 10 puntos?  
 
-$$V(X)=E[(X-E[X])^2]=\sum_{Rx} (x_i-E[x_i])^2*P(X=x_i)$$ $$S^2_x=\frac{\sum_U (x_i-\mu)^2}{N-1}$$
+> Solución, 
 
-5.  La capacidad máxima de un ascensor es de 500 kilos. Si la distribución $X$ de los pesos de los usuarios es
+como información se tienen 2 muestras, $n_1=32$, $n_2=50$. Sea $X\sim . (\mu=540,\sigma=50)$, nos piden analizar la diferencia de las medias de los dos grupos, $\bar{X_1}$, $\bar{X}_2$:
 
-$$X\sim N(\mu=70,\sigma^2=100)$$
+  - más de 20 puntos?
 
--   Cuál es la probabilidad de que 8 pasajeros sobrepasen ese límite
--   Cuál es la probabilidad de que 7 pasajeros sobrepasen ese límite
--   Cuál es la probabilidad de que 6 pasajeros sobrepasen ese límite
+$$P( |\bar{X_1}-\bar{X}_2| >20)=1-P( |\bar{X_1}-\bar{X}_2| \leq 20)=1-P( -20\leq \bar{X_1}-\bar{X}_2 \leq 20)$$
 
-Solución,
+Para la diferencia de medias $\bar{X_1}-\bar{X}_2\sim N(\mu_{\bar{X_1}-\bar{X}_2}=\mu_x-\mu_x=0,\sigma^2_{\bar{X_1}-\bar{X}_2}=\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}=50^2/32+50^2/50)$, entonces, $Y=\bar{X_1}-\bar{X}_2\sim N(\mu_y=0,\sigma^2_y=128.125)$, bajo el supuesto que las $\bar{X}_1$ y $\bar{X}_2$ tienden a ser normales por el teorema del límite central.
 
-Sean $X_1, X_2, \ldots,X_p$ con $p$ la cantidad de pasajeros en el ascensor, suponemos que estas $X_i$ son iid $X_i\sim N(\mu=70,\sigma=10)$. Se pide:
+$$P( -20\leq \bar{X_1}-\bar{X}_2 \leq 20)=P(-20/11.31\leq Z \leq 20/11.31)\approx \phi(1.77)-\phi(-1.77)=$$
 
-$$P(Y=X_1+X_2+\ldots+X_p>500)$$ Notar que la suma de variables normales es también normal. $Y\sim N(\mu_y=p*\mu_x,\sigma^2_y=p*\sigma^2_x )$
+$$=0.962-0.038=0.9232$$ 
 
-$$E[Y]=E[X_1+\ldots+X_p]=E[X_1]+\ldots+E[X_p]=\mu_x+\ldots+\mu_x=p*\mu_x$$ $$V(Y)=V(X_1+\ldots+X_p)=V(X_1)+\ldots+V(X_p)=\sigma^2_x+\ldots+\sigma^2_x=p*\sigma^2_x$$
+$$P( |\bar{X_1}-\bar{X}_2| >20)=1-0.9232=0.0768$$
 
--   Cuál es la probabilidad de que 8 pasajeros sobrepasen ese límite; $Y\sim N(\mu_y=8*70=560,\sigma^2_y=8*100=800)$
+5. Suponga que las varianzas muestrales son mediciones continuas. Calcule la probabilidad de que una muestra aleatoria de 25 observaciones, de una población normal con varianza $\sigma^2 = 6$, tenga una varianza muestral $\hat{S}^2$
 
-$$P(Y>500)=P(Z>\frac{500-560}{\sqrt{800}})=P(Z>-2.12)=1-P(Z\leq -2.12)=1-\phi(-2.12)=$$
+  - mayor que 9.1
+  - entre 3.462 y 10.745.
 
-$$=1-0.017=0.983$$
+$$P(\hat{S}^2>9.1)=P\left(\frac{(n-1)\hat{S^2}}{\sigma^2_x}> 24*9.1/6 \right)=P(\chi^2>36.4)=1-P(\chi^2\leq36.4)=$$
 
--   Cuál es la probabilidad de que 7 pasajeros sobrepasen ese límite, $Y\sim N(\mu_y=490,\sigma^2_y=700)$
+$$=1-0.9498=0.0502$$
 
-$$P(Y>500)=P(Z>0.3779)=1-\phi(0.3779)=1-0.647=0.353$$
+Teniendo en cuenta que $\chi^2\sim \chi^2(v=24)$
 
--   Cuál es la probabilidad de que 6 pasajeros sobrepasen ese límite. (Ejercicio)
-
-2.  El viaje en un autobús especial para ir de un campus de una universidad al campus de otra en una ciudad toma, en promedio, 28 minutos, con una desviación estándar de 5 minutos. En cierta semana un autobús hizo el viaje 40 veces. ¿Cuál es la probabilidad de que el tiempo promedio del viaje sea mayor a 30 minutos?
+6. El viaje en un autobús especial para ir de un campus de una universidad al campus de otra en una ciudad toma, en promedio, 28 minutos, con una desviación estándar de 5 minutos. En cierta semana un autobús hizo el viaje 40 veces. ¿Cuál es la probabilidad de que el tiempo promedio del viaje sea mayor a 30 minutos?
 
 Solución, $n=40$, Sea $X$ una va. que explica el tiempo de viaje entre los dos campus. $X \sim .(\mu_x=28,\sigma=5)$, nos pide:
 
@@ -952,33 +982,33 @@ $$P(\bar{X}>30)=P\left(\frac{\bar{X}-\mu_x}{\sigma_x/\sqrt{n}} >\frac{30-28}{5/\
 
 $$=1-0.9941=0.0059$$
 
-3.  La calificación promedio de los estudiantes de primer año en un examen de aptitudes en cierta universidad es 540, con una desviación estándar de 50. Suponga que las medias se miden con cualquier grado de precisión. ¿Cuál es la probabilidad de que dos grupos seleccionados al azar, que constan de 32 y 50 estudiantes, respectivamente, difieran en sus calificaciones promedio por:
+7. La capacidad máxima de un ascensor es de 500 kilos. Si la distribución $X$ de los pesos de los usuarios es
 
--   más de 20 puntos?
+$$X\sim N(\mu=70,\sigma^2=100)$$
 
--   una cantidad entre 5 y 10 puntos? \_ Solución, como información se tienen 2 muestras, $n_1=32$, $n_2=50$. Sea $X\sim . (\mu=540,\sigma=50)$, nos piden analizar la diferencia de las medias de los dos grupos, $\bar{X_1}$, $\bar{X}_2$:
+  - Cuál es la probabilidad de que 8 pasajeros sobrepasen ese límite?    
+  - Cuál es la probabilidad de que 7 pasajeros sobrepasen ese límite?
+  - Cuál es la probabilidad de que 6 pasajeros sobrepasen ese límite?
 
--   más de 20 puntos?
+> Solución,
 
-$$P( |\bar{X_1}-\bar{X}_2| >20)=1-P( |\bar{X_1}-\bar{X}_2| \leq 20)=1-P( -20\leq \bar{X_1}-\bar{X}_2 \leq 20)$$
+Sean $X_1, X_2, \ldots,X_p$ con $p$ la cantidad de pasajeros en el ascensor, suponemos que estas $X_i$ son iid $X_i\sim N(\mu=70,\sigma=10)$. Se pide:
 
-Para la diferencia de medias $\bar{X_1}-\bar{X}_2\sim N(\mu_{\bar{X_1}-\bar{X}_2}=\mu_x-\mu_x=0,\sigma^2_{\bar{X_1}-\bar{X}_2}=\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}=50^2/32+50^2/50)$, entonces, $Y=\bar{X_1}-\bar{X}_2\sim N(\mu_y=0,\sigma^2_y=128.125)$, bajo el supuesto que las $\bar{X}_1$ y $\bar{X}_2$ tienden a ser normales por el teorema del límite central.
+$$P(Y=X_1+X_2+\ldots+X_p>500)$$ 
 
-$$P( -20\leq \bar{X_1}-\bar{X}_2 \leq 20)=P(-20/11.31\leq Z \leq 20/11.31)\approx \phi(1.77)-\phi(-1.77)=$$
+Notar que la suma de variables normales es también normal. $Y\sim N(\mu_y=p*\mu_x,\sigma^2_y=p*\sigma^2_x )$
 
-$$=0.962-0.038=0.9232$$ $$P( |\bar{X_1}-\bar{X}_2| >20)=1-0.9232=0.0768$$
+$$E[Y]=E[X_1+\ldots+X_p]=E[X_1]+\ldots+E[X_p]=\mu_x+\ldots+\mu_x=p*\mu_x$$ $$V(Y)=V(X_1+\ldots+X_p)=V(X_1)+\ldots+V(X_p)=\sigma^2_x+\ldots+\sigma^2_x=p*\sigma^2_x$$
 
--   una cantidad entre 5 y 10 puntos? (ejercicio)
+  - Cuál es la probabilidad de que 8 pasajeros sobrepasen ese límite; $Y\sim N(\mu_y=8*70=560,\sigma^2_y=8*100=800)$
 
-4.  Suponga que las varianzas muestrales son mediciones continuas. Calcule la probabilidad de que una muestra aleatoria de 25 observaciones, de una población normal con varianza $\sigma^2 = 6$, tenga una varianza muestral $\hat{S}^2$
+$$P(Y>500)=P(Z>\frac{500-560}{\sqrt{800}})=P(Z>-2.12)=1-P(Z\leq -2.12)=1-\phi(-2.12)=$$
 
--   mayor que 9.1
--   entre 3.462 y 10.745.
+$$=1-0.017=0.983$$
 
-$$P(\hat{S}^2>9.1)=P\left(\frac{(n-1)\hat{S^2}}{\sigma^2_x}> 24*9.1/6 \right)=P(\chi^2>36.4)=1-P(\chi^2\leq36.4)=$$
+  - Cuál es la probabilidad de que 7 pasajeros sobrepasen ese límite, $Y\sim N(\mu_y=490,\sigma^2_y=700)$
 
-$$=1-0.9498=0.0502$$
+$$P(Y>500)=P(Z>0.3779)=1-\phi(0.3779)=1-0.647=0.353$$
 
-Teniendo en cuenta que $\chi^2\sim \chi^2(v=24)$
+  - Cuál es la probabilidad de que 6 pasajeros sobrepasen ese límite. (Ejercicio)
 
-5.  Un fabricante de cierta marca de barras de cereal con bajo contenido de grasa afirma que el contenido promedio de grasa saturada en éstas es de 0.5 gramos. En una muestra aleatoria de 8 barras de cereal de esta marca se encontró que su contenido de grasa saturada era de 0.6, 0.7, 0.7, 0.3, 0.4, 0.5, 0.4 y 0.2. ¿Estaría de acuerdo con tal afirmación? Suponga una distribución normal. ($t$)
