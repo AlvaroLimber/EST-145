@@ -5,13 +5,12 @@
 El proceso por el cual, mediante una **muestra estadísticamente seleccionada** se busca describir a la población/universo de la cual esta proviene. Podemos clasificar a la inferencia estadística en:
 
   - *Inferencia descriptiva:* Tiene el único objetivo de describir a la población mediante la muestra, tradicionalmente se enfoca en estimaciones comunes como; la media, la varianza, total, un porcentaje, diferencia de medias, diferencia de proporciones.
-
-  - Estimación puntual: $\hat{\theta}$
-  - Estimación por intervalos:
+  + Estimación puntual: $\hat{\theta}$
+  + Estimación por intervalos:
         $[ \hat{\theta}_{LI},\hat{\theta}_{LS}]$
-  - Pruebas de hipótesis: $\theta=k$, $\theta>k$,
+  + Pruebas de hipótesis: $\theta=k$, $\theta>k$,
         $\theta<k$
-  - Tamaño de la muestra ($n$):
+  + Tamaño de la muestra ($n$):
         $n=f(U,V(\hat{\theta}),\hat{\theta},\ldots)$
 
   - *Inferencia predictiva:* Tiene una idea de estudiar; por un lado, la evolución de las estimaciones y sus posibles valores futuros (series de tiempo), por otro lado, le interesa conocer las relaciones (no causales) entre las variables.
@@ -55,23 +54,28 @@ pregunta es ¿Cuál es mejor?. Existen al menos dos criterios:
 
 $$E[\hat{\theta}]=\theta$$
 
+Nota: Un ejemplo de un estimador sesgado es el de la razón.
+
+$$E[\hat{R}_{y/x}]=E\left[\frac{\hat{t}_y}{\hat{t}_x}\right] \neq \frac{t_y}{t_x}$$
+
 ### Estimador eficiente
 
 Supongamos que tenemos dos estimadores para $\theta$, $\hat{\theta}_1$,
 $\hat{\theta}_2$, el estimador más eficiente entre los dos será quien
 tenga el valor más pequeño en su varianza.
 
-$min(V(\hat{\theta_1}),V(\hat{\theta_2})) \rightarrow \hat{\theta}$\$
+$$min(V(\hat{\theta_1}),V(\hat{\theta_2})) \rightarrow \hat{\theta}$$
 
 Ejemplo.
 
 Sea el vector $X=\{10,10,20,25,30\}$ de una población con $N=5$, se
 define una muestra de $n=3$ y se busca estimar la media de $X$: $\mu_x$.
-A partir de los estimadores de la media y la mediana muestral.
+
+A partir de los estimadores de la **media** y la **mediana** muestral.
 Determinar:
 
--   Son estimadores insesgados
--   Cuál estimador es más eficiente
+  - Son estimadores insesgados
+  - Cuál estimador es más eficiente
 
 Suponga un muestreo sin reposición.
 
@@ -100,52 +104,55 @@ sum((dmediana-mean(dmediana))^2*1/10) # mediana muestral
 ```
 
 Para este ejercicio, la media muestral es insesgado y más eficiente que
-la mediana muestral.
+la mediana muestral, como un estimador de la media poblacional.
 
 > Nota
 
 Los principales problemas de estimación ocurren con frecuencia para
 estimar:
 
--   El promedio o media de una población $\mu$
+  - El promedio o media de una población $\mu$
 
 $$\mu_X=\frac{\sum_U X_i}{N}$$
 
--   La varianza poblacional $\sigma^2$
+  - La varianza poblacional $\sigma^2$
 
 $$\sigma^2=\frac{\sum_U (X_i-\mu_X)^2}{N}$$
 
--   La proporción de una característica en la población $P$
+  - La proporción de una característica en la población $P$
 
 $$P_A=\frac{\#A}{N}=\frac{\sum_{U} X_i}{N}; \quad \{X_i=1, \quad i \in A, X_i=0,\quad eoc\}$$
 
--   La diferencia de medias de dos poblaciones $\mu_1-\mu_2$
--   La diferencia de proporciones de dos poblaciones $P_1-P_2$
+  - La diferencia de medias de dos poblaciones $\mu_1-\mu_2$
+  - La diferencia de proporciones de dos poblaciones $P_1-P_2$
+  - El cociente de varianzas de dos poblaciones $\sigma_1/\sigma_2$
 
 Estimaciones puntuales razonables de estos parámetros son las
 siguientes:
 
--   Para $\mu$, la estimación es $\hat{\mu_x}=\bar{X}$ la media muestral
+  - Para $\mu_x$, la estimación es $\hat{\mu_x}=\bar{X}$ la media muestral
 
-$$\bar{X}=\frac{\sum_s X_i}{n}$$ \* Para $\sigma^2$, la estimación es
-$\hat{\sigma}^2=\hat{S^2}$, la varianza muestral
+$$\bar{X}=\frac{\sum_s X_i}{n}$$
+  - Para $\sigma^2$, la estimación es $\hat{S^2}$, la varianza muestral
 
-$$\hat{S}^2=\frac{\sum_s (X_i-\bar{X})^2}{n-1}$$ \* Para $P$, la
-estimación es $\hat{P}$, la proporción muestral
+$$\hat{S}^2=\frac{\sum_s (X_i-\bar{X})^2}{n-1}$$ 
 
-$$\hat{P}_A=\frac{\#_sA}{N}=\frac{\sum_{s} X_i}{N}; \quad \{X_i=1, \quad i \in A, X_i=0,\quad eoc\}$$
-\* Para $\mu_1-\mu_2$, la estimación es
-$\hat{\mu_1}-\hat{\mu}_2=\bar{X}_1-\bar{X}_2$, la diferencia entre las
-medias de las muestras de dos muestras aleatorias independientes. \*
-Para $P_1-P_2$, la estimación es $\hat{P_1}-\hat{P}_2$, la diferencia
-entre las proporciones de las muestras de dos muestras aleatorias
-independientes.
+  - Para $P$, la estimación es $\hat{P}$, la proporción muestral
 
-Ejercicio, Suponga que $X$ es una variable aleatoria con media $\mu$ y
-varianza $\sigma^2$. Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria
-de tamaño $n$ de $X$. DEMOSTRAR que la media de muestra $\bar{X}$ y la
-varianza muestral $\hat{S}^2$ son estimadores insesgados de $\mu$ y
-$\sigma^2$, respectivamente.
+$$\hat{P}_A=\frac{\#_sA}{n}=\frac{\sum_{s} X_i}{n}; \quad \{X_i=1, \quad i \in A, X_i=0,\quad eoc\}$$
+  - Para $\mu_1-\mu_2$, la estimación es $\hat{\mu_1}-\hat{\mu}_2=\bar{X}_1-\bar{X}_2$, la diferencia entre las
+medias de las muestras de dos muestras aleatorias *independientes*. 
+  - Para $P_1-P_2$, la estimación es $\hat{P_1}-\hat{P}_2$, la diferencia entre las proporciones de las muestras de dos muestras aleatorias *independientes*.
+  - Para el cociente de varianzas $\sigma_1/\sigma_2$ un estimador razonables es $\hat{S}_1/\hat{S}_2$
+
+> Ejemplo, 
+
+Suponga que $X$ es una variable aleatoria con media $\mu_x$ y
+varianza $\sigma^2_x$. Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria de tamaño $n$ de $X$. 
+
+**DEMOSTRAR** que la media muestral $\bar{X}$ y la
+varianza muestral $\hat{S}^2$ son estimadores insesgados de $\mu_x$ y
+$\sigma^2_x$, respectivamente.
 
 Como información; $E[X]=\mu$,
 
@@ -159,9 +166,12 @@ Así,
 $$V(\bar{X})=\frac{\sigma^2}{n}=E[\bar{X}^2]-E[\bar{X}]^2=E[\bar{X}^2]-\mu^2$$
 
 
-$$E[\hat{S^2}]=E\left[\frac{\sum_s (X_i-\bar{X})^2}{n-1} \right]=\frac{1}{n-1} E\left[\sum_s (X_i^2-2X_i \bar{X}+\bar{X}^2) \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X} \sum_sX_i +n\bar{X}^2 \right]= $$
+$$E[\hat{S^2}]=E\left[\frac{\sum_s (X_i-\bar{X})^2}{n-1} \right]=\frac{1}{n-1} E\left[\sum_s (X_i^2-2X_i \bar{X}+\bar{X}^2) \right]=$$
 
-$$=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X}n\frac{\sum_s X_i}{n}  +n\bar{X}^2 \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-2n\bar{X}^2  +n\bar{X}^2 \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-n\bar{X}^2\right]=$$
+$$=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X} \sum_sX_i +n\bar{X}^2 \right]= $$
+
+$$=\frac{1}{n-1}E\left[\sum_s X_i^2-2\bar{X}n\frac{\sum_s X_i}{n}  +n\bar{X}^2 \right]=$$
+$$=\frac{1}{n-1}E\left[\sum_s X_i^2-2n\bar{X}^2  +n\bar{X}^2 \right]=\frac{1}{n-1}E\left[\sum_s X_i^2-n\bar{X}^2\right]=$$
 
 $$=\frac{1}{n-1}\left(\sum_s E[X_i^2]-nE[\bar{X}^2] \right)= \alpha$$
 Notar
@@ -171,7 +181,8 @@ $\sigma^2=E[X_i^2]-E[X_i]^2=E[X_i^2]-\mu^2$, entonces,
 $E[X_i^2]=\sigma^2+\mu^2$. Por otro lado
 $E[\bar{X}^2]=\frac{\sigma^2}{n}+\mu^2$, Así:
 
-$$\alpha=\frac{1}{n-1}\left[\sum_s (\sigma^2+\mu) -n \left(\frac{\sigma^2}{n}+\mu \right) \right]=\frac{1}{n-1}\left[ n \sigma^2+n\mu -\sigma^2-n\mu  \right]=\frac{\sigma^2(n-1)}{n-1}=\sigma^2$$
+$$\alpha=\frac{1}{n-1}\left[\sum_s (\sigma^2+\mu^2) -n \left(\frac{\sigma^2}{n}+\mu^2 \right) \right]=$$
+$$=\frac{1}{n-1}\left[ n \sigma^2+n\mu^2 -\sigma^2-n\mu^2  \right]=\frac{\sigma^2(n-1)}{n-1}=\sigma^2$$
 
 ### Error cuadrático medio (ECM)
 
@@ -190,23 +201,13 @@ $$=V(\hat{\theta})+sesgo(\hat\theta)^2$$
 
 ### Cota de Cramer Rao
 
-Es posible obtener una cota inferior de la varianza de todos los
-estimadores ($\hat{\theta}_1, \hat{\theta}_2,\ldots$) insesgados de
-$\theta$. Sea $\hat{\theta}$ un estimador insesgado del parámetro
-$\theta$, basado en una muestra aleatorio de $n$ observaciones, y
-considérese que $f(x,\theta)$ denota la función de distribución de
-probabilidades de una variable aleatoria $X$. Entonces una cota inferior
-en la varianza de $\hat{\theta}$ es:
+Es posible obtener una cota inferior de la varianza de todos los estimadores ($\hat{\theta}_1, \hat{\theta}_2,\ldots$) insesgados de $\theta$. Sea $\hat{\theta}$ un estimador insesgado del parámetro $\theta$, basado en una muestra aleatorio de $n$ observaciones, y considérese que $f(x,\theta)$ denota la función de distribución de probabilidades de una variable aleatoria $X$. Entonces una cota inferior en la varianza de $\hat{\theta}$ es:
 
 $$V(\hat{\theta})\geq\frac{1}{nE\left\{ \left[\frac{d}{d\theta }ln f(X,\theta) \right]^2 \right\}}$$
 
-Esta desigualdad se denomina *cota de Cramer Rao*. Si un estimador
-insesgado $\hat{\theta}$ satisface la desigualdad, se tratará del
-estimador insesgado de varianza mínima de $\theta$.
+Esta desigualdad se denomina *cota de Cramer Rao*. Si un estimador insesgado $\hat{\theta}$ satisface la desigualdad, se tratará del estimador insesgado de varianza mínima de $\theta$.
 
-Ejemplo, Demostrar que la media muestra $\bar{X}$ es el estimador
-insesgado de varianza mínima de la media de una distribución normal con
-varianza conocida.
+Ejemplo, Demostrar que la media muestral $\bar{X}$ es el estimador insesgado de varianza mínima de la media de una distribución normal con varianza conocida.
 
 Sea $X\sim N(\mu,\sigma^2)$, sabemos $E[\bar{X}]=\mu$
 
