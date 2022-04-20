@@ -234,21 +234,23 @@ maximiza la función de probabilidad $L(\theta)$.
 Pasos para obtener el estimador de máxima verosimilitud para un
 parámetro $\theta$
 
-1.  Obtener $L(\theta)$
-2.  Calcular $ln [L(\theta)]$
-3.  Resolver la ecuación:
+  1. Obtener $L(\theta)$
+  2. Calcular $ln [L(\theta)]$
+  3. Resolver la ecuación:
 
 $$\frac{d}{d\theta} ln [L(\theta)]=0$$
 
 En el caso de que tengamos más de un parámetro, los pasos son:
 
-1.  Obtener
+  1. Obtener
     $L(\theta_1,\theta_2,\ldots)=f(X_1,\theta_1,\theta_2,\ldots)*\ldots*f(X_n,\theta_1,\theta_2,\ldots)$
-2.  Calcular $ln [L(\theta_1,\theta_2,\ldots)]$
-3.  Resolver el sistema de ecuaciones:
+  2. Calcular $ln [L(\theta_1,\theta_2,\ldots)]$
+  3. Resolver el sistema de ecuaciones:
 
 $$\frac{\partial }{\partial \theta_1} ln [L(\theta_1,\theta_2,\ldots)]=0$$
 $$\frac{\partial }{\partial \theta_2} ln [L(\theta_1,\theta_2,\ldots)]=0$$
+$$\vdots$$
+
 $$\frac{\partial }{\partial \theta_p} ln [L(\theta_1,\theta_2,\ldots)]=0$$
 
 Ejemplos
@@ -587,7 +589,9 @@ $$999.5774 \leq \mu \leq 1028.423$$
 
 Definamos al margen de error absoluto como:
 
-$$\epsilon=Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$ Notar que es posible
+$$\epsilon=Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$
+
+Notar que es posible
 despejar $n$ y esto permitirá tener una formula para definir un tamaño
 de muestra condicionado a: el margen de error ($\epsilon$), desviación
 de los datos ($\sigma$) y el nivel de confiabilidad ($Z_{\alpha/2}$)
@@ -609,6 +613,10 @@ Ejercicio, se quiere obtener el tamaño de muestra para un estudio que busca con
 Solución,
 
 $$n=\left(\frac{1.64*650}{300} \right)^2= 12.62\approx 13 $$
+Ejercicio, Se quiere hacer una encuesta sobre los ingresos de los hogares en un determinado barrio de La Paz, tomar como referencia un nivel de confiabilidad del 95% y 99%, un margen de error de 800 Bs. Suponiendo que $\sigma=1300$.
+
+  * 95%: $10.14\approx 11$
+  * 99%: $17.58\approx 18$
 
 ### Intervalo de confianza sobre la diferencia de dos medias, conocida la varianza
 
@@ -656,7 +664,31 @@ Para la diferencia de medias
 
 $$IC_{100(1-\alpha)}(\mu_1-\mu_2): \bar{X}_1-\bar{X}_2 \pm Z_{\alpha/2} \sqrt{\frac{\hat{S_1}^2}{n_1}+\frac{\hat{S_2}^2}{n_2}}$$
 
-Ejercicio, se tiene el dato de una muestra aleatoria de 35 estudiantes sobre la variable horas/día en la computadora, se pide calcular los intervalos de confianza al 90, 95 y 99% de confiabilidad, los datos son:
+> Ejercicio 1 
+
+Se tiene una muestra de 32 estudiantes respecto la nota del primer parcial de la materia de estadística 2 de la carrera de informática, calcular un intervalo de confianza para la media al 95 y 97% de confiabilidad. Los datos son:
+
+```{r}
+bd<-readxl::read_excel("C:\\Users\\Alvaro\\Box\\2022\\umsa\\EST-145\\r-exams\\parcial1_notas_i2022.xlsx")
+x<-bd$nota[!is.na(bd$nota)]
+set.seed(346)
+s<-sample(x,32)
+s
+```
+
+Solución
+
+```{r}
+#95%
+mean(s)+c(-1,1)*1.96*sqrt(var(s)/32)
+#97
+qnorm(0.03/2,lower.tail = F)
+mean(s)+c(-1,1)*qnorm(0.03/2,lower.tail = F)*sqrt(var(s)/32)
+```
+
+> Ejercicio 2
+
+se tiene el dato de una muestra aleatoria de 35 estudiantes sobre la variable horas/día en la computadora, se pide calcular los intervalos de confianza al 90, 95 y 99% de confiabilidad, los datos son:
 
 ```{r}
 n<-35
