@@ -711,7 +711,7 @@ mean(x)+c(-1,1)*1.96*sqrt(var(x)/40)
 
 ### Intervalo de confianza para la media y la diferencia de medias con varianza desconocida pero muestra menor a 30.
 
-Para producir un intervalo de confianza valido en estos casos, se debe realizar supuestos fuertes respecto la población de la cual proviene la información. La suposición mas usual es que la población de base viene de una normal, lo que nos lleva en distribuciones muestrales a trabajar con un distribución $t-student$.
+Para producir un intervalo de confianza *valido* en estos casos, se debe realizar **supuestos fuertes** respecto la población de la cual proviene la información. La suposición mas usual es que la población de base viene de una **normal**, lo que nos lleva en distribuciones muestrales a trabajar con un distribución $t-student$.
 
 Para la media, sea:
 
@@ -738,7 +738,28 @@ n<-20
 qt(alpha/2,n-1,lower.tail = F)
 ```
 
-Ejercicio, suponga que se tiene el dato de 15 personas sobre sus ingresos mensuales, estos datos proviene de una muestra aleatoria. Calcular el estimador de la media e intervalos de confianza al 95% y 98% de confiabilidad. 
+> Ejercicio 1 
+
+Se tienen las siguientes edades de una muestra de 10 personas de un grupo de universitarios egresados de la carrera de informática, se pide construir intervalos de confianza para la media de edad al 95% y 98% de confiabilidad. Los datos son:
+
+```{r}
+n<-10;set.seed(237)
+x<-round(runif(n,22,30),0)
+#x<-c(27, 26, 26, 25 ,26, 29, 26, 22, 28, 26)
+x
+#solución, asumiendo que los datos provienen de una distribución normal
+mean(x)
+t95<-qt(0.05/2,n-1,lower.tail = F)
+t98<-qt(0.02/2,n-1,lower.tail = F)
+#95%
+mean(x)+c(-1,1)*t95*sqrt(var(x)/n)
+#98%
+mean(x)+c(-1,1)*t98*sqrt(var(x)/n)
+```
+
+> Ejercicio 2
+
+Suponga que se tiene el dato de 15 personas sobre sus ingresos mensuales, estos datos proviene de una muestra aleatoria. Calcular el estimador de la media e intervalos de confianza al 95% y 98% de confiabilidad. 
 
 ```{r}
 n<-15
@@ -777,8 +798,7 @@ n<-20
 mx+c(-1,1)*ta*sqrt(s2/n)
 ```
 
-Para la diferencia de medias, pero con varianzas iguales
-$\sigma_1=\sigma_2$
+Para la diferencia de medias, pero con varianzas iguales $\sigma_1=\sigma_2$
 
 Cuando $n_1$ o $n_2$ no superen ambas a 30, la mejor alternativa es usar
 el intervalo de confianza en base a la distribución $t$, para la
@@ -818,23 +838,21 @@ n2<-13
 # Estimador puntual de diferencia de medias
 mx1-mx2
 # Intervalo con varianzas iguales
-ta1<-qt(0.025,n1+n2-2,lower.tail = F)
+ta1<-qt(0.05/2,n1+n2-2,lower.tail = F)
 s2p<-((n1-1)*s21+(n2-1)*s22)/(n1+n2-2)
 mx1-mx2+c(-1,1)*ta1*sqrt(s2p)*sqrt(1/n1+1/n2)
 
 # Intervalo con varianzas desiguales
 v<-((s21/n1+s22/n2)^2)/(((s21/n1)^2)/(n1+1)+((s22/n2)^2)/(n2+1))-2
-ta2<-qt(0.025,v,lower.tail = F)
+ta2<-qt(0.05/2,v,lower.tail = F)
 mx1-mx2+c(-1,1)*ta2*sqrt(s21/n1+s22/n2)
-#estimador puntual
-mx1-mx2
 ```
 
 ### Intervalos de confianza para la diferencia de medias de datos pareados
 
 En general, supongamos que los datos constan de $n$ pares
 $(X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})$, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
-$D_1=X_{11}-X_{21},D_2=X_{12}-X{22},\ldots,D_n=X_{1n}-X_{2n}$,
+$D_1=X_{11}-X_{21},D_2=X_{12}-X_{22},\ldots,D_n=X_{1n}-X_{2n}$,
 estableciendo a $D$ como la va, su intervalo es:
 
 $$IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm t_{\alpha/2,n-1}*\sqrt{\frac{\hat{S}^2_D}{n}} $$
@@ -856,9 +874,9 @@ mean(bd$p2)-mean(bd$p1)
 #creando la variable D=p2-p1
 bd$D<-bd$p2-bd$p1
 mean(bd$D)+c(-1,1)*qt(0.1/2,11,lower.tail = F)*sqrt(var(bd$D)/12)
-##############################
+#############################
 #suponer una muestra de 100 estudiantes
-n<-1000
+n<-100
 set.seed(1536)
 bd2<-data.frame(id=1:n,p1=round(runif(n,40,80)),p2=round(runif(n,30,90)))
 #estimador puntual
@@ -886,6 +904,43 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 $\hat{P}$. Así, el intervalo de confianza queda como:
 
 $$IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}$$
+
+> Ejercicio 1
+
+Se toma una muestra de 40 estudiantes de la materia de estadística I con base al listado de inscritos, se identificó en la muestra lo siguiente:
+
+  * 10 estudiantes abandonaron la materia
+  * 18 estudiantes tienen notas de aprobación
+
+Se pide calcular los intervalos de confianza al 95% de confiabilidad para la proporción de abandono en la materia y la proporción de reprobados. 
+
+Si el curso tiene un total de 180 inscritos, ¿Cuál sera el intervalo de confianza (95%) de la cantidad de estudiantes que aprobaron?
+
+Solución
+
+```{r}
+n<-40
+ab<-10
+ap<-18
+re<-12
+# estimador puntal
+p_ab<-10/40
+p_ap<-18/40
+p_re<-12/40
+p_ab;p_ap; p_re
+p_ab*100;p_ap*100; p_re*100
+#intervalo de confianza
+p_ab+c(-1,1)*1.96*sqrt(p_ab*(1-p_ab)/n) #abandonos
+p_ap+c(-1,1)*1.96*sqrt(p_ap*(1-p_ap)/n) #aprobados
+p_re+c(-1,1)*1.96*sqrt(p_re*(1-p_re)/n) #reprobados
+#%
+100*(p_ab+c(-1,1)*1.96*sqrt(p_ab*(1-p_ab)/n)) #abandonos
+100*(p_ap+c(-1,1)*1.96*sqrt(p_ap*(1-p_ap)/n)) #aprobados
+100*(p_re+c(-1,1)*1.96*sqrt(p_re*(1-p_re)/n))#reprobados
+#personas
+180*(p_ap+c(-1,1)*1.96*sqrt(p_ap*(1-p_ap)/n)) #aprobados
+```
+
 
 Ejemplo, en un curso se tomó una muestra aleatoria de 15 personas, respecto su estatura en centímetros, las mediciones son:
 
@@ -915,7 +970,9 @@ p+c(-1,1)*1.96*sqrt(p*(1-p)/n)
 (p+c(-1,1)*1.96*sqrt(p*(1-p)/n))*100
 ```
 
-Ejercicio, la varianza del estimador de la proporción tiene la forma:
+> Ejemplo, 
+
+La varianza del estimador de la proporción tiene la forma:
 
 $$V(\hat{P})=\frac{P(1-P)}{n}$$
 
@@ -950,21 +1007,24 @@ tm_p<-function(z,e,p){
   n<-((z/e)^2)*(p*(1-p))
   return(n)
 }
-ceiling(tm_p(1.96,0.05,0.5))
+tm_p(1.96,0.05,0.5)
+plot(p,tm_p(1.96,0.05,p))
 ```
 
-Ejercicio, una carrera en la universidad esta a punto de elegir a sus autoridades, se busca hacer una encuesta de intención de votos en los estudiantes para el candidato $Z$, se quiere un nivel de confianza del 95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo
-$n$ máxima y (2) mediante un sondeo se verifico que el candidato $Z$ tiene un 70% de apoyo.
+> Ejercicio,
+
+Una carrera en la universidad esta a punto de elegir a sus autoridades, se busca hacer una encuesta de intención de votos en los estudiantes para el candidato $Z$, se quiere un nivel de confianza del 95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo $n$ máxima y (2) mediante un sondeo se verifico que el candidato $Z$ tiene un 70% de apoyo.
 
 Solución,
 
 ```{r}
 ceiling(tm_p(1.96,0.05,0.5))#1
 ceiling(tm_p(1.96,0.05,0.7))#2
-ceiling(tm_p(1.96,0.02,0.5))#epsilon 2%
+ceiling(tm_p(1.96,0.1,0.5))#epsilon 10%
 ceiling(tm_p(1.96,0.01,0.5))#epsilon 1%
 ```
 
+Nota: La muestra de 385 es valida para cualquier área, siempre y cuando la selección de la muestra se realiza de forma completamente aleatoria (**azar**) y provenir de una **listado** de la población objetivo.
 
 ### Intervalo de confianza para diferencia de proporciones
 
@@ -974,7 +1034,9 @@ $$IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\f
 
 Donde $\hat{P}_1$ y $\hat{P}_2$ son estimaciones de proporción para la población 1 y 2, respecto una misma característica, $n_1$ y $n_2$ son los tamaños de muestra es estas poblaciones.
 
-Ejercicio, en una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:
+> Ejemplo, 
+
+En una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:
 
 ```{r}
 n<-20
@@ -1020,6 +1082,8 @@ $$\theta=\frac{\sigma^2_1}{\sigma^2_2}$$
 Supongamos que $X_1$ y $X_2$ son va normales con media $\mu_1$ y $\mu_2$ desconocidas y varianzas $\sigma^2_1$, $\sigma^2_2$ también desconocidas. Sean dos muestras aleatorias de $X_1$ y $X_2$ de tamaño $n_1$ y $n_2$ y sean $\hat{S}^2_1$ y $\hat{S}^2_2$ las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución $F$.
 
 $$F=\frac{\frac{\hat{S}^2_2}{\sigma^2_2}}{\frac{\hat{S}^2_1}{\sigma^2_1}}$$
+
+Nota: Recordar que la distribución $F$ es el cociente de chi-cuadrados sobre sus grados de libertad. 
 
 Se busca:
 
