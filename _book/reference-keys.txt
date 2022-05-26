@@ -68,4 +68,5 @@ prueba-de-hipótesis-sobre-la-proporción
 prueba-de-hipótesis-sobre-la-diferencia-de-proporciones
 prueba-de-hipótesis-sobre-la-varianza
 prueba-de-hipótesis-sobre-la-igualdad-de-varianzas
+test-de-normalidad-aplicados-en-r-bondad-de-ajuste
 tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii
