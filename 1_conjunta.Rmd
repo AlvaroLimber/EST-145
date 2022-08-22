@@ -1,11 +1,6 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-# Distribuciones conjuntas de probabilidad
+# Distribuciones de probabilidad conjunta
 
-En el caso univariado se tenia a una va $X$ definida en los reales $IR$, a esta va se le asignaba una función de distribución $F(x)$ y una función de densidad $f(x)$. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:
+En el caso univariado se tenia a una va $X$ definida en los reales $\mathbb R$, a esta va se le asignaba una función de distribución $F(x)$ y una función de densidad $f(x)$. Ambas distribuciones tienen su correspondencia en lo discreto y lo continuo:
 
 Caso discreto:
 
@@ -18,19 +13,26 @@ $$\int_{Rx}f(x)dx=1$$
 
 $$F(t)=P(X\leq t)=\int_{-\infty}^{t}f(x)dx$$
 
+Recordar que las funciones de probabilidad estudiadas en estadística I son funciones útiles cuando es posible vincular su comportamiento a los datos. Estas funciones son llamadas distribuciones/funciones paramétricas. Algunos ejemplos:
 
-La idea de este capitulo es ver las propiedades en el caso bivariante y generalizar para el caso multivariante.
+  * $X \sim Bernoulli(P)$
+  * $X \sim Binomial(n,P)$
+  * $X \sim exp(\lambda)$
+  * $X \sim N(\mu,\sigma)$
+
+La idea de este capitulo es ver las propiedades en el caso bivariante ($X_1,X_2$) y generalizar para el caso multivariante ($X_1, X_2, X_3, \ldots, X_n$).
 
 ## Variables aleatorias bivariantes
 
-Son un par de variables aleatorias con una distribución conjunta, son típicamente representadas con mayúscula $(X, Y)$ o $(X_1,X_2)$, las realizaciones de estas variables aleatorias se representan como $(x,y)$ o $(x_1,x_2)$.
+Son un *par* de variables aleatorias con una *distribución conjunta*, son tipicamente representadas con mayúscula $(X, Y)$ o $(X_1,X_2)$, las realizaciones de estas variables aleatorias se representan como $(x,y)$ o $(x_1,x_2)$.
 
-> Definición 1. 
-Un par de variables aleatorias bivariadas es un par numérico de resultados; una función definida en $IR^2$
+> Definición 1: 
+
+Un par de variables aleatorias bivariadas es un par numérico de resultados; una función definida en $\mathbb R^2$
 
 Ejemplos: 
 
-  * Considerar el par (edad, estatura):
+  * Considerar el par (edad, estatura cm):
     + $(23,170)$
     + $(20,172)$
     + $(20,154)$
@@ -47,47 +49,100 @@ Imaginar lanzar 2 monedas simultáneamente, $\Omega=\{CC,CS,SC,SS\}$, si definim
 La función de distribución conjunta de $(X,Y)$ es 
 
 $$F(x,y)=P(X\leq x,Y\leq y)=P\left[\{X\leq x\} \cap \{Y\leq y\}  \right]$$
-Las propiedades de $F$ son similares al caso univariante, $0\leq F(x,y)\leq 1$.
+Las propiedades de $F$ son similares al caso univariante, 
 
-Ejemplo: 
+  * $0\leq F(x,y)\leq 1$.
+  * $F(-\infty,-\infty)=0$, $F(\infty,\infty)=1$
+
+Funciones de densidad/probabilidad bivariadas
+
+  * Discreto: $p(x_1,x_2)=P(X_1=x_1,X_2=x_2)=\pi(x_1,x_2)$
+
+$$0 \leq  \pi(x_1,x_2) \leq 1$$
+
+$$\sum_{Rx_1}\sum_{Rx_2} \pi(x_1,x_2)=1$$
+
+  * Continuo: $f(x_1,x_2)$
+
+$$\int_{Rx_1}\int_{Rx_2} f(x_1,x_2)dx_2 dx_1=1$$
+
+Ejercicio 1: Sea la siguiente función de densidad:
+
+$$f(x_1,x_2)=\frac{1}{500}; \quad  0<x_1<0.25 \quad 0 < x_2<2000$$
+  + Verificar si es una función de densidad
+  + Encontrar la función de distribución ($F$)
+
+$$F(x_1,x_2)=\frac{x_1 x_2}{500}$$  
+  
+  + Calcular la probabilidad de:
+
+$$P(x_1>0.1,x_2<1000)=0.3$$
+$$P(x_1=0.1,x_2<500)=0$$
+  
+> Ejercicio.
+
+Sea la función de distribución:
 
 $$F(x,y)=(1-e^{-x})(1-e^{-y});\hspace{2cm} x,y\geq0 $$
-  * $F(0,0)=0$
-  * $F(\infty,\infty)=1$
+Se pide: 
 
+  * Verificar si es una función de distribución
+  * $P(X<5,Y<10)$
+  * $P(X>100,Y<50)$
 
-Calcular: 
+Solución:
 
-$$P(X<2,Y<70)=F(2,70)=0.8647$$
+  * Verificar si es una función de distribución
+  
+$$F(X=0,Y=0)=F(0,0)=(1-e^{-0})(1-e^{-0})=0$$
 
-  $$P(X\leq 10,Y\leq 100)=F(10,100)=(1-e^{-10})(1-e^{-100})=0.9999546$$
-  $$P(X\leq 5,Y\leq 20)=F(5,20)=0.99326$$
+$$\lim_{t_1,t_2 \rightarrow \infty} F(t_1,t_2)=(1-e^{-\infty})(1-e^{-\infty})=1$$  
+  
+  * $P(X<5,Y<10)$
 
- La distribución conjunta satisface:
+$$F(x,y)=P(X<x,Y<y)=F(5,10)=(1-e^{-5})(1-e^{-10})= 0.993217$$  
+
+```{r}
+Fxy<-function(x,y){
+  pp<-(1-exp(-x))*(1-exp(-y))
+  return(pp)
+}
+Fxy(5,10)
+```
+
+  * $P(X>100,Y<50)=¿?$
+
+La distribución conjunta satisface:
  
- $$P(a<X\leq b,c< Y\leq d)=F(b,d)-F(b,c)-F(a,d)+F(a,c)$$
-
+$$P(a<X\leq b,c< Y\leq d)=F(b,d)-F(b,c)-F(a,d)+F(a,c)$$
 Para $a<b$ y $c<d$
 
-## Función masa de probabilidad (función de densidad)
+Ejemplo:
 
-Para el par $(X,Y)$ con una función de distribución conjunta $F(x,y)$.
+* $P(X>100,Y<50)=¿?$
 
-Para el caso continuo,
+$$P(X>100,Y<50)=F(\infty,50)-F(\infty,0)-F(100,50)+F(100,0)$$
+$$=1-0-1+0=0$$
 
-> Definición 3. 
+> Definición 3 
 
 $$f(x,y)=\frac{\partial^2}{\partial x \partial y}F(x,y)$$
 
-Por un tema de notación, a veces escribiremos $f_{X,Y}(x,y)$
+$$\int_{Rx}\int_{Ry}f(x,y)dydx=1$$
 
-Ejercicio: encontrar $f(x,y)$ para la $F$ dada en el ejemplo anterior
+> Ejercicio
+
+Encontrar la función de densidad de:
+
+$$F(x,y)=(1-e^{-x})(1-e^{-y});\hspace{2cm} x,y\geq0$$
+Solución
 
 $$f(x,y)=\frac{\partial^2}{\partial x \partial y}\left[(1-e^{-x})(1-e^{-y})\right]=e^{-x}e^{-y}$$
 
-$f$ satisface de forma similar las propiedades vistas en el caso univariante.
+Verificar si efectivamente es una función de densidad
 
-$$\int_{Rx}\int_{Ry}f(x,y)dydx=1$$
+$$\int_0^{\infty}\int_0^{\infty} e^{-x}e^{-y} dx dy=1$$
+
 > Ejercicio
 
 Probar que la siguiente función es una función de densidad
@@ -108,15 +163,7 @@ Para el caso discreto podemos definirlo de la siguiente forma:
 
 $$f(x,y)=\pi(x,y)=P(X=x,Y=y)$$
 $$\sum_{Rx}\sum_{Ry}\pi(x,y)=1$$
-Ejemplo, en un restaurante de pizza se vende porciones de pizza y gaseosa, el dueño del local realizó un monitoreo del patrón de como los clientes ordenan sus pedidos, respecto la cantidad de porciones de pizza con la cantidad de gaseosas, encontrando el siguiente resultado:
-
-Cuál sera la probabilidad de:
-
-  * $P(X=3,Y=2)=0.13$
-  * $P(X\geq 2, Y=1)=P(X=2, Y=1)+P(X=3,Y=1)=\pi_{21}+\pi_{31}=0.17+0.05=0.22$
-  
-  
-Ejercicios.
+> Ejercicio
 
 Sea la función de probabilidad discreta:
 
@@ -124,29 +171,32 @@ $$\pi(x,y)=\frac{x+y}{30}, \quad x=0,1,2,3; y=0,1,2$$
 
 Verificar que se trata de una función de probabilidad y luego encontrar:
 
+$$P(X\leq 2, Y=1)$$
+$$P(X> 2, Y\leq 1)$$
+Solución
+
+$$1=\sum_{x=0}^3 \sum_{y=0}^2 \pi(x,y)=\sum_{x=0}^3 \sum_{y=0}^2\frac{x+y}{30}=1$$
 $$P(X\leq 2, Y=1)=\pi_{0,1}+\pi_{1,1}+\pi_{2,1}=0.2$$
-$$P(X> 2, Y\leq 1)=\pi_{3,0}+\pi_{3,1}=0.233$$
+$$P(X> 2, Y\leq 1)=\pi_{3,0}+\pi_{3,1}=\frac{3}{30}+\frac{4}{30}=\frac{7}{30}$$
 
 Solución en R.
 
 ```{r}
 #crear la función
-fxy<-function(x,y){
-  z<-(x+y)/30
-  return(z)
+pxy<-function(x,y){
+  return((x+y)/30)
 }
 aux<-0
 for(x in 0:3){
   for(y in 0:2){
-    aux<-aux+fxy(x,y)
+    aux<-aux+pxy(x,y)
   }
 }
-aux
-sum(fxy(0:2,1))
-sum(fxy(3,0:1))
+sum(pxy(0:2,1))
+pxy(3,0)+pxy(3,1)
 ```
 
-> Ejercicio
+> Ejemplo
 
 Sea la función de densidad:
 
@@ -189,19 +239,49 @@ $$f(y)=\int_{Rx} f(x,y)dx$$
 
 > Ejercicio
 
+Encontrar las distribuciones marginales de la siguiente función de densidad conjunta:
+
+$$f(x,y)=x^2+\frac{xy}{3}; \quad 0<x\leq 1 \quad  0\leq y \leq2$$
+
+$$f(y)=\int_0^1 x^2+\frac{xy}{3} dx= \frac{x^3}{3}/_0^1+ \frac{yx^2}{6}/_0^1=\frac{1}{3}+\frac{y}{6}$$
+
+$$f(x)=\int_0^2 x^2+\frac{xy}{3} dy=x^2 y/_0^2 + \frac{x y^2}{6}/_0^2=2x^2+\frac{2x}{3}$$
+
+> Ejemplo
+
 Encontrar las distribuciones marginales de la función
 
-$$f(x,y)=\frac{x}{8}; \quad 0\leq x\leq 2;0\leq y\leq 4$$
+$$f(x,y)=\frac{x}{8}; \quad 0\leq x\leq 2 \quad 0\leq y\leq 4$$
 Solución:
+
 $$f(x)=\int_0^4 \frac{x}{8} dy= \frac{x}{2}; \quad 0\leq x \leq2$$
-$$f(y)=\int_0^2 \frac{x}{8} dx=\frac{1}{4}; \quad 0\leq y \leq 4$$
-Notar que:
+$$f(y)=\int_0^2 \frac{x}{8} dx=\frac{x^2}{16}/_0^2=\frac{1}{4}; \quad 0\leq y \leq 4$$
 
-$$f(x)*f(y)=\frac{x}{2}*\frac{1}{4}=\frac{x}{8}=f(x,y)$$
+## Independencia
 
-Nota: Si el producto de las marginales da la densidad conjunta, las variables son independientes.
+> Definición 6, dos variables aleatorias son independientes si:
 
-> Ejercicio, para la función:
+Se dice que dos variables aleatorias son independientes si sus funciones de densidad o probabilidad cumplen los siguiente:
+
+$$f(x,y)=f(x)f(y)$$
+$$\pi(x,y)=\pi(x)\pi(y)$$
+La independencia de dos variables aleatorias implica que el comportamiento de una variable no afecta a la otra. 
+
+> Por ejemplo en el ejercicio con la función:
+
+$$f(x,y)=x^2+\frac{xy}{3}; \quad 0<x\leq 1 \quad  0\leq y \leq2$$
+
+Las variables no son independientes. 
+
+> Para el otro ejemplo:
+
+$$f(x,y)=\frac{x}{8}; \quad 0\leq x\leq 2 \quad 0\leq y\leq 4$$
+
+Efectivamente las variables son independientes. 
+
+> Nota: Cuando definimos la independencia, estamos interesados en entender el nivel de relación que existe en las variables. 
+
+> Ejercicio:
 
 $$f(x,y)=e^{-x}e^{-y}$$
 
@@ -236,12 +316,6 @@ $$\int_0^{0.25}\int_0^{2000}\frac{1}{500}dydx=1$$
 $$f(x)=\int_{Ry} f(x,y) dy=\int_0^{2000}\frac{1}{500}dy=4$$
 $$f(y)=\int_{Rx} f(x,y) dx=\int_0^{0.25}\frac{1}{500}dx=\frac{1}{2000}$$
 
-## Independencia
-
-> Definición 6, dos variables aleatorias son independientes si:
-
-$$f(x,y)=f(x)*f(y)$$
-$$\pi(x,y)=\pi(x)*\pi(y)$$
 > Ejercicio 
 
 Dada la siguiente función de densidad conjunta:
@@ -251,6 +325,7 @@ $$f(x,y)=ke^{-2x-3y}; \quad x,y\geq 0$$
   * Encontrar el valor de $k$ para que la función se una función de densidad
   * Encontrar las marginales
   * Verificar si $X$, $Y$ son independientes
+  * Calcular las esperanzas y las varianzas a partir de las marginales
   
 Solución
 
@@ -350,8 +425,16 @@ $$E[X]=\sum_{Rx}\sum_{Ry} x \pi(x,y) =\sum_{Rx}x \pi(x) dx$$
 Sea la función de densidad:
 
 $$f(x,y)=6 e^{-2x-3y}; \quad x,y \geq 0$$
+Encontrar:
 
-Encontrar: 
+  * Las esperanzas: $E[X]$, $E[Y]$  
+  * $E[XY]$
+  * $E[XY]-E[X]E[Y]$
+
+$$E[XY]=\int_{Rx}\int_{Ry} xy f(x,y) dy dx$$
+
+Solución:
+
 $$E[XY]=\int_0^\infty \int_0^\infty xy 6 e^{-2x-3y}dxdy=6 \int_0^\infty x e^{-2x}dx\int_0^\infty y e^{-3y}dy= \alpha $$
 
 Usando la función gamma.
@@ -371,14 +454,15 @@ $$E[X]=\int_0^\infty x 2e^{-2x}dx=2\int_0^\infty x e^{-2x}dx=\frac{2}{4}=\frac{1
 $$E[X^2]=\int_0^\infty x^2 2e^{-2x}dx=2\int_0^\infty x^2 e^{-2x}dx=Tarea$$
 $$E[Y]=3*\frac{1}{9}=\frac{1}{3}$$ 
 $$E[Y^2]=tarea$$
-
 Notar que 
 
 $$E[X]E[Y]=\frac{1}{2}\frac{1}{3}=\frac{1}{6}=E[XY]$$
+$$E[XY]-E[X]E[Y]=\frac{1}{6}-\frac{1}{2}\frac{1}{3}=0$$
+Nota:
 
-Esto sucede únicamente cuando las variables son independientes
+Cuando dos variables aleatorias son independientes:
 
-
+$$E[XY]=E[X]E[Y]$$
 > Ejercicio, Sea la función conjunta 
 
 $$f(x,y)=\frac{1}{500}, \quad 0<X<0.25 \quad 0<y<2000$$
@@ -399,14 +483,10 @@ Demostración,
 
 $$E[XY]=\int_{Rx}\int_{Ry} xyf(x,y)dydx=\int_{Rx}\int_{Ry} xyf(x)f(y)dydx=\int_{Rx}x f(x)\left(\int_{Ry} yf(y)dy\right)dx=E[X]*E[Y]$$
 
-Ejemplo para el caso discreto, de las pizza y las gaseosas.
+Para el caso discreto:
 
-$$E[X]=1*0.5+2*0.31+3*0.19=1.69$$
-$$E[Y]=0*0.12+1*0.63+2*0.25=1.13$$
+https://docs.google.com/spreadsheets/d/1yJlHbrmKeJ5z4X0YlLayAxOtCWqG6uqQqIgku-aCXEI/edit?usp=sharing 
 
-$$E[X^2]=\sum_{x=1}^{x=3}x^2 \pi(x)=1^2*0.5+2^2*0.31+3^2*0.19=3.45$$
-$$E[Y^2]=0^2*0.12+1^2*0.63+2^2*0.25=1.63$$
-$$E[XY]=\sum_{Rx}\sum_{Ry}xy \pi(x,y)=1*0*0.04+1*1*0.42+\ldots+3*2*0.13=2.067$$
 
 ## Distribuciones condicionales
 
@@ -438,6 +518,11 @@ Que sucede si $X$ e $Y$ son variables independientes:
 
 $$f_{X/Y}(x/y)=\frac{f(x,y)}{f(y)}=\frac{f(x)f(y)}{f(y)}=f(x)$$
 $$f_{Y/X}(y/x)=\frac{f(x,y)}{f(x)}=\frac{f(x)f(y)}{f(x)}=f(y)$$
+
+Ejemplo, caso discreto
+
+(Ver excel compartido)
+
 Ejercicio, 
 
 Sea la densidad conjunta de $X,Y$:
@@ -510,9 +595,12 @@ Otra medida importantes es la correlación ($corr(X,Y)=\rho_{xy} $) entre $X$ e 
 
 $$\rho_{xy}=corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}$$
 
-  * Si $cov_{xy}$ o $corr_{xy}$ son distintas de 0, podemos afirmar que existe relación
+  * Si $cov_{xy}$ o $corr_{xy}$ son distintas de 0, podemos afirmar que existe relación (lineal)
   * Si $cov_{xy}>0$ o $corr_{xy}>0$ la relación entre $X$ e $Y$ es directa
   * Si $cov_{xy}<0$ o $corr_{xy}<0$ la relación entre $X$ e $Y$ es inversa
+  
+Tarea: Calcular la correlación del ejercicio anterior.  
+  
   * La intensidad de la dirección de la relación nos la da $corr_{xy}$, mientras más cercana a $corr_{xy}\rightarrow 1$ la relación directa es más fuerte, $corr_{xy}\rightarrow -1$ la relación inversa es más fuerte 
   * Si $corr_{xy}\rightarrow 0$ podemos decir que las variables no están relacionadas ("cuasi-independencia") la correlación mide principalmente relaciones lineales.
   

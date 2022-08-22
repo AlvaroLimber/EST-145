@@ -281,8 +281,7 @@ Sea $X\sim Bernoulli(p)$, la función de probabilidad es:
 
 $$P(X=x)=\pi(x)=p^x (1-p)^{1-x} \quad ; x=\{0,1\}$$
 
-Si $p$ es el parámetro de interés que se busca estimar, ¿qué forma
-tendrá el estimador de máxima verosimilitud?
+Si $p$ es el parámetro de interés que se busca estimar, ¿qué forma tendrá el estimador de máxima verosimilitud?
 
 Solución,
 

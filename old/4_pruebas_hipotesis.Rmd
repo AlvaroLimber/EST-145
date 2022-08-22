@@ -741,15 +741,17 @@ Unilaterales
 
 $$n=\frac{(Z_{\alpha}+Z_\beta)^2 \sigma^2}{\delta^2 }$$
 
-Tarea: Investigar que es el efecto mínimo detectable, el efecto de tamaño. Y encontrar valores recomendados. 
+Los valores más comunes para el error de tipo 2 $\beta$ son:
 
-Nota: La siguiente clase se realizará la demostración para el tamaño de muestra para la media. El estudiante debe repasar los tamaños de muestra para la proporción y la diferencia de medias y proporciones. 
+  * (20%) $Z_{\beta=20}=0.84$
+  * (10%) $Z_{\beta=10}=1.28$
+  * (5%)  $Z_{\beta=5}=1.64$ 
 
-Ejercicio, 11.2 del libro guía.
+> Ejemplo:
 
 Se está estudiando el rendimiento de un proceso químico. De la experiencia previa se sabe que la varianza del rendimiento con este proceso es 5. Los últimos cinco días de operación de la planta han dado como resultado los siguientes rendimientos (en porcentajes):
 
-$$91.6,88.75,90.8,89.95,91.3.$$
+$$91.6, 88.75, 90.8, 89.95, 91.3$$
 
   * ¿Hay razón para creer que el rendimiento es menor al 90%?
   * ¿Que tamaño de muestra se requeriría para detectar un rendimiento medio verdadero de 85% con probabilidad de 0.95?
@@ -761,7 +763,7 @@ $$H_1: \mu<90$$
 $$Z_0=\frac{\bar{X}-\mu_0}{\frac{\sigma}{\sqrt{n}}}=\frac{90.48-90}{\frac{2.24}{\sqrt{5}}}=0.48$$
 Se rechaza $H_0$ si (a un $\alpha=0.05$): 
 
-$$0.48<-Z_{\alpha}=-1.64$$
+$$0.48<-Z_{\alpha}=-1.64 (F)$$
 Por lo tanto no hay evidencia estadística para rechazar $H_0$.
 
 
@@ -785,7 +787,10 @@ Donde $P$ es el valor propuesto para $H_1$.
 Unilateral
 
 $$n=\left(\frac{Z_{\alpha} \sqrt{P_0(1-P_0)}+Z_{\beta} \sqrt{P(1-P)}}{P-P_0} \right)^2$$
-Ejercicio, Se busca realizar una encuesta para estimar la proporción de apoyo a un candidato para la elección en un determinado municipio. Se pide calcular el tamaño de muestra tomando en cuanta tener un nivel de significancia del 5%, un poder del 80% y que las estimaciones sean validas hasta una diferencia del 9%. Suponer que $\sqrt{P_0*(1-P_0)}=\sqrt{P*(1-P)}=0.5$.
+
+> Ejercicio: 
+
+Se busca realizar una encuesta para estimar la proporción de apoyo a un candidato para la elección en un determinado municipio. Se pide calcular el tamaño de muestra tomando en cuanta tener un nivel de significancia del 5%, un poder del 80% y que las estimaciones sean validas hasta una diferencia del 9%. Suponer que $\sqrt{P_0*(1-P_0)}=\sqrt{P*(1-P)}=0.5$.
 
 Solución. $P-P_0=0.09$
 
@@ -796,11 +801,6 @@ n<-((za2*0.5+zb*0.5)/0.09)^2
 n
 ```
 
-Tareas, revisar el libro guía el capítulo 11, en los apartados:
+Sugerencia: Repasar los ejercicios de los libros de referencia.
 
-  * 11-10.2. Tamaño de muestra para la diferencia de proporciones
-  * Revisar la tabla 11.7
-  * Se recomienda ir resolviendo los ejercicios del capitulo 11
-  
-  
-  
+
