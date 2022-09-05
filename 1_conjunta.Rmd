@@ -595,16 +595,43 @@ Otra medida importantes es la correlación ($corr(X,Y)=\rho_{xy} $) entre $X$ e 
 
 $$\rho_{xy}=corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}$$
 
+La correlación esta definida en:
+
+$$-1 \leq \rho_{xy} \leq 1$$
+
   * Si $cov_{xy}$ o $corr_{xy}$ son distintas de 0, podemos afirmar que existe relación (lineal)
-  * Si $cov_{xy}>0$ o $corr_{xy}>0$ la relación entre $X$ e $Y$ es directa
-  * Si $cov_{xy}<0$ o $corr_{xy}<0$ la relación entre $X$ e $Y$ es inversa
+  * Si $cov_{xy}>0$ o $corr_{xy}>0$ la relación entre $X$ e $Y$ es **directa**
+  * Si $cov_{xy}<0$ o $corr_{xy}<0$ la relación entre $X$ e $Y$ es **inversa**
+  * La **intensidad** de la dirección de la relación nos la da $corr_{xy}$, mientras más cercana a $corr_{xy}\rightarrow 1$ la relación directa es más fuerte, $corr_{xy}\rightarrow -1$ la relación inversa es más fuerte 
+  * Si $corr_{xy}\rightarrow 0$ podemos decir que las variables no están relacionadas ("cuasi-independencia") la correlación mide principalmente *relaciones lineales*.
   
-Tarea: Calcular la correlación del ejercicio anterior.  
+Nota: 
+  * Si las variables $X,Y$ son independientes, entonces, siempre se cumple que la covarianza y la correlación es igual a 0.
+  * Si la covarianza o la correlación es igual a 0, eso no implica independencia. Alerta de baja relación o una relación distinta a la lineal.
   
-  * La intensidad de la dirección de la relación nos la da $corr_{xy}$, mientras más cercana a $corr_{xy}\rightarrow 1$ la relación directa es más fuerte, $corr_{xy}\rightarrow -1$ la relación inversa es más fuerte 
-  * Si $corr_{xy}\rightarrow 0$ podemos decir que las variables no están relacionadas ("cuasi-independencia") la correlación mide principalmente relaciones lineales.
-  
-Tarea, 
+Ejercicio:
+
+Sea la función de densidad:
+$$f(x,y)=x+y; \quad 0<x<1 \quad 0<y<1$$
+Encontrar el coeficiente de correlación
+
+$$E[XY]=\int_0^1 \int_0^1 xy (x+y)dxdy= \int_0^1 \int_0^1 x^2y +xy^2dxdy=$$
+$$=\int_0^1 \frac{x^3 y}{3}/_0^1+\frac{x^2 y^2}{2}/_0^1 dy=\int_0^1 \frac{y}{3}+\frac{y^2}{2}dy=\frac{y^2}{6}/_0^1+\frac{y^3}{6}/_0^1=\frac{1}{3}$$
+
+$$f(x)=\int_0^1 (x+y) dy=x*y/_0^1+\frac{y^2}{2}/_0^1=x+\frac{1}{2}$$
+$$f(y)=y+\frac{1}{2}$$
+$$E[X]=\int_0^1 x^2+\frac{x}{2}dx=\frac{1}{3}+\frac{1}{4}=\frac{7}{12}=E[Y]$$
+
+$$cov(X,Y)=E[XY]-E[X]*E[Y]=\frac{1}{3}-\frac{7}{12}\frac{7}{12}=-\frac{1}{144}$$
+
+$$E[X^2]=\int_0^1 x^3+\frac{x^2}{2}dx=\frac{1}{4}+\frac{1}{6}=\frac{5}{12}=E[Y^2]$$
+
+$$V(X)=E[X^2]-E[X]^2=\frac{5}{12}-\left(\frac{7}{12}\right)^2=\frac{11}{144}=V(Y)$$
+
+$$\sigma_X=\sigma_Y=\sqrt{V(X)}=\sqrt{\frac{11}{144}}$$
+
+$$\rho_{xy}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}=\frac{-\frac{1}{144}}{\sqrt{\frac{11}{144}}\sqrt{\frac{11}{144}}}=-\frac{144}{11*144}=-\frac{1}{11}=-0.0909$$
+
 
 Calcular la Covarianza y la correlación de las variables aleatorias $X,Y$.
 
@@ -625,7 +652,7 @@ $$cov(X,Y)=E[XY]-E[X]*E[Y]=E[X]E[Y]-E[X]E[Y]=0$$
 
 Si dos variables son independientes la covarianza y la correlación son iguales a cero, el inverso de esta afirmación no necesariamente es cierta.
 
-### Ejercicio por 1 punto.
+### Ejemplo
 
 Sea la función de densidad:
 
@@ -637,7 +664,6 @@ Se pide:
   * Encontrar las distribuciones condicionales
   * Calcular la covarianza y correlación
   * Verificar si son independientes
-
 
 > Ejercicio
 
@@ -717,7 +743,7 @@ $$f(z)=\int_0^{\infty} \frac{4w e^{-2w}}{(1+z)^2} dw=\frac{1}{(1+z)^2}$$
 
 Supongamos que se busca encontrar a partir de la función de densidad $f(X,Y)$ de dos variables X, Y una tercera variable $Z=H_1(X,Y)$. La estrategia para resolver este tipo de problemas es:
 
-  * Definir una cuarta variable $W=H_2(X,Y)$, es elegida por conveniencia 
+  * Definir una cuarta variable $W=H_2(X,Y)$, es elegida por **conveniencia** 
   * Se encuentran $X=G_1(Z,W)$, $Y=G_2(Z,W)$
   * Una vez con estos valores la función conjunta de $Z,W$ es:
 
@@ -770,11 +796,6 @@ $$l(z)=\int_0^\infty 4e^{-2z}dw=4e^{-2z} w/_0^\infty=$$
 
 Se debe volver a plantear una nueva forma de $W$
 
-Tarea
-
-  * Encontrar una W para el ejercicio anterior, que permita encontrar la función de densidad de $Z$ (Recomendación $W=X/Y$)
-  * Sea $X$ y $Y$ variables aleatorias independientes, cada una con la misma distribución exponencial. Encuentre la función de densidad de $Z=X/Y$, Recomendación $W=X+Y$
-
 ## Distrubuciones conjuntas de más de 2 variables aleatorias
 
 Estamos introduciendo ahora $n$ variables aleatorias, que se puede denotar por vector 
@@ -797,3 +818,7 @@ Notar también que si las $n$ variables aleatorias son independientes entre ella
 
 $$f(X_1,X_2,\ldots,X_n)=f(X_1)*f(X_2)*\ldots f(X_n)$$
 
+Si estamos interesados en encontrar la covarianza entre dos variables aleatorias de estas $n$ va.
+
+$$cov(X_i,X_j)=E[X_i X_j]-E[X_i]E[X_j] \quad i \neq j$$
+$$f(x_i,x_j)=\int \ldots\int_{k\neq i,j} f(x_1,x_2,\ldots,x_n)dx_{k\neq i,j}$$
