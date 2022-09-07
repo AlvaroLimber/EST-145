@@ -341,28 +341,29 @@ $$E[X]=\sum_{Rx}x*P(X=x)$$
 
 $$E[\hat{\theta}]=\theta$$
 
-Clase 5, septiembre
-
 ## Distribución muestral
 
 Recordar que una estadística es una función sobre la muestra y sobre los valores que toman las variables aleatorias vinculadas a esta. Como la estadística es una función sobre las muestras aleatorias (muestras posibles) las evaluaciones que se realizan para cada una de las muestras posibles (estimaciones) conforman lo que vamos a denominar una distribución muestral.
 
 Por ejemplo si planteamos al estimador del parámetro del total, recordar:
 
-$$\theta=t_y=\sum_U y_i$$ Un estimador para este parámetro será:
+$$\theta=t_y=\sum_U y_i$$
+Un estimador para este parámetro será:
 
-$$\hat{\theta}=\hat{t}_y=\frac{N}{n} \sum_s y_i$$
+$$\hat{\theta}=\hat{t}_y=\frac{N}{n} \sum_s y_i=N \bar{y}$$
 
 Este $\hat{\theta}$ es una estadística sobre las muestras aleatorias, por lo tanto podemos decir que existe una distribución de probabilidad para este estimador, a esa distribución de probabilidad se conoce como distribución muestral.
 
 Ejemplo práctico.
 
-Supongamos que de una población de 6 personas tenemos la información de sus ingresos mensuales. $Y_{Ingresos}=\{2000,3000,3500,0,6000,4500\}$. $N=6$
+Supongamos que de una población de 6 personas tenemos la información de sus ingresos mensuales. 
+
+$$Y_{Ingresos}=\{2000,3000,3500,0,6000,4500\}$$
 
 Supongamos que seleccionamos una muestra de tamaño $n=3$ de esta población, para ambos mecanismos de selección (s/rep, c/rep), se pide para ambos mecanismos:
 
--   Conocer la cantidad de muestras posibles y mostrar estas.
--   Para el estimador
+  - Conocer la cantidad de muestras posibles y mostrar estas.
+  - Para el estimador
 
 $$\hat{\bar{Y}}=\frac{1}{n}\sum_s y_i$$
 
@@ -403,7 +404,11 @@ $$E[\hat{\theta}]=\sum_{Rs} \hat{\theta_s} P(\hat{\theta}=\hat{\theta_s})$$
 
 $$V(\hat{\theta})=E[(\hat{\theta}-E[\hat{\theta}])^2]=\sum_{s}(\hat{\theta_s}-E[\hat{\theta}])^2*P(\hat{\theta}=\hat{\theta})$$
 
-Nota, Si $E[\hat{\theta}]=\theta$ decimos que el estimador $\hat{\theta}$ es un estimador insesgado (sin **sesgo**)
+Nota: Si, 
+
+$$E[\hat{\theta}]=\theta$$ 
+
+decimos que el estimador $\hat{\theta}$ es un estimador insesgado (sin **sesgo**)
 
 El estimador de la media muestral, es un estimador insesgado de la media poblacional.
 
@@ -419,7 +424,8 @@ pty<-sum(ty*(1/20)) # esperanza
 sum((ty-pty)^2*(1/20)) # varianza de la media muestral
 ```
 
-$$E[\hat{t}_y]=E[N*\bar{Y}]=N E[\bar{Y}]=N*u_y=N*\frac{\sum_U y_i}{N}=\sum_U {y_i}=t_y$$ Repetir los cálculos para un muestreo con reposición. Muestras probables $6^3=N^n=216$.
+$$E[\hat{t}_y]=E[N*\bar{Y}]=N E[\bar{Y}]=N*u_y=N*\frac{\sum_U y_i}{N}=\sum_U {y_i}=t_y$$
+Repetir los cálculos para un muestreo con reposición. Muestras probables $6^3=N^n=216$.
 
 ```{r,eval=FALSE}
 Y<-round(rnorm(25,30,5))
@@ -455,15 +461,18 @@ $$V(X)=\sigma_x^2=\frac{\sum_U (x_i-\mu_x)^2}{N}$$
 
 > Teorema:
 
-Sean $X_1,X_2,\ldots,X_n$ variables aleatorias para una muestra de tamaño $n$ extraida de la población $U$, donde estas $X_i$ independientes e idénticamente distribuidas (iid) como: $X_i\sim .(E[X_i]=\mu_x,V(X_i)=\sigma_x^2)$, entonces, si:
+Sean $X_1,X_2,\ldots,X_n$ variables aleatorias para una muestra de tamaño $n$ extraída de la población $U$, donde estas $X_i$ independientes e idénticamente distribuidas (iid) como: 
 
-$$\bar{X}=\frac{\sum_s x_i}{n}$$
+$$X_i\sim .(E[X_i]=\mu_x,V(X_i)=\sigma_x^2)$$ 
+
+entonces, si:
+
+$$\bar{x}=\frac{\sum_s x_i}{n}$$
 
 Tenemos que
 
-$$E[\bar{X}]=\mu_x$$
-
-$$V(\bar{X})=\sigma^2_{\bar{x}}=\frac{\sigma^2_x}{n}$$
+$$E[\bar{x}]=\mu_x$$
+$$V(\bar{x})=\sigma^2_{\bar{x}}=\frac{\sigma^2_x}{n}$$
 
 Demostración,
 
@@ -473,37 +482,41 @@ Si, $X$ e $Y$ son independientes $Cov(X,Y)=0$.
 
 $$V(X+Y)=V(X)+V(Y)$$
 
-$$V(\bar{X})=V\left(\frac{\sum_s x_i}{n}\right)=\frac{1}{n^2}V(x_1+x_2+\ldots+x_n)=\frac{1}{n^2}\{V(x_1)+\ldots+V(x_n)\}=$$ $$=\frac{1}{n^2}(\sigma^2_x+\sigma^2_x+\ldots+\sigma^2_x)=\frac{n \sigma_x^2}{n^2}=\frac{\sigma^2_x}{n}$$ Nota: Cuando no es posible tener acceso al valor de $\sigma^2_x$ se puede estimar este parámetro, mediante la muestra usando en su lugar a la varianza muestral:
+$$V(\bar{X})=V\left(\frac{\sum_s x_i}{n}\right)=\frac{1}{n^2}V(x_1+x_2+\ldots+x_n)=\frac{1}{n^2}\{V(x_1)+\ldots+V(x_n)\}=$$ 
+$$=\frac{1}{n^2}(\sigma^2_x+\sigma^2_x+\ldots+\sigma^2_x)=\frac{n \sigma_x^2}{n^2}=\frac{\sigma^2_x}{n}$$
 
-$$\hat{S}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
+Nota: Cuando no es posible tener acceso al valor de $\sigma^2_x$ se puede estimar este parámetro, mediante la muestra usando en su lugar a la varianza muestral:
 
-> Ejemplo
-
-Sean los siguientes 10 valores de una variable $X$
+$$s^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
+Ejemplo numérico
 
 ```{r}
-set.seed(999)
-x<-round(runif(10,20,50),0)
-x
-mux<-mean(x)
-mux#media poblacional
-n<-4
-#muestras s/rep
-choose(10,4)#muestras posibles
-s<-combn(x,n)
-s
-# aplicando el estimador de la media muestral
-xbar<-apply(s,2,mean)#distribución muestral
-hist(xbar)
-# según el teorema, E[xbar]=mux
-sum(xbar*(1/210))
-mean(xbar)
-mean(xbar)==mux
+N<-10000
+set.seed(1234)
+edad<-round(runif(N,15,55),0)
+head(edad)
+n<-100
+100/10000
+format(choose(N,n),scientific = F)
+#parámetros
+ux<-mean(edad)
+ux
+#Vamos a simular algunas de las muestras posibles
+k<-100000
+xbar<-NULL
+for(i in 1:k){
+  xbar[i]<-mean(sample(edad,n))  
+}
+mean(xbar)#E[xbar]=ux
+#varianza teórica
+sigma2x<-sum((edad-mean(edad))^2)/N
+var_xbar<-sigma2x/n
+var_xbar
+#con la simulación E[X^2]-E[X]^2
+mean(xbar^2)-mean(xbar)^2
+
+knitr::knit_exit()
 ```
-
-Para el caso de la varianza, cuando la población es finita ($N$ conocida, pequeña). La varianza del estimador tiene una forma distinta. (Tarea).
-
-$$V(\bar{X})=\left(1-\frac{n}{N}\right)*\frac{S^2}{n}$$
 
 ## Teorema del límite central
 
