@@ -514,21 +514,23 @@ var_xbar<-sigma2x/n
 var_xbar
 #con la simulación E[X^2]-E[X]^2
 mean(xbar^2)-mean(xbar)^2
-
-knitr::knit_exit()
 ```
 
 ## Teorema del límite central
 
 > Teorema:
 
-Si $\bar{X}$ es la media de una muestra aleatoria de tamaño $n$. Tomada de una población $U$ con media $\mu_x$ y varianza finita $\sigma^2_x$. Entonces la forma límite de la distribución de:
+Si $\bar{x}$ es la media de una muestra aleatoria de tamaño $n$. Tomada de una población $U$ con media $\mu_x$ y varianza finita $\sigma^2_x$. Entonces la forma límite de la distribución de:
 
-$$Z=\frac{\bar{X}-E[\bar{X}]}{\sqrt{V(\bar{X})}}=\frac{\bar{X}-\mu_x}{\frac{\sigma_x}{\sqrt{n}}}$$ a medida que $n \rightarrow \infty$, podemos asegurar que $Z\sim N(0,1)$, en este marco se puede decir a medida que $n$ es más grande:
+$$Z=\frac{\bar{x}-E[\bar{x}]}{\sqrt{V(\bar{x})}}=\frac{\bar{x}-\mu_x}{\frac{\sigma_x}{\sqrt{n}}}$$ 
 
-$$\bar{X}\sim N\left(\mu_x,\frac{\sigma^2_x}{n}\right)$$
+a medida que $n \rightarrow \infty$, podemos asegurar que $Z\sim N(0,1)$, en este marco se puede decir a medida que $n$ es más grande:
+
+$$\bar{x}\sim N\left(\mu_x,\frac{\sigma^2_x}{n}\right)$$
 
 Nota: esta idea de $n$ grande se usa tradicionalmente el valor de $n>30$, hay textos que plantean $n=20$.
+
+> Este teorema nos permite indicar que la distribución de la media se puede parametrizar a una Norma.
 
 ### Simulación del teorema del límite central
 
@@ -536,7 +538,9 @@ Vamos a suponer los siguiente:
 
   + $N=1000000$
   + Vamos a simular a una variable de edad $X:Edad$ $Rx \in [0,100]$
-  + Vamos tener dos comportamientos de $X$, 1) Volátil (uniforme) 2) Concentrada (Normal)
+  + Vamos tener dos comportamientos de $X$, 
+    * Volátil (uniforme) 
+    * Concentrada (Normal)
 
 ```{r}
 N<-1000000
@@ -548,6 +552,11 @@ par(mfrow=c(1,2))
 hist(x1,xlim=c(0,100),main="Uniforme")
 hist(x2,xlim=c(0,100),main="Normal")
 dev.off()
+# Veamos sus parámetros
+mean(x1)#media poblacional
+mean(x2)#media poblacional
+var(x1)
+var(x2)
 #### Teorema del limite central
 #n=30 ,100, 500
 n<-30
@@ -564,34 +573,55 @@ for(i in 1:k){
   xbar2[i]<-mean(s2)
 }
 #teorema 1
-abs(mean(x1)-mean(xbar1))
-abs(mean(x2)-mean(xbar2))
+abs(mean(x1)-mean(xbar1))#esperanza
 
-abs(var(xbar1)-var(x1)/n)
-abs(var(xbar2)-var(x2)/n)
+sigma2_x1<-sum((x1-mean(x1))^2)/N # parámetros sigma2_x1
+sigma2_x2<-sum((x2-mean(x2))^2)/N # parámetros sigma2_x2
+
+abs(sum((xbar1^2)*(1/k))-mean(xbar1)^2-sigma2_x1/n)
+
+abs(sum((xbar2^2)*(1/k))-mean(xbar2)^2-sigma2_x2/n)
 #teorema del limite central
 par(mfrow=c(1,2))
 plot(density(xbar1))
 plot(density(xbar2))
 dev.off()
-plot(density(xbar),col="blue",lwd=2)
-points(density(rnorm(10^6,mean(x),sqrt(var(x)*((n-1)/n))/sqrt(n))),type="l",col="red",lwd=2)
+
+curve(dnorm(x,mean(x1),sqrt(sigma2_x1/n)),xlim = c(30,70),main="Uniforme")
+points(density(xbar1),col="blue",type = "l",lwd=2)
+
+curve(dnorm(x,mean(x2),sqrt(sigma2_x2/n)),xlim = c(30,70),main="Normal")
+points(density(xbar2),col="blue",type = "l",lwd=2)
 ```
 
 > Ejemplo,
 
-Se tiene una muestra de 50 personas de una población, sobre la cual se mide su estatura en centímetros, se calculó la media muestral de 167.6 cm. Suponiendo un varianza poblacional de 44. Calcular la probabilidad que el estimador de la media sea mayor a 170 cm. 
+Se tiene una muestra de **35** personas de una población, sobre la cual se mide su estatura en centímetros, se calculó la **media muestral** de 167.6 cm. Suponiendo un varianza poblacional de 44. Calcular la **probabilidad** que el estimador de la media sea mayor a 170 cm. 
 
 Solución. 
 
 Se pide:
 
-$$P(\bar{X}>170)$$
-Por el teorema del limite central ya que $n=50$
+$$P(\bar{x}>170)$$
+Por el teorema del limite central ya que $n=35$
 
-$$\bar{X}\sim N(\hat{\mu}_{\bar{x}}=167.6,\sigma_{\bar{x}}=\sqrt{\frac{44}{50}})=N(167.6,0.94)$$
-$$P(\bar{X}>170)=P(Z>2.55)=1-P(Z\leq2.55)=1-\phi(2.55)=$$
-$$=1-0.9946139=0.005486$$
+$$\bar{x}\sim N(\hat{\mu}_{\bar{x}}=167.6,\sigma_{\bar{x}}=\sqrt{\frac{44}{35}})=N(167.6,1.12)$$
+$$P(\bar{x}>170)=P(Z>3.93)=1-P(Z\leq 3.93 )=1-\phi(3.93)=$$
+$$=1-0.9999575=0.0000425$$
+
+Ejercicio, se conoce la media de gastos en transporte de una *muestra aleatoria* de estudiantes de la UMSA en un día normal, el valor es de 9.5 Bs. Suponer que la varianza del gasto es de 4, calcular las siguientes probabilidades suponiendo un $n=20$, $n=40$, $n=1000$.
+
+$$P(\bar{x}<5)\approx 0$$
+$$P(7<\bar{x}<10)=\phi(\frac{10-9.5}{\sqrt{4/n}})-\phi(\frac{7-9.5}{\sqrt{4/n}})=$$  
+$$\bar{x}\sim N\left(\mu_x,\frac{\sigma^2_x}{n}\right)$$
+
+```{r}
+#
+pnorm((5-9.5)/sqrt(4/c(20,40,100)))
+curve(dnorm(x,9.5,0.45),xlim = c(7,12),ylim=c(0,2.5))
+curve(dnorm(x,9.5,0.32),xlim = c(7,12),add = T, col="red")
+curve(dnorm(x,9.5,0.06),xlim = c(7,12),add = T, col="blue")
+```
 
 ## Distribución muestral para la diferencia de medias
 
@@ -603,7 +633,9 @@ La distribución muestral de las diferencias de media $\bar{X_1}-\bar{X_2}$ esta
 
 $$E[\bar{X_1}-\bar{X_2}]=\mu_{x_1}-\mu_{x_2}$$
 
-$$V(\bar{X_1}-\bar{X_2})=\frac{\sigma^2_{x_1}}{n_1}+\frac{\sigma^2_{x_2}}{n_2}$$ Demostración:
+$$V(\bar{X_1}-\bar{X_2})=\frac{\sigma^2_{x_1}}{n_1}+\frac{\sigma^2_{x_2}}{n_2}$$ 
+
+Demostración:
 
 $$E[\bar{X_1}-\bar{X_2}]=E[\bar{X_1}]-E[\bar{X_2}]=\mu_{x_1}-\mu_{x_2}$$
 
@@ -612,6 +644,18 @@ $$V(\bar{X_1}-\bar{X_2})=V(\bar{X_1})+V(\bar{X_2})=\frac{\sigma^2_{x_1}}{n_1}+\f
 Por el teorema del limite central con $n\geq30$:
 
 $$\bar{X_1}-\bar{X_2}\sim N\left(\mu_{x_1}-\mu_{x_2},\frac{\sigma^2_{x_1}}{n_1}+\frac{\sigma^2_{x_2}}{n_2}\right)$$
+
+> Problema: Existen 2 paralelos en la materia estadística 2, se extrae una muestra en ambos grupos de tamaño 35. Con los datos de la muestra se encontro que el promedio de edad del paralelo A es de 21.5 y del paralelo B de 20.7. Si suponemos que las varianzas de ambos grupos son iguales y el valor es de 1.9. Calcular la probabilidad que la diferencia de edades entre el paralelo A respecto el B sea mayor a un año.
+
+Solución, por el teorema del limite central ya que el tamaño de muestra en mayor a 30, se tiene:
+
+$$\bar{x}_a-\bar{x}_b \sim N(21.5-20.7,1.9/35+1.9/35)=N(0.8,0.1086)$$
+
+$$P(\bar{x}_a-\bar{x}_b>1)=P(Z>(1-0.8)/\sqrt{0.1086})=$$
+$$=P(Z>0.61)=1-\phi(0.61)=1-0.7291=0.2709$$
+```{r}
+1-pnorm((1-0.8)/sqrt(2*1.9/35))
+```
 
 > Ejercicio de clase.
 
@@ -631,7 +675,10 @@ $$=0.2980-0.0985=0.199$$
 
 La proporción no es nada más que un caso especial de la media para $X$ que toma valores binarios según alguna característica de interés.
 
-Sea $P_A=\frac{\#A}{N}=\frac{\sum_U x_i}{N}$, $x_i=1$ si $i \in A$ $x_i=0$ eoc. la proporción de alguna característica de la población.
+Sea 
+$$P_A=\frac{\#A}{N}=\frac{\sum_U x_i}{N}, \quad x_i=1, i \in A, \quad x_i=0\text{ } eoc$$
+
+la proporción de alguna característica de la población.
 
 Así la el estimador de la proporción sera:
 
@@ -639,17 +686,36 @@ $$\hat{P}_A=\frac{\sum_s{x_i}}{n}=\frac{\#a}{n}$$
 
 > Teorema:
 
-Para el estadístico $\hat{P}_A$ se cumple cuando $n$ tiende a infinito los siguientes resultados:
+Para el estadístico $\hat{P}_A$ se cumple:
 
--   $E[\hat{P}_A]=P_A$
--   $V(\hat{P}_A)=\frac{\sigma^2_A}{n}$
--   $\hat{P}_A\sim N(P_A,\frac{\sigma^2_A}{n})$, cuando $n \rightarrow \infty$
+$$E[\hat{P}_A]=P_A$$
+
+$$V(\hat{P}_A)=\frac{\sigma^2_A}{n}$$
+Cuando n tiene al infinito
+
+$$\hat{P}_A\sim N\left(P_A,\frac{\sigma^2_A}{n}\right)$$
 
 Donde $\sigma^2_A$, sabiendo que $x_i$ es binaria.
 
-$$\sigma^2_A=\frac{\sum_U(x_i-\mu_x)^2}{N}= P_A *(1-P_A)$$ Demostración
+$$\sigma^2_A=\frac{\sum_U(x_i-\mu_x)^2}{N}= P_A *(1-P_A)$$
+Demostración
 
 $$\mu_x=\frac{\sum_U{x_i}}{N}=\frac{\#A}{N}=P_A$$ $$\sigma^2_A=\frac{\sum_U(x_i-P_A)^2}{N}=\frac{\sum_U x_i^2-2P_A \sum_U{x_i}+NP_A^2}{N}=$$ $$=\frac{NP_A-2P_A NP_A+NP_A^2}{N}=P_A-P_A^2=P_A(1-P_A)$$
+Entonces:
+
+$$\hat{P}_A \sim N\left(P_A,\frac{P_A (1-P_A)}{n}\right)$$
+
+> Problema: Se tiene una muestra aleatoria de tamaño 50 de un grupo de estudiantes, donde se verifico que 42 de ellos cuentan con acceso a internet mediante un plan mensual en sus casas. ¿Cuál es la probabilidad que más del 95% de estos estudiantes tengan acceso a internet mediante un plan mensual en sus casas?
+
+Solución, el estimador de la proporción es:
+
+$$\hat{P}_{internet}=\frac{42}{50}=0.84 \rightarrow 84\%$$
+$$\hat{P}_{internet} \sim N\left(0.84,\frac{0.84 (1-0.84)}{50}\right)=N(0.84,0.002688)$$
+
+$$P(\hat{P}_{internet}>0.95)=P\left(Z>\frac{0.95-0.84}{\sqrt{0.002688}}\right)=P(Z>2.12)=$$
+
+$$=1-\phi(2.12)=1-0.9830=0.017$$
+### Simulación en R del teorema del limite central para una proporción.
 
 ```{r}
 N<-100000
@@ -716,68 +782,54 @@ Ejemplo,
 
 Sea una población de $N=5$ elementos con la variable $X=\{10,15,20,20,35\}$, calcular $\mu_x$ y $\sigma^2_x$.
 
--   $\mu_x=20$
--   $\sigma^2_x=70$
+  - $\mu_x=20$
+  - $\sigma^2_x=70$
 
-Suponer que se toman muestras aleatorias de esta población de tamaño $n=3$ sin reposición. La cantidad de muestras posibles es 10.
+Un estimador candidato a ser estimador de la varianza podría ser:
+
+$$\hat{\sigma}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n}$$
+Sin embargo, este estimador no es un estimador insesgado como se lo estudiara en el próximo capitulo. Ahora existe un estimador que si logra ser insesgado de la varianza poblacional, este se conoce como la varianza muestral. 
+
+$$S_x^2=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
+
+Teniendo esto en cuenta, es importante conocer la distribución muestral del estimador de la varianza muestral.
 
 ```{r}
-x<-c(10,15,20,20,35)
-s<-combn(x,3)
-s
-#distribución muestral de la media
-apply(s, 2, mean)
-
-mean(apply(s, 2, mean))
-# varianza poblacional
-vp<-sum((x-mean(x))^2)/5
-vp
+#Supongamos que tenemos una población de 10000 personas y se sacan muestras de tamaño 20. Simular el comportamiento de la distribución muestral de la varianza. 
+x<-round(runif(10000,10,70))
+svar<-NULL
+k<-10000
+for(i in 1:k){
+  aux<-sample(x,20)
+  svar[i]<-var(aux)  
+}
+plot(density(svar))
+abline(v=var(x)*(9999/10000),col="red")
+abline(v=var(x)*(9999/10000)+c(-1,1)*sd(svar),col="red",lty=2)
+abline(v=var(x)*(9999/10000)+c(-1,1)*2*sd(svar),col="red",lty=3)
 ```
 
-Pensemos para el caso de la varianza en posibles estadísticos (estimadores):
-
-$$\hat{\theta}_1=\hat{\sigma}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n}$$
-
-$$\hat{\theta}_2=\hat{S}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
-
-Una forma de elegir quien de estos dos estimadores es mejor, podría ser viendo cual es insesgado.
-
-$$E[\hat{\sigma}_x^2]=\sigma_x^2\quad ; \quad E[\hat{S}_x^2]=\sigma_x^2$$
+La teoría estadística para estudiar la distribución muestral de la varianza define el estudio de una nueva distribución paramétrica, esta distribución que ayuda a entender a la distribución de la varianza muestral es la distribución $\chi^2$
+ 
 ```{r}
-theta1<-apply(s,2,var)*(2/3)
-theta2<-apply(s,2,var)
-theta1
-theta2
-mean(theta1)
-mean(theta2)
-vp
-#cuasi varianza
-cvp<-sum((x-mean(x))^2)/4
-cvp
+curve(dchisq(x,100),xlim=c(0,200))
 ```
-
-La cuasi varianza se denota como:
-
-$$S^2_x=\frac{\sum_U (x_i-\mu_x)^2}{N-1}$$
-
-Se puede demostrar que:
-
-$$E[\hat{S}_x^2]=S^2_x$$
+ 
 > Teorema
 
-Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria extraída de una población Normal $N(\mu_x,\sigma^2_x)$, definamos al estadístico (varianza muestral):
+Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria extraída de una *población Normal* $N(\mu_x,\sigma^2_x)$, definamos al estadístico (varianza muestral):
 
-$$\hat{S}^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
+$$S^2_x=\frac{\sum_s (x_i-\bar{x})^2}{n-1}$$
 
 Entonces, se cumple
 
-$$\chi^2=\frac{(n-1)\hat{S}^2_x}{\sigma^2_x}=\frac{\sum_s (x_i-\bar{x})^2}{\sigma^2_x}\sim \chi^2(n-1)$$
+$$\chi^2=\frac{(n-1){S}^2_x}{\sigma^2_x}=\frac{\sum_s (x_i-\bar{x})^2}{\sigma^2_x}\sim \chi^2(n-1)$$
 
 ## Distribución $\chi^2$
 
 Se dice que una variable aleatoria $X$ tiene una distribución Chi-cuadrado $\chi^2$ con $v$ grados de libertad. Se escribe como: $X \sim \chi^2(v)$, donde el $Rx=\{x>0\}$, si su función de densidad es:
 
-$$f(x)=\frac{1}{2^\frac{v}{2} \Gamma(\frac{v}{2})}*x^{\frac{v}{2}-1}*e^{-\frac{x}{2}}$$
+$$f(x)=\frac{1}{2^\frac{v}{2} \Gamma(\frac{v}{2})}*x^{\frac{v}{2}-1}*e^{-\frac{x}{2}};\quad x>0$$
 
 ```{r}
 curve(dchisq(x,1),xlim=c(0,60),ylim=c(0,0.4))
@@ -789,19 +841,32 @@ curve(dchisq(x,10),xlim=c(0,60),main="v=10")
 abline(v=10)
 curve(dchisq(x,100),xlim=c(0,300),main="v=100")
 abline(v=100)
+curve(dchisq(x,500),xlim=c(200,800),main="v=500")
+abline(v=500)
 ```
 
 Donde,
 
 $$E[X]=v \quad ; \quad V(X)=2v$$
+Relación entre la chi-cuadrado y la normal
+
+```{r}
+v<-500
+vx2<-2*v
+curve(dchisq(x,v),xlim=v+c(-3,3)*sqrt(vx2),main=paste0("v=",v))
+curve(dnorm(x,v,sqrt(vx2)),col="red",add=T)
+```
 
 Ejercicio 1,
 
 Sea X una va, tal que: $X\sim \chi^2(35)$. Calcular la probabilidad que:
 
 $$P(30<X<40)=P(X<40)-P(X<30)=0.4503$$
-$$P(X>35)=1-P(X\leq 35)=0.4682$$
+Como se aproxima este valor con la distribución normal. Vamos a suponer que $X\sim N(35,70)$ ya que n es "grande".
 
+$$P(30<X<40)=P( -0.5976143<Z<0.5976143)=$$
+$$=\phi(0.5976)-\phi(-0.5976)=0.7257-0.2743=0.4514$$
+$$P(X>35)=1-P(X\leq 35)=0.4682$$
 $$P(X<32)=0.3863$$
 
 En el R
@@ -823,7 +888,7 @@ $$X\sim N(\mu_x,\sigma_x^2=16)$$
 
 Encuentre la probabilidad que la varianza muestral se encuentre entre 12 y 18.
 
-$$P\left(12<\hat{S}^2_x<18\right)=?$$
+$$P\left(12<S^2_x<18\right)=?$$
 
 Solución,
 
@@ -836,7 +901,6 @@ $$P(21.75<Y<32.625)=0.5373$$
 ```{r}
 pchisq(32.625,29)-pchisq(21.75,29)
 ```
-
 
 Ejercicio 3,
 
@@ -873,11 +937,11 @@ En el fondo la distribución $\chi^2$ es la suma de variables aleatorias Normale
 
 Sea $Z$ una variable aleatoria **normal estándar** y $V$ una variable aleatoria **chi-cuadrado** con $v$ grados de libertad. Si $Z$ y $V$ son independientes, entonces la distribución de la variable aleatoria $X$, donde:
 
-$$X=\frac{Z}{\sqrt{V/v}}$$ 
+$$X=\frac{Z}{\sqrt{V/v}}$$
 
 Se comporta como una distribución $t$ con $v$ grados de libertad. En notación, decimos $X\sim t(v)$.
 
-$$f(x)=\frac{\Gamma(\frac{v+1}{2})}{\Gamma{(\frac{v}{2})}\sqrt{v\pi} }\left(1+\frac{x^2}{v} \right)^{-(\frac{v+1}{2})}, \quad -\infty<x<\infty$$
+$$f(x)=\frac{\Gamma(\frac{v+1}{2})}{\Gamma{(\frac{v}{2})}\sqrt{v\pi} }\left(1+\frac{x^2}{v} \right)^{-(\frac{v+1}{2})}; \quad -\infty<x<\infty$$
 
 Al igual que la distribución normal estándar, la $t$ es simétrica al rededor del cero. Y levemente más plana que una normal.
 
@@ -886,13 +950,18 @@ Apariencia de la $t$
 ```{r}
 curve(dt(x,2),xlim=c(-5,5),ylim=c(0,0.4),main="v=2")
 curve(dt(x,2),xlim=c(-5,5),ylim=c(0,0.4),lwd=2)
-for(v in 3:40){
+for(v in 3:50){
   curve(dt(x,v),xlim=c(-5,5),col=v,add=T)
 }
+curve(dt(x,20),xlim=c(-5,5),col="red",add=T,lwd=2.5)
+curve(dnorm(x),col="blue",lwd=2.5,add=T)
 ```
 
+Para una variable $X\sim t(v)$, se cumple:
 
-Nota: Cuando $v\rightarrow \infty$  
+$$E[X]=0 \quad V(X)=\frac{v}{v-2}; v>2$$
+
+Nota: Cuando $v\rightarrow \infty$
 
 $$t \sim N\left(\mu=0,\sigma^2=\frac{v}{v-2}\right)$$
 
@@ -914,17 +983,12 @@ curve(dnorm(x,0,sqrt(v/(v-2))),xlim=c(-5,5),ylim=c(0,0.4),main="100 grados de li
 curve(dt(x,v),xlim=c(-5,5),main="t-student (v=100)",col="red",add=T)
 ```
 
-> Corolario
+Ejercicio:
 
-Sean $X_1, X_2, \ldots, X_n$ variables aleatorias e independientes e idénticamente distribuidas (iid) $X_i\sim N(\mu,\sigma^2_x), \quad i=\{1,\ldots,n\}$. Sean los estimadores:
+Sea $X\sim t(v=10)$, calcular:
 
-$$\bar{X}=\frac{\sum_s x_i}{n} \quad y \quad \hat{S}^2_x=\frac{\sum_s (x_i-\bar{X})^2}{n-1}$$
-
-Entonces,
-
-$$
-\frac{\bar{X}-\mu}{\hat{S}/\sqrt{n}}\sim t(v=n-1)
-$$
+$$P(-1<X<1)=P(X<1)-P(X<-1)=$$
+$$=0.8295534-0.1704466=0.6591068$$
 
 En R, para obtener $P(X<t)=F(t)$ con $X\sim t(v)$.
 
@@ -951,7 +1015,7 @@ pt(1.2,30)-pt(-1,30)
 pt(3,30)
 ```
 
-Suponer que se puede utilizar la norma para aproximar a la variable anterior, usando esa aproximación calcular las mismas probabilidades.
+Suponer que se puede utilizar la normal para aproximar a la variable anterior, usando esa aproximación calcular las mismas probabilidades.
 
 $$X\sim N\left(0,\sigma^2=\frac{30}{28}\right)$$
 
@@ -964,7 +1028,6 @@ $$X\sim N\left(0,\sigma^2=\frac{30}{28}\right)$$
 pnorm(1.2,0,sqrt(30/28))-pnorm(-1,0,sqrt(30/28))
 pnorm(3,0,sqrt(30/28))
 ```
-
 
 ## Distribución Fisher (F)
 
@@ -979,6 +1042,32 @@ Así, decimos que $X$ se distribuye como una Fisher, $X\sim F(v_1,v_2)$, donde e
 $$
 f(x)=\frac{\left(\frac{v_1}{v_2} \right)^{v_1/2} x^{v_1/2-1}\Gamma{(\frac{v_1+v_2}{2})} }{\Gamma{(\frac{v_1}{2})} \Gamma{(\frac{v_2}{2})}\left(1+\frac{v_1}{v_2}x \right)^{(v_1+v_2)/2}}, \quad x>0
 $$
+Para la Fisher se tiene:
+
+$$E[X]=\frac{v_2}{v_2-2}; \quad v_2>2$$
+$$V(X)=\frac{2 v_2^2 (v_1+v_2-2)}{v_1(v_2-2)(v_2-4)}; \quad v_2>4$$
+
+Gráficamente
+
+```{r}
+curve(df(x,10,10),xlim=c(0,6),ylim=c(0,2))
+curve(df(x,10,20),xlim=c(0,6),ylim=c(0,2),col=2,add = T)
+curve(df(x,20,10),xlim=c(0,6),ylim=c(0,2),col=3,add = T)
+curve(df(x,100,100),xlim=c(0,6),ylim=c(0,2),col=3,add = T)
+curve(df(x,100,200),xlim=c(0,6),ylim=c(0,2),col=4,add = T)
+curve(df(x,200,100),xlim=c(0,6),ylim=c(0,2),col=2,add = T)
+```
+
+Ejemplo: Sea $x\sim F(5,9)$, calcular:
+
+$$P(X>1.2)=1-P(X\leq 1.2)=1-F(1.2)=$$
+$$=1-0.6182996=0.3817$$
+
+```{r}
+pf(1.2,5,9)
+curve(df(x,5,9),xlim=c(0,3))
+abline(v=1.2)
+```
 
 ### Para las varianzas muestrales
 
