@@ -26,5 +26,3 @@ distribución-muestral-para-la-varianza
 distribución-chi2
 distribución-t-student
 distribución-fisher-f
-para-las-varianzas-muestrales
-ejercicios
