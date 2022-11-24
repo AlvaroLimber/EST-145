@@ -910,24 +910,24 @@ n<-20
 mx+c(-1,1)*ta*sqrt(s2/n)
 ```
 
-(clase del lunes)
+
 Para la diferencia de medias, pero con varianzas iguales $\sigma_1=\sigma_2$
 
 Cuando $n_1$ o $n_2$ no superen ambas a 30, la mejor alternativa es usar
 el intervalo de confianza en base a la distribución $t$, para la
 diferencia de medias el IC es:
 
-$$IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,n_1+n_2-2} \hat{S}_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$$
+$$IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,n_1+n_2-2} S_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$$
 
-Con $\hat{S^2}_p$
+Con $S^2_p$ (Varianza ponderada)
 
-$$\hat{S}^2_p=\frac{(n_1-1)\hat{S}^2_1+(n_2-1)\hat{S}^2_2}{n_1+n_2-2}$$
+$$S^2_p=\frac{(n_1-1)S^2_1+(n_2-1)S^2_2}{n_1+n_2-2}$$
 
 Para la diferencia de medias, pero con varianzas no iguales
 
-$$IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,v} \sqrt{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2}}$$
+$$IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,v} \sqrt{\frac{S_1^2}{n_1}+\frac{S^2_2}{n_2}}$$
 
-$$v=\frac{\left(\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2} \right)^2}{\frac{(\hat{S}_1^2/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}-2$$
+$$v=\frac{\left(\frac{S_1^2}{n_1}+\frac{S^2_2}{n_2} \right)^2}{\frac{(S_1^2/n_1)^2}{n_1+1}+\frac{(S^2_2/n_2)^2}{n_2+1}}-2$$
 Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de ambos grupos, con el fin de estudiar la diferencia de medias para las notas de un examen, los resultados para ambos grupos fueron:
 
 ```{r}
@@ -963,22 +963,21 @@ mx1-mx2+c(-1,1)*ta2*sqrt(s21/n1+s22/n2)
 
 ### Intervalos de confianza para la diferencia de medias de datos pareados
 
-En general, supongamos que los datos constan de $n$ pares
-$(X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})$, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
+En general, supongamos que los datos constan de $n$ pares $(X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})$, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
 $D_1=X_{11}-X_{21},D_2=X_{12}-X_{22},\ldots,D_n=X_{1n}-X_{2n}$,
 estableciendo a $D$ como la va, su intervalo es:
 
-$$IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm t_{\alpha/2,n-1}*\sqrt{\frac{\hat{S}^2_D}{n}} $$
+$$IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm t_{\alpha/2,n-1}*\sqrt{\frac{S^2_D}{n}} $$
 
 Si n es grande, entonces el intervalo es dado por:
 
-$$IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm Z_{\alpha/2}*\sqrt{\frac{\hat{S}^2_D}{n}} $$
+$$IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm Z_{\alpha/2}*\sqrt{\frac{S^2_D}{n}} $$
 
 Ejemplo, se tiene las notas de los parciales de una muestra de 12
 estudiantes, será que los estudiantes mejoraron su rendimiento del parcial 1 al parcial 2. Construya un intervalo de confianza al 90%.
 
 ```{r}
-set.seed(1536)
+set.seed(240)
 bd<-data.frame(id=1:12,p1=round(runif(12,40,80)),p2=round(runif(12,30,90)))
 #estimador puntual
 mean(bd$p1)
@@ -987,6 +986,9 @@ mean(bd$p2)-mean(bd$p1)
 #creando la variable D=p2-p1
 bd$D<-bd$p2-bd$p1
 mean(bd$D)+c(-1,1)*qt(0.1/2,11,lower.tail = F)*sqrt(var(bd$D)/12)
+
+qt(0.1/2,11,lower.tail = F)#ver página 779 del libro guía
+
 #############################
 #suponer una muestra de 100 estudiantes
 n<-100
@@ -1008,17 +1010,26 @@ Si asumimos que el estimador del parámetro $P$ (proporción), se distribuye nor
 $$IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{V(\hat{P})}$$
 Donde para encontrar la $V(\hat{P})$ basta con resolver la varianza del estimador de la media para valores binarios.
 
-$$V(\bar{X})=\frac{\sigma^2}{n} =V(\hat{P})=\frac{\sigma^2_p}{n}=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i^2 }{N}-\mu^2 \right)=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i }{N}-P^2 \right)=$$
+$$V(\bar{x})=\frac{\sigma^2}{n} =V(\hat{P})=\frac{\sigma^2_p}{n}=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i^2 }{N}-\mu^2 \right)=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i }{N}-P^2 \right)=$$
 
 $$=\frac{1}{n}(P-P^2)=\frac{P(1-P)}{n}$$
 
-Notar que esta varianza esta en términos del parámetro $P$, por lo que
-recurrimos en el caso muestral a reemplazarlo por su estimador
-$\hat{P}$. Así, el intervalo de confianza queda como:
+Notar que esta varianza esta en términos del parámetro $P$, por lo que recurrimos en el caso muestral a reemplazarlo por su estimador $\hat{P}$. Así, el intervalo de confianza queda como:
 
 $$IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}$$
-
 > Ejercicio 1
+
+En un municipio se van a realizar elecciones para la alcaldía, se tiene información a partir de una encuesta aleatoria a 60 personas que el partido X tiene un apoyo de 33 personas, calcular el intervalo de confianza al 95% para el porcentaje de apoyo al partido X. ¿Se puede afirmar con base en la encuesta que el partido X ganará?
+
+> Solución, 
+
+Como información $n=60$. $\hat{P}=33/60=0.55$
+
+$$IC_{95\%}(P_x)=0.55 \pm 1.96 * \sqrt{\frac{0.55*0.45}{60}}=$$
+
+$$[0.42 \quad 0.68]\rightarrow [42.4 \quad 67.6]\%$$
+
+> Ejercicio 2
 
 Se toma una muestra de 40 estudiantes de la materia de estadística I con base al listado de inscritos, se identificó en la muestra lo siguiente:
 
@@ -1112,8 +1123,7 @@ Ahora, podemos usar esta definición como una salida para el calculo del tamaño
 
 $$n=\left(\frac{Z_{\alpha/2}}{\epsilon}\right)^2 \hat{P}(1-\hat{P})$$
 
-Dado que definir el tamaño de muestra es un paso previo a la recolección de información, notar que se tiene total control sobre el margen de error ($\epsilon$) y el nivel de confiabilidad ($Z_{\alpha/2}$), sin embargo, en la formula aparece el estimador $\hat{P}$ que es el de interés, la solución para saltarnos este dilema, es elegir un $\hat{P}$
-basado en un estudio similar o una prueba piloto, la otra alternativa extrema es suponer un $\hat{P}$ que haga máximo a $n$ con lo demás fijo.
+Dado que definir el tamaño de muestra es un paso previo a la recolección de información, notar que se tiene total control sobre el margen de error ($\epsilon$) y el nivel de confiabilidad ($Z_{\alpha/2}$), sin embargo, en la formula aparece el estimador $\hat{P}$ que es el de interés, la solución para saltarnos este dilema, es elegir un $\hat{P}$ basado en un estudio similar o una prueba piloto, la otra alternativa extrema es suponer un $\hat{P}$ que haga máximo a $n$ con lo demás fijo.
 
 ```{r}
 tm_p<-function(z,e,p){
@@ -1121,6 +1131,7 @@ tm_p<-function(z,e,p){
   return(n)
 }
 tm_p(1.96,0.05,0.5)
+p<-seq(0,1,0.01)
 plot(p,tm_p(1.96,0.05,p))
 ```
 
@@ -1146,6 +1157,13 @@ Esta diferencia de proporciones son ampliamente usadas cuando se comparan dos po
 $$IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}$$
 
 Donde $\hat{P}_1$ y $\hat{P}_2$ son estimaciones de proporción para la población 1 y 2, respecto una misma característica, $n_1$ y $n_2$ son los tamaños de muestra es estas poblaciones.
+
+> Ejercicio: Se tienen muestras aleatorias de tamaño 45 de personas que se postularon a una carrera durante los semestres I-2022 y II-2022, se sabe que en el primer semestre de la muestra aprobaron 22 postulantes, mientras que en el segundo semestre fueron 27, obtener el intervalo de confianza al 95% para la diferencia de proporciones del semestre II respecto el I. (5 minutos)
+
+Solución:
+
+$$IC_{95\%}(P_{II}-P_{I})=\frac{27}{45}-\frac{22}{45} \pm 1.96 * \sqrt{\frac{27/45(1-27/45)}{45}+\frac{22/45(1-22/45)}{45}}$$
+$$=\frac{5}{45}\pm 0.2045\rightarrow [-0.093 \quad 0.315]  $$
 
 > Ejemplo, 
 
@@ -1181,20 +1199,32 @@ $$IC_{100*(1-\alpha)}(P_1-P_2)=[-0.702 \quad -0.098]$$
 
 Suponga que $X\sim Normal(\mu,\sigma)$ ambos parámetros desconocidos. Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de tamaño $n$ de $X$. Recodar que la varianza muestra sigue una distribución de muestreo tipo $\chi^2$.
 
-$$\chi^2=\frac{(n-1)\hat{S}^2}{\sigma^2}$$
+$$\chi^2=\frac{(n-1)S^2}{\sigma^2}$$
 Para desarrollar el intervalo usamos esta distribución:
 
 $$P(\chi^2_{1-\alpha/2,n-1} \leq \chi^2 \leq \chi^2_{\alpha/2,n-1})=1-\alpha$$
-$$IC_{100*(1-\alpha)}(\sigma^2): \left[\frac{(n-1)\hat{S}^2}{\chi^2_{\alpha/2,n-1}} \quad  \frac{(n-1)\hat{S}^2}{\chi^2_{1-\alpha/2,n-1}}\right]$$
+$$IC_{100*(1-\alpha)}(\sigma^2): \left[\frac{(n-1){S}^2}{\chi^2_{\alpha/2,n-1}} \quad  \frac{(n-1){S}^2}{\chi^2_{1-\alpha/2,n-1}}\right]$$
+
+> Ejercicio, se tiene una muestra aleatoria de 10 personas respecto la cantidad de horas de sueño del día anterior. Los resultados son:
+
+11  8  4  7 11  9  5 10  9 11
+
+Calcular el intervalo de confianza al 95% para la varianza de la variable horas de sueño.
+
+Solución, como información, $n=10$. $S^2=6.28$
+
+$$IC_{95\%}(\sigma^2): \left[\frac{9*6.28}{\chi^2_{0.05/2,9}} \quad  \frac{9*6.28}{\chi^2_{1-0.05/2,9}}\right]=\left[\frac{56.52}{19.02} \quad  \frac{56.52}{2.7}\right]$$
+$$=[2.97 \quad 20.93]$$
+
 
 ### Intervalo de confianza para el cociente de varianzas
 
 El objetivo de esta medida es tener un intervalo para el cociente de las varianzas de dos poblaciones, esto puede servir para identificar que población (con que variable) tiene mayor variabilidad. El parámetro es:
 
 $$\theta=\frac{\sigma^2_1}{\sigma^2_2}$$
-Supongamos que $X_1$ y $X_2$ son va normales con media $\mu_1$ y $\mu_2$ desconocidas y varianzas $\sigma^2_1$, $\sigma^2_2$ también desconocidas. Sean dos muestras aleatorias de $X_1$ y $X_2$ de tamaño $n_1$ y $n_2$ y sean $\hat{S}^2_1$ y $\hat{S}^2_2$ las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución $F$.
+Supongamos que $X_1$ y $X_2$ son va normales con media $\mu_1$ y $\mu_2$ desconocidas y varianzas $\sigma^2_1$, $\sigma^2_2$ también desconocidas. Sean dos muestras aleatorias de $X_1$ y $X_2$ de tamaño $n_1$ y $n_2$ y sean $S^2_1$ y $S^2_2$ las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución $F$.
 
-$$F=\frac{\frac{\hat{S}^2_2}{\sigma^2_2}}{\frac{\hat{S}^2_1}{\sigma^2_1}}$$
+$$F=\frac{\frac{S^2_2}{\sigma^2_2}}{\frac{S^2_1}{\sigma^2_1}}$$
 
 Nota: Recordar que la distribución $F$ es el cociente de chi-cuadrados sobre sus grados de libertad. 
 
@@ -1202,7 +1232,13 @@ Se busca:
 
 $$P(F_{1-\alpha/2,n_2-1,n_1-1} \leq F \leq F_{\alpha/2,n_2-1,n_1-1})=1-\alpha$$
 
-$$IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_2-1,n_1-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_2-1,n_1-1}\right]$$
+$$IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{{S}^2_1}{{S}^2_2} F_{1-\alpha/2,n_2-1,n_1-1} \quad \frac{{S}^2_1}{{S}^2_2} F_{\alpha/2,n_2-1,n_1-1}\right]$$
+Para encontrar el valor de F en R. Suponer una muestra para ambas poblaciones de 13 y un nivel de confiabilidad del 95%
+
+```{r}
+qf(1-0.05/2,12,12,lower.tail = F)
+qf(0.05/2,12,12,lower.tail = F)
+```
 
 ## Ejercicios
 

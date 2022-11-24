@@ -23,7 +23,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2022-10-23" />
+<meta name="date" content="2022-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="tema-2-distribuciones-muestrales.html"/>
-
+<link rel="next" href="prueba-de-hipótesis.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -227,6 +227,30 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="estimaciones.html"><a href="estimaciones.html#ejercicios"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Prueba de Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.1</b> Hipótesis estadística</a></li>
+<li class="chapter" data-level="4.1.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#región-de-aceptación-y-región-de-rechazo"><i class="fa fa-check"></i><b>4.1.2</b> Región de aceptación y región de rechazo</a></li>
+<li class="chapter" data-level="4.1.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#errores-de-tipo-i-y-errores-de-tipo-ii"><i class="fa fa-check"></i><b>4.1.3</b> Errores de tipo I y errores de tipo II</a></li>
+<li class="chapter" data-level="4.1.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-bilaterales"><i class="fa fa-check"></i><b>4.1.4</b> Pruebas bilaterales</a></li>
+<li class="chapter" data-level="4.1.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pruebas-unilaterales"><i class="fa fa-check"></i><b>4.1.5</b> Pruebas unilaterales</a></li>
+<li class="chapter" data-level="4.1.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#pasos-para-la-prueba-hipótesis-estadística"><i class="fa fa-check"></i><b>4.1.6</b> Pasos para la prueba hipótesis estadística</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-media"><i class="fa fa-check"></i><b>4.2</b> Prueba de hipótesis sobre la media</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-conocida"><i class="fa fa-check"></i><b>4.2.1</b> Con varianza conocida</a></li>
+<li class="chapter" data-level="4.2.2" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#con-varianza-desconocida"><i class="fa fa-check"></i><b>4.2.2</b> Con varianza desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-medias"><i class="fa fa-check"></i><b>4.3</b> Prueba de hipótesis sobre la diferencia de medias</a></li>
+<li class="chapter" data-level="4.4" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-proporción"><i class="fa fa-check"></i><b>4.4</b> Prueba de hipótesis sobre la proporción</a></li>
+<li class="chapter" data-level="4.5" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-diferencia-de-proporciones"><i class="fa fa-check"></i><b>4.5</b> Prueba de hipótesis sobre la diferencia de Proporciones</a></li>
+<li class="chapter" data-level="4.6" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-varianza"><i class="fa fa-check"></i><b>4.6</b> Prueba de hipótesis sobre la varianza</a></li>
+<li class="chapter" data-level="4.7" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#prueba-de-hipótesis-sobre-la-igualdad-de-varianzas"><i class="fa fa-check"></i><b>4.7</b> Prueba de hipótesis sobre la igualdad de varianzas</a></li>
+<li class="chapter" data-level="4.8" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#test-de-normalidad-aplicados-en-r-bondad-de-ajuste"><i class="fa fa-check"></i><b>4.8</b> Test de normalidad aplicados en R (bondad de ajuste)</a></li>
+<li class="chapter" data-level="4.9" data-path="prueba-de-hipótesis.html"><a href="prueba-de-hipótesis.html#tamaño-de-muestra-y-su-relación-con-el-error-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.9</b> Tamaño de muestra y su relación con el error de tipo I y tipo II</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -334,21 +358,19 @@ Determinar:</p>
 <pre><code>## [1] 10</code></pre>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="estimaciones.html#cb149-1" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">combn</span>(x,<span class="dv">3</span>)</span>
 <span id="cb149-2"><a href="estimaciones.html#cb149-2" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]   10   10   10   10   10   10
-## [2,]   10   10   10   20   20   25
-## [3,]   20   25   30   25   30   30
-##      [,7] [,8] [,9] [,10]
-## [1,]   10   10   10    20
-## [2,]   20   20   25    25
-## [3,]   25   30   30    30</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## [1,]   10   10   10   10   10   10   10   10   10
+## [2,]   10   10   10   20   20   25   20   20   25
+## [3,]   20   25   30   25   30   30   25   30   30
+##      [,10]
+## [1,]    20
+## [2,]    25
+## [3,]    30</code></pre>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="estimaciones.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la media muestral</span></span>
 <span id="cb151-2"><a href="estimaciones.html#cb151-2" aria-hidden="true" tabindex="-1"></a>dmedia<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,mean)</span>
 <span id="cb151-3"><a href="estimaciones.html#cb151-3" aria-hidden="true" tabindex="-1"></a>dmedia</span></code></pre></div>
-<pre><code>##  [1] 13.33333 15.00000 16.66667
-##  [4] 18.33333 20.00000 21.66667
-##  [7] 18.33333 20.00000 21.66667
-## [10] 25.00000</code></pre>
+<pre><code>##  [1] 13.33333 15.00000 16.66667 18.33333 20.00000
+##  [6] 21.66667 18.33333 20.00000 21.66667 25.00000</code></pre>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="estimaciones.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co">#distribución muestral de la mediana muestral</span></span>
 <span id="cb153-2"><a href="estimaciones.html#cb153-2" aria-hidden="true" tabindex="-1"></a>dmediana<span class="ot">&lt;-</span><span class="fu">apply</span>(s,<span class="dv">2</span>,median)</span>
 <span id="cb153-3"><a href="estimaciones.html#cb153-3" aria-hidden="true" tabindex="-1"></a>dmediana</span></code></pre></div>
@@ -860,9 +882,9 @@ Calcular los siguientes intervalos de confianza al 90%:
 <span id="cb187-3"><a href="estimaciones.html#cb187-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">346</span>)</span>
 <span id="cb187-4"><a href="estimaciones.html#cb187-4" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="fu">sample</span>(x,<span class="dv">32</span>)</span>
 <span id="cb187-5"><a href="estimaciones.html#cb187-5" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
-<pre><code>##  [1] 18 18 12  3 18  9  3 15 18 18 12
-## [12]  6 21  6 15 15  9  6 18 24 15 12
-## [23]  9 18 18  9  9  9  9 18 18 18</code></pre>
+<pre><code>##  [1] 18 18 12  3 18  9  3 15 18 18 12  6 21  6 15
+## [16] 15  9  6 18 24 15 12  9 18 18  9  9  9  9 18
+## [31] 18 18</code></pre>
 <p>Solución</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="estimaciones.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="co">#95%</span></span>
 <span id="cb189-2"><a href="estimaciones.html#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(s)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(s)<span class="sc">/</span><span class="dv">32</span>)</span></code></pre></div>
@@ -890,10 +912,9 @@ Calcular los siguientes intervalos de confianza al 90%:
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="estimaciones.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1534</span>)</span>
 <span id="cb201-2"><a href="estimaciones.html#cb201-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">40</span>,<span class="dv">19</span>,<span class="dv">29</span>))</span>
 <span id="cb201-3"><a href="estimaciones.html#cb201-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 20 26 25 24 22 27 21 28 23 26 23
-## [12] 24 27 22 20 27 23 26 22 23 23 28
-## [23] 21 25 20 19 24 22 27 22 21 28 28
-## [34] 24 23 24 21 28 27 24</code></pre>
+<pre><code>##  [1] 20 26 25 24 22 27 21 28 23 26 23 24 27 22 20
+## [16] 27 23 26 22 23 23 28 21 25 20 19 24 22 27 22
+## [31] 21 28 28 24 23 24 21 28 27 24</code></pre>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="estimaciones.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(x)<span class="sc">/</span><span class="dv">40</span>)</span></code></pre></div>
 <pre><code>## [1] 23.12872 24.77128</code></pre>
 </div>
@@ -946,9 +967,8 @@ Nota: El valor de <span class="math inline">\(t_{\alpha/2,n-1}\)</span> en R.</p
 <span id="cb217-2"><a href="estimaciones.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1423</span>)</span>
 <span id="cb217-3"><a href="estimaciones.html#cb217-3" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">500</span>,<span class="dv">10000</span>),<span class="dv">0</span>)</span>
 <span id="cb217-4"><a href="estimaciones.html#cb217-4" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 3415 1271 7587 5620 1277 2620 8805
-##  [8] 1811 5152 4956 7823 9186 6785 3465
-## [15] 9672</code></pre>
+<pre><code>##  [1] 3415 1271 7587 5620 1277 2620 8805 1811 5152
+## [10] 4956 7823 9186 6785 3465 9672</code></pre>
 <p>Solución, bajo el supuesto que los ingresos tienen un comportamiento normal, se utilizara el intervalo de confianza con la t-student.</p>
 <div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="estimaciones.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)<span class="co">#estimador puntual</span></span></code></pre></div>
 <pre><code>## [1] 5296.333</code></pre>
@@ -961,9 +981,8 @@ Nota: El valor de <span class="math inline">\(t_{\alpha/2,n-1}\)</span> en R.</p
 <div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="estimaciones.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
 <span id="cb225-2"><a href="estimaciones.html#cb225-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">20</span>,<span class="dv">140</span>,<span class="dv">180</span>))</span>
 <span id="cb225-3"><a href="estimaciones.html#cb225-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 171 173 180 152 148 166 177 179
-##  [9] 173 167 175 145 152 142 143 155
-## [17] 179 176 173 147</code></pre>
+<pre><code>##  [1] 171 173 180 152 148 166 177 179 173 167 175
+## [12] 145 152 142 143 155 179 176 173 147</code></pre>
 <p>Encontrar un intervalo de confianza al 95% de confiabilidad para la media poblacional.</p>
 <p>Solución,</p>
 <div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="estimaciones.html#cb227-1" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
@@ -972,17 +991,16 @@ Nota: El valor de <span class="math inline">\(t_{\alpha/2,n-1}\)</span> en R.</p
 <span id="cb227-4"><a href="estimaciones.html#cb227-4" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
 <span id="cb227-5"><a href="estimaciones.html#cb227-5" aria-hidden="true" tabindex="-1"></a>mx<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(s2<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] 157.1698 170.1302</code></pre>
-<p>(clase del lunes)
-Para la diferencia de medias, pero con varianzas iguales <span class="math inline">\(\sigma_1=\sigma_2\)</span></p>
+<p>Para la diferencia de medias, pero con varianzas iguales <span class="math inline">\(\sigma_1=\sigma_2\)</span></p>
 <p>Cuando <span class="math inline">\(n_1\)</span> o <span class="math inline">\(n_2\)</span> no superen ambas a 30, la mejor alternativa es usar
 el intervalo de confianza en base a la distribución <span class="math inline">\(t\)</span>, para la
 diferencia de medias el IC es:</p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,n_1+n_2-2} \hat{S}_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\]</span></p>
-<p>Con <span class="math inline">\(\hat{S^2}_p\)</span></p>
-<p><span class="math display">\[\hat{S}^2_p=\frac{(n_1-1)\hat{S}^2_1+(n_2-1)\hat{S}^2_2}{n_1+n_2-2}\]</span></p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,n_1+n_2-2} S_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\]</span></p>
+<p>Con <span class="math inline">\(S^2_p\)</span> (Varianza ponderada)</p>
+<p><span class="math display">\[S^2_p=\frac{(n_1-1)S^2_1+(n_2-1)S^2_2}{n_1+n_2-2}\]</span></p>
 <p>Para la diferencia de medias, pero con varianzas no iguales</p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,v} \sqrt{\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2}}\]</span></p>
-<p><span class="math display">\[v=\frac{\left(\frac{\hat{S}_1^2}{n_1}+\frac{\hat{S}^2_2}{n_2} \right)^2}{\frac{(\hat{S}_1^2/n_1)^2}{n_1+1}+\frac{(\hat{S}^2_2/n_2)^2}{n_2+1}}-2\]</span>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_1-\mu_2)=\bar{X}_1-\bar{X}_2+t_{\alpha/2,v} \sqrt{\frac{S_1^2}{n_1}+\frac{S^2_2}{n_2}}\]</span></p>
+<p><span class="math display">\[v=\frac{\left(\frac{S_1^2}{n_1}+\frac{S^2_2}{n_2} \right)^2}{\frac{(S_1^2/n_1)^2}{n_1+1}+\frac{(S^2_2/n_2)^2}{n_2+1}}-2\]</span>
 Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de ambos grupos, con el fin de estudiar la diferencia de medias para las notas de un examen, los resultados para ambos grupos fueron:</p>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="estimaciones.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1421</span>)</span>
 <span id="cb229-2"><a href="estimaciones.html#cb229-2" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">100</span>))</span>
@@ -991,8 +1009,7 @@ Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de 
 <span id="cb229-5"><a href="estimaciones.html#cb229-5" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
 <pre><code>##  [1] 79 82 99 30 20 64 94 97 84 67</code></pre>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="estimaciones.html#cb231-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
-<pre><code>##  [1] 73 62 57 23 59 16 65 39 81 23 74
-## [12] 22 20</code></pre>
+<pre><code>##  [1] 73 62 57 23 59 16 65 39 81 23 74 22 20</code></pre>
 <p>Armar un intervalo de confianza al 95% de confiabilidad suponiendo que las varianzas son iguales y otro para varianzas distintas.</p>
 <div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="estimaciones.html#cb233-1" aria-hidden="true" tabindex="-1"></a>mx1<span class="ot">&lt;-</span><span class="fu">mean</span>(x1)</span>
 <span id="cb233-2"><a href="estimaciones.html#cb233-2" aria-hidden="true" tabindex="-1"></a>mx2<span class="ot">&lt;-</span><span class="fu">mean</span>(x2)</span>
@@ -1016,43 +1033,44 @@ Ejemplo, se tienen dos grupos donde se tomo de forma aleatoria a una muestra de 
 </div>
 <div id="intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados" class="section level3 hasAnchor" number="3.3.6">
 <h3><span class="header-section-number">3.3.6</span> Intervalos de confianza para la diferencia de medias de datos pareados<a href="estimaciones.html#intervalos-de-confianza-para-la-diferencia-de-medias-de-datos-pareados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>En general, supongamos que los datos constan de <span class="math inline">\(n\)</span> pares
-<span class="math inline">\((X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})\)</span>, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
+<p>En general, supongamos que los datos constan de <span class="math inline">\(n\)</span> pares <span class="math inline">\((X_{11}, X_{21}), (X_{12}, X_{22})...(X_{1n}, X_{2n})\)</span>, usualmente esto sucede cuando se trabaja con observaciones en 2 puntos distintos de tiempo. Definamos las diferencias como
 <span class="math inline">\(D_1=X_{11}-X_{21},D_2=X_{12}-X_{22},\ldots,D_n=X_{1n}-X_{2n}\)</span>,
 estableciendo a <span class="math inline">\(D\)</span> como la va, su intervalo es:</p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm t_{\alpha/2,n-1}*\sqrt{\frac{\hat{S}^2_D}{n}} \]</span></p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm t_{\alpha/2,n-1}*\sqrt{\frac{S^2_D}{n}} \]</span></p>
 <p>Si n es grande, entonces el intervalo es dado por:</p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm Z_{\alpha/2}*\sqrt{\frac{\hat{S}^2_D}{n}} \]</span></p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(\mu_D=\mu_1-\mu_2): \bar{D} \pm Z_{\alpha/2}*\sqrt{\frac{S^2_D}{n}} \]</span></p>
 <p>Ejemplo, se tiene las notas de los parciales de una muestra de 12
 estudiantes, será que los estudiantes mejoraron su rendimiento del parcial 1 al parcial 2. Construya un intervalo de confianza al 90%.</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="estimaciones.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="estimaciones.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">240</span>)</span>
 <span id="cb239-2"><a href="estimaciones.html#cb239-2" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">12</span>,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
 <span id="cb239-3"><a href="estimaciones.html#cb239-3" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
 <span id="cb239-4"><a href="estimaciones.html#cb239-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
-<pre><code>## [1] 57.08333</code></pre>
+<pre><code>## [1] 56.5</code></pre>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="estimaciones.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)</span></code></pre></div>
-<pre><code>## [1] 65.5</code></pre>
+<pre><code>## [1] 74.91667</code></pre>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="estimaciones.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd<span class="sc">$</span>p1)</span></code></pre></div>
-<pre><code>## [1] 8.416667</code></pre>
+<pre><code>## [1] 18.41667</code></pre>
 <div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="estimaciones.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
 <span id="cb245-2"><a href="estimaciones.html#cb245-2" aria-hidden="true" tabindex="-1"></a>bd<span class="sc">$</span>D<span class="ot">&lt;-</span>bd<span class="sc">$</span>p2<span class="sc">-</span>bd<span class="sc">$</span>p1</span>
 <span id="cb245-3"><a href="estimaciones.html#cb245-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">11</span>,<span class="at">lower.tail =</span> F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd<span class="sc">$</span>D)<span class="sc">/</span><span class="dv">12</span>)</span></code></pre></div>
-<pre><code>## [1] -2.418471 19.251805</code></pre>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="estimaciones.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="do">#############################</span></span>
-<span id="cb247-2"><a href="estimaciones.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="co">#suponer una muestra de 100 estudiantes</span></span>
-<span id="cb247-3"><a href="estimaciones.html#cb247-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">100</span></span>
-<span id="cb247-4"><a href="estimaciones.html#cb247-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
-<span id="cb247-5"><a href="estimaciones.html#cb247-5" aria-hidden="true" tabindex="-1"></a>bd2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span>n,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
-<span id="cb247-6"><a href="estimaciones.html#cb247-6" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
-<span id="cb247-7"><a href="estimaciones.html#cb247-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
+<pre><code>## [1]  9.980298 26.853035</code></pre>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="estimaciones.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">11</span>,<span class="at">lower.tail =</span> F)<span class="co">#ver página 779 del libro guía</span></span></code></pre></div>
+<pre><code>## [1] 1.795885</code></pre>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="estimaciones.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="do">#############################</span></span>
+<span id="cb249-2"><a href="estimaciones.html#cb249-2" aria-hidden="true" tabindex="-1"></a><span class="co">#suponer una muestra de 100 estudiantes</span></span>
+<span id="cb249-3"><a href="estimaciones.html#cb249-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">100</span></span>
+<span id="cb249-4"><a href="estimaciones.html#cb249-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1536</span>)</span>
+<span id="cb249-5"><a href="estimaciones.html#cb249-5" aria-hidden="true" tabindex="-1"></a>bd2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span>n,<span class="at">p1=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">40</span>,<span class="dv">80</span>)),<span class="at">p2=</span><span class="fu">round</span>(<span class="fu">runif</span>(n,<span class="dv">30</span>,<span class="dv">90</span>)))</span>
+<span id="cb249-6"><a href="estimaciones.html#cb249-6" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador puntual</span></span>
+<span id="cb249-7"><a href="estimaciones.html#cb249-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
 <pre><code>## [1] 60.27</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="estimaciones.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="estimaciones.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)</span></code></pre></div>
 <pre><code>## [1] 60.08</code></pre>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="estimaciones.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="estimaciones.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>p2)<span class="sc">-</span><span class="fu">mean</span>(bd2<span class="sc">$</span>p1)</span></code></pre></div>
 <pre><code>## [1] -0.19</code></pre>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="estimaciones.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
-<span id="cb253-2"><a href="estimaciones.html#cb253-2" aria-hidden="true" tabindex="-1"></a>bd2<span class="sc">$</span>D<span class="ot">&lt;-</span>bd2<span class="sc">$</span>p2<span class="sc">-</span>bd2<span class="sc">$</span>p1</span>
-<span id="cb253-3"><a href="estimaciones.html#cb253-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qnorm</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd2<span class="sc">$</span>D)<span class="sc">/</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="estimaciones.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creando la variable D=p2-p1</span></span>
+<span id="cb255-2"><a href="estimaciones.html#cb255-2" aria-hidden="true" tabindex="-1"></a>bd2<span class="sc">$</span>D<span class="ot">&lt;-</span>bd2<span class="sc">$</span>p2<span class="sc">-</span>bd2<span class="sc">$</span>p1</span>
+<span id="cb255-3"><a href="estimaciones.html#cb255-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bd2<span class="sc">$</span>D)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qnorm</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">var</span>(bd2<span class="sc">$</span>D)<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] -3.466029  3.086029</code></pre>
 </div>
 <div id="intervalo-de-confianza-para-proporciones" class="section level3 hasAnchor" number="3.3.7">
@@ -1060,14 +1078,20 @@ estudiantes, será que los estudiantes mejoraron su rendimiento del parcial 1 al
 <p>Si asumimos que el estimador del parámetro <span class="math inline">\(P\)</span> (proporción), se distribuye normal, es decir, <span class="math inline">\(\hat{P}\sim Normal\)</span>, bajo ciertas condiciones como que el tamaño de muestra es grande, se puede plantear al intervalo de confianza como:</p>
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{V(\hat{P})}\]</span>
 Donde para encontrar la <span class="math inline">\(V(\hat{P})\)</span> basta con resolver la varianza del estimador de la media para valores binarios.</p>
-<p><span class="math display">\[V(\bar{X})=\frac{\sigma^2}{n} =V(\hat{P})=\frac{\sigma^2_p}{n}=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i^2 }{N}-\mu^2 \right)=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i }{N}-P^2 \right)=\]</span></p>
+<p><span class="math display">\[V(\bar{x})=\frac{\sigma^2}{n} =V(\hat{P})=\frac{\sigma^2_p}{n}=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i^2 }{N}-\mu^2 \right)=\frac{1}{n}\left(\frac{\sum_{i=1}^N x_i }{N}-P^2 \right)=\]</span></p>
 <p><span class="math display">\[=\frac{1}{n}(P-P^2)=\frac{P(1-P)}{n}\]</span></p>
-<p>Notar que esta varianza esta en términos del parámetro <span class="math inline">\(P\)</span>, por lo que
-recurrimos en el caso muestral a reemplazarlo por su estimador
-<span class="math inline">\(\hat{P}\)</span>. Así, el intervalo de confianza queda como:</p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span></p>
+<p>Notar que esta varianza esta en términos del parámetro <span class="math inline">\(P\)</span>, por lo que recurrimos en el caso muestral a reemplazarlo por su estimador <span class="math inline">\(\hat{P}\)</span>. Así, el intervalo de confianza queda como:</p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}(P)=\hat{P} \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span>
+&gt; Ejercicio 1</p>
+<p>En un municipio se van a realizar elecciones para la alcaldía, se tiene información a partir de una encuesta aleatoria a 60 personas que el partido X tiene un apoyo de 33 personas, calcular el intervalo de confianza al 95% para el porcentaje de apoyo al partido X. ¿Se puede afirmar con base en la encuesta que el partido X ganará?</p>
 <blockquote>
-<p>Ejercicio 1</p>
+<p>Solución,</p>
+</blockquote>
+<p>Como información <span class="math inline">\(n=60\)</span>. <span class="math inline">\(\hat{P}=33/60=0.55\)</span></p>
+<p><span class="math display">\[IC_{95\%}(P_x)=0.55 \pm 1.96 * \sqrt{\frac{0.55*0.45}{60}}=\]</span></p>
+<p><span class="math display">\[[0.42 \quad 0.68]\rightarrow [42.4 \quad 67.6]\%\]</span></p>
+<blockquote>
+<p>Ejercicio 2</p>
 </blockquote>
 <p>Se toma una muestra de 40 estudiantes de la materia de estadística I con base al listado de inscritos, se identificó en la muestra lo siguiente:</p>
 <ul>
@@ -1077,63 +1101,63 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 <p>Se pide calcular los intervalos de confianza al 95% de confiabilidad para la proporción de abandono en la materia y la proporción de reprobados.</p>
 <p>Si el curso tiene un total de 180 inscritos, ¿Cuál sera el intervalo de confianza (95%) de la cantidad de estudiantes que aprobaron?</p>
 <p>Solución</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="estimaciones.html#cb255-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">40</span></span>
-<span id="cb255-2"><a href="estimaciones.html#cb255-2" aria-hidden="true" tabindex="-1"></a>ab<span class="ot">&lt;-</span><span class="dv">10</span></span>
-<span id="cb255-3"><a href="estimaciones.html#cb255-3" aria-hidden="true" tabindex="-1"></a>ap<span class="ot">&lt;-</span><span class="dv">18</span></span>
-<span id="cb255-4"><a href="estimaciones.html#cb255-4" aria-hidden="true" tabindex="-1"></a>re<span class="ot">&lt;-</span><span class="dv">12</span></span>
-<span id="cb255-5"><a href="estimaciones.html#cb255-5" aria-hidden="true" tabindex="-1"></a><span class="co"># estimador puntal</span></span>
-<span id="cb255-6"><a href="estimaciones.html#cb255-6" aria-hidden="true" tabindex="-1"></a>p_ab<span class="ot">&lt;-</span><span class="dv">10</span><span class="sc">/</span><span class="dv">40</span></span>
-<span id="cb255-7"><a href="estimaciones.html#cb255-7" aria-hidden="true" tabindex="-1"></a>p_ap<span class="ot">&lt;-</span><span class="dv">18</span><span class="sc">/</span><span class="dv">40</span></span>
-<span id="cb255-8"><a href="estimaciones.html#cb255-8" aria-hidden="true" tabindex="-1"></a>p_re<span class="ot">&lt;-</span><span class="dv">12</span><span class="sc">/</span><span class="dv">40</span></span>
-<span id="cb255-9"><a href="estimaciones.html#cb255-9" aria-hidden="true" tabindex="-1"></a>p_ab;p_ap; p_re</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="estimaciones.html#cb257-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">40</span></span>
+<span id="cb257-2"><a href="estimaciones.html#cb257-2" aria-hidden="true" tabindex="-1"></a>ab<span class="ot">&lt;-</span><span class="dv">10</span></span>
+<span id="cb257-3"><a href="estimaciones.html#cb257-3" aria-hidden="true" tabindex="-1"></a>ap<span class="ot">&lt;-</span><span class="dv">18</span></span>
+<span id="cb257-4"><a href="estimaciones.html#cb257-4" aria-hidden="true" tabindex="-1"></a>re<span class="ot">&lt;-</span><span class="dv">12</span></span>
+<span id="cb257-5"><a href="estimaciones.html#cb257-5" aria-hidden="true" tabindex="-1"></a><span class="co"># estimador puntal</span></span>
+<span id="cb257-6"><a href="estimaciones.html#cb257-6" aria-hidden="true" tabindex="-1"></a>p_ab<span class="ot">&lt;-</span><span class="dv">10</span><span class="sc">/</span><span class="dv">40</span></span>
+<span id="cb257-7"><a href="estimaciones.html#cb257-7" aria-hidden="true" tabindex="-1"></a>p_ap<span class="ot">&lt;-</span><span class="dv">18</span><span class="sc">/</span><span class="dv">40</span></span>
+<span id="cb257-8"><a href="estimaciones.html#cb257-8" aria-hidden="true" tabindex="-1"></a>p_re<span class="ot">&lt;-</span><span class="dv">12</span><span class="sc">/</span><span class="dv">40</span></span>
+<span id="cb257-9"><a href="estimaciones.html#cb257-9" aria-hidden="true" tabindex="-1"></a>p_ab;p_ap; p_re</span></code></pre></div>
 <pre><code>## [1] 0.25</code></pre>
 <pre><code>## [1] 0.45</code></pre>
 <pre><code>## [1] 0.3</code></pre>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="estimaciones.html#cb259-1" aria-hidden="true" tabindex="-1"></a>p_ab<span class="sc">*</span><span class="dv">100</span>;p_ap<span class="sc">*</span><span class="dv">100</span>; p_re<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="estimaciones.html#cb261-1" aria-hidden="true" tabindex="-1"></a>p_ab<span class="sc">*</span><span class="dv">100</span>;p_ap<span class="sc">*</span><span class="dv">100</span>; p_re<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 25</code></pre>
 <pre><code>## [1] 45</code></pre>
 <pre><code>## [1] 30</code></pre>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="estimaciones.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo de confianza</span></span>
-<span id="cb263-2"><a href="estimaciones.html#cb263-2" aria-hidden="true" tabindex="-1"></a>p_ab<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ab<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ab)<span class="sc">/</span>n) <span class="co">#abandonos</span></span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="estimaciones.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo de confianza</span></span>
+<span id="cb265-2"><a href="estimaciones.html#cb265-2" aria-hidden="true" tabindex="-1"></a>p_ab<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ab<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ab)<span class="sc">/</span>n) <span class="co">#abandonos</span></span></code></pre></div>
 <pre><code>## [1] 0.115808 0.384192</code></pre>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="estimaciones.html#cb265-1" aria-hidden="true" tabindex="-1"></a>p_ap<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ap<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ap)<span class="sc">/</span>n) <span class="co">#aprobados</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="estimaciones.html#cb267-1" aria-hidden="true" tabindex="-1"></a>p_ap<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ap<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ap)<span class="sc">/</span>n) <span class="co">#aprobados</span></span></code></pre></div>
 <pre><code>## [1] 0.2958251 0.6041749</code></pre>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="estimaciones.html#cb267-1" aria-hidden="true" tabindex="-1"></a>p_re<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_re<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_re)<span class="sc">/</span>n) <span class="co">#reprobados</span></span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="estimaciones.html#cb269-1" aria-hidden="true" tabindex="-1"></a>p_re<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_re<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_re)<span class="sc">/</span>n) <span class="co">#reprobados</span></span></code></pre></div>
 <pre><code>## [1] 0.1579845 0.4420155</code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="estimaciones.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="co">#%</span></span>
-<span id="cb269-2"><a href="estimaciones.html#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span>(p_ab<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ab<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ab)<span class="sc">/</span>n)) <span class="co">#abandonos</span></span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="estimaciones.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="co">#%</span></span>
+<span id="cb271-2"><a href="estimaciones.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span>(p_ab<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ab<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ab)<span class="sc">/</span>n)) <span class="co">#abandonos</span></span></code></pre></div>
 <pre><code>## [1] 11.5808 38.4192</code></pre>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="estimaciones.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span>(p_ap<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ap<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ap)<span class="sc">/</span>n)) <span class="co">#aprobados</span></span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="estimaciones.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span>(p_ap<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ap<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ap)<span class="sc">/</span>n)) <span class="co">#aprobados</span></span></code></pre></div>
 <pre><code>## [1] 29.58251 60.41749</code></pre>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="estimaciones.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span>(p_re<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_re<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_re)<span class="sc">/</span>n))<span class="co">#reprobados</span></span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="estimaciones.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span>(p_re<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_re<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_re)<span class="sc">/</span>n))<span class="co">#reprobados</span></span></code></pre></div>
 <pre><code>## [1] 15.79845 44.20155</code></pre>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="estimaciones.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="co">#personas</span></span>
-<span id="cb275-2"><a href="estimaciones.html#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="dv">180</span><span class="sc">*</span>(p_ap<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ap<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ap)<span class="sc">/</span>n)) <span class="co">#aprobados</span></span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="estimaciones.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co">#personas</span></span>
+<span id="cb277-2"><a href="estimaciones.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="dv">180</span><span class="sc">*</span>(p_ap<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_ap<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_ap)<span class="sc">/</span>n)) <span class="co">#aprobados</span></span></code></pre></div>
 <pre><code>## [1]  53.24852 108.75148</code></pre>
 <p>Ejemplo, en un curso se tomó una muestra aleatoria de 15 personas, respecto su estatura en centímetros, las mediciones son:</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="estimaciones.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1431</span>)</span>
-<span id="cb277-2"><a href="estimaciones.html#cb277-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
-<span id="cb277-3"><a href="estimaciones.html#cb277-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>##  [1] 163 167 156 156 178 172 152 160
-##  [9] 140 160 168 175 170 160 164</code></pre>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="estimaciones.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1431</span>)</span>
+<span id="cb279-2"><a href="estimaciones.html#cb279-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb279-3"><a href="estimaciones.html#cb279-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1] 163 167 156 156 178 172 152 160 140 160 168
+## [12] 175 170 160 164</code></pre>
 <p>Se pide encontrar al estimador de la proporción y su intervalo de confianza al 95% de confiabilidad para la proporción de estudiantes con estatura de 170 o más.</p>
 <p>Solución,</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="estimaciones.html#cb279-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
-<span id="cb279-2"><a href="estimaciones.html#cb279-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
-<span id="cb279-3"><a href="estimaciones.html#cb279-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="estimaciones.html#cb281-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">15</span></span>
+<span id="cb281-2"><a href="estimaciones.html#cb281-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>(x<span class="sc">&gt;=</span><span class="dv">170</span>)<span class="sc">*</span><span class="dv">1</span></span>
+<span id="cb281-3"><a href="estimaciones.html#cb281-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>##  [1] 0 0 0 0 1 1 0 0 0 0 0 1 1 0 0</code></pre>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="estimaciones.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
-<span id="cb281-2"><a href="estimaciones.html#cb281-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
-<span id="cb281-3"><a href="estimaciones.html#cb281-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="estimaciones.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="co">#el estimador de la proporción</span></span>
+<span id="cb283-2"><a href="estimaciones.html#cb283-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">mean</span>(x)</span>
+<span id="cb283-3"><a href="estimaciones.html#cb283-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.2666667</code></pre>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="estimaciones.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="co">#en porcentaje</span></span>
-<span id="cb283-2"><a href="estimaciones.html#cb283-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="estimaciones.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="co">#en porcentaje</span></span>
+<span id="cb285-2"><a href="estimaciones.html#cb285-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 26.66667</code></pre>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="estimaciones.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo</span></span>
-<span id="cb285-2"><a href="estimaciones.html#cb285-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="estimaciones.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo</span></span>
+<span id="cb287-2"><a href="estimaciones.html#cb287-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n)</span></code></pre></div>
 <pre><code>## [1] 0.04287417 0.49045916</code></pre>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="estimaciones.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
-<span id="cb287-2"><a href="estimaciones.html#cb287-2" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="estimaciones.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo en %</span></span>
+<span id="cb289-2"><a href="estimaciones.html#cb289-2" aria-hidden="true" tabindex="-1"></a>(p<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1]  4.287417 49.045916</code></pre>
 <blockquote>
 <p>Ejemplo,</p>
@@ -1145,8 +1169,8 @@ recurrimos en el caso muestral a reemplazarlo por su estimador
 <p><span class="math display">\[\frac{d V(\hat{P})}{dP}=\frac{d}{dP}\left(\frac{P}{n}-\frac{P^2}{n}\right)=\frac{1}{n}-\frac{2P}{n}=0 \rightarrow P=0.5\]</span>
 También,</p>
 <p><span class="math display">\[\frac{d^2 V(\hat{P})}{d^2P}=-\frac{2}{n}&lt;0 \quad (máximo)\]</span></p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="estimaciones.html#cb289-1" aria-hidden="true" tabindex="-1"></a>vp<span class="ot">&lt;-</span><span class="cf">function</span>(x){x<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)}</span>
-<span id="cb289-2"><a href="estimaciones.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(vp,<span class="at">xlab=</span><span class="st">&quot;p&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;v(p)&quot;</span>,<span class="at">main=</span><span class="st">&quot;n=1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="estimaciones.html#cb291-1" aria-hidden="true" tabindex="-1"></a>vp<span class="ot">&lt;-</span><span class="cf">function</span>(x){x<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)}</span>
+<span id="cb291-2"><a href="estimaciones.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(vp,<span class="at">xlab=</span><span class="st">&quot;p&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;v(p)&quot;</span>,<span class="at">main=</span><span class="st">&quot;n=1&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <div id="tamaño-de-muestra-para-estimar-proporciones" class="section level4 hasAnchor" number="3.3.7.1">
 <h4><span class="header-section-number">3.3.7.1</span> Tamaño de muestra para estimar proporciones<a href="estimaciones.html#tamaño-de-muestra-para-estimar-proporciones" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1154,28 +1178,28 @@ También,</p>
 <p><span class="math display">\[\epsilon= Z_{\alpha/2} * \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\]</span></p>
 <p>Ahora, podemos usar esta definición como una salida para el calculo del tamaño de muestra necesario para cometer un determinado margen de error (<span class="math inline">\(epsilon\)</span>), sujeto a un nivel de confiabilidad de <span class="math inline">\(Z_{\alpha/2}\)</span>, basta con despejar <span class="math inline">\(n\)</span> de la anterior formula.</p>
 <p><span class="math display">\[n=\left(\frac{Z_{\alpha/2}}{\epsilon}\right)^2 \hat{P}(1-\hat{P})\]</span></p>
-<p>Dado que definir el tamaño de muestra es un paso previo a la recolección de información, notar que se tiene total control sobre el margen de error (<span class="math inline">\(\epsilon\)</span>) y el nivel de confiabilidad (<span class="math inline">\(Z_{\alpha/2}\)</span>), sin embargo, en la formula aparece el estimador <span class="math inline">\(\hat{P}\)</span> que es el de interés, la solución para saltarnos este dilema, es elegir un <span class="math inline">\(\hat{P}\)</span>
-basado en un estudio similar o una prueba piloto, la otra alternativa extrema es suponer un <span class="math inline">\(\hat{P}\)</span> que haga máximo a <span class="math inline">\(n\)</span> con lo demás fijo.</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="estimaciones.html#cb290-1" aria-hidden="true" tabindex="-1"></a>tm_p<span class="ot">&lt;-</span><span class="cf">function</span>(z,e,p){</span>
-<span id="cb290-2"><a href="estimaciones.html#cb290-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span>((z<span class="sc">/</span>e)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span>
-<span id="cb290-3"><a href="estimaciones.html#cb290-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n)</span>
-<span id="cb290-4"><a href="estimaciones.html#cb290-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb290-5"><a href="estimaciones.html#cb290-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>)</span></code></pre></div>
+<p>Dado que definir el tamaño de muestra es un paso previo a la recolección de información, notar que se tiene total control sobre el margen de error (<span class="math inline">\(\epsilon\)</span>) y el nivel de confiabilidad (<span class="math inline">\(Z_{\alpha/2}\)</span>), sin embargo, en la formula aparece el estimador <span class="math inline">\(\hat{P}\)</span> que es el de interés, la solución para saltarnos este dilema, es elegir un <span class="math inline">\(\hat{P}\)</span> basado en un estudio similar o una prueba piloto, la otra alternativa extrema es suponer un <span class="math inline">\(\hat{P}\)</span> que haga máximo a <span class="math inline">\(n\)</span> con lo demás fijo.</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="estimaciones.html#cb292-1" aria-hidden="true" tabindex="-1"></a>tm_p<span class="ot">&lt;-</span><span class="cf">function</span>(z,e,p){</span>
+<span id="cb292-2"><a href="estimaciones.html#cb292-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span>((z<span class="sc">/</span>e)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span>
+<span id="cb292-3"><a href="estimaciones.html#cb292-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n)</span>
+<span id="cb292-4"><a href="estimaciones.html#cb292-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb292-5"><a href="estimaciones.html#cb292-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>## [1] 384.16</code></pre>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="estimaciones.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p,<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,p))</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="estimaciones.html#cb294-1" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
+<span id="cb294-2"><a href="estimaciones.html#cb294-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p,<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,p))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <blockquote>
 <p>Ejercicio,</p>
 </blockquote>
 <p>Una carrera en la universidad esta a punto de elegir a sus autoridades, se busca hacer una encuesta de intención de votos en los estudiantes para el candidato <span class="math inline">\(Z\)</span>, se quiere un nivel de confianza del 95%, y no errar en +- 5%. Calcular el tamaño de muestra, (1) suponiendo <span class="math inline">\(n\)</span> máxima y (2) mediante un sondeo se verifico que el candidato <span class="math inline">\(Z\)</span> tiene un 70% de apoyo.</p>
 <p>Solución,</p>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="estimaciones.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))<span class="co">#1</span></span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="estimaciones.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.5</span>))<span class="co">#1</span></span></code></pre></div>
 <pre><code>## [1] 385</code></pre>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="estimaciones.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.7</span>))<span class="co">#2</span></span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="estimaciones.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.05</span>,<span class="fl">0.7</span>))<span class="co">#2</span></span></code></pre></div>
 <pre><code>## [1] 323</code></pre>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="estimaciones.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 10%</span></span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="estimaciones.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 10%</span></span></code></pre></div>
 <pre><code>## [1] 97</code></pre>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="estimaciones.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.01</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 1%</span></span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="estimaciones.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">tm_p</span>(<span class="fl">1.96</span>,<span class="fl">0.01</span>,<span class="fl">0.5</span>))<span class="co">#epsilon 1%</span></span></code></pre></div>
 <pre><code>## [1] 9604</code></pre>
 <p>Nota: La muestra de 385 es valida para cualquier área, siempre y cuando la selección de la muestra se realiza de forma completamente aleatoria (<strong>azar</strong>) y provenir de una <strong>listado</strong> de la población objetivo.</p>
 </div>
@@ -1186,16 +1210,22 @@ basado en un estudio similar o una prueba piloto, la otra alternativa extrema es
 <p><span class="math display">\[IC_{100*(1-\alpha)}(P_1-P_2)=(\hat{P}_1-\hat{P}_2) \pm Z_{\alpha/2} * \sqrt{\frac{\hat{P_1}(1-\hat{P}_1)}{n_1}+\frac{\hat{P}_2(1-\hat{P}_2)}{n_2}}\]</span></p>
 <p>Donde <span class="math inline">\(\hat{P}_1\)</span> y <span class="math inline">\(\hat{P}_2\)</span> son estimaciones de proporción para la población 1 y 2, respecto una misma característica, <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> son los tamaños de muestra es estas poblaciones.</p>
 <blockquote>
+<p>Ejercicio: Se tienen muestras aleatorias de tamaño 45 de personas que se postularon a una carrera durante los semestres I-2022 y II-2022, se sabe que en el primer semestre de la muestra aprobaron 22 postulantes, mientras que en el segundo semestre fueron 27, obtener el intervalo de confianza al 95% para la diferencia de proporciones del semestre II respecto el I. (5 minutos)</p>
+</blockquote>
+<p>Solución:</p>
+<p><span class="math display">\[IC_{95\%}(P_{II}-P_{I})=\frac{27}{45}-\frac{22}{45} \pm 1.96 * \sqrt{\frac{27/45(1-27/45)}{45}+\frac{22/45(1-22/45)}{45}}\]</span>
+<span class="math display">\[=\frac{5}{45}\pm 0.2045\rightarrow [-0.093 \quad 0.315]  \]</span></p>
+<blockquote>
 <p>Ejemplo,</p>
 </blockquote>
 <p>En una muestra aleatoria de 20 estudiantes se midió la estatura del grupo, se tiene conocimiento del sexo de los estudiantes y se busca estimar la diferencia de proporciones por hombre y mujer de la proporción de estudiantes que superan los 170 cm de estatura. Los datos son:</p>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="estimaciones.html#cb301-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
-<span id="cb301-2"><a href="estimaciones.html#cb301-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb301-3"><a href="estimaciones.html#cb301-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
-<span id="cb301-4"><a href="estimaciones.html#cb301-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
-<span id="cb301-5"><a href="estimaciones.html#cb301-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
-<span id="cb301-6"><a href="estimaciones.html#cb301-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
-<span id="cb301-7"><a href="estimaciones.html#cb301-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="estimaciones.html#cb303-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb303-2"><a href="estimaciones.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb303-3"><a href="estimaciones.html#cb303-3" aria-hidden="true" tabindex="-1"></a>estatura<span class="ot">&lt;-</span><span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">165</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span>
+<span id="cb303-4"><a href="estimaciones.html#cb303-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1501</span>)</span>
+<span id="cb303-5"><a href="estimaciones.html#cb303-5" aria-hidden="true" tabindex="-1"></a>mujer<span class="ot">&lt;-</span><span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
+<span id="cb303-6"><a href="estimaciones.html#cb303-6" aria-hidden="true" tabindex="-1"></a>bd<span class="ot">&lt;-</span><span class="fu">data.frame</span>(estatura,mujer)</span>
+<span id="cb303-7"><a href="estimaciones.html#cb303-7" aria-hidden="true" tabindex="-1"></a>bd</span></code></pre></div>
 <pre><code>##    estatura mujer
 ## 1       161     0
 ## 2       179     0
@@ -1230,21 +1260,34 @@ basado en un estudio similar o una prueba piloto, la otra alternativa extrema es
 <div id="intervalo-de-confianza-para-la-varianza" class="section level3 hasAnchor" number="3.3.9">
 <h3><span class="header-section-number">3.3.9</span> Intervalo de confianza para la varianza<a href="estimaciones.html#intervalo-de-confianza-para-la-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suponga que <span class="math inline">\(X\sim Normal(\mu,\sigma)\)</span> ambos parámetros desconocidos. Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> de <span class="math inline">\(X\)</span>. Recodar que la varianza muestra sigue una distribución de muestreo tipo <span class="math inline">\(\chi^2\)</span>.</p>
-<p><span class="math display">\[\chi^2=\frac{(n-1)\hat{S}^2}{\sigma^2}\]</span>
+<p><span class="math display">\[\chi^2=\frac{(n-1)S^2}{\sigma^2}\]</span>
 Para desarrollar el intervalo usamos esta distribución:</p>
 <p><span class="math display">\[P(\chi^2_{1-\alpha/2,n-1} \leq \chi^2 \leq \chi^2_{\alpha/2,n-1})=1-\alpha\]</span>
-<span class="math display">\[IC_{100*(1-\alpha)}(\sigma^2): \left[\frac{(n-1)\hat{S}^2}{\chi^2_{\alpha/2,n-1}} \quad  \frac{(n-1)\hat{S}^2}{\chi^2_{1-\alpha/2,n-1}}\right]\]</span></p>
+<span class="math display">\[IC_{100*(1-\alpha)}(\sigma^2): \left[\frac{(n-1){S}^2}{\chi^2_{\alpha/2,n-1}} \quad  \frac{(n-1){S}^2}{\chi^2_{1-\alpha/2,n-1}}\right]\]</span></p>
+<blockquote>
+<p>Ejercicio, se tiene una muestra aleatoria de 10 personas respecto la cantidad de horas de sueño del día anterior. Los resultados son:</p>
+</blockquote>
+<p>11 8 4 7 11 9 5 10 9 11</p>
+<p>Calcular el intervalo de confianza al 95% para la varianza de la variable horas de sueño.</p>
+<p>Solución, como información, <span class="math inline">\(n=10\)</span>. <span class="math inline">\(S^2=6.28\)</span></p>
+<p><span class="math display">\[IC_{95\%}(\sigma^2): \left[\frac{9*6.28}{\chi^2_{0.05/2,9}} \quad  \frac{9*6.28}{\chi^2_{1-0.05/2,9}}\right]=\left[\frac{56.52}{19.02} \quad  \frac{56.52}{2.7}\right]\]</span>
+<span class="math display">\[=[2.97 \quad 20.93]\]</span></p>
 </div>
 <div id="intervalo-de-confianza-para-el-cociente-de-varianzas" class="section level3 hasAnchor" number="3.3.10">
 <h3><span class="header-section-number">3.3.10</span> Intervalo de confianza para el cociente de varianzas<a href="estimaciones.html#intervalo-de-confianza-para-el-cociente-de-varianzas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El objetivo de esta medida es tener un intervalo para el cociente de las varianzas de dos poblaciones, esto puede servir para identificar que población (con que variable) tiene mayor variabilidad. El parámetro es:</p>
 <p><span class="math display">\[\theta=\frac{\sigma^2_1}{\sigma^2_2}\]</span>
-Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> son va normales con media <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> desconocidas y varianzas <span class="math inline">\(\sigma^2_1\)</span>, <span class="math inline">\(\sigma^2_2\)</span> también desconocidas. Sean dos muestras aleatorias de <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> de tamaño <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> y sean <span class="math inline">\(\hat{S}^2_1\)</span> y <span class="math inline">\(\hat{S}^2_2\)</span> las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución <span class="math inline">\(F\)</span>.</p>
-<p><span class="math display">\[F=\frac{\frac{\hat{S}^2_2}{\sigma^2_2}}{\frac{\hat{S}^2_1}{\sigma^2_1}}\]</span></p>
+Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> son va normales con media <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> desconocidas y varianzas <span class="math inline">\(\sigma^2_1\)</span>, <span class="math inline">\(\sigma^2_2\)</span> también desconocidas. Sean dos muestras aleatorias de <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> de tamaño <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> y sean <span class="math inline">\(S^2_1\)</span> y <span class="math inline">\(S^2_2\)</span> las varianzas de las muestras. Para armar el intervalo de confianza recurrimos a la distribución <span class="math inline">\(F\)</span>.</p>
+<p><span class="math display">\[F=\frac{\frac{S^2_2}{\sigma^2_2}}{\frac{S^2_1}{\sigma^2_1}}\]</span></p>
 <p>Nota: Recordar que la distribución <span class="math inline">\(F\)</span> es el cociente de chi-cuadrados sobre sus grados de libertad.</p>
 <p>Se busca:</p>
 <p><span class="math display">\[P(F_{1-\alpha/2,n_2-1,n_1-1} \leq F \leq F_{\alpha/2,n_2-1,n_1-1})=1-\alpha\]</span></p>
-<p><span class="math display">\[IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{\hat{S}^2_1}{\hat{S}^2_2} F_{1-\alpha/2,n_2-1,n_1-1} \quad \frac{\hat{S}^2_1}{\hat{S}^2_2} F_{\alpha/2,n_2-1,n_1-1}\right]\]</span></p>
+<p><span class="math display">\[IC_{100*(1-\alpha)}\left(\frac{\sigma^2_1}{\sigma^2_2}\right): \left[\frac{{S}^2_1}{{S}^2_2} F_{1-\alpha/2,n_2-1,n_1-1} \quad \frac{{S}^2_1}{{S}^2_2} F_{\alpha/2,n_2-1,n_1-1}\right]\]</span>
+Para encontrar el valor de F en R. Suponer una muestra para ambas poblaciones de 13 y un nivel de confiabilidad del 95%</p>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="estimaciones.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">12</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<pre><code>## [1] 0.3051314</code></pre>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="estimaciones.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">12</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<pre><code>## [1] 3.277277</code></pre>
 </div>
 </div>
 <div id="ejercicios" class="section level2 hasAnchor" number="3.4">
@@ -1259,8 +1302,8 @@ Supongamos que <span class="math inline">\(X_1\)</span> y <span class="math inli
 <p>respecto al espesor de pared medio.</p>
 <p>Solución,</p>
 <p><span class="math display">\[IC(\bar{x})_{90\%}=\bar{x} \pm t_{\alpha/2,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05\pm 1.71 \sqrt{\frac{0.08^2}{25}}\]</span></p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="estimaciones.html#cb303-1" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb303-2"><a href="estimaciones.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="fl">4.05</span><span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fl">0.08</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="estimaciones.html#cb309-1" aria-hidden="true" tabindex="-1"></a>ta<span class="ot">&lt;-</span><span class="fu">qt</span>(<span class="fl">0.1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb309-2"><a href="estimaciones.html#cb309-2" aria-hidden="true" tabindex="-1"></a><span class="fl">4.05</span><span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>ta<span class="sc">*</span><span class="fu">sqrt</span>(<span class="fl">0.08</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>)</span></code></pre></div>
 <pre><code>## [1] 4.022626 4.077374</code></pre>
 <p><span class="math display">\[IC(\bar{x})_{90\%}=[4.02 \quad 4.08]\]</span>
 Para el intervalo de confianza inferior. Recordar que para el intervalo de confianza de 2 lados, la formula es:</p>
@@ -1268,7 +1311,7 @@ Para el intervalo de confianza inferior. Recordar que para el intervalo de confi
 Mientras para un intervalo inferior, la formula es:</p>
 <p><span class="math display">\[P(L&lt;\theta)=1-\alpha\]</span></p>
 <p><span class="math display">\[IC(\bar{x})_{90\%, inferior}=\bar{x} - t_{\alpha,n-1} \sqrt{\frac{\hat{S}^2}{n}}=4.05- 1.32 \sqrt{\frac{0.08^2}{25}}\]</span></p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="estimaciones.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.1</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="estimaciones.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.1</span>,<span class="dv">24</span>,<span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 1.317836</code></pre>
 <p><span class="math display">\[L: 4.03mm\]</span></p>
 <ol start="2" style="list-style-type: decimal">
@@ -1283,77 +1326,60 @@ Mientras para un intervalo inferior, la formula es:</p>
 </ul>
 <p>se pide calcular intervalos de confianza para la varianza para ambas poblaciones, y para el cociente de varianzas entre <span class="math inline">\(Hombre/Mujer\)</span> y <span class="math inline">\(Mujer/Hombre\)</span>. Estos intervalos al 95 % de confiabilidad. (Asumir normalidad de los datos de origen).</p>
 <p>Solución:</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="estimaciones.html#cb307-1" aria-hidden="true" tabindex="-1"></a>hh<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2078</span>,  <span class="dv">3565</span>,  <span class="dv">3767</span>,  <span class="dv">3600</span>,  <span class="dv">2907</span>,  <span class="dv">1299</span>,  <span class="dv">3483</span>,  <span class="dv">8475</span>,  <span class="dv">2425</span>,  <span class="dv">3500</span>,  <span class="dv">3118</span>,  <span class="dv">3377</span>,  <span class="dv">3897</span>, <span class="dv">21883</span>,  <span class="dv">9717</span>,  <span class="dv">2078</span>,  <span class="dv">8167</span>)</span>
-<span id="cb307-2"><a href="estimaciones.html#cb307-2" aria-hidden="true" tabindex="-1"></a>mm<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1905</span>, <span class="dv">9500</span>, <span class="dv">996</span>, <span class="dv">3250</span>, <span class="dv">3335</span>, <span class="dv">433</span>, <span class="dv">2917</span>, <span class="dv">616</span>, <span class="dv">1625</span>, <span class="dv">1104</span>, <span class="dv">2050</span>, <span class="dv">3000</span>, <span class="dv">1625</span>)</span>
-<span id="cb307-3"><a href="estimaciones.html#cb307-3" aria-hidden="true" tabindex="-1"></a>nh<span class="ot">&lt;-</span><span class="dv">17</span>;nm<span class="ot">&lt;-</span><span class="dv">13</span></span>
-<span id="cb307-4"><a href="estimaciones.html#cb307-4" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador de varianzas</span></span>
-<span id="cb307-5"><a href="estimaciones.html#cb307-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="co">#puntual hombres S^2</span></span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="estimaciones.html#cb313-1" aria-hidden="true" tabindex="-1"></a>hh<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2078</span>,  <span class="dv">3565</span>,  <span class="dv">3767</span>,  <span class="dv">3600</span>,  <span class="dv">2907</span>,  <span class="dv">1299</span>,  <span class="dv">3483</span>,  <span class="dv">8475</span>,  <span class="dv">2425</span>,  <span class="dv">3500</span>,  <span class="dv">3118</span>,  <span class="dv">3377</span>,  <span class="dv">3897</span>, <span class="dv">21883</span>,  <span class="dv">9717</span>,  <span class="dv">2078</span>,  <span class="dv">8167</span>)</span>
+<span id="cb313-2"><a href="estimaciones.html#cb313-2" aria-hidden="true" tabindex="-1"></a>mm<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1905</span>, <span class="dv">9500</span>, <span class="dv">996</span>, <span class="dv">3250</span>, <span class="dv">3335</span>, <span class="dv">433</span>, <span class="dv">2917</span>, <span class="dv">616</span>, <span class="dv">1625</span>, <span class="dv">1104</span>, <span class="dv">2050</span>, <span class="dv">3000</span>, <span class="dv">1625</span>)</span>
+<span id="cb313-3"><a href="estimaciones.html#cb313-3" aria-hidden="true" tabindex="-1"></a>nh<span class="ot">&lt;-</span><span class="dv">17</span>;nm<span class="ot">&lt;-</span><span class="dv">13</span></span>
+<span id="cb313-4"><a href="estimaciones.html#cb313-4" aria-hidden="true" tabindex="-1"></a><span class="co">#estimador de varianzas</span></span>
+<span id="cb313-5"><a href="estimaciones.html#cb313-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="co">#puntual hombres S^2</span></span></code></pre></div>
 <pre><code>## [1] 24271163</code></pre>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="estimaciones.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="co">#puntual mujeres S^2</span></span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="estimaciones.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="co">#puntual mujeres S^2</span></span></code></pre></div>
 <pre><code>## [1] 5400214</code></pre>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="estimaciones.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo hombres</span></span>
-<span id="cb311-2"><a href="estimaciones.html#cb311-2" aria-hidden="true" tabindex="-1"></a>lih<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb311-3"><a href="estimaciones.html#cb311-3" aria-hidden="true" tabindex="-1"></a>lsh<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb311-4"><a href="estimaciones.html#cb311-4" aria-hidden="true" tabindex="-1"></a>lih;<span class="fu">var</span>(hh);lsh</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="estimaciones.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo hombres</span></span>
+<span id="cb317-2"><a href="estimaciones.html#cb317-2" aria-hidden="true" tabindex="-1"></a>lih<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb317-3"><a href="estimaciones.html#cb317-3" aria-hidden="true" tabindex="-1"></a>lsh<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">*</span>(nh<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb317-4"><a href="estimaciones.html#cb317-4" aria-hidden="true" tabindex="-1"></a>lih;<span class="fu">var</span>(hh);lsh</span></code></pre></div>
 <pre><code>## [1] 13462780</code></pre>
 <pre><code>## [1] 24271163</code></pre>
 <pre><code>## [1] 56218511</code></pre>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="estimaciones.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo mujeres</span></span>
-<span id="cb315-2"><a href="estimaciones.html#cb315-2" aria-hidden="true" tabindex="-1"></a>limj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb315-3"><a href="estimaciones.html#cb315-3" aria-hidden="true" tabindex="-1"></a>lsmj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb315-4"><a href="estimaciones.html#cb315-4" aria-hidden="true" tabindex="-1"></a>limj;<span class="fu">var</span>(mm);lsmj</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="estimaciones.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo mujeres</span></span>
+<span id="cb321-2"><a href="estimaciones.html#cb321-2" aria-hidden="true" tabindex="-1"></a>limj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb321-3"><a href="estimaciones.html#cb321-3" aria-hidden="true" tabindex="-1"></a>lsmj<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">*</span>(nm<span class="dv">-1</span>))<span class="sc">/</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb321-4"><a href="estimaciones.html#cb321-4" aria-hidden="true" tabindex="-1"></a>limj;<span class="fu">var</span>(mm);lsmj</span></code></pre></div>
 <pre><code>## [1] 2776857</code></pre>
 <pre><code>## [1] 5400214</code></pre>
 <pre><code>## [1] 14715187</code></pre>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="estimaciones.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
-<span id="cb319-2"><a href="estimaciones.html#cb319-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza H/M</span></span>
-<span id="cb319-3"><a href="estimaciones.html#cb319-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb319-4"><a href="estimaciones.html#cb319-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm)<span class="co">#puntual</span></span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="estimaciones.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb325-2"><a href="estimaciones.html#cb325-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza H/M</span></span>
+<span id="cb325-3"><a href="estimaciones.html#cb325-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb325-4"><a href="estimaciones.html#cb325-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm)<span class="co">#puntual</span></span></code></pre></div>
 <pre><code>## [1] 4.494481</code></pre>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="estimaciones.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
-<span id="cb321-2"><a href="estimaciones.html#cb321-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb321-3"><a href="estimaciones.html#cb321-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb321-4"><a href="estimaciones.html#cb321-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="estimaciones.html#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
+<span id="cb327-2"><a href="estimaciones.html#cb327-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb327-3"><a href="estimaciones.html#cb327-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb327-4"><a href="estimaciones.html#cb327-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
 <pre><code>## [1] 1.426128</code></pre>
 <pre><code>## [1] 4.494481</code></pre>
 <pre><code>## [1] 12.98477</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="estimaciones.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="co">#99 confiabilidad</span></span>
-<span id="cb325-2"><a href="estimaciones.html#cb325-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb325-3"><a href="estimaciones.html#cb325-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb325-4"><a href="estimaciones.html#cb325-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="estimaciones.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="co">#99 confiabilidad</span></span>
+<span id="cb331-2"><a href="estimaciones.html#cb331-2" aria-hidden="true" tabindex="-1"></a>lihm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb331-3"><a href="estimaciones.html#cb331-3" aria-hidden="true" tabindex="-1"></a>lshm<span class="ot">&lt;-</span>(<span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.01</span><span class="sc">/</span><span class="dv">2</span>,nm<span class="dv">-1</span>,nh<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb331-4"><a href="estimaciones.html#cb331-4" aria-hidden="true" tabindex="-1"></a>lihm; <span class="fu">var</span>(hh)<span class="sc">/</span><span class="fu">var</span>(mm); lshm</span></code></pre></div>
 <pre><code>## [1] 0.9615647</code></pre>
 <pre><code>## [1] 4.494481</code></pre>
 <pre><code>## [1] 18.42446</code></pre>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="estimaciones.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
-<span id="cb329-2"><a href="estimaciones.html#cb329-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza M/H</span></span>
-<span id="cb329-3"><a href="estimaciones.html#cb329-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb329-4"><a href="estimaciones.html#cb329-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh)<span class="co">#puntual</span></span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="estimaciones.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb335-2"><a href="estimaciones.html#cb335-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cociente de varianza M/H</span></span>
+<span id="cb335-3"><a href="estimaciones.html#cb335-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb335-4"><a href="estimaciones.html#cb335-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh)<span class="co">#puntual</span></span></code></pre></div>
 <pre><code>## [1] 0.2224951</code></pre>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="estimaciones.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
-<span id="cb331-2"><a href="estimaciones.html#cb331-2" aria-hidden="true" tabindex="-1"></a>limh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb331-3"><a href="estimaciones.html#cb331-3" aria-hidden="true" tabindex="-1"></a>lsmh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
-<span id="cb331-4"><a href="estimaciones.html#cb331-4" aria-hidden="true" tabindex="-1"></a>limh; <span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh); lsmh</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="estimaciones.html#cb337-1" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalos</span></span>
+<span id="cb337-2"><a href="estimaciones.html#cb337-2" aria-hidden="true" tabindex="-1"></a>limh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb337-3"><a href="estimaciones.html#cb337-3" aria-hidden="true" tabindex="-1"></a>lsmh<span class="ot">&lt;-</span>(<span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh))<span class="sc">*</span><span class="fu">qf</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>,nh<span class="dv">-1</span>,nm<span class="dv">-1</span>,<span class="at">lower.tail =</span> F)</span>
+<span id="cb337-4"><a href="estimaciones.html#cb337-4" aria-hidden="true" tabindex="-1"></a>limh; <span class="fu">var</span>(mm)<span class="sc">/</span><span class="fu">var</span>(hh); lsmh</span></code></pre></div>
 <pre><code>## [1] 0.0770133</code></pre>
 <pre><code>## [1] 0.2224951</code></pre>
 <pre><code>## [1] 0.7011992</code></pre>
 
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div class="csl-entry">
-Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
-</div>
-<div class="csl-entry">
-R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
-<div class="csl-entry">
-Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.
-</div>
-<div class="csl-entry">
-———. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
-</div>
-<div class="csl-entry">
-Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <span>“<span class="nocase">How to Read This Book</span>.”</span> <em>Transforming Climate Finance and Green Investment with Blockchains</em>, 1. <a href="https://doi.org/10.1016/b978-0-12-814447-3.00041-0">https://doi.org/10.1016/b978-0-12-814447-3.00041-0</a>.
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -1361,8 +1387,8 @@ Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <span>“<span class="no
           </div>
         </div>
       </div>
-<a href="tema-2-distribuciones-muestrales.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="tema-2-distribuciones-muestrales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prueba-de-hipótesis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
